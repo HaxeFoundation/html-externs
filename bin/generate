@@ -61,6 +61,13 @@ with open("CSS.txt") as file:
 	haxe.cssProperties += file.readlines()
 
 stdDir = "../haxe/std"
-shutil.rmtree(stdDir+"/js/html")
+
+# Delete all files in js/html
+for root, dirs, files in os.walk(stdDir+"/js/html", topdown=False):
+	if root == stdDir+"/js/html/compat":
+		continue # Don't touch the compat directory
+	for file in files:
+		os.remove(root+"/"+file)
+
 haxe.generate(stdDir)
 dir_util.copy_tree("haxe", stdDir)
