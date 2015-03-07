@@ -76,6 +76,24 @@ RENAMES = {
 	"OfflineResourceList": "ApplicationCache",
 }
 
+ALLOWED_MOZ_PREFIXES = set([
+	# Fullscreen API
+	"mozCancelFullScreen",
+	"mozFullScreenEnabled",
+	"mozFullScreenElement",
+	"mozFullScreen",
+	"mozCancelFullScreen",
+	"onmozfullscreenchange",
+	"onmozfullscreenerror",
+
+	# Pointer Lock API
+	"mozPointerLockElement",
+	"mozExitPointerLock",
+	"mozRequestPointerLock",
+	"onmozpointerlockchange",
+	"onmozpointerlockerror",
+])
+
 HTML_ELEMENTS = {
 	"AnchorElement": "a",
 	"AppletElement": "applet",
@@ -523,7 +541,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeHaxeType(idl.name)
 
 		elif isinstance(idl, IDLIdentifier):
-			write(toHaxeIdentifier(idl.name))
+			write(toHaxeIdentifier(stripMozPrefix(idl.name, lowerCase=True)))
 
 		elif isinstance(idl, IDLAttribute):
 			writeNativeMeta(idl.identifier)
@@ -641,10 +659,17 @@ def isDefinedInParents (idl, member, checkMembers=False):
 				return True
 	return False
 
+def stripMozPrefix (name, lowerCase=False):
+	def replacer (match):
+		return match.group(1).lower()
+	name = re.sub(r"^moz(.)", replacer if lowerCase else r"\1", name)
+	name = re.sub(r"^onmoz", "on", name)
+	return name
+
 def stripTrailingUnderscore (name):
 	if name.endswith("_"):
 		name = name[0:-1]
-	name = re.sub(r"^moz", "", name) # Also unprefix moz...
+	name = stripMozPrefix(name)
 	if name in RENAMES:
 		name = RENAMES[name]
 	return name
@@ -707,6 +732,8 @@ def toEnumValue (value):
 	return value
 
 def isMozPrefixed (name):
+	if name in ALLOWED_MOZ_PREFIXES:
+		return False
 	name = name.lower()
 	return name.startswith("moz") or name.startswith("onmoz") or name.startswith("__")
 
