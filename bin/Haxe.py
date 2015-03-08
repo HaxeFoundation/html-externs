@@ -514,7 +514,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			elif idl.isUnion():
 				def writeUnion (memberTypes):
 					if len(memberTypes) > 1:
-						write("haxe.EitherType<", memberTypes[0], ",")
+						write("haxe.extern.EitherType<", memberTypes[0], ",")
 						writeUnion(memberTypes[1:])
 						write(">")
 					else:
