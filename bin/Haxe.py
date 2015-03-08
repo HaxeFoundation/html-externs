@@ -76,23 +76,11 @@ RENAMES = {
 	"OfflineResourceList": "ApplicationCache",
 }
 
-ALLOWED_MOZ_PREFIXES = set([
-	# Fullscreen API
-	"mozCancelFullScreen",
-	"mozFullScreenEnabled",
-	"mozFullScreenElement",
-	"mozFullScreen",
-	"mozCancelFullScreen",
-	"onmozfullscreenchange",
-	"onmozfullscreenerror",
-
-	# Pointer Lock API
-	"mozPointerLockElement",
-	"mozExitPointerLock",
-	"mozRequestPointerLock",
-	"onmozpointerlockchange",
-	"onmozpointerlockerror",
-])
+# Whitelisted moz-prefixed APIs
+ALLOWED_MOZ_PREFIXES = [
+	re.compile("(on)?moz.*fullscreen.*", re.IGNORECASE),
+	re.compile("(on)?moz.*pointerlock.*", re.IGNORECASE),
+]
 
 HTML_ELEMENTS = {
 	"AnchorElement": "a",
@@ -732,8 +720,9 @@ def toEnumValue (value):
 	return value
 
 def isMozPrefixed (name):
-	if name in ALLOWED_MOZ_PREFIXES:
-		return False
+	for pattern in ALLOWED_MOZ_PREFIXES:
+		if pattern.match(name):
+			return False
 	name = name.lower()
 	return name.startswith("moz") or name.startswith("onmoz") or name.startswith("__")
 
