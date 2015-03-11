@@ -27,15 +27,15 @@ import haxe.extern.EitherType;
 @:native("Promise")
 extern class Promise<T>
 {
-  @:overload(function(promise : Promise<T>) : Promise<T> {})
-  @:overload(function(thenable : Thenable<T>) : Promise<T> {})
+  @:overload(function<T>(promise : Promise<T>) : Promise<T> {})
+  @:overload(function<T>(thenable : Thenable<T>) : Promise<T> {})
   static function resolve<T>( value : T ) : Promise<T>;
   static function reject<T>( ?value : Dynamic ) : Promise<T>;
   static function all( iterable : Array<Dynamic> ) : Promise<Array<Dynamic>>;
   static function race( iterable : Array<Dynamic> ) : Promise<Dynamic>;
   /** @throws DOMError */
   function new( init : (T -> Void) -> (Dynamic -> Void) -> Void ) : Void;
-  function then( ?fulfillCallback : PromiseCallback<T, TOut>, ?rejectCallback : EitherType<Dynamic -> Void, PromiseCallback<Dynamic, TOut>> ) : Promise<TOut>;
+  function then<TOut>( ?fulfillCallback : PromiseCallback<T, TOut>, ?rejectCallback : EitherType<Dynamic -> Void, PromiseCallback<Dynamic, TOut>> ) : Promise<TOut>;
   @:native("catch")
   function catchError<TOut>( rejectCallback : EitherType<Dynamic -> Void, PromiseCallback<Dynamic, TOut>> ) : Promise<TOut>;
 }
