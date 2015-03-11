@@ -21,6 +21,7 @@ WHITELIST = set([
 
 BLACKLIST = set([
 	"CallsList",
+	"Promise",
 ])
 
 PREFS = set([
