@@ -81,6 +81,7 @@ RENAMES = {
 ALLOWED_MOZ_PREFIXES = [
 	re.compile("(on)?moz.*fullscreen.*", re.IGNORECASE),
 	re.compile("(on)?moz.*pointerlock.*", re.IGNORECASE),
+	re.compile("mozImageSmoothingEnabled"),
 ]
 
 HTML_ELEMENTS = {
