@@ -5,6 +5,7 @@ import glob
 import os
 import shutil
 import subprocess
+import textwrap
 
 import WebIDL
 import Haxe
@@ -69,5 +70,76 @@ for root, dirs, files in os.walk(stdDir+"/js/html", topdown=False):
 	for file in files:
 		os.remove(root+"/"+file)
 
+# Generate externs
 haxe.generate(stdDir)
+
+# Merge in the hand-written haxe directory
 dir_util.copy_tree("haxe", stdDir)
+
+deprecations = {
+	"js.html.BarInfo": "BarProp",
+	"js.html.CSSMatrix": "DOMMatrix",
+	"js.html.ClientRect": "DOMRect",
+	"js.html.ClientRectList": "DOMRectList",
+	"js.html.DOMApplicationCache": "ApplicationCache",
+	"js.html.DOMCoreException": "DOMException",
+	"js.html.DOMFormData": "FormData",
+	"js.html.DOMMimeType": "MimeType",
+	"js.html.DOMMimeTypeArray": "MimeTypeArray",
+	"js.html.DOMPlugin": "Plugin",
+	"js.html.DOMPluginArray": "PluginArray",
+	"js.html.DOMSelection": "Selection",
+	"js.html.DOMURL": "URL",
+	"js.html.DOMWindow": "Window",
+	"js.html.Point": "DOMPoint",
+	"js.html.SpeechInputEvent": "SpeechRecognitionEvent",
+	"js.html.SpeechInputResult": "SpeechRecognitionResult",
+	"js.html.SpeechInputResultList": "SpeechRecognitionResultList",
+	"js.html.TextTrackCue": "VTTCue",
+	"js.html.webgl.CompressedTextureS3TC": "ExtensionCompressedTextureS3TC",
+	"js.html.webgl.DebugRendererInfo": "ExtensionDebugRendererInfo",
+	"js.html.webgl.DebugShaders": "ExtensionDebugShaders",
+	"js.html.webgl.DepthTexture": "ExtensionDepthTexture",
+	"js.html.webgl.EXTTextureFilterAnisotropic": "ExtensionTextureFilterAnisotropic",
+	"js.html.webgl.LoseContext": "ExtensionLoseContext",
+	"js.html.webgl.OESStandardDerivatives": "ExtensionStandardDerivatives",
+	"js.html.webgl.OESTextureFloat": "ExtensionTextureFloat",
+	"js.html.webgl.OESVertexArrayObject": "ExtensionVertexArray",
+	"js.html.webgl.VertexArrayObjectOES": "VertexArray",
+}
+
+# Generate deprecated typedefs
+for oldPath, newClass in deprecations.iteritems():
+	oldClass = oldPath.split(".")[-1]
+	package = ".".join(oldPath.split(".")[:-1])
+
+	with open(stdDir+"/"+oldPath.replace(".", "/")+".hx", "w") as file:
+		file.write(textwrap.dedent("""\
+			/*
+			 * Copyright (C)2005-2015 Haxe Foundation
+			 *
+			 * Permission is hereby granted, free of charge, to any person obtaining a
+			 * copy of this software and associated documentation files (the "Software"),
+			 * to deal in the Software without restriction, including without limitation
+			 * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+			 * and/or sell copies of the Software, and to permit persons to whom the
+			 * Software is furnished to do so, subject to the following conditions:
+			 *
+			 * The above copyright notice and this permission notice shall be included in
+			 * all copies or substantial portions of the Software.
+			 *
+			 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+			 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+			 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+			 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+			 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+			 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+			 * DEALINGS IN THE SOFTWARE.
+			 */
+
+			package %s;
+
+		""" % package))
+		file.write("/** @deprecated Use %s instead. */\n" % newClass)
+		file.write("@:deprecated(\"%s is deprecated, use %s instead\")\n" % (oldClass, newClass))
+		file.write("typedef %s = %s;\n" % (oldClass, newClass))
