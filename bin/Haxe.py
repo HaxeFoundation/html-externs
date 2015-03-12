@@ -367,6 +367,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			if arrayAccess:
 				write(" implements ArrayAccess<", arrayAccess, ">")
 
+			if idl.identifier.name == "DOMStringMap":
+				write(" implements Dynamic<String>")
+
 			writeln()
 			writeln("{")
 			beginIndent()
