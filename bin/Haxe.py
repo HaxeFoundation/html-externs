@@ -21,6 +21,7 @@ WHITELIST = set([
 
 BLACKLIST = set([
 	"CallsList",
+	"Promise",
 ])
 
 PREFS = set([
@@ -497,8 +498,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			elif idl.isArray() or idl.isSequence():
 				write("Array<", idl.inner, ">")
 			elif idl.isPromise():
-				# TODO(bruno): Enable Promise type parameter
-				write("Promise/*<%s>*/" % idl._promiseInnerType)
+				write("Promise<")
+				write(idl._promiseInnerType)
+				write(">")
 			elif idl.isUnion():
 				def writeUnion (memberTypes):
 					if len(memberTypes) > 1:
