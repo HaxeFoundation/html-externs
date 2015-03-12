@@ -361,11 +361,6 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 							returnType, arguments = member.signatures()[0]
 							if len(arguments) == 1 and arguments[0].type.isInteger():
 								arrayAccess = returnType
-								continue
-						elif member.isMethod() and member.isSetter():
-							returnType, arguments = member.signatures()[0]
-							if len(arguments) == 2 and arguments[0].type.isInteger():
-								continue
 						collection = methods if member.isMethod() else vars
 					collection.append(member)
 

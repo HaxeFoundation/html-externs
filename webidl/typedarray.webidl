@@ -40,7 +40,7 @@ interface Int8Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter byte get(unsigned long index);
-    setter void set_(unsigned long index, byte value);
+    /*setter*/ void set(unsigned long index, byte value);
     void set(Int8Array_ array, optional unsigned long offset);
     void set(byte[] array, optional unsigned long offset);
     Int8Array_ subarray(long start, long end);
@@ -62,7 +62,7 @@ interface Uint8Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter octet get(unsigned long index);
-    setter void set_(unsigned long index, octet value);
+    /*setter*/ void set(unsigned long index, octet value);
     void set(Uint8Array_ array, optional unsigned long offset);
     void set(octet[] array, optional unsigned long offset);
     Uint8Array_ subarray(long start, long end);
@@ -82,7 +82,7 @@ interface Uint8ClampedArray_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
 
     getter octet get(unsigned long index);
-    setter void set_(unsigned long index, [Clamp] octet value);
+    /*setter*/ void set(unsigned long index, [Clamp] octet value);
     void set(Uint8ClampedArray_ array, optional unsigned long offset);
     void set(octet[] array, optional unsigned long offset);
     Uint8ClampedArray_ subarray(long start, long end);
@@ -102,7 +102,7 @@ interface Int16Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter short get(unsigned long index);
-    setter void set_(unsigned long index, short value);
+    /*setter*/ void set(unsigned long index, short value);
     void set(Int16Array_ array, optional unsigned long offset);
     void set(short[] array, optional unsigned long offset);
     Int16Array_ subarray(long start, long end);
@@ -122,7 +122,7 @@ interface Uint16Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter unsigned short get(unsigned long index);
-    setter void set_(unsigned long index, unsigned short value);
+    /*setter*/ void set(unsigned long index, unsigned short value);
     void set(Uint16Array_ array, optional unsigned long offset);
     void set(unsigned short[] array, optional unsigned long offset);
     Uint16Array_ subarray(long start, long end);
@@ -142,7 +142,7 @@ interface Int32Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter long get(unsigned long index);
-    setter void set_(unsigned long index, long value);
+    /*setter*/ void set(unsigned long index, long value);
     void set(Int32Array_ array, optional unsigned long offset);
     void set(long[] array, optional unsigned long offset);
     Int32Array_ subarray(long start, long end);
@@ -162,7 +162,7 @@ interface Uint32Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter unsigned long get(unsigned long index);
-    setter void set_(unsigned long index, unsigned long value);
+    /*setter*/ void set(unsigned long index, unsigned long value);
     void set(Uint32Array_ array, optional unsigned long offset);
     void set(unsigned long[] array, optional unsigned long offset);
     Uint32Array_ subarray(long start, long end);
@@ -182,7 +182,7 @@ interface Float32Array_  : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter unrestricted float get(unsigned long index);
-    setter void set_(unsigned long index, unrestricted float value);
+    /*setter*/ void set(unsigned long index, unrestricted float value);
     void set(Float32Array_ array, optional unsigned long offset);
     void set(unrestricted float[] array, optional unsigned long offset);
     Float32Array_ subarray(long start, long end);
@@ -202,7 +202,7 @@ interface Float64Array_ : ArrayBufferView_ {
     readonly attribute unsigned long length;
     
     getter unrestricted double get(unsigned long index);
-    setter void set_(unsigned long index, unrestricted double value);
+    /*setter*/ void set(unsigned long index, unrestricted double value);
     void set(Float64Array_ array, optional unsigned long offset);
     void set(unrestricted double[] array, optional unsigned long offset);
     Float64Array_ subarray(long start, long end);
