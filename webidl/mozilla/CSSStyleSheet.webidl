@@ -7,7 +7,7 @@
  * http://dev.w3.org/csswg/cssom/
  */
 
-interface CSSRule;
+/* interface CSSRule; */
 
 interface CSSStyleSheet : StyleSheet {
   [Pure]
