@@ -27,6 +27,11 @@ The following types from js.html have been removed, along with an
 explanation. Most of the changes are due to spec advances, and removal
 of Chrome-only APIs.
 
+- js.html.Element
+	- Renamed to HTMLElement
+- js.html.HtmlElement
+	- Renamed to HTMLHtmlElement
+
 - js.html.AbstractWorker
     - Merged into Worker.
 - js.html.AnimationList
@@ -37,13 +42,7 @@ of Chrome-only APIs.
     - Obsolete.
 - js.html.BeforeLoadEvent
     - ?
-- js.html.CSSCharsetRule
-    - ?
 - js.html.CSSFilterValue
-    - ?
-- js.html.CSSFontFaceRule
-    - ?
-- js.html.CSSImportRule
     - ?
 - js.html.CSSKeyframeRule
     - ?
@@ -51,17 +50,7 @@ of Chrome-only APIs.
     - ?
 - js.html.CSSMatrix
     - Renamed to DOMMatrix.
-- js.html.CSSMediaRule
-    - ?
-- js.html.CSSPageRule
-    - ?
-- js.html.CSSRule
-    - ?
-- js.html.CSSStyleRule
-    - ?
 - js.html.CSSTransformValue
-    - ?
-- js.html.CSSUnknownRule
     - ?
 - js.html.CanvasRenderingContext
     - Obsolete.
@@ -70,7 +59,7 @@ of Chrome-only APIs.
 - js.html.ClientRectList
     - Renamed to DOMRectList.
 - js.html.Clipboard
-    - Obsolete.
+    - Renamed to DataTransfer.
 - js.html.Counter
     - ?
 - js.html.DOMApplicationCache
