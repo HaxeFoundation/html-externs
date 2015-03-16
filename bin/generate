@@ -81,6 +81,7 @@ deprecations = {
 	"js.html.CSSMatrix": "DOMMatrix",
 	"js.html.ClientRect": "DOMRect",
 	"js.html.ClientRectList": "DOMRectList",
+	"js.html.Clipboard": "DataTransfer",
 	"js.html.DOMApplicationCache": "ApplicationCache",
 	"js.html.DOMCoreException": "DOMException",
 	"js.html.DOMFormData": "FormData",
