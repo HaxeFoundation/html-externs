@@ -71,6 +71,7 @@ FUNCS = set([
 	"mozilla::dom::workers::WorkerPrivate::WorkerAvailable",
 	"nsDocument::IsWebAnimationsEnabled",
 	"nsDocument::IsWebComponentsEnabled",
+	"nsGenericHTMLElement::TouchEventsEnabled",
 ])
 
 RENAMES = {
