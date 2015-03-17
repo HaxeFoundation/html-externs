@@ -336,3 +336,18 @@ of Chrome-only APIs.
     - Renamed to ExtensionVertexArrayObject.
 - js.html.webgl.VertexArrayObjectOES
     - Renamed to VertexArray.
+
+## Regarding HtmlElement and HTMLElement
+
+In Haxe 3.1, js.html.Element was a unified version of Element and HTMLElement. Our Element contained functionality from both Element and HTMLElement.
+
+In Haxe 3.2, we match the DOM spec more closely. There's a js.html.HTMLElement now, and you probably want to use it instead of Element (unless you're working with SVG or something). That required renaming js.html.HtmlElement to HTMLHtmlElement.
+
+Haxe 3.1:
+* Element
+* HtmlElement
+
+Haxe 3.2:
+* Element
+* HTMLElement
+* HTMLHtmlElement
