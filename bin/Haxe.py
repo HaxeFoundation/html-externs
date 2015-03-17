@@ -74,6 +74,13 @@ FUNCS = set([
 	"nsGenericHTMLElement::TouchEventsEnabled",
 ])
 
+# Types that are renamed, but still have their @:native pointing to the original name
+ALIASES = {
+	"Element": "DOMElement",
+	"HTMLElement": "Element",
+}
+
+# Types that are completely renamed from one thing to another, including the @:native
 RENAMES = {
 	"OfflineResourceList": "ApplicationCache",
 }
@@ -674,10 +681,9 @@ def toHaxeType (name):
 	name = stripTrailingUnderscore(name)
 	if name != "":
 		name = name[0].upper() + name[1:]
+	if name in ALIASES:
+		name = ALIASES[name]
 	name = re.sub("^HTML(.+Element)", "\\1", name)
-	if name == "HtmlElement":
-		# Avoid a case-insensitive collision between HTMLElement and HTMLHtmlElement (for Windows)
-		name = "HTMLHtmlElement"
 	if name.startswith("SVG"):
 		name = name[len("SVG"):]
 	if name.startswith("WebGL"):
