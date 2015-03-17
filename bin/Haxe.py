@@ -79,7 +79,6 @@ RENAMES = {
 
 # Whitelisted moz-prefixed APIs
 ALLOWED_MOZ_PREFIXES = [
-	re.compile("(on)?moz.*fullscreen.*", re.IGNORECASE),
 	re.compile("(on)?moz.*pointerlock.*", re.IGNORECASE),
 	re.compile("mozImageSmoothingEnabled"),
 	re.compile("mozMovement[XY]"),
