@@ -585,7 +585,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					write(";")
 
 		elif isinstance(idl, IDLArgument):
-			if idl.optional:
+			if idl.optional and not idl.variadic:
 				write("?")
 			write(idl.identifier, " : ")
 			if idl.variadic:
