@@ -587,7 +587,11 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		elif isinstance(idl, IDLArgument):
 			if idl.optional:
 				write("?")
-			write(idl.identifier, " : ", idl.type)
+			write(idl.identifier, " : ")
+			if idl.variadic:
+				write("haxe.extern.Rest<", idl.type, ">")
+			else:
+				write(idl.type)
 			if idl.defaultValue and not isinstance(idl.defaultValue, IDLNullValue) and not isinstance(idl.defaultValue, IDLUndefinedValue):
 				write(" = ", idl.defaultValue)
 
