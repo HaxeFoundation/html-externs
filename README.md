@@ -23,14 +23,12 @@ should go in the haxe/ directory.
 
 # Haxe 3.2 API migration
 
+`Element` was split into `Element` and `DOMElement`. Certain methods
+that return `DOMElement` may need to be coerced into an `Element`.
+
 The following types from js.html have been removed, along with an
 explanation. Most of the changes are due to spec advances, and removal
 of Chrome-only APIs.
-
-- js.html.Element
-	- Renamed to HTMLElement
-- js.html.HtmlElement
-	- Renamed to HTMLHtmlElement
 
 - js.html.AbstractWorker
     - Merged into Worker.
