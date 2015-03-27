@@ -67,6 +67,9 @@ partial interface Element {
            attribute EventHandler oncopy;
            attribute EventHandler oncut;
            attribute EventHandler onpaste;
+
+  // NON-STANDARD
+  attribute DOMString innerText;
 };
 
 // http://dev.w3.org/csswg/cssom-view/#extensions-to-the-htmlelement-interface
