@@ -535,7 +535,14 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				else:
 					write("Dynamic/*MISSING %s*/" % name)
 			else:
-				writeHaxeType(idl.name)
+				# Force Element and Document to HTMLElement and HTMLDocument to make things more
+				# convenient for typical web development and preserve 3.1 compat:
+				# https://github.com/HaxeFoundation/haxe/issues/4081
+				if name == "Element":
+					name = "HTMLElement"
+				elif name == "Document":
+					name = "HTMLDocument"
+				writeHaxeType(name)
 
 		elif isinstance(idl, IDLIdentifier):
 			write(toHaxeIdentifier(stripMozPrefix(idl.name, lowerCase=True)))
