@@ -359,6 +359,10 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			vars = []
 			methods = []
 			for member in idl.members:
+				if member.isMethod() and member.isGetter():
+					returnType, arguments = member.signatures()[0]
+					if len(arguments) == 1 and arguments[0].type.isInteger():
+						arrayAccess = returnType
 				if isAvailable(member):
 					collection = None
 					if isDefinedInParents(idl, member):
@@ -366,10 +370,6 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					if member.isConst() or member.isStatic():
 						collection = staticMethods if member.isMethod() else staticVars
 					else:
-						if member.isMethod() and member.isGetter():
-							returnType, arguments = member.signatures()[0]
-							if len(arguments) == 1 and arguments[0].type.isInteger():
-								arrayAccess = returnType
 						collection = methods if member.isMethod() else vars
 					collection.append(member)
 
