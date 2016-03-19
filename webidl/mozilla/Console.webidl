@@ -5,7 +5,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 [ChromeOnly,
- Exposed=(Window,Worker)]
+ Exposed=(Window,Worker,WorkerDebugger)]
 interface Console {
   void log(any... data);
   void info(any... data);
@@ -16,11 +16,13 @@ interface Console {
   void table(any... data);
   void trace();
   void dir(any... data);
+  void dirxml(any... data);
   void group(any... data);
   void groupCollapsed(any... data);
   void groupEnd(any... data);
   void time(optional any time);
   void timeEnd(optional any time);
+  void timeStamp(optional any data);
 
   void profile(any... data);
   void profileEnd(any... data);
@@ -28,13 +30,21 @@ interface Console {
   void assert(boolean condition, any... data);
   void count(any... data);
 
-  void ___noSuchMethod__();
+  // No-op methods for compatibility with other browsers.
+  [BinaryName="noopMethod"]
+  void clear();
+  [BinaryName="noopMethod"]
+  void markTimeline();
+  [BinaryName="noopMethod"]
+  void timeline();
+  [BinaryName="noopMethod"]
+  void timelineEnd();
 };
 
 // This is used to propagate console events to the observers.
 dictionary ConsoleEvent {
-  (unsigned long or DOMString) ID;
-  (unsigned long or DOMString) innerID;
+  (unsigned long long or DOMString) ID;
+  (unsigned long long or DOMString) innerID;
   DOMString level = "";
   DOMString filename = "";
   unsigned long lineNumber = 0;
@@ -42,10 +52,7 @@ dictionary ConsoleEvent {
   DOMString functionName = "";
   double timeStamp = 0;
   sequence<any> arguments;
-
-  // This array will only hold strings or null elements.
-  sequence<any> styles;
-
+  sequence<DOMString?> styles;
   boolean private = false;
   // stacktrace is handled via a getter in some cases so we can construct it
   // lazily.  Note that we're not making this whole thing an interface because
@@ -71,6 +78,7 @@ dictionary ConsoleStackEntry {
   unsigned long columnNumber = 0;
   DOMString functionName = "";
   unsigned long language = 0;
+  DOMString? asyncCause;
 };
 
 dictionary ConsoleTimerStart {

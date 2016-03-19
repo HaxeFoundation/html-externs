@@ -17,7 +17,7 @@ interface ArrayBuffer_ {
 
 /* ArrayBuffer_ implements Transferable; */
 
-[NoInterfaceObject]
+/* [NoInterfaceObject] */
 interface ArrayBufferView_ {
     readonly attribute ArrayBuffer_ buffer;
     readonly attribute unsigned long byteOffset;

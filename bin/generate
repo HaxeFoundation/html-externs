@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from distutils import dir_util
+import collections
 import glob
 import os
 import shutil
@@ -10,21 +11,13 @@ import textwrap
 import WebIDL
 import Haxe
 
-CONFIG = {
+CONFIG = collections.defaultdict(lambda: False, {
 	"MOZ_BUILD_APP": "browser",
 	"MOZ_EME": True,
 	"MOZ_GAMEPAD": True,
 	"MOZ_WEBSPEECH": True,
 	"MOZ_WEBRTC": True,
-
-	"MOZ_AUDIO_CHANNEL_MANAGER": False,
-	"MOZ_B2G_BT": False,
-	"MOZ_B2G_FM": False,
-	"MOZ_B2G_RIL": False,
-	"MOZ_DEBUG": False,
-	"MOZ_NFC": False,
-	"MOZ_WIDGET_TOOLKIT": False,
-}
+})
 MOZ_WHITELIST = set([
 	"ErrorEvent.webidl",
 	"TrackEvent.webidl",
@@ -32,6 +25,9 @@ MOZ_WHITELIST = set([
 MOZ_BLACKLIST = set([
 	"EventListener.webidl",
 	"LegacyQueryInterface.webidl",
+	"MozIcc.webidl",
+	"MozIccManager.webidl",
+	"MozIccInfo.webidl",
 ])
 execfile("webidl/mozilla/moz.build")
 
@@ -77,36 +73,36 @@ haxe.generate(stdDir)
 dir_util.copy_tree("haxe", stdDir)
 
 deprecations = {
-	"js.html.BarInfo": "BarProp",
-	"js.html.CSSMatrix": "DOMMatrix",
-	"js.html.ClientRect": "DOMRect",
-	"js.html.ClientRectList": "DOMRectList",
-	"js.html.Clipboard": "DataTransfer",
-	"js.html.DOMApplicationCache": "ApplicationCache",
-	"js.html.DOMCoreException": "DOMException",
-	"js.html.DOMFormData": "FormData",
-	"js.html.DOMMimeType": "MimeType",
-	"js.html.DOMMimeTypeArray": "MimeTypeArray",
-	"js.html.DOMPlugin": "Plugin",
-	"js.html.DOMPluginArray": "PluginArray",
-	"js.html.DOMSelection": "Selection",
-	"js.html.DOMURL": "URL",
-	"js.html.DOMWindow": "Window",
-	"js.html.Point": "DOMPoint",
-	"js.html.SpeechInputEvent": "SpeechRecognitionEvent",
-	"js.html.SpeechInputResult": "SpeechRecognitionResult",
-	"js.html.SpeechInputResultList": "SpeechRecognitionResultList",
-	"js.html.TextTrackCue": "VTTCue",
-	"js.html.webgl.CompressedTextureS3TC": "ExtensionCompressedTextureS3TC",
-	"js.html.webgl.DebugRendererInfo": "ExtensionDebugRendererInfo",
-	"js.html.webgl.DebugShaders": "ExtensionDebugShaders",
-	"js.html.webgl.DepthTexture": "ExtensionDepthTexture",
-	"js.html.webgl.EXTTextureFilterAnisotropic": "ExtensionTextureFilterAnisotropic",
-	"js.html.webgl.LoseContext": "ExtensionLoseContext",
-	"js.html.webgl.OESStandardDerivatives": "ExtensionStandardDerivatives",
-	"js.html.webgl.OESTextureFloat": "ExtensionTextureFloat",
-	"js.html.webgl.OESVertexArrayObject": "ExtensionVertexArray",
-	"js.html.webgl.VertexArrayObjectOES": "VertexArray",
+	# "js.html.BarInfo": "BarProp",
+	# "js.html.CSSMatrix": "DOMMatrix",
+	# "js.html.ClientRect": "DOMRect",
+	# "js.html.ClientRectList": "DOMRectList",
+	# "js.html.Clipboard": "DataTransfer",
+	# "js.html.DOMApplicationCache": "ApplicationCache",
+	# "js.html.DOMCoreException": "DOMException",
+	# "js.html.DOMFormData": "FormData",
+	# "js.html.DOMMimeType": "MimeType",
+	# "js.html.DOMMimeTypeArray": "MimeTypeArray",
+	# "js.html.DOMPlugin": "Plugin",
+	# "js.html.DOMPluginArray": "PluginArray",
+	# "js.html.DOMSelection": "Selection",
+	# "js.html.DOMURL": "URL",
+	# "js.html.DOMWindow": "Window",
+	# "js.html.Point": "DOMPoint",
+	# "js.html.SpeechInputEvent": "SpeechRecognitionEvent",
+	# "js.html.SpeechInputResult": "SpeechRecognitionResult",
+	# "js.html.SpeechInputResultList": "SpeechRecognitionResultList",
+	# # "js.html.TextTrackCue": "VTTCue",
+	# "js.html.webgl.CompressedTextureS3TC": "ExtensionCompressedTextureS3TC",
+	# "js.html.webgl.DebugRendererInfo": "ExtensionDebugRendererInfo",
+	# "js.html.webgl.DebugShaders": "ExtensionDebugShaders",
+	# "js.html.webgl.DepthTexture": "ExtensionDepthTexture",
+	# "js.html.webgl.EXTTextureFilterAnisotropic": "ExtensionTextureFilterAnisotropic",
+	# "js.html.webgl.LoseContext": "ExtensionLoseContext",
+	# "js.html.webgl.OESStandardDerivatives": "ExtensionStandardDerivatives",
+	# "js.html.webgl.OESTextureFloat": "ExtensionTextureFloat",
+	# "js.html.webgl.OESVertexArrayObject": "ExtensionVertexArray",
+	# "js.html.webgl.VertexArrayObjectOES": "VertexArray",
 }
 
 # Generate deprecated typedefs

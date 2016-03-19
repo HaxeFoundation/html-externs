@@ -1,6 +1,7 @@
 import datetime
 import os
 import re
+import string
 import sys
 import textwrap
 
@@ -22,6 +23,7 @@ WHITELIST = set([
 BLACKLIST = set([
 	"CallsList",
 	"Promise",
+	"LegacyMozTCPSocket",
 ])
 
 PREFS = set([
@@ -72,6 +74,11 @@ FUNCS = set([
 	"nsDocument::IsWebAnimationsEnabled",
 	"nsDocument::IsWebComponentsEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
+	"mozilla::dom::OffscreenCanvas::PrefEnabled",
+	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
+	"SpeechRecognition::IsAuthorized",
+	"mozilla::dom::ServiceWorkerRegistrationVisible",
+	"mozilla::dom::workers::ServiceWorkerVisible",
 ])
 
 # Types that are renamed, but still have their @:native pointing to the original name
@@ -89,7 +96,7 @@ RENAMES = {
 ALLOWED_MOZ_PREFIXES = [
 	re.compile("(on)?moz.*pointerlock.*", re.IGNORECASE),
 	re.compile("mozImageSmoothingEnabled"),
-	re.compile("mozMovement[XY]"),
+	# re.compile("mozMovement[XY]"),
 ]
 
 HTML_ELEMENTS = {
@@ -228,6 +235,8 @@ class Program ():
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary) and isAvailable(idl):
 				knownTypes.append(stripTrailingUnderscore(idl.identifier.name))
+			else:
+			    print("Ignoring %s %s" % (type(idl), idl))
 
 		usedTypes = set()
 		for idl in self.idls:
@@ -271,7 +280,8 @@ def checkUsage (idl):
 		used |= checkUsage(idl.ctor())
 
 	elif isinstance(idl, IDLCallbackType):
-		returnType, arguments = idl.signatures()[0]
+		callback = idl.callback
+		returnType, arguments = callback.signatures()[0]
 		for argument in arguments:
 			used |= checkUsage(argument.type)
 		used |= checkUsage(returnType)
@@ -455,11 +465,12 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				"""))
 
 		elif isinstance(idl, IDLCallbackType):
-			if idl.identifier.name == "EventHandlerNonNull":
+			callback = idl.callback
+			if callback.identifier.name == "EventHandlerNonNull":
 				# Special case for event handler convenience
 				write("haxe.Constraints.Function")
 			else:
-				returnType, arguments = idl.signatures()[0]
+				returnType, arguments = callback.signatures()[0]
 				if len(arguments) > 0:
 					if len(arguments) == 1 and arguments[0].type.isAny() and returnType.isAny():
 						# Assume that Dynamic -> Dynamic should be Function
@@ -477,6 +488,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			writeln("{")
 			beginIndent()
 			if idl.parent:
+				name = idl.parent.identifier.name
+				if name not in usedTypes or name not in knownTypes:
+					write("// ")
 				writeln("> ", idl.parent.identifier, ",")
 			for member in idl.members:
 				if isAvailable(member):
@@ -682,6 +696,10 @@ def stripTrailingUnderscore (name):
 		name = RENAMES[name]
 	return name
 
+def toCamelCase (name):
+	# Convert a snakey case name to an upper camel case
+	return string.capwords(name, sep="_").replace("_", "")
+
 def toHaxeIdentifier (name):
 	name = re.sub(r"[^A-Za-z0-9_]", "_", name)
 	if name in RESERVED_WORDS:
@@ -699,6 +717,12 @@ def toHaxeType (name):
 		name = name[len("SVG"):]
 	if name.startswith("WebGL"):
 		name = name[len("WebGL"):]
+	if name.startswith("WEBGL_"):
+		name = "Extension"+toCamelCase(name[len("WEBGL_"):])
+	if name.startswith("EXT_"):
+		name = "Extension"+toCamelCase(name[len("EXT_"):])
+	if name.startswith("OES_"):
+		name = "Extension"+toCamelCase(name[len("OES_"):])
 	elif name.startswith("IDB"):
 		name = name[len("IDB"):]
 	elif name.startswith("RTC"):
@@ -713,7 +737,7 @@ def toHaxeType (name):
 def toHaxePackage (name):
 	name = stripTrailingUnderscore(name)
 	package = ["js", "html"]
-	if name.startswith("WebGL"):
+	if name.startswith("WebGL") or name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_"):
 		package.append("webgl")
 	elif name.startswith("IDB"):
 		package.append("idb")
@@ -767,6 +791,7 @@ def isAvailable (idl):
 		if idl.getExtendedAttribute("ChromeOnly") or \
 				idl.getExtendedAttribute("AvailableIn") or \
 				idl.getExtendedAttribute("CheckPermissions") or \
+				idl.getExtendedAttribute("CheckAnyPermissions") or \
 				idl.getExtendedAttribute("NavigatorProperty"):
 			return False
 		if isDisabled(idl.getExtendedAttribute("Pref"), PREFS):

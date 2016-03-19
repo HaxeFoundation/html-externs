@@ -12,6 +12,7 @@ dictionary IDBObjectStoreParameters {
     boolean                             autoIncrement = false;
 };
 
+[Exposed=(Window,Worker)]
 interface IDBObjectStore {
     readonly    attribute DOMString      name;
 
@@ -62,14 +63,14 @@ interface IDBObjectStore {
 partial interface IDBObjectStore {
     // Success fires IDBTransactionEvent, result == array of values for given keys
     [Throws]
-    IDBRequest mozGetAll (optional any key, optional unsigned long limit);
+    IDBRequest mozGetAll (optional any key, [EnforceRange] optional unsigned long limit);
 
-    [Pref="dom.indexedDB.experimental", Throws]
-    IDBRequest getAll (optional any key, optional unsigned long limit);
+    [Throws]
+    IDBRequest getAll (optional any key, [EnforceRange] optional unsigned long limit);
 
-    [Pref="dom.indexedDB.experimental", Throws]
-    IDBRequest getAllKeys (optional any key, optional unsigned long limit);
+    [Throws]
+    IDBRequest getAllKeys (optional any key, [EnforceRange] optional unsigned long limit);
 
-    [Pref="dom.indexedDB.experimental", Throws]
+    [Throws]
     IDBRequest openKeyCursor (optional any range, optional IDBCursorDirection direction = "next");
 };

@@ -5,7 +5,7 @@
  *
  * PeerConnection.js' interface to the C++ PeerConnectionImpl.
  *
- * Do not confuse with mozRTCPeerConnection. This interface is purely for
+ * Do not confuse with RTCPeerConnection. This interface is purely for
  * communication between the PeerConnection JS DOM binding and the C++
  * implementation in SIPCC.
  *
@@ -23,6 +23,7 @@ interface PeerConnectionImpl  {
   void initialize(PeerConnectionObserver observer, Window window,
                   RTCConfiguration iceServers,
                   nsISupports thread);
+
   /* JSEP calls */
   [Throws]
   void createOffer(optional RTCOfferOptions options);
@@ -44,13 +45,19 @@ interface PeerConnectionImpl  {
   [Throws]
   void removeTrack(MediaStreamTrack track);
   [Throws]
-  void replaceTrack(MediaStreamTrack thisTrack, MediaStreamTrack withTrack,
-                    MediaStream stream);
+  void replaceTrack(MediaStreamTrack thisTrack, MediaStreamTrack withTrack);
+  [Throws]
+  void setParameters(MediaStreamTrack track,
+                     optional RTCRtpParameters parameters);
+  [Throws]
+  RTCRtpParameters getParameters(MediaStreamTrack track);
   [Throws]
   void closeStreams();
 
   sequence<MediaStream> getLocalStreams();
   sequence<MediaStream> getRemoteStreams();
+
+  void selectSsrc(MediaStreamTrack recvTrack, unsigned short ssrcIndex);
 
   /* As the ICE candidates roll in this one should be called each time
    * in order to keep the candidate list up-to-date for the next SDP-related
@@ -64,9 +71,14 @@ interface PeerConnectionImpl  {
   void close();
 
   /* Notify DOM window if this plugin crash is ours. */
-  boolean pluginCrash(unsigned long long pluginId, DOMString name, DOMString pluginDumpID);
+  boolean pluginCrash(unsigned long long pluginId, DOMString name);
 
   /* Attributes */
+  /* This provides the implementation with the certificate it uses to
+   * authenticate itself.  The JS side must set this before calling
+   * createOffer/createAnswer or retrieving the value of fingerprint.  This has
+   * to be delayed because generating the certificate takes some time. */
+  attribute RTCCertificate certificate;
   [Constant]
   readonly attribute DOMString fingerprint;
   readonly attribute DOMString localDescription;
@@ -86,7 +98,4 @@ interface PeerConnectionImpl  {
     unsigned short type, boolean outOfOrderAllowed,
     unsigned short maxTime, unsigned short maxNum,
     boolean externalNegotiated, unsigned short stream);
-  [Throws]
-  void connectDataConnection(unsigned short localport,
-    unsigned short remoteport, unsigned short numstreams);
 };

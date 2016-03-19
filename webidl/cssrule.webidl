@@ -1,6 +1,6 @@
 
   // Introduced in DOM Level 2:
-  interface CSSRule {
+  interface CSSRule_ {
 
     // RuleType
     const unsigned short      UNKNOWN_RULE                   = 0;
@@ -16,11 +16,11 @@
                                         // raises(dom::DOMException) on setting
 
     readonly attribute CSSStyleSheet    parentStyleSheet;
-    readonly attribute CSSRule          parentRule;
+    readonly attribute CSSRule_          parentRule;
   };
 
   // Introduced in DOM Level 2:
-  interface CSSStyleRule : CSSRule {
+  interface CSSStyleRule : CSSRule_ {
              attribute DOMString        selectorText;
                                         // raises(dom::DOMException) on setting
 
@@ -28,7 +28,7 @@
   };
 
   // Introduced in DOM Level 2:
-  interface CSSMediaRule : CSSRule {
+  interface CSSMediaRule : CSSRule_ {
     readonly attribute MediaList  media;
     readonly attribute CSSRuleList      cssRules;
     unsigned long      insertRule(DOMString rule, 
@@ -39,12 +39,12 @@
   };
 
   // Introduced in DOM Level 2:
-  interface CSSFontFaceRule : CSSRule {
+  interface CSSFontFaceRule : CSSRule_ {
     readonly attribute CSSStyleDeclaration  style;
   };
 
   // Introduced in DOM Level 2:
-  interface CSSPageRule : CSSRule {
+  interface CSSPageRule : CSSRule_ {
              attribute DOMString        selectorText;
                                         // raises(dom::DOMException) on setting
 
@@ -52,19 +52,19 @@
   };
 
   // Introduced in DOM Level 2:
-  interface CSSImportRule : CSSRule {
+  interface CSSImportRule : CSSRule_ {
     readonly attribute DOMString        href;
     readonly attribute MediaList  media;
     readonly attribute CSSStyleSheet    styleSheet;
   };
 
   // Introduced in DOM Level 2:
-  interface CSSCharsetRule : CSSRule {
+  interface CSSCharsetRule : CSSRule_ {
              attribute DOMString        encoding;
                                         // raises(dom::DOMException) on setting
 
   };
 
   // Introduced in DOM Level 2:
-  interface CSSUnknownRule : CSSRule {
+  interface CSSUnknownRule : CSSRule_ {
   };

@@ -47,8 +47,13 @@ interface MediaRecorder : EventTarget {
 
   [Throws]
   void requestData();
+
+  static boolean isTypeSupported(DOMString type);
 };
 
 dictionary MediaRecorderOptions {
   DOMString mimeType = ""; // Default encoding mimeType.
+  unsigned long audioBitsPerSecond;
+  unsigned long videoBitsPerSecond;
+  unsigned long bitsPerSecond;
 };

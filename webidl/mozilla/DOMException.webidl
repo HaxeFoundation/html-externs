@@ -50,12 +50,11 @@ interface ExceptionMembers
 
   // A stack trace, if available.  nsIStackFrame does not have classinfo so
   // this was only ever usefully available to chrome JS.
-  [ChromeOnly]
+  [ChromeOnly, Exposed=Window]
   readonly attribute StackFrame?             location;
-  // An inner exception that triggered this, if available.
-  readonly attribute nsISupports?            inner;
 
   // Arbitary data for the implementation.
+  [Exposed=Window]
   readonly attribute nsISupports?            data;
 
   // Formatted exception stack
@@ -63,7 +62,7 @@ interface ExceptionMembers
   readonly attribute DOMString               stack;
 };
 
-[NoInterfaceObject]
+[NoInterfaceObject, Exposed=(Window,Worker)]
 interface Exception {
   // A generic formatter - make it suitable to print, etc.
   stringifier;
@@ -74,7 +73,8 @@ Exception implements ExceptionMembers;
 // XXXkhuey this is an 'exception', not an interface, but we don't have any
 // parser or codegen mechanisms for dealing with exceptions.
 [ExceptionClass,
- Exposed=(Window, Worker)]
+ Exposed=(Window, Worker),
+ Constructor(optional DOMString message = "", optional DOMString name)]
 interface DOMException {
   const unsigned short INDEX_SIZE_ERR = 1;
   const unsigned short DOMSTRING_SIZE_ERR = 2; // historical

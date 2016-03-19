@@ -49,6 +49,12 @@ interface Telephony : EventTarget {
   [Throws]
   void stopTone(optional unsigned long serviceId);
 
+  // Calling this method, the app will be treated as owner of the telephony
+  // calls from the AudioChannel policy.
+  [Throws,
+   CheckAllPermissions="audio-channel-telephony"]
+  void ownAudioChannel();
+
   [Throws]
   attribute boolean muted;
 
@@ -61,8 +67,9 @@ interface Telephony : EventTarget {
   readonly attribute CallsList calls;
   readonly attribute TelephonyCallGroup conferenceGroup;
 
-  // The 'ready' event will be fired when the telephony object is ready.
-  attribute EventHandler onready;
+  // Async notification that object initialization is done.
+  [Throws]
+  readonly attribute Promise<void> ready;
 
   attribute EventHandler onincoming;
   attribute EventHandler oncallschanged;

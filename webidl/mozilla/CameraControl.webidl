@@ -109,6 +109,11 @@ dictionary CameraStartRecordingOptions
      will be left as-is on stopRecording(). If the camera does not
      support this setting, it will be ignored. */
   boolean autoEnableLowLightTorch = false;
+
+  /* If true, a poster JPG will be created from the recording and issued
+     via the poster event. PosterCreated or PosterFailed recording state
+     changes will indicate whether or not it was created. */
+  boolean createPoster = false;
 };
 
 /*
@@ -243,8 +248,24 @@ interface CameraControl : MediaStream
      recording limits (see CameraStartRecordingOptions) was reached.
 
      event type is CameraStateChangeEvent where:
-         'newState' is the new recorder state */
+         'newState' is one of the following states:
+             'Started' if the recording has begun capturing data
+             'Stopped' when the recording has completed (success and failure)
+             'Paused' if the recording is paused
+             'Resumed' if the recording is resumed after pausing
+             'PosterCreated' if a poster was requested and created
+             'PosterFailed' if a poster was requested and failed to create
+             'FileSizeLimitReached' if stopped due to file size limit
+             'VideoLengthLimitReached' if stopped due to a time limit
+             'TrackCompleted' if audio or video track complete when stopping
+             'TrackFailed' if audio or video track incomplete when stopping
+             'MediaRecorderFailed' if failed due to local error
+             'MediaServerFailed' if failed due to media server */
   attribute EventHandler    onrecorderstatechange;
+
+  /* the event dispatched when a poster is successfully captured; it is of the
+     type BlobEvent, where the data attribute contains the poster. */
+  attribute EventHandler    onposter;
 
   /* the event dispatched when the viewfinder stops or starts,
      useful for synchronizing other UI elements.
@@ -255,7 +276,10 @@ interface CameraControl : MediaStream
 
   /* the size of the picture to be returned by a call to takePicture();
      an object with 'height' and 'width' properties that corresponds to
-     one of the options returned by capabilities.pictureSizes. */
+     one of the options returned by capabilities.pictureSizes.
+
+     note that unlike when one uses setConfiguration instead to update the
+     picture size, this will not recalculate the ideal preview size. */
   [Throws]
   CameraSize getPictureSize();
   [Throws]
@@ -287,7 +311,13 @@ interface CameraControl : MediaStream
      to the display; e.g. if 'sensorAngle' is 270 degrees (or -90 degrees),
      then the preview stream needs to be rotated +90 degrees to have the
      same orientation as the real world. */
+  [Constant, Cached]
   readonly attribute long   sensorAngle;
+
+  /* the mode the camera will use to determine the correct exposure of
+     the scene; supported modes are exposed by capabilities.meteringModes. */
+  [Throws]
+  attribute DOMString       meteringMode;
 
   /* tell the camera to attempt to focus the image */
   [Throws]
@@ -331,9 +361,20 @@ interface CameraControl : MediaStream
                                DeviceStorage storageArea,
                                DOMString filename);
 
-  /* stop precording video. */
+  /* stop recording video. */
   [Throws]
   void stopRecording();
+
+  /* pause recording video. The camera remains active but audio and video
+     frames are no longer saved in the output file. If called when not
+     recording or already paused, it fails silently. */
+  [Throws]
+  void pauseRecording();
+
+  /* resume recording video while paused. If called when not recording or
+     not paused, it fails silently. */
+  [Throws]
+  void resumeRecording();
 
   /* call in or after the takePicture() onSuccess callback to
      resume the camera preview stream. */
@@ -355,11 +396,8 @@ interface CameraControl : MediaStream
 
   /* the event dispatched when the camera is successfully configured.
 
-     event type is CameraConfigurationEvent where:
-         'mode' is the selected camera mode
-         'recorderProfile' is the selected profile
-         'width' contains the preview width
-         'height' contains the preview height */
+     event type is CameraConfigurationEvent which has the same members as
+     CameraConfiguration. */
   attribute EventHandler onconfigurationchange;
 
   /* if focusMode is set to either 'continuous-picture' or 'continuous-video',
@@ -417,7 +455,9 @@ interface CameraControl : MediaStream
    'mouth' is the coordinates of the detected mouth; null if not supported or
    detected. Same boundary conditions as 'leftEye'.
 */
-[Pref="camera.control.face_detection.enabled", Func="DOMCameraDetectedFace::HasSupport"]
+[Pref="camera.control.face_detection.enabled",
+ Func="DOMCameraDetectedFace::HasSupport",
+ Constructor(optional CameraDetectedFaceInit initDict)]
 interface CameraDetectedFace
 {
   readonly attribute unsigned long id;
@@ -434,6 +474,19 @@ interface CameraDetectedFace
 
   readonly attribute boolean hasMouth;
   readonly attribute DOMPoint? mouth;
+};
+
+dictionary CameraDetectedFaceInit
+{
+  unsigned long id = 0;
+  unsigned long score = 100;
+  CameraRegion bounds;
+  boolean hasLeftEye = false;
+  DOMPointInit leftEye;
+  boolean hasRightEye = false;
+  DOMPointInit rightEye;
+  boolean hasMouth = false;
+  DOMPointInit mouth;
 };
 
 callback CameraFaceDetectionCallback = void (sequence<CameraDetectedFace> faces);

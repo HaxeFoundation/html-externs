@@ -58,6 +58,7 @@ dictionary NetworkProperties {
   boolean dontConnect;
   DOMString serverCertificate;
   DOMString subjectMatch;
+  DOMString userCertificate;
 };
 
 [Constructor(optional NetworkProperties properties),
@@ -96,6 +97,7 @@ interface MozWifiNetwork {
            attribute boolean? dontConnect;
            attribute DOMString? serverCertificate;
            attribute DOMString? subjectMatch;
+           attribute DOMString? userCertificate;
 };
 
 [JSImplementation="@mozilla.org/mozwificonnection;1",
@@ -126,7 +128,8 @@ dictionary IPConfiguration {
 
 [JSImplementation="@mozilla.org/wifimanager;1",
  NavigatorProperty="mozWifiManager",
- Func="Navigator::HasWifiManagerSupport"]
+ Func="Navigator::HasWifiManagerSupport",
+ UnsafeInPrerendering]
 interface MozWifiManager : EventTarget {
   /**
    * Turn on/off wifi functionality.

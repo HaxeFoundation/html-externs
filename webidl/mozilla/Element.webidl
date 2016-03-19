@@ -30,11 +30,13 @@ interface Element : Node {
            attribute DOMString id;
   [Pure]
            attribute DOMString className;
-  [Constant]
+  [Constant, PutForwards=value]
   readonly attribute DOMTokenList classList;
 
   [SameObject]
   readonly attribute NamedNodeMap attributes;
+  [Pure]
+  sequence<DOMString> getAttributeNames();
   [Pure]
   DOMString? getAttribute(DOMString name);
   [Pure]
@@ -59,6 +61,8 @@ interface Element : Node {
 
   [Throws, Pure]
   boolean matches(DOMString selector);
+  [Throws, Pure, BinaryName="matches"]
+  boolean webkitMatchesSelector(DOMString selector);
 
   [Pure]
   HTMLCollection getElementsByTagName(DOMString localName);
@@ -92,11 +96,11 @@ interface Element : Node {
    *
    * See <http://dev.w3.org/2006/webapi/selectors-api2/#matchesselector>
    */
-  [Throws, Pure]
+  [Throws, Pure, BinaryName="matches"]
   boolean mozMatchesSelector(DOMString selector);
 
   // Pointer events methods.
-  [Throws, Pref="dom.w3c_pointer_events.enabled"]
+  [Throws, Pref="dom.w3c_pointer_events.enabled", UnsafeInPrerendering]
   void setPointerCapture(long pointerId);
 
   [Throws, Pref="dom.w3c_pointer_events.enabled"]
@@ -120,15 +124,6 @@ interface Element : Node {
   void releaseCapture();
 
   // Mozilla extensions
-  /**
-   * Requests that this element be made the full-screen element, as per the DOM
-   * full-screen api.
-   *
-   * The fsOptions parameter is non-standard.
-   *
-   * @see <https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI>
-   */
-  void mozRequestFullScreen(optional RequestFullscreenOptions fsOptions);
 
   /**
    * Requests that this element be made the pointer-locked element, as per the DOM
@@ -136,6 +131,7 @@ interface Element : Node {
    *
    * @see <http://dvcs.w3.org/hg/pointerlock/raw-file/default/index.html>
    */
+  [UnsafeInPrerendering]
   void mozRequestPointerLock();
 
   // Obsolete methods.
@@ -182,6 +178,11 @@ partial interface Element {
   void scrollTo(optional ScrollToOptions options);
   void scrollBy(unrestricted double x, unrestricted double y);
   void scrollBy(optional ScrollToOptions options);
+  // mozScrollSnap is used by chrome to perform scroll snapping after the
+  // user performs actions that may affect scroll position
+  // mozScrollSnap is deprecated, to be replaced by a web accessible API, such
+  // as an extension to the ScrollOptions dictionary.  See bug 1137937.
+  [ChromeOnly] void mozScrollSnap();
 
   readonly attribute long clientTop;
   readonly attribute long clientLeft;
@@ -189,11 +190,13 @@ partial interface Element {
   readonly attribute long clientHeight;
 
   // Mozilla specific stuff
-  /* The maximum offset that the element can be scrolled to
+  /* The minimum/maximum offset that the element can be scrolled to
      (i.e., the value that scrollLeft/scrollTop would be clamped to if they were
      set to arbitrarily large values. */
-  readonly attribute long scrollTopMax;
-  readonly attribute long scrollLeftMax;
+  [ChromeOnly] readonly attribute long scrollTopMin;
+               readonly attribute long scrollTopMax;
+  [ChromeOnly] readonly attribute long scrollLeftMin;
+               readonly attribute long scrollLeftMax;
 };
 
 // http://dvcs.w3.org/hg/undomanager/raw-file/tip/undomanager.html
@@ -238,9 +241,21 @@ Element implements ParentNode;
 Element implements Animatable;
 Element implements GeometryUtils;
 
-// non-standard: allows passing options to Element.requestFullScreen
+// non-standard: allows passing options to Element.requestFullscreen
 dictionary RequestFullscreenOptions {
   // Which HMDVRDevice to go full screen on; also enables VR rendering.
   // If null, normal fullscreen is entered.
   HMDVRDevice? vrDisplay = null;
+};
+
+// https://fullscreen.spec.whatwg.org/#api
+partial interface Element {
+  /**
+   * The options parameter is non-standard. In Gecko, it can be:
+   *  a RequestFullscreenOptions object
+   */
+  [Throws, UnsafeInPrerendering]
+  void requestFullscreen(optional any options);
+  [Throws, UnsafeInPrerendering, BinaryName="requestFullscreen", Deprecated="PrefixedFullscreenAPI"]
+  void mozRequestFullScreen(optional any options);
 };

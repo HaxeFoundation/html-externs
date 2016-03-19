@@ -10,14 +10,17 @@ partial interface Element {
   [Constant]
   readonly attribute DOMStringMap dataset;
 
+  [GetterThrows, Pure]
+           attribute DOMString innerText;
+
   // microdata 
   [SetterThrows, Pure]
            attribute boolean itemScope;
-  [PutForwards=value,Constant] readonly attribute DOMSettableTokenList itemType;
+  [PutForwards=value,Constant] readonly attribute DOMTokenList itemType;
   [SetterThrows, Pure]
            attribute DOMString itemId;
-  [PutForwards=value,Constant] readonly attribute DOMSettableTokenList itemRef;
-  [PutForwards=value,Constant] readonly attribute DOMSettableTokenList itemProp;
+  [PutForwards=value,Constant] readonly attribute DOMTokenList itemRef;
+  [PutForwards=value,Constant] readonly attribute DOMTokenList itemProp;
   [Constant]
   readonly attribute HTMLPropertiesCollection properties;
   [Throws]
@@ -39,7 +42,7 @@ partial interface Element {
   readonly attribute DOMString accessKeyLabel;
   [SetterThrows, Pure]
            attribute boolean draggable;
-  //[PutForwards=value] readonly attribute DOMSettableTokenList dropzone;
+  //[PutForwards=value] readonly attribute DOMTokenList dropzone;
   [SetterThrows, Pure]
            attribute DOMString contentEditable;
   [Pure]
@@ -67,9 +70,6 @@ partial interface Element {
            attribute EventHandler oncopy;
            attribute EventHandler oncut;
            attribute EventHandler onpaste;
-
-  // NON-STANDARD
-  attribute DOMString innerText;
 };
 
 // http://dev.w3.org/csswg/cssom-view/#extensions-to-the-htmlelement-interface
@@ -80,6 +80,13 @@ partial interface Element {
   readonly attribute long offsetLeft;
   readonly attribute long offsetWidth;
   readonly attribute long offsetHeight;
+};
+
+// Extension for scroll-grabbing, used in the B2G dynamic toolbar.
+// This is likely to be revised.
+partial interface Element {
+  [Func="nsGenericHTMLElement::IsScrollGrabAllowed"]
+           attribute boolean scrollgrab;
 };
 
 Element implements GlobalEventHandlers;
