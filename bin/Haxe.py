@@ -24,6 +24,7 @@ BLACKLIST = set([
 	"CallsList",
 	"Promise",
 	"LegacyMozTCPSocket",
+	"PushManagerImpl",
 ])
 
 PREFS = set([
