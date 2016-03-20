@@ -74,7 +74,7 @@ FUNCS = set([
 	"nsDocument::IsWebAnimationsEnabled",
 	"nsDocument::IsWebComponentsEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
-	"mozilla::dom::OffscreenCanvas::PrefEnabled",
+	# "mozilla::dom::OffscreenCanvas::PrefEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
 	"SpeechRecognition::IsAuthorized",
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
@@ -235,8 +235,6 @@ class Program ():
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary) and isAvailable(idl):
 				knownTypes.append(stripTrailingUnderscore(idl.identifier.name))
-			else:
-			    print("Ignoring %s %s" % (type(idl), idl))
 
 		usedTypes = set()
 		for idl in self.idls:
@@ -357,7 +355,14 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 
 	def writeIdl (idl):
 		if isinstance(idl, IDLInterface):
-			writeln("@:native(\"%s\")" % stripTrailingUnderscore(idl.identifier.name))
+			nativeName = stripTrailingUnderscore(idl.identifier.name)
+			if nativeName == "ArrayBuffer" or nativeName == "DataView" \
+					or nativeName == "Float32Array" or nativeName == "Float64Array" \
+					or nativeName == "Uint8Array":
+				writeln("// Explicitly include the compatibility class")
+				writeln("import js.html.compat.%s;" % nativeName)
+				writeln()
+			writeln("@:native(\"%s\")" % nativeName)
 			write("extern class ", toHaxeType(idl.identifier.name))
 			if idl.parent:
 				write(" extends ")
@@ -715,14 +720,16 @@ def toHaxeType (name):
 	name = re.sub("^HTML(.+Element)", "\\1", name)
 	if name.startswith("SVG"):
 		name = name[len("SVG"):]
-	if name.startswith("WebGL"):
+	elif name.startswith("WebGL"):
 		name = name[len("WebGL"):]
-	if name.startswith("WEBGL_"):
+	elif name.startswith("WEBGL_"):
 		name = "Extension"+toCamelCase(name[len("WEBGL_"):])
-	if name.startswith("EXT_"):
+	elif name.startswith("EXT_"):
 		name = "Extension"+toCamelCase(name[len("EXT_"):])
-	if name.startswith("OES_"):
+	elif name.startswith("OES_"):
 		name = "Extension"+toCamelCase(name[len("OES_"):])
+	elif name.startswith("ANGLE_"):
+		name = "Extension"+toCamelCase(name[len("ANGLE_"):])
 	elif name.startswith("IDB"):
 		name = name[len("IDB"):]
 	elif name.startswith("RTC"):
@@ -732,12 +739,20 @@ def toHaxeType (name):
 			if group.removePrefix and name.startswith(group.removePrefix) and name in group.names:
 				name = name[len(group.removePrefix):]
 				break
+
+	if name.startswith("ExtensionCompressedTexture"):
+		name = "ExtensionCompressedTexture" + name[len("ExtensionCompressedTexture"):].upper()
+	elif name == "ExtensionSrgb":
+		name = "ExtensionSRGB"
+	elif name == "ExtensionBlendMinmax":
+		name = "ExtensionBlendMinMax"
+
 	return name
 
 def toHaxePackage (name):
 	name = stripTrailingUnderscore(name)
 	package = ["js", "html"]
-	if name.startswith("WebGL") or name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_"):
+	if name.startswith("WebGL") or name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_") or name.startswith("ANGLE_"):
 		package.append("webgl")
 	elif name.startswith("IDB"):
 		package.append("idb")
