@@ -531,9 +531,13 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			elif idl.isUnion():
 				def writeUnion (memberTypes):
 					if len(memberTypes) > 1:
-						write("haxe.extern.EitherType<", memberTypes[0], ",")
-						writeUnion(memberTypes[1:])
-						write(">")
+						if memberTypes[1].name == "OffscreenCanvas":
+							# Special case for WebGLRenderingContext.canvas
+							write(memberTypes[0])
+						else:
+							write("haxe.extern.EitherType<", memberTypes[0], ",")
+							writeUnion(memberTypes[1:])
+							write(">")
 					else:
 						write(memberTypes[0])
 				writeUnion(idl.memberTypes)
