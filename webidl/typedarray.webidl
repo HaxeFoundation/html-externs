@@ -101,8 +101,8 @@ interface Int16Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
-    getter short get(unsigned long index);
-    /*setter*/ void set(unsigned long index, short value);
+    getter short(unsigned long index);
+    //setter void set(unsigned long index, short value);
     void set(Int16Array_ array, optional unsigned long offset);
     void set(short[] array, optional unsigned long offset);
     Int16Array_ subarray(long start, optional long end);
