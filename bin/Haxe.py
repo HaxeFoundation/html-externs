@@ -67,6 +67,7 @@ FUNCS = set([
 	"TextTrackRegion::RegionsEnabled",
 	"mozilla::dom::EventSource::PrefEnabled",
 	"mozilla::dom::MediaSource::Enabled",
+	"mozilla::dom::Notification::PrefEnabled",
 	"mozilla::dom::Touch::PrefEnabled",
 	"mozilla::dom::TouchEvent::PrefEnabled",
 	"mozilla::dom::TouchList::PrefEnabled",
