@@ -61,7 +61,7 @@ stdDir = "../haxe/std"
 
 # Delete all files in js/html
 for root, dirs, files in os.walk(stdDir+"/js/html", topdown=False):
-	if root == stdDir+"/js/html/compat":
+	if os.path.normpath(root) == os.path.normpath(stdDir+"/js/html/compat"):
 		continue # Don't touch the compat directory
 	for file in files:
 		os.remove(root+"/"+file)
