@@ -242,6 +242,15 @@ class Program ():
 			if isinstance(idl, IDLInterface):
 				usedTypes |= checkUsage(idl)
 
+		def addDictParent(idl):
+			if idl.parent:
+				usedTypes.add(idl.parent.identifier.name)
+				addDictParent(idl.parent)
+
+		for idl in self.idls:
+			if isinstance(idl, IDLDictionary) and stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+				addDictParent(idl)
+
 		# Discard all implemented interfaces
 		for idl in self.idls:
 			if isinstance(idl, IDLImplementsStatement) and idl.implementee.getExtendedAttribute("NoInterfaceObject"):
@@ -495,9 +504,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			beginIndent()
 			if idl.parent:
 				name = idl.parent.identifier.name
-				if name not in usedTypes or name not in knownTypes:
-					write("// ")
-				writeln("> ", idl.parent.identifier, ",")
+				# if name not in usedTypes or name not in knownTypes:
+				# 	write("// ")
+				writeln("> ", toHaxeType(idl.parent.identifier.name), ",")
 			for member in idl.members:
 				if isAvailable(member):
 					writeNativeMeta(member.identifier)
