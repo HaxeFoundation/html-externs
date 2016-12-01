@@ -675,7 +675,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		 */
 
 		// This file is generated from %s. Do not edit!
-		""" % (datetime.date.today().year, idl.location.get()))
+		""" % (datetime.date.today().year, idl.location.filename()))
 	writeln(header)
 	writeln("package %s;" % (".".join(package)))
 	writeln()
