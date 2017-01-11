@@ -439,7 +439,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			# For HTMLDocument, add all createFooElement shortcuts
 			if idl.identifier.name == "HTMLDocument":
 				for name, html in HTML_ELEMENTS.iteritems():
-					writeln("/** Shorthand for creating an HTML <%s> element. */" % html)
+					writeln("/** Shorthand for creating an HTML `<%s>` element. */" % html)
 					write("inline function create%s() : %s {" % (name, toHaxeType(name)))
 					writeln(" return cast createElement(\"%s\"); }" % html)
 				writeln()
