@@ -531,7 +531,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write("}")
 
 		elif isinstance(idl, IDLEnum):
-			writeln("@:enum abstract ", toHaxeType(idl.identifier.name), "(String)")
+			writeln("enum abstract ", toHaxeType(idl.identifier.name), "(String)")
 			writeln("{")
 			beginIndent()
 			for value in idl.values():
