@@ -474,7 +474,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				endContext()
 
 				beginContext("WebGL2", "js.html.webgl.ContextAttributes", "js.html.webgl.WebGL2RenderingContext")
-				writeln("return canvas.getContext('webgl2', attribs);")
+				writeln("return this.getContext('webgl2', attribs);")
 				endContext()
 
 			endIndent()
