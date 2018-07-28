@@ -1,4 +1,4 @@
 webidlyacc.py
 parser.out
 *.pyc
-webidl/mozilla/.svn
+.svn/
