@@ -61,6 +61,15 @@ PREFS = set([
 	# "dom.identity.enabled",
 	"media.peerconnection.enabled",
 	"media.peerconnection.identity.enabled",
+
+	"media.peerconnection.dtmf.enabled",
+	"media.peerconnection.remoteTrackId.enabled",
+	"media.peerconnection.rtpsourcesapi.enabled",
+	"media.ondevicechange.enabled",
+
+	"webgl.enable-webgl2",
+
+	"canvas.capturestream.enabled"
 ])
 
 FUNCS = set([
@@ -738,8 +747,10 @@ def toHaxeType (name):
 	name = re.sub("^HTML(.+Element)", "\\1", name)
 	if name.startswith("SVG"):
 		name = name[len("SVG"):]
+	elif name.startswith("WebGL2"):
+		None # do nothing
 	elif name.startswith("WebGL"):
-	name = name[len("WebGL"):]
+		name = name[len("WebGL"):]
 	elif name.startswith("WEBGL_"):
 		name = "Extension"+toCamelCase(name[len("WEBGL_"):])
 	elif name.startswith("EXT_"):
