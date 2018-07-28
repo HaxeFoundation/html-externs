@@ -298,10 +298,10 @@ def checkUsage (idl):
 	elif isinstance(idl, IDLType):
 		if idl.nullable():
 			used |= checkUsage(idl.inner)
-		elif idl.isArray() or idl.isSequence():
+		elif idl.isSequence():
 			used |= checkUsage(idl.inner)
 		elif idl.isPromise():
-			used |= checkUsage(idl._promiseInnerType)
+			used |= checkUsage(idl.promiseInnerType())
 		elif not idl.isPrimitive():
 			used.add(stripTrailingUnderscore(idl.name))
 
@@ -532,11 +532,11 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			if idl.nullable():
 				# write("Null<", idl.inner, ">")
 				write(idl.inner)
-			elif idl.isArray() or idl.isSequence():
+			elif idl.isSequence():
 				write("Array<", idl.inner, ">")
 			elif idl.isPromise():
 				write("Promise<")
-				write(idl._promiseInnerType)
+				write(idl.promiseInnerType())
 				write(">")
 			elif idl.isUnion():
 				def writeUnion (memberTypes):
@@ -649,6 +649,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		elif isinstance(idl, IDLNullValue):
 			write("null")
 
+		elif isinstance(idl, IDLEmptySequenceValue):
+			write("[]")
+
 		else:
 			assert False, "Unhandled IDL type: %s" % type(idl)
 
@@ -736,7 +739,7 @@ def toHaxeType (name):
 	if name.startswith("SVG"):
 		name = name[len("SVG"):]
 	elif name.startswith("WebGL"):
-		name = name[len("WebGL"):]
+	name = name[len("WebGL"):]
 	elif name.startswith("WEBGL_"):
 		name = "Extension"+toCamelCase(name[len("WEBGL_"):])
 	elif name.startswith("EXT_"):
