@@ -29,6 +29,17 @@ MOZ_BLACKLIST = set([
 	"MozIccManager.webidl",
 	"MozIccInfo.webidl",
 ])
+
+# This is an empty stub to stand in for the Files class provided by the moz.build sandbox environment
+# In the current moz.build file it's used to set "BUG_COMPONENT" which we don't use
+class Files:
+    def __init__(self, files):
+        return
+    def __enter__(self):
+        return
+    def __exit__(self, type, value, traceback):
+        return
+
 execfile("webidl/mozilla/moz.build")
 
 parser = WebIDL.Parser()
