@@ -48,7 +48,7 @@ def parse (file):
 	defines = []
 	for key, value in CONFIG.iteritems():
 		if value:
-			defines += ["-D", key]
+			defines += ["-D" + key]
 	process = subprocess.Popen(["cpp"] + defines + ["-C", "-P", file], stdout=subprocess.PIPE)
 	stdout, stderr = process.communicate()
 	parser.parse(stdout, os.path.relpath(file, "webidl"))
