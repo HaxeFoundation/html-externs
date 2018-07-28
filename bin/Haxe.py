@@ -37,6 +37,7 @@ PREFS = set([
 	"dom.animations-api.core.enabled",
 	"dom.battery.enabled",
 	"dom.gamepad.enabled",
+	"dom.webaudio.enabled",
 	"dom.image.picture.enabled",
 	"dom.image.srcset.enabled",
 	"dom.imagecapture.enabled",
