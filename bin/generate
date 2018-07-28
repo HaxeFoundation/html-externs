@@ -28,6 +28,7 @@ MOZ_BLACKLIST = set([
 	"MozIcc.webidl",
 	"MozIccManager.webidl",
 	"MozIccInfo.webidl",
+	"MozApplicationEvent.webidl",
 ])
 
 # This is an empty stub to stand in for the Files class provided by the moz.build sandbox environment
@@ -56,6 +57,10 @@ def parse (file):
 
 # Include all files in webidl
 for file in glob.glob("webidl/*.webidl"):
+	parse(file)
+
+# Include all files in chrome-webidl
+for file in glob.glob("webidl/chrome-webidl/*.webidl"):
 	parse(file)
 
 # Include all files from mozilla
