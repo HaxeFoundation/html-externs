@@ -10,11 +10,19 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-[Constructor(optional DOMString utfLabel = "utf-8"),
+[Constructor,
  Exposed=(Window,Worker,System)]
 interface TextEncoder {
   [Constant]
   readonly attribute DOMString encoding;
+  /*
+   * This is spec-wise USVString but marking it as
+   * DOMString to avoid duplicate work. Since the
+   * UTF-16 to UTF-8 converter performs processing
+   * that's equivalent to first converting a
+   * DOMString to a USVString, let's avoid having
+   * the binding code doing it, too.
+   */
   [NewObject]
-  Uint8Array encode(optional USVString input = "");
+  Uint8Array encode(optional DOMString input = "");
 };

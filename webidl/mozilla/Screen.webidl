@@ -34,6 +34,7 @@ interface Screen : EventTarget {
    * Can be: landscape-primary, landscape-secondary,
    *         portrait-primary or portrait-secondary.
    */
+  [NeedsCallerType]
   readonly attribute DOMString mozOrientation;
 
   attribute EventHandler onmozorientationchange;
@@ -42,20 +43,43 @@ interface Screen : EventTarget {
    * DEPRECATED, use ScreenOrientation API instead.
    * Lock screen orientation to the specified type.
    */
-  [Throws, UnsafeInPrerendering]
+  [Throws]
   boolean mozLockOrientation(DOMString orientation);
-  [Throws, UnsafeInPrerendering]
+  [Throws]
   boolean mozLockOrientation(sequence<DOMString> orientation);
 
   /**
    * DEPRECATED, use ScreenOrientation API instead.
    * Unlock the screen orientation.
    */
-  [UnsafeInPrerendering]
   void mozUnlockOrientation();
 };
 
 // https://w3c.github.io/screen-orientation
 partial interface Screen {
   readonly attribute ScreenOrientation orientation;
+};
+
+// https://wicg.github.io/media-capabilities/#idl-index
+enum ScreenColorGamut {
+  "srgb",
+  "p3",
+  "rec2020",
+};
+
+[Func="mozilla::dom::MediaCapabilities::Enabled"]
+interface ScreenLuminance {
+  readonly attribute double min;
+  readonly attribute double max;
+  readonly attribute double maxAverage;
+};
+
+partial interface Screen {
+  [Func="mozilla::dom::MediaCapabilities::Enabled"]
+  readonly attribute ScreenColorGamut colorGamut;
+  [Func="mozilla::dom::MediaCapabilities::Enabled"]
+  readonly attribute ScreenLuminance? luminance;
+
+  [Func="mozilla::dom::MediaCapabilities::Enabled"]
+  attribute EventHandler onchange;
 };

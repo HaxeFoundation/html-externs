@@ -7,15 +7,16 @@
  * http://www.whatwg.org/specs/web-apps/current-work/#channel-messaging
  */
 
-[Exposed=(Window,Worker,System)]
+[Exposed=(Window,Worker,AudioWorklet,System)]
 interface MessagePort : EventTarget {
   [Throws]
-  void postMessage(any message, optional sequence<Transferable> transferable);
+  void postMessage(any message, optional sequence<object> transferable = []);
 
   void start();
   void close();
 
   // event handlers
   attribute EventHandler onmessage;
+  attribute EventHandler onmessageerror;
 };
 // MessagePort implements Transferable;

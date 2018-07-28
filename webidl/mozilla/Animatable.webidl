@@ -14,12 +14,15 @@ dictionary KeyframeAnimationOptions : KeyframeEffectOptions {
   DOMString id = "";
 };
 
+dictionary AnimationFilter {
+  boolean subtree = false;
+};
+
 [NoInterfaceObject]
 interface Animatable {
-  [Func="nsDocument::IsWebAnimationsEnabled", Throws]
-  Animation animate(object? frames,
-                    optional (unrestricted double or KeyframeAnimationOptions)
-                      options);
-  [Func="nsDocument::IsWebAnimationsEnabled"]
-  sequence<Animation> getAnimations();
+  [Throws]
+  Animation animate(object? keyframes,
+                    optional UnrestrictedDoubleOrKeyframeAnimationOptions options);
+  [Func="nsDocument::IsWebAnimationsGetAnimationsEnabled"]
+  sequence<Animation> getAnimations(optional AnimationFilter filter);
 };
