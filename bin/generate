@@ -60,7 +60,7 @@ for file in glob.glob("webidl/*.webidl"):
 	parse(file)
 
 # Include all files in chrome-webidl
-for file in glob.glob("webidl/chrome-webidl/*.webidl"):
+for file in glob.glob("webidl/mozilla/webidl/chrome-webidl/*.webidl"):
 	parse(file)
 
 # Include all files from mozilla

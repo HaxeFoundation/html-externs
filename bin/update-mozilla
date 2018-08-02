@@ -7,11 +7,3 @@ else
 	rm -rf webidl/mozilla
     svn co https://github.com/mozilla/gecko-dev/trunk/dom/webidl webidl/mozilla
 fi
-
-if [ -d webidl/chrome-webidl/.svn ]; then
-    cd webidl/chrome-webidl
-    svn up
-else
-	rm -rf webidl/chrome-webidl
-    svn co https://github.com/mozilla/gecko-dev/trunk/dom/chrome-webidl webidl/chrome-webidl
-fi
