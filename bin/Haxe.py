@@ -442,7 +442,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln()
 
 			ctor = idl.ctor()
-			if ctor:
+			if ctor and not ctor.isHTMLConstructor():
 				writeln(ctor)
 			for member in methods:
 				writeln(member)
