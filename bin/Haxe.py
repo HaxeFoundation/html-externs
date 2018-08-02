@@ -13,7 +13,7 @@ RESERVED_WORDS = set([
 	"finally", "float", "for", "function", "goto", "if", "implements", "import", "in", "instanceof", "int",
 	"interface", "is", "let", "long", "namespace", "native", "new", "null", "package", "private", "protected",
 	"public", "return", "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
-	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield"
+	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield", "inline"
 ])
 
 WHITELIST = set([
@@ -25,6 +25,26 @@ BLACKLIST = set([
 	"Promise",
 	"LegacyMozTCPSocket",
 	"PushManagerImpl",
+	"APZTestData",
+	"APZBucket",
+	"APZHitResult",
+	"WebExtensionContentScriptInit",
+	"TreeView",
+	"TreeBoxObject",
+	# blacklist webgpu files for now (remove these when WebGPU is ready)
+	"WebGPUBufferBinding",
+	"WebGPUBindGroupBinding",
+	"WebGPUBinding",
+	"WebGPUBlendDescriptor",
+	"WebGPUExtensions",
+	"WebGPUPipelineStageDescriptor",
+	"WebGPUPowerPreference",
+	"WebGPURenderPassAttachmentDescriptor",
+	"WebGPUStencilStateFaceDescriptor",
+	"WebGPUVertexAttributeDescriptor",
+	"WebGPUVertexInputDescriptor",
+	"InstallTrigger",
+
 ])
 
 PREFS = set([
@@ -83,8 +103,13 @@ FUNCS = set([
 	"mozilla::dom::TouchList::PrefEnabled",
 	"mozilla::dom::WebSocket::PrefEnabled",
 	"mozilla::dom::workers::WorkerPrivate::WorkerAvailable",
+	"mozilla::dom::DOMPrefs::FetchObserverEnabled",
+	"mozilla::dom::DOMPrefs::ServiceWorkersEnabled",
 	"nsDocument::IsWebAnimationsEnabled",
 	"nsDocument::IsWebComponentsEnabled",
+	"nsDocument::AreWebAnimationsTimelinesEnabled",
+	"nsDocument::IsWebAnimationsGetAnimationsEnabled",
+	"nsDocument::IsShadowDOMEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
 	# "mozilla::dom::OffscreenCanvas::PrefEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
@@ -92,6 +117,7 @@ FUNCS = set([
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
 	"mozilla::dom::workers::ServiceWorkerVisible",
 	"HTMLInputElement::ValueAsDateEnabled",
+	"ServiceWorkerVisible",
 ])
 
 # Types that are renamed, but still have their @:native pointing to the original name
@@ -108,13 +134,13 @@ RENAMES = {
 # Whitelisted moz-prefixed APIs
 ALLOWED_MOZ_PREFIXES = [
 	re.compile("(on)?moz.*pointerlock.*", re.IGNORECASE),
-	re.compile("mozImageSmoothingEnabled"),
+	# re.compile("mozImageSmoothingEnabled"),
 	# re.compile("mozMovement[XY]"),
 ]
 
 HTML_ELEMENTS = {
 	"AnchorElement": "a",
-	"AppletElement": "applet",
+	# "AppletElement": "applet",
 	"AreaElement": "area",
 	"AudioElement": "audio",
 	"BaseElement": "base",
@@ -123,7 +149,7 @@ HTML_ELEMENTS = {
 	"BRElement": "br",
 	"ButtonElement": "button",
 	"CanvasElement": "canvas",
-	"ContentElement": "content",
+	# "ContentElement": "content",
 	"DataListElement": "datalist",
 	# "DetailsElement": "details",
 	"DirectoryElement": "dir",
@@ -168,7 +194,7 @@ HTML_ELEMENTS = {
 	"QuoteElement": "quote",
 	"ScriptElement": "script",
 	"SelectElement": "select",
-	"ShadowElement": "shadow",
+	# "ShadowElement": "shadow",
 	"SourceElement": "source",
 	"SpanElement": "span",
 	"StyleElement": "style",
@@ -228,6 +254,31 @@ PACKAGES = {
 		"ScriptProcessorNode",
 		"StereoPannerNode",
 		"WaveShaperNode",
+		# new as of aug 2018
+		"AnalyserOptions",
+		"AudioBufferOptions",
+		"AudioBufferSourceOptions",
+		"AudioContextOptions",
+		"AudioScheduledSourceNode",
+		"BiquadFilterOptions",
+		"ChannelMergerOptions",
+		"ChannelSplitterOptions",
+		"ConstantSourceNode",
+		"ConstantSourceOptions",
+		"ConvolverOptions",
+		"DelayOptions",
+		"DynamicsCompressorOptions",
+		"GainOptions",
+		"IIRFilterNode",
+		"IIRFilterOptions",
+		"MediaElementAudioSourceOptions",
+		"MediaStreamAudioSourceOptions",
+		"OfflineAudioContextOptions",
+		"OscillatorOptions",
+		"PannerOptions",
+		"PeriodicWaveOptions",
+		"StereoPannerOptions",
+		"WaveShaperOptions",
 	]),
 	"rtc": PackageGroup([
 		"DataChannel",
@@ -272,9 +323,18 @@ class Program ():
 			if (isinstance(idl, IDLInterface) or \
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary)) and \
-					stripTrailingUnderscore(idl.identifier.name) in usedTypes and \
-					isAvailable(idl):
-				generate(idl, usedTypes, knownTypes, self.cssProperties, outputDir)
+					stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+
+				if (isAvailable(idl)):
+					generate(idl, usedTypes, knownTypes, self.cssProperties, outputDir)
+				else:
+					# report if used type is unavailable due to feature setting
+					if not isBlacklisted(idl):
+						if hasattr(idl, "getExtendedAttribute"):
+							pref = idl.getExtendedAttribute("Pref")
+							func = idl.getExtendedAttribute("Func")
+							if isDisabled(pref, PREFS) or isDisabled(func, FUNCS):
+								print('> Warning: Type "%s" requires Pref "%s", Func "%s"' % (idl.identifier.name, pref, func))
 
 # Return all the types used by this IDL
 def checkUsage (idl):
@@ -318,6 +378,9 @@ def checkUsage (idl):
 			used |= checkUsage(idl.inner)
 		elif idl.isPromise():
 			used |= checkUsage(idl.promiseInnerType())
+		elif idl.isUnion():
+			for t in idl.memberTypes:
+				used |= checkUsage(t)
 		elif not idl.isPrimitive():
 			used.add(stripTrailingUnderscore(idl.name))
 
@@ -389,11 +452,15 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln("// Explicitly include the compatibility class")
 				writeln("import js.html.compat.%s;" % nativeName)
 				writeln()
-			writeln("@:native(\"%s\")" % nativeName)
-			write("extern class ", toHaxeType(idl.identifier.name))
-			if idl.parent:
-				write(" extends ")
-				writeHaxeType(idl.parent.identifier.name)
+
+			if idl.isCallback() and not idl.hasConstants():
+				write("typedef ", toHaxeType(idl.identifier.name), " =")
+			else:
+				writeln("@:native(\"%s\")" % nativeName)
+				write("extern class ", toHaxeType(idl.identifier.name))
+				if idl.parent:
+					write(" extends ")
+					writeHaxeType(idl.parent.identifier.name)
 
 			arrayAccess = None
 			staticVars = []
@@ -761,17 +828,17 @@ def toHaxeType (name):
 	if name.startswith("SVG"):
 		name = name[len("SVG"):]
 	elif name.startswith("WebGL2"):
-		None # do nothing
+		pass
 	elif name.startswith("WebGL"):
 		name = name[len("WebGL"):]
 	elif name.startswith("WEBGL_"):
-		name = "Extension"+toCamelCase(name[len("WEBGL_"):])
+		name = "WEBGL"+toCamelCase(name[len("WEBGL_"):])
 	elif name.startswith("EXT_"):
-		name = "Extension"+toCamelCase(name[len("EXT_"):])
+		name = "EXT"+toCamelCase(name[len("EXT_"):])
 	elif name.startswith("OES_"):
-		name = "Extension"+toCamelCase(name[len("OES_"):])
+		name = "OES"+toCamelCase(name[len("OES_"):])
 	elif name.startswith("ANGLE_"):
-		name = "Extension"+toCamelCase(name[len("ANGLE_"):])
+		name = "ANGLE"+toCamelCase(name[len("ANGLE_"):])
 	elif name.startswith("IDB"):
 		name = name[len("IDB"):]
 	elif name.startswith("RTC"):
@@ -782,20 +849,26 @@ def toHaxeType (name):
 				name = name[len(group.removePrefix):]
 				break
 
-	if name.startswith("ExtensionCompressedTexture"):
-		name = "ExtensionCompressedTexture" + name[len("ExtensionCompressedTexture"):].upper()
-	elif name == "ExtensionSrgb":
-		name = "ExtensionSRGB"
-	elif name == "ExtensionBlendMinmax":
-		name = "ExtensionBlendMinMax"
+	# if name.startswith("ExtensionCompressedTexture"):
+	# 	name = "ExtensionCompressedTexture" + name[len("ExtensionCompressedTexture"):].upper()
+	# elif name == "ExtensionSrgb":
+	# 	name = "ExtensionSRGB"
+	# elif name == "ExtensionBlendMinmax":
+	# 	name = "ExtensionBlendMinMax"
 
 	return name
+
+def isWebGLExtension(name):
+	return name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_") or name.startswith("ANGLE_")
 
 def toHaxePackage (name):
 	name = stripTrailingUnderscore(name)
 	package = ["js", "html"]
-	if name.startswith("WebGL") or name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_") or name.startswith("ANGLE_"):
+	if name.startswith("WebGL"):
 		package.append("webgl")
+	elif isWebGLExtension(name):
+		package.append("webgl")
+		package.append("extension")
 	elif name.startswith("IDB"):
 		package.append("idb")
 	elif name.startswith("SVG"):
@@ -833,17 +906,30 @@ def isDisabled (attrs, whitelist):
 				return True
 	return False
 
-def isAvailable (idl):
+def isWhitelisted(idl):
 	if idl.identifier.name in WHITELIST:
 		return True
+
+def isBlacklisted(idl):
+	# blacklist all chrome-webidl/ files
+	if "chrome-webidl" in idl.location.filename():
+		return True
+
 	if idl.identifier.name in BLACKLIST:
-		return False
+		return True
 
 	if isMozPrefixed(idl.identifier.name):
 		# Hack for WebRTC, which is moz prefixed but we want it
 		if not idl.identifier.name.startswith("mozRTC"):
-			return False
+			return True
 
+def isAvailable (idl):
+	if isWhitelisted(idl):
+		return True
+	if isBlacklisted(idl):
+		return False
+
+	# check feature preferences
 	if hasattr(idl, "getExtendedAttribute"):
 		if idl.getExtendedAttribute("ChromeOnly") or \
 				idl.getExtendedAttribute("AvailableIn") or \
