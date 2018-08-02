@@ -39,6 +39,7 @@ interface Int8Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter byte (unsigned long index);
     //setter void set(unsigned long index, byte value);
     void set(Int8Array_ array, optional unsigned long offset);
@@ -61,6 +62,7 @@ interface Uint8Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter octet(unsigned long index);
     //setter void set(unsigned long index, octet value);
     void set(Uint8Array_ array, optional unsigned long offset);
@@ -81,6 +83,7 @@ interface Uint8ClampedArray_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter octet (unsigned long index);
     //setter void set(unsigned long index, [Clamp] octet value);
     void set(Uint8ClampedArray_ array, optional unsigned long offset);
@@ -101,6 +104,7 @@ interface Int16Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter short(unsigned long index);
     //setter void set(unsigned long index, short value);
     void set(Int16Array_ array, optional unsigned long offset);
@@ -121,6 +125,7 @@ interface Uint16Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter unsigned short(unsigned long index);
     //setter void set(unsigned long index, unsigned short value);
     void set(Uint16Array_ array, optional unsigned long offset);
@@ -141,6 +146,7 @@ interface Int32Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter long(unsigned long index);
     //setter void set(unsigned long index, long value);
     void set(Int32Array_ array, optional unsigned long offset);
@@ -161,6 +167,7 @@ interface Uint32Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter unsigned long(unsigned long index);
     //setter void set(unsigned long index, unsigned long value);
     void set(Uint32Array_ array, optional unsigned long offset);
@@ -181,6 +188,7 @@ interface Float32Array_  : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter unrestricted float(unsigned long index);
     //setter void set(unsigned long index, unrestricted float value);
     void set(Float32Array_ array, optional unsigned long offset);
@@ -201,6 +209,7 @@ interface Float64Array_ : ArrayBufferView_ {
 
     readonly attribute unsigned long length;
 
+    [Pure]
     getter unrestricted double(unsigned long index);
     //setter void set(unsigned long index, unrestricted double value);
     void set(Float64Array_ array, optional unsigned long offset);
@@ -225,18 +234,26 @@ interface DataView_ : ArrayBufferView_ {
     //
     // These methods raise an INDEX_SIZE_ERR exception if they would read
     // beyond the end of the view.
+    [Pure]
     byte getInt8(unsigned long byteOffset);
+    [Pure]
     octet getUint8(unsigned long byteOffset);
+    [Pure]
     short getInt16(unsigned long byteOffset,
                    optional boolean littleEndian);
+    [Pure]
     unsigned short getUint16(unsigned long byteOffset,
                              optional boolean littleEndian);
+    [Pure]
     long getInt32(unsigned long byteOffset,
                   optional boolean littleEndian);
+    [Pure]
     unsigned long getUint32(unsigned long byteOffset,
                             optional boolean littleEndian);
+    [Pure]
     unrestricted float getFloat32(unsigned long byteOffset,
                                   optional boolean littleEndian);
+    [Pure]
     unrestricted double getFloat64(unsigned long byteOffset,
                                    optional boolean littleEndian);
 
