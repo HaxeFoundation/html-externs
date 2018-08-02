@@ -23,7 +23,6 @@ MOZ_WHITELIST = set([
 	"TrackEvent.webidl",
 ])
 MOZ_BLACKLIST = set([
-	"EventListener.webidl",
 	"LegacyQueryInterface.webidl",
 	"MozIcc.webidl",
 	"MozIccManager.webidl",
