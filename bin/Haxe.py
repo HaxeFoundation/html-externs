@@ -251,7 +251,7 @@ class Program ():
 
 		usedTypes = set()
 		for idl in self.idls:
-			if isinstance(idl, IDLInterface):
+			if isinstance(idl, IDLInterface) or isinstance(idl, IDLDictionary):
 				usedTypes |= checkUsage(idl)
 
 		def addDictParent(idl):
@@ -298,6 +298,11 @@ def checkUsage (idl):
 			if isAvailable(member):
 				used |= checkUsage(member)
 		used |= checkUsage(idl.ctor())
+
+	elif isinstance(idl, IDLDictionary):
+		for member in idl.members:
+			if isAvailable(member):
+				used |= checkUsage(member)
 
 	elif isinstance(idl, IDLCallbackType):
 		callback = idl.callback
