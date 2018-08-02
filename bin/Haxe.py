@@ -91,6 +91,7 @@ FUNCS = set([
 	"SpeechRecognition::IsAuthorized",
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
 	"mozilla::dom::workers::ServiceWorkerVisible",
+	"HTMLInputElement::ValueAsDateEnabled",
 ])
 
 # Types that are renamed, but still have their @:native pointing to the original name
