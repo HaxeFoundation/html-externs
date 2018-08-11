@@ -9,29 +9,10 @@ interface MozObserver;
 
 [Func="IsChromeOrXBL"]
 interface XULDocument : Document {
-           attribute Node? popupNode;
-
-  /**
-   * These attributes correspond to trustedGetPopupNode().rangeOffset and
-   * rangeParent. They will help you find where in the DOM the popup is
-   * happening. Can be accessed only during a popup event. Accessing any other
-   * time will be an error.
-   */
-  [Throws, ChromeOnly]
-  readonly attribute Node? popupRangeParent;
-  [Throws, ChromeOnly]
-  readonly attribute long  popupRangeOffset;
-
-           attribute Node? tooltipNode;
-
-  readonly attribute XULCommandDispatcher? commandDispatcher;
 
   [Throws]
   void addBroadcastListenerFor(Element broadcaster, Element observer,
                                DOMString attr);
   void removeBroadcastListenerFor(Element broadcaster, Element observer,
                                   DOMString attr);
-
-  [Throws]
-  BoxObject? getBoxObjectFor(Element? element);
 };

@@ -175,6 +175,8 @@ partial interface Document {
    * etc.
    */
   [Func="IsChromeOrXBL"] readonly attribute boolean mozSyntheticDocument;
+  [Throws, Func="IsChromeOrXBL"]
+  BoxObject? getBoxObjectFor(Element? element);
   /**
    * Returns the script element whose script is currently being processed.
    *
@@ -348,6 +350,9 @@ partial interface Document {
   Element? getBindingParent(Node node);
   [Throws, Func="IsChromeOrXBL", NeedsSubjectPrincipal]
   void loadBindingDocument(DOMString documentURL);
+  // Creates a new XUL element regardless of the document's default type.
+  [CEReactions, NewObject, Throws, Func="IsChromeOrXBL"]
+  Element createXULElement(DOMString localName, optional (ElementCreationOptions or DOMString) options);
 
   // Touch bits
   // XXXbz I can't find the sane spec for this stuff, so just cribbing
@@ -383,13 +388,6 @@ partial interface Document {
   [ChromeOnly]
   attribute boolean styleSheetChangeEventsEnabled;
 
-  [ChromeOnly, Throws]
-  void obsoleteSheet(URI sheetURI);
-  [ChromeOnly, Throws]
-  void obsoleteSheet(DOMString sheetURI);
-
-  [ChromeOnly] readonly attribute nsIDocShell? docShell;
-
   [ChromeOnly] readonly attribute DOMString contentLanguage;
 
   [ChromeOnly] readonly attribute nsILoadGroup? documentLoadGroup;
@@ -408,6 +406,26 @@ partial interface Document {
   // "document_idle" webextension script injection point.
   [ChromeOnly, Throws]
   readonly attribute Promise<Document> documentReadyForIdle;
+
+  // Lazily created command dispatcher, returns null if the document is not
+  // chrome privileged.
+  [ChromeOnly]
+  readonly attribute XULCommandDispatcher? commandDispatcher;
+
+  [ChromeOnly]
+  attribute Node? popupNode;
+
+  /**
+   * These attributes correspond to rangeParent and rangeOffset. They will help
+   * you find where in the DOM the popup is happening. Can be accessed only
+   * during a popup event. Accessing any other time will be an error.
+   */
+  [Throws, ChromeOnly]
+  readonly attribute Node? popupRangeParent;
+  [Throws, ChromeOnly]
+  readonly attribute long  popupRangeOffset;
+  [ChromeOnly]
+  attribute Node? tooltipNode;
 };
 
 dictionary BlockParsingOptions {

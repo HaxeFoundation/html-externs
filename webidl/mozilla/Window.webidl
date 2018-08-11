@@ -255,6 +255,8 @@ partial interface Window {
 
   [ChromeOnly, Throws] readonly attribute Element? realFrameElement;
 
+  [ChromeOnly] readonly attribute nsIDocShell? docShell;
+
   [Throws, NeedsCallerType]
   readonly attribute float mozInnerScreenX;
   [Throws, NeedsCallerType]
@@ -270,10 +272,6 @@ partial interface Window {
   [Replaceable, Throws] readonly attribute long   scrollMaxY;
 
   [Throws] attribute boolean fullScreen;
-
-  [Throws, ChromeOnly] void back();
-  [Throws, ChromeOnly] void forward();
-  [Throws, ChromeOnly, NeedsSubjectPrincipal] void home();
 
   // XXX Should this be in nsIDOMChromeWindow?
   void                      updateCommands(DOMString action,
