@@ -108,6 +108,7 @@ interface Uint8Array_ {
     [Pure]
     static Uint8Array_ from(sequence<unsigned long> source, optional IMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -160,6 +161,7 @@ interface Uint8ClampedArray_ {
     [Pure]
     static Uint8ClampedArray_ from(sequence<unsigned long> source, optional IMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -212,6 +214,7 @@ interface Int16Array_ {
     [Pure]
     static Int16Array_ from(sequence<unsigned long> source, optional IMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -264,6 +267,7 @@ interface Uint16Array_ {
     [Pure]
     static Uint16Array_ from(sequence<unsigned long> source, optional IMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -316,6 +320,7 @@ interface Int32Array_ {
     [Pure]
     static Int32Array_ from(sequence<unsigned long> source, optional IMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -368,6 +373,7 @@ interface Uint32Array_ {
     [Pure]
     static Uint32Array_ from(sequence<unsigned long> source, optional IMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -420,6 +426,7 @@ interface Float32Array_  {
     [Pure]
     static Float32Array_ from(sequence<unrestricted float> source, optional FMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
@@ -472,6 +479,7 @@ interface Float64Array_ {
     [Pure]
     static Float64Array_ from(sequence<unrestricted double> source, optional DMapFnCallback mapFn, optional any thisArg);
 
+    readonly attribute unsigned long BYTES_PER_ELEMENT_;
     readonly attribute unsigned long length;
 
     [Pure]
