@@ -433,8 +433,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeIdl(arg)
 
 	def writeNativeMeta (idl):
-		if idl.name != toHaxeIdentifier(idl.name):
-			writeln("@:native(\"%s\")" % idl.name)
+		nativeName = stripTrailingUnderscore(idl.name)
+		if nativeName != toHaxeIdentifier(idl.name):
+			writeln("@:native(\"%s\")" % nativeName)
 
 	def writeHaxeType (name):
 		# Include the package name if the type is in a different package
@@ -453,7 +454,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln("import js.html.compat.%s;" % nativeName)
 				writeln()
 
-			if idl.isCallback() and not idl.hasConstants():
+			# It's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
+			# if the type has constants then we need a concrete class to host them
+			if (idl.isCallback() or idl.getExtendedAttribute("NoInterfaceObject")) and not idl.hasConstants():
 				write("typedef ", toHaxeType(idl.identifier.name), " =")
 			else:
 				writeln("@:native(\"%s\")" % nativeName)
@@ -649,7 +652,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			elif idl.isDate():
 				write("Date")
 			elif idl.isObject() or idl.isAny():
-				write("Dynamic")
+				write("Any")
 			elif name not in usedTypes or name not in knownTypes:
 				if name == "WindowProxy":
 					write("Window") # Special case hack
