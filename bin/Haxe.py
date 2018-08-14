@@ -313,8 +313,8 @@ class Program ():
 
 		# expand used types along edges (check usage of references)
 		# this is a simple fix to avoid cycles when expanding references
-		usageReferenceDistance = 3
-		for number in range(usageReferenceDistance):
+		usedTypeReferenceDistance = 3
+		for number in range(usedTypeReferenceDistance):
 			for idl in self.idls:
 				if (isinstance(idl, IDLInterface) or \
 						isinstance(idl, IDLEnum) or \
@@ -676,7 +676,6 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			elif idl.isDate():
 				write("Date")
 			elif idl.isRecord() and (idl.keyType.isString() or idl.keyType.isByteString() or idl.keyType.isDOMString() or idl.keyType.isUSVString()):
-				print("!!! record %s, inner: %s" % (idl, idl.inner))
 				write("haxe.DynamicAccess<");
 				writeIdl(idl.inner);
 				write(">")
