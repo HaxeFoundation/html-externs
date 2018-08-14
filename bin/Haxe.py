@@ -44,7 +44,7 @@ BLACKLIST = set([
 	"WebGPUVertexAttributeDescriptor",
 	"WebGPUVertexInputDescriptor",
 	"InstallTrigger",
-
+	"VoidCallback",
 ])
 
 PREFS = set([
@@ -293,6 +293,25 @@ PACKAGES = {
 	"rtc": PackageGroup([
 		"DataChannel",
 	]),
+	"eme": PackageGroup([
+		"KeyIdsInitData",
+		"MediaEncryptedEvent",
+		"MediaKeyError",
+		"MediaKeyMessageEvent",
+		"MediaKeys",
+		"MediaKeySession",
+		"MediaKeyStatusMap",
+		"MediaKeySystemAccess",
+		"MediaKeyNeededEventInit",
+		"MediaKeyMessageType",
+		"MediaKeyMessageEventInit",
+		"MediaKeySessionType",
+		"MediaKeysPolicy",
+		"MediaKeyStatus",
+		"MediaKeysRequirement",
+		"MediaKeySystemMediaCapability",
+		"MediaKeySystemConfiguration",
+	])
 }
 
 class Program ():
