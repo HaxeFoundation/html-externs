@@ -279,6 +279,12 @@ PACKAGES = {
 		"PeriodicWaveOptions",
 		"StereoPannerOptions",
 		"WaveShaperOptions",
+		"AudioParamMap",
+		"AudioWorklet",
+		"AudioWorkletGlobalScope",
+		"AudioWorkletNode",
+		"AudioWorkletProcessor",
+		"BaseAudioContext",
 	]),
 	"rtc": PackageGroup([
 		"DataChannel",
@@ -302,8 +308,19 @@ class Program ():
 
 		usedTypes = set()
 		for idl in self.idls:
-			if isinstance(idl, IDLInterface) or isinstance(idl, IDLDictionary):
+			if (isinstance(idl, IDLInterface)) and isAvailable(idl):
 				usedTypes |= checkUsage(idl)
+
+		# expand used types along edges (check usage of references)
+		# this is a simple fix to avoid cycles when expanding references
+		usageReferenceDistance = 3
+		for number in range(usageReferenceDistance):
+			for idl in self.idls:
+				if (isinstance(idl, IDLInterface) or \
+						isinstance(idl, IDLEnum) or \
+						isinstance(idl, IDLDictionary)) and \
+						stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+					usedTypes |= checkUsage(idl)
 
 		def addDictParent(idl):
 			if idl.parent:
@@ -360,6 +377,8 @@ def checkUsage (idl):
 		used |= checkUsage(idl.ctor())
 
 	elif isinstance(idl, IDLDictionary):
+		used |= checkUsage(idl.identifier)
+
 		for member in idl.members:
 			if isAvailable(member):
 				used |= checkUsage(member)
@@ -370,6 +389,11 @@ def checkUsage (idl):
 		for argument in arguments:
 			used |= checkUsage(argument.type)
 		used |= checkUsage(returnType)
+
+	# TODO: prevent cycles
+	# elif isinstance(idl, IDLWrapperType):
+	# 	print("### checkUsage:IDLWrapperType %s, dict: %s" % (idl, idl.isDictionary()))
+	# 	used |= checkUsage(idl.inner)
 
 	elif isinstance(idl, IDLType):
 		if idl.nullable():
@@ -651,11 +675,18 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				write("Void")
 			elif idl.isDate():
 				write("Date")
+			elif idl.isRecord() and (idl.keyType.isString() or idl.keyType.isByteString() or idl.keyType.isDOMString() or idl.keyType.isUSVString()):
+				print("!!! record %s, inner: %s" % (idl, idl.inner))
+				write("haxe.DynamicAccess<");
+				writeIdl(idl.inner);
+				write(">")
 			elif idl.isObject() or idl.isAny():
 				write("Any")
 			elif name not in usedTypes or name not in knownTypes:
 				if name == "WindowProxy":
 					write("Window") # Special case hack
+				elif name in ["nsISupports", "nsIVariant"]:
+					write("Any")
 				else:
 					write("Dynamic/*MISSING %s*/" % name)
 			else:
