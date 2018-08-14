@@ -285,6 +285,10 @@ PACKAGES = {
 		"AudioWorkletNode",
 		"AudioWorkletProcessor",
 		"BaseAudioContext",
+		"AudioContextState",
+		"AudioNodeOptions",
+		"AudioWorkletNodeOptions",
+		"PeriodicWaveConstraints",
 	]),
 	"rtc": PackageGroup([
 		"DataChannel",
