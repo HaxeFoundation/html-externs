@@ -17,7 +17,6 @@ RESERVED_WORDS = set([
 ])
 
 WHITELIST = set([
-	"Console",
 	"ConsoleInstance",
 ])
 
@@ -46,6 +45,11 @@ BLACKLIST = set([
 	"WebGPUVertexInputDescriptor",
 	"InstallTrigger",
 	"VoidCallback",
+])
+
+# means the type doesn't have a corresponding native object and so it represents an interface
+FORCE_INTERFACE = set([
+	"ConsoleInstance"
 ])
 
 PREFS = set([
@@ -508,7 +512,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 
 			# It's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
 			# if the type has constants then we need a concrete class to host them
-			if (idl.isCallback() or idl.getExtendedAttribute("NoInterfaceObject")) and not idl.hasConstants():
+			if idl.identifier.name in FORCE_INTERFACE:
+				write("extern interface ", toHaxeType(idl.identifier.name))
+			elif (idl.isCallback() or idl.getExtendedAttribute("NoInterfaceObject")) and not idl.hasConstants():
 				write("typedef ", toHaxeType(idl.identifier.name), " =")
 			else:
 				writeln("@:native(\"%s\")" % nativeName)
