@@ -90,7 +90,9 @@ PREFS = set([
 
 	"webgl.enable-webgl2",
 
-	"canvas.capturestream.enabled"
+	"canvas.capturestream.enabled",
+	"device.sensors.motion.enabled",
+	"device.sensors.orientation.enabled",
 ])
 
 FUNCS = set([
@@ -118,6 +120,7 @@ FUNCS = set([
 	"mozilla::dom::workers::ServiceWorkerVisible",
 	"HTMLInputElement::ValueAsDateEnabled",
 	"ServiceWorkerVisible",
+	"nsGlobalWindowInner::DeviceSensorsEnabled",
 ])
 
 # Types that are renamed, but still have their @:native pointing to the original name
@@ -151,7 +154,7 @@ HTML_ELEMENTS = {
 	"CanvasElement": "canvas",
 	# "ContentElement": "content",
 	"DataListElement": "datalist",
-	# "DetailsElement": "details",
+	"DetailsElement": "details",
 	"DirectoryElement": "dir",
 	"DivElement": "div",
 	"DListElement": "dl",
@@ -194,6 +197,7 @@ HTML_ELEMENTS = {
 	"QuoteElement": "quote",
 	"ScriptElement": "script",
 	"SelectElement": "select",
+	"SlotElement": "slot",
 	# "ShadowElement": "shadow",
 	"SourceElement": "source",
 	"SpanElement": "span",
