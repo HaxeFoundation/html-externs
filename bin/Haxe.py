@@ -18,6 +18,7 @@ RESERVED_WORDS = set([
 
 WHITELIST = set([
 	"Console",
+	"ConsoleInstance",
 ])
 
 BLACKLIST = set([
@@ -328,14 +329,14 @@ class Program ():
 	def generate (self, outputDir):
 		knownTypes = []
 		for idl in self.idls:
-			if isinstance(idl, IDLInterface) or \
+			if isinstance(idl, IDLInterfaceOrNamespace) or \
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary) and isAvailable(idl):
 				knownTypes.append(stripTrailingUnderscore(idl.identifier.name))
 
 		usedTypes = set()
 		for idl in self.idls:
-			if (isinstance(idl, IDLInterface)) and isAvailable(idl):
+			if (isinstance(idl, IDLInterfaceOrNamespace)) and isAvailable(idl):
 				usedTypes |= checkUsage(idl)
 
 		# expand used types along edges (check usage of references)
@@ -343,7 +344,7 @@ class Program ():
 		usedTypeReferenceDistance = 3
 		for number in range(usedTypeReferenceDistance):
 			for idl in self.idls:
-				if (isinstance(idl, IDLInterface) or \
+				if (isinstance(idl, IDLInterfaceOrNamespace) or \
 						isinstance(idl, IDLEnum) or \
 						isinstance(idl, IDLDictionary)) and \
 						stripTrailingUnderscore(idl.identifier.name) in usedTypes:
@@ -364,7 +365,7 @@ class Program ():
 				usedTypes.discard(idl.implementee.identifier.name)
 
 		for idl in self.idls:
-			if (isinstance(idl, IDLInterface) or \
+			if (isinstance(idl, IDLInterfaceOrNamespace) or \
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary)) and \
 					stripTrailingUnderscore(idl.identifier.name) in usedTypes:
@@ -384,7 +385,7 @@ class Program ():
 def checkUsage (idl):
 	used = set()
 
-	if isinstance(idl, IDLInterface):
+	if isinstance(idl, IDLInterfaceOrNamespace):
 		def isAvailableRecursive (idl):
 			if not isAvailable(idl):
 				return False
@@ -496,7 +497,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		write(toHaxeType(name))
 
 	def writeIdl (idl):
-		if isinstance(idl, IDLInterface):
+		if isinstance(idl, IDLInterfaceOrNamespace):
 			nativeName = stripTrailingUnderscore(idl.identifier.name)
 			if nativeName == "ArrayBuffer" or nativeName == "DataView" \
 					or nativeName == "Float32Array" or nativeName == "Float64Array" \
