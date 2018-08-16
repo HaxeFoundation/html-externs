@@ -500,6 +500,19 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write(".".join(typePackage)+".")
 		write(toHaxeType(name))
 
+	def writeHaxeFunctionType(signature):
+		returnType, arguments = signature
+		if len(arguments) > 0:
+			if len(arguments) == 1 and arguments[0].type.isAny() and returnType.isAny():
+				# Assume that Dynamic -> Dynamic should be Function
+				write("haxe.Constraints.Function")
+			else:
+				for argument in arguments:
+					write(argument.type, " -> ")
+				write(returnType)
+		else:
+			write("Void -> ", returnType)
+
 	def writeIdl (idl):
 		if isinstance(idl, IDLInterfaceOrNamespace):
 			nativeName = stripTrailingUnderscore(idl.identifier.name)
@@ -634,17 +647,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				# Special case for event handler convenience
 				write("haxe.Constraints.Function")
 			else:
-				returnType, arguments = callback.signatures()[0]
-				if len(arguments) > 0:
-					if len(arguments) == 1 and arguments[0].type.isAny() and returnType.isAny():
-						# Assume that Dynamic -> Dynamic should be Function
-						write("haxe.Constraints.Function")
-					else:
-						for argument in arguments:
-							write(argument.type, " -> ")
-						write(returnType)
-				else:
-					write("Void -> ", returnType)
+				writeHaxeFunctionType(callback.signatures()[0])
 
 		elif isinstance(idl, IDLDictionary):
 			# writeln("typedef ", idl.identifier, " =")
@@ -730,7 +733,23 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					name = "HTMLElement"
 				elif name == "Document":
 					name = "HTMLDocument"
-				writeHaxeType(name)
+
+				if idl.isCallbackInterface():
+					# either a callback function or callback interface instance
+					write("haxe.extern.EitherType<")
+
+					# find the callback interface's method signature from the first method
+					for member in idl.inner.members:
+						if member.isMethod():
+							writeHaxeFunctionType(member.signatures()[0])
+							break
+
+					write(", ")
+					writeHaxeType(name)
+					write(">")
+				else:
+					writeHaxeType(name)
+
 
 		elif isinstance(idl, IDLIdentifier):
 			write(toHaxeIdentifier(stripMozPrefix(idl.name, lowerCase=True)))
