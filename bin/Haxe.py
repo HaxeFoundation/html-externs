@@ -500,7 +500,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write(".".join(typePackage)+".")
 		write(toHaxeType(name))
 
-	def writeHaxeFunctionType(signature):
+	def writeHaxeFunctionType (signature):
 		returnType, arguments = signature
 		if len(arguments) > 0:
 			if len(arguments) == 1 and arguments[0].type.isAny() and returnType.isAny():
@@ -512,6 +512,87 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				write(returnType)
 		else:
 			write("Void -> ", returnType)
+
+	def writeType (idl, callbackInterfaceMode):
+		name = stripTrailingUnderscore(idl.name)
+
+		if isinstance(idl, IDLCallbackType):
+			callback = idl.callback
+			if callback.identifier.name == "EventHandlerNonNull":
+				# Special case for event handler convenience
+				write("haxe.Constraints.Function")
+			else:
+				writeHaxeFunctionType(callback.signatures()[0])
+		elif idl.nullable():
+			# write("Null<", idl.inner, ">")
+			writeType(idl.inner, callbackInterfaceMode)
+		elif idl.isSequence():
+			write("Array<")
+			writeType(idl.inner, callbackInterfaceMode)
+			write(">")
+		elif idl.isPromise():
+			write("Promise<")
+			writeType(idl.promiseInnerType(), callbackInterfaceMode)
+			write(">")
+		elif idl.isUnion():
+			def writeUnion (memberTypes):
+				if len(memberTypes) > 1:
+					if memberTypes[1].name == "OffscreenCanvas":
+						# Special case for WebGLRenderingContext.canvas
+						writeType(memberTypes[0], callbackInterfaceMode)
+					else:
+						write("haxe.extern.EitherType<", memberTypes[0], ",")
+						writeUnion(memberTypes[1:])
+						write(">")
+				else:
+					writeType(memberTypes[0], callbackInterfaceMode)
+			writeUnion(idl.memberTypes)
+		elif idl.isString() or idl.isByteString() or idl.isDOMString() or idl.isUSVString():
+			write("String")
+		elif idl.isNumeric():
+			write("Int" if idl.isInteger() else "Float")
+		elif idl.isBoolean():
+			write("Bool")
+		elif idl.isVoid():
+			write("Void")
+		elif idl.isDate():
+			write("Date")
+		elif idl.isRecord() and (idl.keyType.isString() or idl.keyType.isByteString() or idl.keyType.isDOMString() or idl.keyType.isUSVString()):
+			write("haxe.DynamicAccess<");
+			writeType(idl.inner, callbackInterfaceMode);
+			write(">")
+		elif idl.isObject() or idl.isAny():
+			write("Any")
+		elif name not in usedTypes or name not in knownTypes:
+			if name == "WindowProxy":
+				write("Window") # Special case hack
+			elif name in ["nsISupports", "nsIVariant"]:
+				write("Any")
+			else:
+				write("Dynamic/*MISSING %s*/" % name)
+		else:
+			# Force Element and Document to HTMLElement and HTMLDocument to make things more
+			# convenient for typical web development and preserve 3.1 compat:
+			# https://github.com/HaxeFoundation/haxe/issues/4081
+			if name == "Element":
+				name = "HTMLElement"
+			elif name == "Document":
+				name = "HTMLDocument"
+
+			if idl.isCallbackInterface():
+				if callbackInterfaceMode == None:
+					# either a callback function or callback interface instance
+					write("haxe.extern.EitherType<")
+					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
+					write(", ")
+					writeHaxeType(name)
+					write(">")
+				elif callbackInterfaceMode == "function":
+					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
+				elif callbackInterfaceMode == "interface":
+					writeHaxeType(name)
+			else:
+				writeHaxeType(name)
 
 	def writeIdl (idl):
 		if isinstance(idl, IDLInterfaceOrNamespace):
@@ -641,14 +722,6 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					}
 				"""))
 
-		elif isinstance(idl, IDLCallbackType):
-			callback = idl.callback
-			if callback.identifier.name == "EventHandlerNonNull":
-				# Special case for event handler convenience
-				write("haxe.Constraints.Function")
-			else:
-				writeHaxeFunctionType(callback.signatures()[0])
-
 		elif isinstance(idl, IDLDictionary):
 			# writeln("typedef ", idl.identifier, " =")
 			writeln("typedef ", toHaxeType(idl.identifier.name), " =")
@@ -679,77 +752,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write("}")
 
 		elif isinstance(idl, IDLType):
-			name = stripTrailingUnderscore(idl.name)
-			if idl.nullable():
-				# write("Null<", idl.inner, ">")
-				write(idl.inner)
-			elif idl.isSequence():
-				write("Array<", idl.inner, ">")
-			elif idl.isPromise():
-				write("Promise<")
-				write(idl.promiseInnerType())
-				write(">")
-			elif idl.isUnion():
-				def writeUnion (memberTypes):
-					if len(memberTypes) > 1:
-						if memberTypes[1].name == "OffscreenCanvas":
-							# Special case for WebGLRenderingContext.canvas
-							write(memberTypes[0])
-						else:
-							write("haxe.extern.EitherType<", memberTypes[0], ",")
-							writeUnion(memberTypes[1:])
-							write(">")
-					else:
-						write(memberTypes[0])
-				writeUnion(idl.memberTypes)
-			elif idl.isString() or idl.isByteString() or idl.isDOMString() or idl.isUSVString():
-				write("String")
-			elif idl.isNumeric():
-				write("Int" if idl.isInteger() else "Float")
-			elif idl.isBoolean():
-				write("Bool")
-			elif idl.isVoid():
-				write("Void")
-			elif idl.isDate():
-				write("Date")
-			elif idl.isRecord() and (idl.keyType.isString() or idl.keyType.isByteString() or idl.keyType.isDOMString() or idl.keyType.isUSVString()):
-				write("haxe.DynamicAccess<");
-				writeIdl(idl.inner);
-				write(">")
-			elif idl.isObject() or idl.isAny():
-				write("Any")
-			elif name not in usedTypes or name not in knownTypes:
-				if name == "WindowProxy":
-					write("Window") # Special case hack
-				elif name in ["nsISupports", "nsIVariant"]:
-					write("Any")
-				else:
-					write("Dynamic/*MISSING %s*/" % name)
-			else:
-				# Force Element and Document to HTMLElement and HTMLDocument to make things more
-				# convenient for typical web development and preserve 3.1 compat:
-				# https://github.com/HaxeFoundation/haxe/issues/4081
-				if name == "Element":
-					name = "HTMLElement"
-				elif name == "Document":
-					name = "HTMLDocument"
-
-				if idl.isCallbackInterface():
-					# either a callback function or callback interface instance
-					write("haxe.extern.EitherType<")
-
-					# find the callback interface's method signature from the first method
-					for member in idl.inner.members:
-						if member.isMethod():
-							writeHaxeFunctionType(member.signatures()[0])
-							break
-
-					write(", ")
-					writeHaxeType(name)
-					write(">")
-				else:
-					writeHaxeType(name)
-
+			writeType(idl, None)
 
 		elif isinstance(idl, IDLIdentifier):
 			write(toHaxeIdentifier(stripMozPrefix(idl.name, lowerCase=True)))
@@ -774,7 +777,40 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			constructor = idl.identifier.name == "constructor"
 
 			writeNativeMeta(idl.identifier)
+
 			signatures = idl.signatures()
+
+			# write special overloads for signatures with callback interface arguments
+			# this allows callback interface arguments to accept a typed function, an untyped function and the callback interface
+			for idx, (returnType, arguments) in enumerate(signatures):
+				for idx, argument in enumerate(arguments):
+					if argument.type.isCallbackInterface():
+
+						# write the haxe.Constraints.Function overload
+						write("@:overload( function( ")
+						for idx, argument in enumerate(arguments):
+							if argument.type.isCallbackInterface():
+								write(argument.identifier, " : haxe.Constraints.Function")
+							else:
+								write(argument)
+							if idx < len(arguments)-1:
+								write(", ")
+						writeln(") : ", returnType, " {} )")
+
+						# write the callback interface type overload
+						write("@:overload( function( ")
+						for idx, argument in enumerate(arguments):
+							if argument.type.isCallbackInterface():
+								write(argument.identifier, " : ")
+								writeType(argument.type, "interface")
+							else:
+								write(argument)
+							if idx < len(arguments)-1:
+								write(", ")
+						writeln(") : ", returnType, " {} )")
+
+						break
+
 			for idx, (returnType, arguments) in enumerate(signatures):
 				overload = (idx < len(signatures)-1)
 				if overload:
@@ -807,7 +843,8 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			if idl.variadic:
 				write("haxe.extern.Rest<", idl.type, ">")
 			else:
-				write(idl.type)
+				# Only write the function type for callback interfaces - the interface type will be handled via @:overloads
+				writeType(idl.type, "function")
 			if idl.defaultValue and not isinstance(idl.defaultValue, IDLNullValue) and not isinstance(idl.defaultValue, IDLUndefinedValue):
 				write(" = ", idl.defaultValue)
 
@@ -869,6 +906,13 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 	writeln()
 	writeIdl(idl)
 	file.close()
+
+def getCallbackInterfaceSignature(callbackInterface):
+	# find the callback interface's method signature from the first method
+	for member in callbackInterface.members:
+		if member.isMethod():
+			return member.signatures()[0]
+	return None
 
 def isDefinedInParents (idl, member, checkMembers=False):
 	if idl.parent and isDefinedInParents(idl.parent, member, True):
