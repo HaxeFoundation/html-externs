@@ -817,7 +817,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					write("@:overload( function(")
 				else:
 					if idl.getExtendedAttribute("Pure"):
-						write("@:pure ")
+						writeln("@:pure")
 					if idl.isStatic() and not constructor:
 						write("static ")
 					write("function ", "new" if constructor else idl.identifier, "(")
