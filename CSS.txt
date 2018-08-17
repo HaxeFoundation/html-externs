@@ -266,8 +266,8 @@ ruby-align
 ruby-merge
 ruby-position
 shape-image-threshold
-shape-outside
 shape-margin
+shape-outside
 size
 speak
 speak-as
