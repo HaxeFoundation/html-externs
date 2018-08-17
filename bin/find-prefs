@@ -1,3 +1,4 @@
 #!/bin/sh -e
-
-find webidl | xargs grep 'Pref=".*\.enabled"' webidl/mozilla/ -o --no-filename | sort | uniq
+WEB_IDLS=`find webidl -type f -not -iwholename '*.svn*'`
+echo $WEB_IDLS | xargs grep 'Pref=".*"' -o --no-filename | sort | uniq
+echo $WEB_IDLS | xargs grep 'Func=".*"' -o --no-filename | sort | uniq
