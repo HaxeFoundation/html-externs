@@ -17,6 +17,7 @@ CONFIG = collections.defaultdict(lambda: False, {
 	"MOZ_GAMEPAD": True,
 	"MOZ_WEBSPEECH": True,
 	"MOZ_WEBRTC": True,
+	"MOZ_WIDGET_ANDROID": True, # for Window.{orientation,onorientationchange}
 })
 MOZ_WHITELIST = set([
 	"ErrorEvent.webidl",
@@ -30,15 +31,20 @@ MOZ_BLACKLIST = set([
 	"MozApplicationEvent.webidl",
 ])
 
-# This is an empty stub to stand in for the Files class provided by the moz.build sandbox environment
-# In the current moz.build file it's used to set "BUG_COMPONENT" which we don't use
+# moz.build uses a 'Files' class which is normally provided by the moz.build execution sandbox 
+# we create a stub that lets us collect the values in BUG_COMPONENT, which indicate how webidl files can be grouped into packages
+webidlPackageGroups = []
 class Files:
-    def __init__(self, files):
-        return
-    def __enter__(self):
-        return
-    def __exit__(self, type, value, traceback):
-        return
+	def __init__(self, files):
+		self.files = files
+		return
+	def __enter__(self):
+		return
+	def __exit__(self, type, value, traceback):
+		global webidlPackageGroups
+		# moz.build should set BUG_COMPONENT to something like ("Core", "Web Audio")
+		webidlPackageGroups.append((self.files, BUG_COMPONENT))
+		return
 
 execfile("webidl/mozilla/moz.build")
 
@@ -63,7 +69,7 @@ for file in glob.glob("webidl/mozilla/webidl/chrome-webidl/*.webidl"):
 	parse(file)
 
 # Include all files from mozilla
-for file in (set(WEBIDL_FILES + PREPROCESSED_WEBIDL_FILES) | MOZ_WHITELIST) - MOZ_BLACKLIST:
+for file in (set(WEBIDL_FILES + PREPROCESSED_WEBIDL_FILES + GENERATED_EVENTS_WEBIDL_FILES) | MOZ_WHITELIST) - MOZ_BLACKLIST:
 	parse("webidl/mozilla/"+file)
 
 idls = parser.finish()
