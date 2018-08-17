@@ -118,7 +118,7 @@ FUNCS = set([
 	"nsDocument::IsWebAnimationsGetAnimationsEnabled",
 	"nsDocument::IsShadowDOMEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
-	# "mozilla::dom::OffscreenCanvas::PrefEnabled",
+	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
 	"SpeechRecognition::IsAuthorized",
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
@@ -126,6 +126,7 @@ FUNCS = set([
 	"HTMLInputElement::ValueAsDateEnabled",
 	"ServiceWorkerVisible",
 	"nsGlobalWindowInner::DeviceSensorsEnabled",
+	"IsNotUAWidget",
 ])
 
 # Types that are renamed, but still have their @:native pointing to the original name
