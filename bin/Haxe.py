@@ -599,12 +599,12 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			writeType(idl.inner, subTypeMode);
 			write(">")
 		elif idl.isObject() or idl.isAny():
-			write("Any")
+			write("Dynamic")
 		elif name not in usedTypes or name not in knownTypes:
 			if name == "WindowProxy":
 				write("Window") # Special case hack
 			elif name in ["nsISupports", "nsIVariant"]:
-				write("Any")
+				write("Dynamic")
 			else:
 				write("Dynamic/*MISSING %s*/" % name)
 		else:
