@@ -860,7 +860,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				if len(arguments) > 0:
 					write(" ")
 					for idx, argument in enumerate(arguments):
-						write(argument)
+						# only write the function form of callback interfaces
+						# the interface form will have been defined in an overload 
+						writeArgument(argument, None, "function")
 						if idx < len(arguments)-1:
 							write(", ")
 					write(" ")
