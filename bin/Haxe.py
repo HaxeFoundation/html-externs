@@ -651,6 +651,14 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					write(" extends ")
 					writeHaxeType(idl.parent.identifier.name)
 
+			# write 'implements' for each implemented interface
+			for implementedInterface in idl.implementedInterfaces:
+				if stripTrailingUnderscore(implementedInterface.identifier.name) in usedTypes \
+					and isAvailable(implementedInterface) \
+					and (determineHaxeType(implementedInterface) == "interface"):
+					write(" implements ")
+					writeHaxeType(implementedInterface.identifier.name)
+
 			arrayAccess = None
 			staticVars = []
 			staticMethods = []
