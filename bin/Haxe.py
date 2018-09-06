@@ -671,12 +671,20 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 						arrayAccess = returnType
 				if isAvailable(member):
 					collection = None
-					if isDefinedInParents(idl, member):
+
+					isStaticMember = member.isConst() or member.isStatic()
+
+					# skip any redeclared member variables
+					# but allow redeclared statics or methods
+					if (not member.isMethod()) and (not isStaticMember) and isDefinedInParents(idl, member):
 						continue
-					if member.isConst() or member.isStatic():
+
+					if isStaticMember:
 						collection = staticMethods if member.isMethod() else staticVars
 					else:
 						collection = methods if member.isMethod() else vars
+
+
 					collection.append(member)
 
 			if arrayAccess:
