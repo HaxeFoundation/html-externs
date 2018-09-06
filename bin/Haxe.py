@@ -132,6 +132,35 @@ FUNCS = set([
 	"IsNotUAWidget",
 ])
 
+HARDCODED_METHODS = {
+	# While the externs generated for EventTarget are correct, in practice users expect the Event argument to behave dynamically
+	# 	That-is: addEventListener((event) => { /* event could be any sub-type of js.html.Event */ })
+	# To enable this we hardcode the signature
+	"::EventTarget::addEventListener": (
+		"REPLACE",
+		[
+			"@:overload( function( type : String, listener : EventListener, ?options : haxe.extern.EitherType<AddEventListenerOptions,Bool>, ?wantsUntrusted : Bool ) : Void {} )",
+			"function addEventListener( type: String, listener: haxe.Constraints.Function, ?options : haxe.extern.EitherType<AddEventListenerOptions,Bool>, ?wantsUntrusted : Bool ) : Void;"
+		]
+	),
+
+	"::EventTarget::removeEventListener": (
+		"REPLACE",
+		[
+			"@:overload( function( type : String, listener : EventListener, ?options : haxe.extern.EitherType<EventListenerOptions,Bool>) : Void {} )",
+			"function removeEventListener( type : String, listener : haxe.Constraints.Function, ?options : haxe.extern.EitherType<EventListenerOptions,Bool> ) : Void;"
+		]
+	),
+
+	# In the previous versions of the externs, error callback was Void -> Void
+	"::BaseAudioContext::decodeAudioData": (
+		"PREPEND",
+		[
+			"@:overload( function( audioData : js.html.ArrayBuffer, ?successCallback : AudioBuffer -> Void, ?errorCallback : Void -> Void ) : Promise<AudioBuffer> {} )"
+		]
+	)
+}
+
 DEPRECATED = {
 	"OfflineAudioCompletionEvent"
 }
@@ -827,66 +856,80 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			constructor = idl.identifier.name == "constructor"
 
 			writeNativeMeta(idl.identifier)
+			
+			# write 
+			writeMainSignatures = True
 
-			signatures = idl.signatures()
+			# handle hardcoded methods
+			if idl.identifier.QName() in HARDCODED_METHODS:
+				(mode, lines) = HARDCODED_METHODS[idl.identifier.QName()]
 
-			# write special overloads for signatures with callback interface arguments
-			# this allows callback interface arguments to accept a typed function, an untyped function and the callback interface
-			for idx, (returnType, arguments) in enumerate(signatures):
-				for idx, argument in enumerate(arguments):
-					if argument.type.isCallbackInterface():
+				if mode == "REPLACE":
+					writeMainSignatures = False
 
-						# write the haxe.Constraints.Function overload
-						write("@:overload( function( ")
-						for idx, argument in enumerate(arguments):
-							if argument.type.isCallbackInterface():
-								writeArgument(argument, "haxe.Constraints.Function")
-							else:
-								write(argument)
-							if idx < len(arguments)-1:
-								write(", ")
-						writeln(") : ", returnType, " {} )")
+				for line in lines:
+					writeln(line)
 
-						# write the callback interface type overload
-						write("@:overload( function( ")
-						for idx, argument in enumerate(arguments):
-							if argument.type.isCallbackInterface():
-								writeArgument(argument, None, "interface")
-							else:
-								write(argument)
-							if idx < len(arguments)-1:
-								write(", ")
-						writeln(") : ", returnType, " {} )")
-						break
+			if writeMainSignatures:
+				signatures = idl.signatures()
 
-
-
-			for idx, (returnType, arguments) in enumerate(signatures):
-				overload = (idx < len(signatures)-1)
-				if overload:
-					write("@:overload( function(")
-				else:
-					if idl.getExtendedAttribute("Pure"):
-						writeln("@:pure")
-					if idl.isStatic() and not constructor:
-						write("static ")
-					write("function ", "new" if constructor else idl.identifier, "(")
-
-				# Write the argument list
-				if len(arguments) > 0:
-					write(" ")
+				# write special overloads for signatures with callback interface arguments
+				# this allows callback interface arguments to accept a typed function, an untyped function and the callback interface
+				for idx, (returnType, arguments) in enumerate(signatures):
 					for idx, argument in enumerate(arguments):
-						# only write the function form of callback interfaces
-						# the interface form will have been defined in an overload 
-						writeArgument(argument, None, "function")
-						if idx < len(arguments)-1:
-							write(", ")
-					write(" ")
-				write(") : ", "Void" if constructor else returnType)
-				if overload:
-					writeln(" {} )")
-				else:
-					write(";")
+						if argument.type.isCallbackInterface():
+
+							# write the haxe.Constraints.Function overload
+							write("@:overload( function( ")
+							for idx, argument in enumerate(arguments):
+								if argument.type.isCallbackInterface():
+									writeArgument(argument, "haxe.Constraints.Function")
+								else:
+									write(argument)
+								if idx < len(arguments)-1:
+									write(", ")
+							writeln(") : ", returnType, " {} )")
+
+							# write the callback interface type overload
+							write("@:overload( function( ")
+							for idx, argument in enumerate(arguments):
+								if argument.type.isCallbackInterface():
+									writeArgument(argument, None, "interface")
+								else:
+									write(argument)
+								if idx < len(arguments)-1:
+									write(", ")
+							writeln(") : ", returnType, " {} )")
+							break
+
+
+
+				for idx, (returnType, arguments) in enumerate(signatures):
+					overload = (idx < len(signatures)-1)
+					if overload:
+						write("@:overload( function(")
+					else:
+						if idl.getExtendedAttribute("Pure"):
+							writeln("@:pure")
+						if idl.isStatic() and not constructor:
+							write("static ")
+						write("function ", "new" if constructor else idl.identifier, "(")
+
+					# Write the argument list
+					if len(arguments) > 0:
+						write(" ")
+						for idx, argument in enumerate(arguments):
+							# only write the function form of callback interfaces
+							# the interface form will have been defined in an overload 
+							writeArgument(argument, None, "function")
+							if idx < len(arguments)-1:
+								write(", ")
+						write(" ")
+					write(") : ", "Void" if constructor else returnType)
+					if overload:
+						writeln(" {} )")
+					else:
+						write(";")
 
 		elif isinstance(idl, IDLArgument):
 			writeArgument(idl, None, None)
