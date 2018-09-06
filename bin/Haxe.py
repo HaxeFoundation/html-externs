@@ -129,6 +129,10 @@ FUNCS = set([
 	"IsNotUAWidget",
 ])
 
+DEPRECATED = {
+	"OfflineAudioCompletionEvent"
+}
+
 # Types that are renamed, but still have their @:native pointing to the original name
 ALIASES = {
 	"Element": "DOMElement",
@@ -604,6 +608,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln("// Explicitly include the compatibility class")
 				writeln("import js.html.compat.%s;" % nativeName)
 				writeln()
+
+			if idl.identifier.name in DEPRECATED:
+				writeln("@:deprecated(\"" + idl.identifier.name + " is deprecated\")")
 
 			# It's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
 			# if the type has constants then we need a concrete class to host them
