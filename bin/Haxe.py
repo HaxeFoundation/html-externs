@@ -152,7 +152,7 @@ HARDCODED_METHODS = {
 		]
 	),
 
-	# In the previous versions of the externs, error callback was Void -> Void
+	# In the previous versions of the externs the error callback was Void -> Void
 	"::BaseAudioContext::decodeAudioData": (
 		"PREPEND",
 		[
@@ -161,6 +161,7 @@ HARDCODED_METHODS = {
 	)
 }
 
+# Add @:deprecated meta to classes deprecated by the spec but still in use
 DEPRECATED = {
 	"OfflineAudioCompletionEvent"
 }
@@ -1129,13 +1130,6 @@ def toHaxeType (name):
 			if group.removePrefix and name.startswith(group.removePrefix) and name in group.names:
 				name = name[len(group.removePrefix):]
 				break
-
-	# if name.startswith("ExtensionCompressedTexture"):
-	# 	name = "ExtensionCompressedTexture" + name[len("ExtensionCompressedTexture"):].upper()
-	# elif name == "ExtensionSrgb":
-	# 	name = "ExtensionSRGB"
-	# elif name == "ExtensionBlendMinmax":
-	# 	name = "ExtensionBlendMinMax"
 
 	return name
 
