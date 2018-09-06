@@ -602,6 +602,29 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			else:
 				writeHaxeType(name)
 
+	def writeArgument(argument, overrideType = None, subTypeMode = None):
+		if argument.optional and not argument.variadic:
+			write("?")
+
+		write(argument.identifier, " : ")
+
+		if argument.variadic:
+			write("haxe.extern.Rest<")
+
+		if overrideType != None:
+			if isinstance(idl, IDLType):
+				writeType(overrideType, subTypeMode)
+			else:
+				write(overrideType)
+		else:
+			writeType(argument.type, subTypeMode)
+
+		if argument.variadic:
+			write(">")
+
+		if argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue):
+				write(" = ", argument.defaultValue)
+
 	def writeIdl (idl):
 		if isinstance(idl, IDLInterfaceOrNamespace):
 			nativeName = stripTrailingUnderscore(idl.identifier.name)
@@ -612,16 +635,16 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln("import js.html.compat.%s;" % nativeName)
 				writeln()
 
+			haxeType = determineHaxeType(idl)
+
 			if idl.identifier.name in DEPRECATED:
 				writeln("@:deprecated(\"" + idl.identifier.name + " is deprecated\")")
 
-			# It's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
-			# if the type has constants then we need a concrete class to host them
-			if idl.identifier.name in FORCE_INTERFACE:
+			if haxeType == "interface":
 				write("extern interface ", toHaxeType(idl.identifier.name))
-			elif (idl.isCallback() or idl.getExtendedAttribute("NoInterfaceObject")) and not idl.hasConstants():
+			elif haxeType == "typedef":
 				write("typedef ", toHaxeType(idl.identifier.name), " =")
-			else:
+			elif haxeType == "class":
 				writeln("@:native(\"%s\")" % nativeName)
 				write("extern class ", toHaxeType(idl.identifier.name))
 				if idl.parent:
@@ -801,7 +824,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 						write("@:overload( function( ")
 						for idx, argument in enumerate(arguments):
 							if argument.type.isCallbackInterface():
-								write(argument.identifier, " : haxe.Constraints.Function")
+								writeArgument(argument, "haxe.Constraints.Function")
 							else:
 								write(argument)
 							if idx < len(arguments)-1:
@@ -812,15 +835,15 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 						write("@:overload( function( ")
 						for idx, argument in enumerate(arguments):
 							if argument.type.isCallbackInterface():
-								write(argument.identifier, " : ")
-								writeType(argument.type, "interface")
+								writeArgument(argument, None, "interface")
 							else:
 								write(argument)
 							if idx < len(arguments)-1:
 								write(", ")
 						writeln(") : ", returnType, " {} )")
-
 						break
+
+
 
 			for idx, (returnType, arguments) in enumerate(signatures):
 				overload = (idx < len(signatures)-1)
@@ -848,16 +871,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					write(";")
 
 		elif isinstance(idl, IDLArgument):
-			if idl.optional and not idl.variadic:
-				write("?")
-			write(idl.identifier, " : ")
-			if idl.variadic:
-				write("haxe.extern.Rest<", idl.type, ">")
-			else:
-				# Only write the function type for callback interfaces - the interface type will be handled via @:overloads
-				writeType(idl.type, "function")
-			if idl.defaultValue and not isinstance(idl.defaultValue, IDLNullValue) and not isinstance(idl.defaultValue, IDLUndefinedValue):
-				write(" = ", idl.defaultValue)
+			writeArgument(idl, None, None)
 
 		elif isinstance(idl, IDLValue):
 			if idl.type.isString():
@@ -917,6 +931,20 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 	writeln()
 	writeIdl(idl)
 	file.close()
+
+def determineHaxeType(idlInterfaceOrNamespace):
+	# it's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
+	# if the type has constants then we need a concrete class to host them
+	idl = idlInterfaceOrNamespace
+	if idl.identifier.name in FORCE_INTERFACE:
+		return "interface"
+	elif (idl.isCallback() or idl.getExtendedAttribute("NoInterfaceObject")) and not idl.hasConstants():
+		if not idl.isCallback() and len(idl.interfacesImplementingSelf) > 0:
+			return "interface"
+		else:
+			return "typedef"
+	else:
+		return "class"
 
 def getCallbackInterfaceSignature(callbackInterface):
 	# find the callback interface's method signature from the first method
