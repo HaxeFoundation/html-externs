@@ -902,8 +902,35 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 							writeln(") : ", returnType, " {} )")
 							break
 
+				# If there's a single union argument, write overloads for all possible types for this argument
+				# this enables better type inference than just Either<A, B>
+				overrideUnionType = None
 
+				for idx, (returnType, arguments) in enumerate(signatures):
+					unionArgument = None
+					unionArguments = 0
 
+					for idx, argument in enumerate(arguments):
+						if argument.type.isUnion():
+							unionArgument = argument.type
+							unionArguments = unionArguments + 1
+
+					if unionArguments == 1:
+						unionMemberTypes = getUnionMembersRecursive(unionArgument)
+						overrideUnionType = unionMemberTypes[0]
+						for memberType in unionMemberTypes[1:]:
+							# write the callback interface type overload
+							write("@:overload( function( ")
+							for idx, argument in enumerate(arguments):
+								if argument.type.isUnion():
+									writeArgument(argument, memberType, None)
+								else:
+									writeArgument(argument, None, None)
+								if idx < len(arguments)-1:
+									write(", ")
+							writeln(") : ", returnType, " {} )")
+
+				# write primary function overloads and main signature
 				for idx, (returnType, arguments) in enumerate(signatures):
 					overload = (idx < len(signatures)-1)
 					if overload:
@@ -919,9 +946,12 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					if len(arguments) > 0:
 						write(" ")
 						for idx, argument in enumerate(arguments):
-							# only write the function form of callback interfaces
-							# the interface form will have been defined in an overload 
-							writeArgument(argument, None, "function")
+							if argument.type.isUnion() and (overrideUnionType != None):
+								writeArgument(argument, overrideUnionType, None)
+							else:
+								# only write the function form of callback interfaces
+								# the interface form will have been defined in an overload 
+								writeArgument(argument, None, "function")
 							if idx < len(arguments)-1:
 								write(", ")
 						write(" ")
@@ -1013,6 +1043,27 @@ def getCallbackInterfaceSignature(callbackInterface):
 		if member.isMethod():
 			return member.signatures()[0]
 	return None
+
+def countUnionMembers(idlType):
+	if isinstance(idlType, IDLParametrizedType):
+		return countUnionMembers(idlType.inner)
+	elif idlType.isUnion():
+		return len(idlType.memberTypes)
+	else:
+		return 0
+
+def getUnionMembersRecursive(idlType):
+	if idlType == None:
+		return []
+	elif idlType.nullable():
+		return getUnionMembersRecursive(idlType.inner)
+	elif idlType.isUnion():
+		allMemberTypes = []
+		for subType in idlType.memberTypes:
+			allMemberTypes += getUnionMembersRecursive(subType)
+		return allMemberTypes
+	else:
+		return [idlType]
 
 def isDefinedInParents (idl, member, checkMembers=False):
 	if idl.parent and isDefinedInParents(idl.parent, member, True):
