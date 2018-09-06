@@ -101,6 +101,8 @@ PREFS = set([
 	"canvas.capturestream.enabled",
 	"device.sensors.motion.enabled",
 	"device.sensors.orientation.enabled",
+
+	"dom.pointer-lock.enabled",
 ])
 
 FUNCS = set([
@@ -158,12 +160,15 @@ HARDCODED_METHODS = {
 		[
 			"@:overload( function( audioData : js.html.ArrayBuffer, ?successCallback : AudioBuffer -> Void, ?errorCallback : Void -> Void ) : Promise<AudioBuffer> {} )"
 		]
-	)
+	),
+
+	"::WebGLRenderingContextBase::getExtension": ( "REPLACE", ["function getExtension<T>( name : Extension<T> ) : T;"] ),
 }
 
 # Add @:deprecated meta to classes deprecated by the spec but still in use
 DEPRECATED = {
-	"OfflineAudioCompletionEvent"
+	"OfflineAudioCompletionEvent": None,
+	"PerformanceTiming": "use the PerformanceNavigationTiming interface instead"
 }
 
 # Types that are renamed, but still have their @:native pointing to the original name
@@ -361,6 +366,28 @@ PACKAGES = {
 	])
 }
 
+COPYRIGHT_HEADER = """/*
+ * Copyright (C)2005-%s Haxe Foundation
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ */""" % (datetime.date.today().year)
+
 class Program ():
 	idls = None
 	cssProperties = []
@@ -422,6 +449,8 @@ class Program ():
 							func = idl.getExtendedAttribute("Func")
 							if isDisabled(pref, PREFS) or isDisabled(func, FUNCS):
 								print('> Warning: Type "%s" requires Pref "%s", Func "%s"' % (idl.identifier.name, pref, func))
+		
+		generateWebGLExtensionEnum(self.idls, outputDir)
 
 # Return all the types used by this IDL
 def checkUsage (idl):
@@ -668,7 +697,11 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			haxeType = determineHaxeType(idl)
 
 			if idl.identifier.name in DEPRECATED:
-				writeln("@:deprecated(\"" + idl.identifier.name + " is deprecated\")")
+				message = DEPRECATED[idl.identifier.name]
+				write("@:deprecated(\"" + idl.identifier.name + " is deprecated")
+				if message is not None:
+					write(", " + message)
+				writeln("\")")
 
 			if haxeType == "interface":
 				write("extern interface ", toHaxeType(idl.identifier.name))
@@ -861,15 +894,17 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			# write 
 			writeMainSignatures = True
 
-			# handle hardcoded methods
+			# write hardcoded signatures
 			if idl.identifier.QName() in HARDCODED_METHODS:
 				(mode, lines) = HARDCODED_METHODS[idl.identifier.QName()]
 
 				if mode == "REPLACE":
 					writeMainSignatures = False
 
-				for line in lines:
-					writeln(line)
+				for idx, line in enumerate(lines):
+					write(line)
+					if idx < (len(lines) - 1) or writeMainSignatures:
+						writeln()
 
 			if writeMainSignatures:
 				signatures = idl.signatures()
@@ -993,36 +1028,48 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 	print("Generating %s..." % fileName)
 
 	file = open(fileName, "w")
-	header = textwrap.dedent("""\
-		/*
-		 * Copyright (C)2005-%s Haxe Foundation
-		 *
-		 * Permission is hereby granted, free of charge, to any person obtaining a
-		 * copy of this software and associated documentation files (the "Software"),
-		 * to deal in the Software without restriction, including without limitation
-		 * the rights to use, copy, modify, merge, publish, distribute, sublicense,
-		 * and/or sell copies of the Software, and to permit persons to whom the
-		 * Software is furnished to do so, subject to the following conditions:
-		 *
-		 * The above copyright notice and this permission notice shall be included in
-		 * all copies or substantial portions of the Software.
-		 *
-		 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-		 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-		 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-		 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-		 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-		 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-		 * DEALINGS IN THE SOFTWARE.
-		 */
-
-		// This file is generated from %s. Do not edit!
-		""" % (datetime.date.today().year, idl.location.filename().replace("/","\\")))
-	writeln(header)
+	writeln(COPYRIGHT_HEADER)
+	writeln()
+	writeln("// This file is generated from %s. Do not edit!" % idl.location.filename().replace("/","\\"))
+	writeln()
 	writeln("package %s;" % (".".join(package)))
 	writeln()
 	writeIdl(idl)
 	file.close()
+
+# find all WebGL extensions and create an enum so we can type getExtension(name)
+def generateWebGLExtensionEnum(idls, outputDir):
+	# search search through idls for webgl extensions
+	extensions = []
+	for idl in idls:
+		if isinstance(idl, IDLInterfaceOrNamespace) and isAvailable(idl):
+			name = stripTrailingUnderscore(idl.identifier.name)
+			if isWebGLExtension(name):
+				extensions.append(name)
+
+	extensions.sort()
+
+	package = ["js", "html", "webgl"]
+	dir = "%s/%s" % (outputDir, "/".join(package))
+	fileName = dir + "/Extension.hx";
+
+	print("Generating %s..." % fileName)
+	
+	file = open(fileName, "w")
+	file.write(COPYRIGHT_HEADER + "\n")
+	file.write("\n")
+	file.write("// This file is automatically generated. Do not edit!\n")
+	file.write("\n")
+	file.write("package %s;\n" % (".".join(package)))
+	file.write("\n")
+	file.write("import js.html.webgl.extension.*;\n")
+	file.write("\n")
+	file.write("enum abstract Extension<T>(String) from String to String {\n")
+
+	for name in extensions:
+		file.write("\tvar %s: Extension<%s> = '%s';\n" % (name, toHaxeType(name), name))
+
+	file.write("}\n")
 
 def determineHaxeType(idlInterfaceOrNamespace):
 	# it's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
