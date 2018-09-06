@@ -49,9 +49,10 @@ BLACKLIST = set([
 	"VoidCallback",
 ])
 
-# means the type doesn't have a corresponding native object and so it represents an interface
+# If type doesn't have a corresponding native object and we can't tell this from the WebIDL, add here to make it a haxe interface
 FORCE_INTERFACE = set([
-	"ConsoleInstance"
+	"ConsoleInstance",
+	"ArrayBufferView",
 ])
 
 PREFS = set([
