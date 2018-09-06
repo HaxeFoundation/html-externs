@@ -617,17 +617,17 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				name = "HTMLDocument"
 
 			if idl.isCallbackInterface():
-				if subTypeMode == None:
+				if subTypeMode == "function":
+					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
+				elif subTypeMode == "interface":
+					writeHaxeType(name)
+				else:
 					# either a callback function or callback interface instance
 					write("haxe.extern.EitherType<")
 					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
 					write(", ")
 					writeHaxeType(name)
 					write(">")
-				elif subTypeMode == "function":
-					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
-				elif subTypeMode == "interface":
-					writeHaxeType(name)
 			else:
 				writeHaxeType(name)
 
