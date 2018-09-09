@@ -3,4 +3,4 @@ parser.out
 *.pyc
 .svn/
 _mdn-docs-cache/
-# _output_documented_html/
+_output_documented_html/
