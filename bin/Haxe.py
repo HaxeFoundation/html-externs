@@ -132,6 +132,7 @@ FUNCS = set([
 	"ServiceWorkerVisible",
 	"nsGlobalWindowInner::DeviceSensorsEnabled",
 	"IsNotUAWidget",
+	"nsGlobalWindowInner::IsWindowPrintEnabled",
 ])
 
 HARDCODED_METHODS = {
@@ -687,13 +688,6 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 	def writeIdl (idl):
 		if isinstance(idl, IDLInterfaceOrNamespace):
 			nativeName = stripTrailingUnderscore(idl.identifier.name)
-			if nativeName == "ArrayBuffer" or nativeName == "DataView" \
-					or nativeName == "Float32Array" or nativeName == "Float64Array" \
-					or nativeName == "Uint8Array":
-				writeln("// Explicitly include the compatibility class")
-				writeln("import js.html.compat.%s;" % nativeName)
-				writeln()
-
 			haxeType = determineHaxeType(idl)
 
 			if idl.identifier.name in DEPRECATED:
