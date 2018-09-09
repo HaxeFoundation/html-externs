@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import datetime
 import os
 import re
@@ -13,11 +15,11 @@ RESERVED_WORDS = set([
 	"finally", "float", "for", "function", "goto", "if", "implements", "import", "in", "instanceof", "int",
 	"interface", "is", "let", "long", "namespace", "native", "new", "null", "package", "private", "protected",
 	"public", "return", "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
-	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield"
+	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield", "inline"
 ])
 
 WHITELIST = set([
-	"Console",
+	"ConsoleInstance",
 ])
 
 BLACKLIST = set([
@@ -25,6 +27,32 @@ BLACKLIST = set([
 	"Promise",
 	"LegacyMozTCPSocket",
 	"PushManagerImpl",
+	"APZTestData",
+	"APZBucket",
+	"APZHitResult",
+	"WebExtensionContentScriptInit",
+	"TreeView",
+	"TreeBoxObject",
+	# blacklist webgpu files for now (remove these when WebGPU is ready)
+	"WebGPUBufferBinding",
+	"WebGPUBindGroupBinding",
+	"WebGPUBinding",
+	"WebGPUBlendDescriptor",
+	"WebGPUExtensions",
+	"WebGPUPipelineStageDescriptor",
+	"WebGPUPowerPreference",
+	"WebGPURenderPassAttachmentDescriptor",
+	"WebGPUStencilStateFaceDescriptor",
+	"WebGPUVertexAttributeDescriptor",
+	"WebGPUVertexInputDescriptor",
+	"InstallTrigger",
+	"VoidCallback",
+])
+
+# If type doesn't have a corresponding native object and we can't tell this from the WebIDL, add here to make it a haxe interface
+FORCE_INTERFACE = set([
+	"ConsoleInstance",
+	"ArrayBufferView",
 ])
 
 PREFS = set([
@@ -37,6 +65,7 @@ PREFS = set([
 	"dom.animations-api.core.enabled",
 	"dom.battery.enabled",
 	"dom.gamepad.enabled",
+	"dom.webaudio.enabled",
 	"dom.image.picture.enabled",
 	"dom.image.srcset.enabled",
 	"dom.imagecapture.enabled",
@@ -61,6 +90,19 @@ PREFS = set([
 	# "dom.identity.enabled",
 	"media.peerconnection.enabled",
 	"media.peerconnection.identity.enabled",
+
+	"media.peerconnection.dtmf.enabled",
+	"media.peerconnection.remoteTrackId.enabled",
+	"media.peerconnection.rtpsourcesapi.enabled",
+	"media.ondevicechange.enabled",
+
+	"webgl.enable-webgl2",
+
+	"canvas.capturestream.enabled",
+	"device.sensors.motion.enabled",
+	"device.sensors.orientation.enabled",
+
+	"dom.pointer-lock.enabled",
 ])
 
 FUNCS = set([
@@ -73,15 +115,62 @@ FUNCS = set([
 	"mozilla::dom::TouchList::PrefEnabled",
 	"mozilla::dom::WebSocket::PrefEnabled",
 	"mozilla::dom::workers::WorkerPrivate::WorkerAvailable",
+	"mozilla::dom::DOMPrefs::FetchObserverEnabled",
+	"mozilla::dom::DOMPrefs::ServiceWorkersEnabled",
 	"nsDocument::IsWebAnimationsEnabled",
 	"nsDocument::IsWebComponentsEnabled",
+	"nsDocument::AreWebAnimationsTimelinesEnabled",
+	"nsDocument::IsWebAnimationsGetAnimationsEnabled",
+	"nsDocument::IsShadowDOMEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
-	# "mozilla::dom::OffscreenCanvas::PrefEnabled",
+	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
 	"SpeechRecognition::IsAuthorized",
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
 	"mozilla::dom::workers::ServiceWorkerVisible",
+	"HTMLInputElement::ValueAsDateEnabled",
+	"ServiceWorkerVisible",
+	"nsGlobalWindowInner::DeviceSensorsEnabled",
+	"IsNotUAWidget",
+	"nsGlobalWindowInner::IsWindowPrintEnabled",
 ])
+
+HARDCODED_METHODS = {
+	# While the externs generated for EventTarget are correct, in practice users expect the Event argument to behave dynamically
+	# 	That-is: addEventListener((event) => { /* event could be any sub-type of js.html.Event */ })
+	# To enable this we hardcode the signature
+	"::EventTarget::addEventListener": (
+		"REPLACE",
+		[
+			"@:overload( function( type : String, listener : EventListener, ?options : haxe.extern.EitherType<AddEventListenerOptions,Bool>, ?wantsUntrusted : Bool ) : Void {} )",
+			"function addEventListener( type: String, listener: haxe.Constraints.Function, ?options : haxe.extern.EitherType<AddEventListenerOptions,Bool>, ?wantsUntrusted : Bool ) : Void;"
+		]
+	),
+
+	"::EventTarget::removeEventListener": (
+		"REPLACE",
+		[
+			"@:overload( function( type : String, listener : EventListener, ?options : haxe.extern.EitherType<EventListenerOptions,Bool>) : Void {} )",
+			"function removeEventListener( type : String, listener : haxe.Constraints.Function, ?options : haxe.extern.EitherType<EventListenerOptions,Bool> ) : Void;"
+		]
+	),
+
+	# In the previous versions of the externs the error callback was Void -> Void
+	"::BaseAudioContext::decodeAudioData": (
+		"PREPEND",
+		[
+			"@:overload( function( audioData : js.html.ArrayBuffer, ?successCallback : AudioBuffer -> Void, ?errorCallback : Void -> Void ) : Promise<AudioBuffer> {} )"
+		]
+	),
+
+	"::WebGLRenderingContextBase::getExtension": ( "REPLACE", ["function getExtension<T>( name : Extension<T> ) : T;"] ),
+}
+
+# Add @:deprecated meta to classes deprecated by the spec but still in use
+DEPRECATED = {
+	"OfflineAudioCompletionEvent": None,
+	"PerformanceTiming": "use the PerformanceNavigationTiming interface instead"
+}
 
 # Types that are renamed, but still have their @:native pointing to the original name
 ALIASES = {
@@ -97,13 +186,13 @@ RENAMES = {
 # Whitelisted moz-prefixed APIs
 ALLOWED_MOZ_PREFIXES = [
 	re.compile("(on)?moz.*pointerlock.*", re.IGNORECASE),
-	re.compile("mozImageSmoothingEnabled"),
+	# re.compile("mozImageSmoothingEnabled"),
 	# re.compile("mozMovement[XY]"),
 ]
 
 HTML_ELEMENTS = {
 	"AnchorElement": "a",
-	"AppletElement": "applet",
+	# "AppletElement": "applet",
 	"AreaElement": "area",
 	"AudioElement": "audio",
 	"BaseElement": "base",
@@ -112,9 +201,9 @@ HTML_ELEMENTS = {
 	"BRElement": "br",
 	"ButtonElement": "button",
 	"CanvasElement": "canvas",
-	"ContentElement": "content",
+	# "ContentElement": "content",
 	"DataListElement": "datalist",
-	# "DetailsElement": "details",
+	"DetailsElement": "details",
 	"DirectoryElement": "dir",
 	"DivElement": "div",
 	"DListElement": "dl",
@@ -157,7 +246,8 @@ HTML_ELEMENTS = {
 	"QuoteElement": "quote",
 	"ScriptElement": "script",
 	"SelectElement": "select",
-	"ShadowElement": "shadow",
+	"SlotElement": "slot",
+	# "ShadowElement": "shadow",
 	"SourceElement": "source",
 	"SpanElement": "span",
 	"StyleElement": "style",
@@ -217,11 +307,87 @@ PACKAGES = {
 		"ScriptProcessorNode",
 		"StereoPannerNode",
 		"WaveShaperNode",
+		# new as of aug 2018
+		"AnalyserOptions",
+		"AudioBufferOptions",
+		"AudioBufferSourceOptions",
+		"AudioContextOptions",
+		"AudioScheduledSourceNode",
+		"BiquadFilterOptions",
+		"ChannelMergerOptions",
+		"ChannelSplitterOptions",
+		"ConstantSourceNode",
+		"ConstantSourceOptions",
+		"ConvolverOptions",
+		"DelayOptions",
+		"DynamicsCompressorOptions",
+		"GainOptions",
+		"IIRFilterNode",
+		"IIRFilterOptions",
+		"MediaElementAudioSourceOptions",
+		"MediaStreamAudioSourceOptions",
+		"OfflineAudioContextOptions",
+		"OscillatorOptions",
+		"PannerOptions",
+		"PeriodicWaveOptions",
+		"StereoPannerOptions",
+		"WaveShaperOptions",
+		"AudioParamMap",
+		"AudioWorklet",
+		"AudioWorkletGlobalScope",
+		"AudioWorkletNode",
+		"AudioWorkletProcessor",
+		"BaseAudioContext",
+		"AudioContextState",
+		"AudioNodeOptions",
+		"AudioWorkletNodeOptions",
+		"PeriodicWaveConstraints",
 	]),
 	"rtc": PackageGroup([
 		"DataChannel",
 	]),
+	"eme": PackageGroup([
+		"KeyIdsInitData",
+		"MediaEncryptedEvent",
+		"MediaKeyError",
+		"MediaKeyMessageEvent",
+		"MediaKeys",
+		"MediaKeySession",
+		"MediaKeyStatusMap",
+		"MediaKeySystemAccess",
+		"MediaKeyNeededEventInit",
+		"MediaKeyMessageType",
+		"MediaKeyMessageEventInit",
+		"MediaKeySessionType",
+		"MediaKeysPolicy",
+		"MediaKeyStatus",
+		"MediaKeysRequirement",
+		"MediaKeySystemMediaCapability",
+		"MediaKeySystemConfiguration",
+	])
 }
+
+COPYRIGHT_HEADER = """/*
+ * Copyright (C)2005-%s Haxe Foundation
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ */""" % (datetime.date.today().year)
 
 class Program ():
 	idls = None
@@ -233,15 +399,26 @@ class Program ():
 	def generate (self, outputDir):
 		knownTypes = []
 		for idl in self.idls:
-			if isinstance(idl, IDLInterface) or \
+			if isinstance(idl, IDLInterfaceOrNamespace) or \
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary) and isAvailable(idl):
 				knownTypes.append(stripTrailingUnderscore(idl.identifier.name))
 
 		usedTypes = set()
 		for idl in self.idls:
-			if isinstance(idl, IDLInterface):
+			if (isinstance(idl, IDLInterfaceOrNamespace)) and isAvailable(idl):
 				usedTypes |= checkUsage(idl)
+
+		# expand used types along edges (check usage of references)
+		# this is a simple fix to avoid cycles when expanding references
+		usedTypeReferenceDistance = 3
+		for number in range(usedTypeReferenceDistance):
+			for idl in self.idls:
+				if (isinstance(idl, IDLInterfaceOrNamespace) or \
+						isinstance(idl, IDLEnum) or \
+						isinstance(idl, IDLDictionary)) and \
+						stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+					usedTypes |= checkUsage(idl)
 
 		def addDictParent(idl):
 			if idl.parent:
@@ -258,18 +435,29 @@ class Program ():
 				usedTypes.discard(idl.implementee.identifier.name)
 
 		for idl in self.idls:
-			if (isinstance(idl, IDLInterface) or \
+			if (isinstance(idl, IDLInterfaceOrNamespace) or \
 					isinstance(idl, IDLEnum) or \
 					isinstance(idl, IDLDictionary)) and \
-					stripTrailingUnderscore(idl.identifier.name) in usedTypes and \
-					isAvailable(idl):
-				generate(idl, usedTypes, knownTypes, self.cssProperties, outputDir)
+					stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+
+				if (isAvailable(idl)):
+					generate(idl, usedTypes, knownTypes, self.cssProperties, outputDir)
+				else:
+					# report if used type is unavailable due to feature setting
+					if not isBlacklisted(idl):
+						if hasattr(idl, "getExtendedAttribute"):
+							pref = idl.getExtendedAttribute("Pref")
+							func = idl.getExtendedAttribute("Func")
+							if isDisabled(pref, PREFS) or isDisabled(func, FUNCS):
+								print('> Warning: Type "%s" requires Pref "%s", Func "%s"' % (idl.identifier.name, pref, func))
+		
+		generateWebGLExtensionEnum(self.idls, outputDir)
 
 # Return all the types used by this IDL
 def checkUsage (idl):
 	used = set()
 
-	if isinstance(idl, IDLInterface):
+	if isinstance(idl, IDLInterfaceOrNamespace):
 		def isAvailableRecursive (idl):
 			if not isAvailable(idl):
 				return False
@@ -288,6 +476,13 @@ def checkUsage (idl):
 				used |= checkUsage(member)
 		used |= checkUsage(idl.ctor())
 
+	elif isinstance(idl, IDLDictionary):
+		used |= checkUsage(idl.identifier)
+
+		for member in idl.members:
+			if isAvailable(member):
+				used |= checkUsage(member)
+
 	elif isinstance(idl, IDLCallbackType):
 		callback = idl.callback
 		returnType, arguments = callback.signatures()[0]
@@ -295,13 +490,21 @@ def checkUsage (idl):
 			used |= checkUsage(argument.type)
 		used |= checkUsage(returnType)
 
+	# TODO: prevent cycles
+	# elif isinstance(idl, IDLWrapperType):
+	# 	print("### checkUsage:IDLWrapperType %s, dict: %s" % (idl, idl.isDictionary()))
+	# 	used |= checkUsage(idl.inner)
+
 	elif isinstance(idl, IDLType):
 		if idl.nullable():
 			used |= checkUsage(idl.inner)
-		elif idl.isArray() or idl.isSequence():
+		elif idl.isSequence():
 			used |= checkUsage(idl.inner)
 		elif idl.isPromise():
-			used |= checkUsage(idl._promiseInnerType)
+			used |= checkUsage(idl.promiseInnerType())
+		elif idl.isUnion():
+			for t in idl.memberTypes:
+				used |= checkUsage(t)
 		elif not idl.isPrimitive():
 			used.add(stripTrailingUnderscore(idl.name))
 
@@ -354,8 +557,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeIdl(arg)
 
 	def writeNativeMeta (idl):
-		if idl.name != toHaxeIdentifier(idl.name):
-			writeln("@:native(\"%s\")" % idl.name)
+		nativeName = stripTrailingUnderscore(idl.name)
+		if nativeName != toHaxeIdentifier(idl.name):
+			writeln("@:native(\"%s\")" % nativeName)
 
 	def writeHaxeType (name):
 		# Include the package name if the type is in a different package
@@ -364,20 +568,153 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write(".".join(typePackage)+".")
 		write(toHaxeType(name))
 
+	def writeHaxeFunctionType (signature):
+		returnType, arguments = signature
+		if len(arguments) > 0:
+			if len(arguments) == 1 and arguments[0].type.isAny() and returnType.isAny():
+				# Assume that Dynamic -> Dynamic should be Function
+				write("haxe.Constraints.Function")
+			else:
+				for argument in arguments:
+					write(argument.type, " -> ")
+				write(returnType)
+		else:
+			write("Void -> ", returnType)
+
+	def writeType (idl, subTypeMode):
+		name = stripTrailingUnderscore(idl.name)
+
+		if isinstance(idl, IDLCallbackType):
+			callback = idl.callback
+			if callback.identifier.name == "EventHandlerNonNull":
+				# Special case for event handler convenience
+				write("haxe.Constraints.Function")
+			else:
+				writeHaxeFunctionType(callback.signatures()[0])
+		elif idl.nullable():
+			# write("Null<", idl.inner, ">")
+			writeType(idl.inner, subTypeMode)
+		elif idl.isSequence():
+			write("Array<")
+			writeType(idl.inner, subTypeMode)
+			write(">")
+		elif idl.isPromise():
+			write("Promise<")
+			writeType(idl.promiseInnerType(), subTypeMode)
+			write(">")
+		elif idl.isUnion():
+			def writeUnion (memberTypes):
+				if len(memberTypes) > 1:
+					if memberTypes[1].name == "OffscreenCanvas":
+						# Special case for WebGLRenderingContext.canvas
+						writeType(memberTypes[0], subTypeMode)
+					else:
+						write("haxe.extern.EitherType<", memberTypes[0], ",")
+						writeUnion(memberTypes[1:])
+						write(">")
+				else:
+					writeType(memberTypes[0], subTypeMode)
+			writeUnion(idl.memberTypes)
+		elif idl.isString() or idl.isByteString() or idl.isDOMString() or idl.isUSVString():
+			write("String")
+		elif idl.isNumeric():
+			write("Int" if idl.isInteger() else "Float")
+		elif idl.isBoolean():
+			write("Bool")
+		elif idl.isVoid():
+			write("Void")
+		elif idl.isDate():
+			write("Date")
+		elif idl.isRecord() and (idl.keyType.isString() or idl.keyType.isByteString() or idl.keyType.isDOMString() or idl.keyType.isUSVString()):
+			write("haxe.DynamicAccess<");
+			writeType(idl.inner, subTypeMode);
+			write(">")
+		elif idl.isObject() or idl.isAny():
+			write("Dynamic")
+		elif name not in usedTypes or name not in knownTypes:
+			if name == "WindowProxy":
+				write("Window") # Special case hack
+			elif name in ["nsISupports", "nsIVariant"]:
+				write("Dynamic")
+			else:
+				write("Dynamic/*MISSING %s*/" % name)
+		else:
+			# Force Element and Document to HTMLElement and HTMLDocument to make things more
+			# convenient for typical web development and preserve 3.1 compat:
+			# https://github.com/HaxeFoundation/haxe/issues/4081
+			if name == "Element":
+				name = "HTMLElement"
+			elif name == "Document":
+				name = "HTMLDocument"
+
+			if idl.isCallbackInterface():
+				if subTypeMode == "function":
+					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
+				elif subTypeMode == "interface":
+					writeHaxeType(name)
+				else:
+					# either a callback function or callback interface instance
+					write("haxe.extern.EitherType<")
+					writeHaxeFunctionType(getCallbackInterfaceSignature(idl.inner))
+					write(", ")
+					writeHaxeType(name)
+					write(">")
+			else:
+				writeHaxeType(name)
+
+	def writeArgument(argument, overrideType = None, subTypeMode = None):
+		if argument.optional and not argument.variadic:
+			write("?")
+
+		write(argument.identifier, " : ")
+
+		if argument.variadic:
+			write("haxe.extern.Rest<")
+
+		if overrideType != None:
+			if isinstance(idl, IDLType):
+				writeType(overrideType, subTypeMode)
+			else:
+				write(overrideType)
+		else:
+			writeType(argument.type, subTypeMode)
+
+		if argument.variadic:
+			write(">")
+
+		if argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue):
+				write(" = ", argument.defaultValue)
+
 	def writeIdl (idl):
-		if isinstance(idl, IDLInterface):
+		if isinstance(idl, IDLInterfaceOrNamespace):
 			nativeName = stripTrailingUnderscore(idl.identifier.name)
-			if nativeName == "ArrayBuffer" or nativeName == "DataView" \
-					or nativeName == "Float32Array" or nativeName == "Float64Array" \
-					or nativeName == "Uint8Array":
-				writeln("// Explicitly include the compatibility class")
-				writeln("import js.html.compat.%s;" % nativeName)
-				writeln()
-			writeln("@:native(\"%s\")" % nativeName)
-			write("extern class ", toHaxeType(idl.identifier.name))
-			if idl.parent:
-				write(" extends ")
-				writeHaxeType(idl.parent.identifier.name)
+			haxeType = determineHaxeType(idl)
+
+			if idl.identifier.name in DEPRECATED:
+				message = DEPRECATED[idl.identifier.name]
+				write("@:deprecated(\"" + idl.identifier.name + " is deprecated")
+				if message is not None:
+					write(", " + message)
+				writeln("\")")
+
+			if haxeType == "interface":
+				write("extern interface ", toHaxeType(idl.identifier.name))
+			elif haxeType == "typedef":
+				write("typedef ", toHaxeType(idl.identifier.name), " =")
+			elif haxeType == "class":
+				writeln("@:native(\"%s\")" % nativeName)
+				write("extern class ", toHaxeType(idl.identifier.name))
+				if idl.parent:
+					write(" extends ")
+					writeHaxeType(idl.parent.identifier.name)
+
+			# write 'implements' for each implemented interface
+			for implementedInterface in idl.implementedInterfaces:
+				if stripTrailingUnderscore(implementedInterface.identifier.name) in usedTypes \
+					and isAvailable(implementedInterface) \
+					and (determineHaxeType(implementedInterface) == "interface"):
+					write(" implements ")
+					writeHaxeType(implementedInterface.identifier.name)
 
 			arrayAccess = None
 			staticVars = []
@@ -391,12 +728,20 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 						arrayAccess = returnType
 				if isAvailable(member):
 					collection = None
-					if isDefinedInParents(idl, member):
+
+					isStaticMember = member.isConst() or member.isStatic()
+
+					# skip any redeclared member variables
+					# but allow redeclared statics or methods
+					if (not member.isMethod()) and (not isStaticMember) and isDefinedInParents(idl, member):
 						continue
-					if member.isConst() or member.isStatic():
+
+					if isStaticMember:
 						collection = staticMethods if member.isMethod() else staticVars
 					else:
 						collection = methods if member.isMethod() else vars
+
+
 					collection.append(member)
 
 			if arrayAccess:
@@ -431,7 +776,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln()
 
 			ctor = idl.ctor()
-			if ctor:
+			if ctor and not ctor.isHTMLConstructor():
 				writeln(ctor)
 			for member in methods:
 				writeln(member)
@@ -439,7 +784,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			# For HTMLDocument, add all createFooElement shortcuts
 			if idl.identifier.name == "HTMLDocument":
 				for name, html in HTML_ELEMENTS.iteritems():
-					writeln("/** Shorthand for creating an HTML <%s> element. */" % html)
+					writeln("/** Shorthand for creating an HTML `<%s>` element. */" % html)
 					write("inline function create%s() : %s {" % (name, toHaxeType(name)))
 					writeln(" return cast createElement(\"%s\"); }" % html)
 				writeln()
@@ -463,6 +808,10 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln("return CanvasUtil.getContextWebGL(this, attribs);")
 				endContext()
 
+				beginContext("WebGL2", "js.html.webgl.ContextAttributes", "js.html.webgl.WebGL2RenderingContext")
+				writeln("return this.getContext('webgl2', attribs);")
+				endContext()
+
 			endIndent()
 			write("}")
 
@@ -479,24 +828,6 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 						}
 					}
 				"""))
-
-		elif isinstance(idl, IDLCallbackType):
-			callback = idl.callback
-			if callback.identifier.name == "EventHandlerNonNull":
-				# Special case for event handler convenience
-				write("haxe.Constraints.Function")
-			else:
-				returnType, arguments = callback.signatures()[0]
-				if len(arguments) > 0:
-					if len(arguments) == 1 and arguments[0].type.isAny() and returnType.isAny():
-						# Assume that Dynamic -> Dynamic should be Function
-						write("haxe.Constraints.Function")
-					else:
-						for argument in arguments:
-							write(argument.type, " -> ")
-						write(returnType)
-				else:
-					write("Void -> ", returnType)
 
 		elif isinstance(idl, IDLDictionary):
 			# writeln("typedef ", idl.identifier, " =")
@@ -518,7 +849,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write("}")
 
 		elif isinstance(idl, IDLEnum):
-			writeln("@:enum abstract ", toHaxeType(idl.identifier.name), "(String)")
+			writeln("enum abstract ", toHaxeType(idl.identifier.name), "(String)")
 			writeln("{")
 			beginIndent()
 			for value in idl.values():
@@ -528,55 +859,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write("}")
 
 		elif isinstance(idl, IDLType):
-			name = stripTrailingUnderscore(idl.name)
-			if idl.nullable():
-				# write("Null<", idl.inner, ">")
-				write(idl.inner)
-			elif idl.isArray() or idl.isSequence():
-				write("Array<", idl.inner, ">")
-			elif idl.isPromise():
-				write("Promise<")
-				write(idl._promiseInnerType)
-				write(">")
-			elif idl.isUnion():
-				def writeUnion (memberTypes):
-					if len(memberTypes) > 1:
-						if memberTypes[1].name == "OffscreenCanvas":
-							# Special case for WebGLRenderingContext.canvas
-							write(memberTypes[0])
-						else:
-							write("haxe.extern.EitherType<", memberTypes[0], ",")
-							writeUnion(memberTypes[1:])
-							write(">")
-					else:
-						write(memberTypes[0])
-				writeUnion(idl.memberTypes)
-			elif idl.isString() or idl.isByteString() or idl.isDOMString() or idl.isUSVString():
-				write("String")
-			elif idl.isNumeric():
-				write("Int" if idl.isInteger() else "Float")
-			elif idl.isBoolean():
-				write("Bool")
-			elif idl.isVoid():
-				write("Void")
-			elif idl.isDate():
-				write("Date")
-			elif idl.isObject() or idl.isAny():
-				write("Dynamic")
-			elif name not in usedTypes or name not in knownTypes:
-				if name == "WindowProxy":
-					write("Window") # Special case hack
-				else:
-					write("Dynamic/*MISSING %s*/" % name)
-			else:
-				# Force Element and Document to HTMLElement and HTMLDocument to make things more
-				# convenient for typical web development and preserve 3.1 compat:
-				# https://github.com/HaxeFoundation/haxe/issues/4081
-				if name == "Element":
-					name = "HTMLElement"
-				elif name == "Document":
-					name = "HTMLDocument"
-				writeHaxeType(name)
+			writeType(idl, None)
 
 		elif isinstance(idl, IDLIdentifier):
 			write(toHaxeIdentifier(stripMozPrefix(idl.name, lowerCase=True)))
@@ -601,40 +884,115 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			constructor = idl.identifier.name == "constructor"
 
 			writeNativeMeta(idl.identifier)
-			signatures = idl.signatures()
-			for idx, (returnType, arguments) in enumerate(signatures):
-				overload = (idx < len(signatures)-1)
-				if overload:
-					write("@:overload( function(")
-				else:
-					if idl.isStatic() and not constructor:
-						write("static ")
-					write("function ", "new" if constructor else idl.identifier, "(")
+			
+			# write 
+			writeMainSignatures = True
 
-				# Write the argument list
-				if len(arguments) > 0:
-					write(" ")
+			# write hardcoded signatures
+			if idl.identifier.QName() in HARDCODED_METHODS:
+				(mode, lines) = HARDCODED_METHODS[idl.identifier.QName()]
+
+				if mode == "REPLACE":
+					writeMainSignatures = False
+
+				for idx, line in enumerate(lines):
+					write(line)
+					if idx < (len(lines) - 1) or writeMainSignatures:
+						writeln()
+
+			if writeMainSignatures:
+				signatures = idl.signatures()
+
+				# write special overloads for signatures with callback interface arguments
+				# this allows callback interface arguments to accept a typed function, an untyped function and the callback interface
+				for idx, (returnType, arguments) in enumerate(signatures):
 					for idx, argument in enumerate(arguments):
-						write(argument)
-						if idx < len(arguments)-1:
-							write(", ")
-					write(" ")
-				write(") : ", "Void" if constructor else returnType)
-				if overload:
-					writeln(" {} )")
-				else:
-					write(";")
+						if argument.type.isCallbackInterface():
+
+							# write the haxe.Constraints.Function overload
+							write("@:overload( function( ")
+							for idx, argument in enumerate(arguments):
+								if argument.type.isCallbackInterface():
+									writeArgument(argument, "haxe.Constraints.Function")
+								else:
+									write(argument)
+								if idx < len(arguments)-1:
+									write(", ")
+							writeln(") : ", returnType, " {} )")
+
+							# write the callback interface type overload
+							write("@:overload( function( ")
+							for idx, argument in enumerate(arguments):
+								if argument.type.isCallbackInterface():
+									writeArgument(argument, None, "interface")
+								else:
+									write(argument)
+								if idx < len(arguments)-1:
+									write(", ")
+							writeln(") : ", returnType, " {} )")
+							break
+
+				# If there's a single union argument, write overloads for all possible types for this argument
+				# this enables better type inference than just Either<A, B>
+				overrideUnionType = None
+
+				for idx, (returnType, arguments) in enumerate(signatures):
+					unionArgument = None
+					unionArguments = 0
+
+					for idx, argument in enumerate(arguments):
+						if argument.type.isUnion():
+							unionArgument = argument.type
+							unionArguments = unionArguments + 1
+
+					if unionArguments == 1:
+						unionMemberTypes = getUnionMembersRecursive(unionArgument)
+						overrideUnionType = unionMemberTypes[0]
+						for memberType in unionMemberTypes[1:]:
+							# write the callback interface type overload
+							write("@:overload( function( ")
+							for idx, argument in enumerate(arguments):
+								if argument.type.isUnion():
+									writeArgument(argument, memberType, None)
+								else:
+									writeArgument(argument, None, None)
+								if idx < len(arguments)-1:
+									write(", ")
+							writeln(") : ", returnType, " {} )")
+
+				# write primary function overloads and main signature
+				for idx, (returnType, arguments) in enumerate(signatures):
+					overload = (idx < len(signatures)-1)
+					if overload:
+						write("@:overload( function(")
+					else:
+						if idl.getExtendedAttribute("Pure"):
+							writeln("@:pure")
+						if idl.isStatic() and not constructor:
+							write("static ")
+						write("function ", "new" if constructor else idl.identifier, "(")
+
+					# Write the argument list
+					if len(arguments) > 0:
+						write(" ")
+						for idx, argument in enumerate(arguments):
+							if argument.type.isUnion() and (overrideUnionType != None):
+								writeArgument(argument, overrideUnionType, None)
+							else:
+								# only write the function form of callback interfaces
+								# the interface form will have been defined in an overload 
+								writeArgument(argument, None, "function")
+							if idx < len(arguments)-1:
+								write(", ")
+						write(" ")
+					write(") : ", "Void" if constructor else returnType)
+					if overload:
+						writeln(" {} )")
+					else:
+						write(";")
 
 		elif isinstance(idl, IDLArgument):
-			if idl.optional and not idl.variadic:
-				write("?")
-			write(idl.identifier, " : ")
-			if idl.variadic:
-				write("haxe.extern.Rest<", idl.type, ">")
-			else:
-				write(idl.type)
-			if idl.defaultValue and not isinstance(idl.defaultValue, IDLNullValue) and not isinstance(idl.defaultValue, IDLUndefinedValue):
-				write(" = ", idl.defaultValue)
+			writeArgument(idl, None, None)
 
 		elif isinstance(idl, IDLValue):
 			if idl.type.isString():
@@ -649,6 +1007,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		elif isinstance(idl, IDLNullValue):
 			write("null")
 
+		elif isinstance(idl, IDLEmptySequenceValue):
+			write("[]")
+
 		else:
 			assert False, "Unhandled IDL type: %s" % type(idl)
 
@@ -661,36 +1022,90 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 	print("Generating %s..." % fileName)
 
 	file = open(fileName, "w")
-	header = textwrap.dedent("""\
-		/*
-		 * Copyright (C)2005-%s Haxe Foundation
-		 *
-		 * Permission is hereby granted, free of charge, to any person obtaining a
-		 * copy of this software and associated documentation files (the "Software"),
-		 * to deal in the Software without restriction, including without limitation
-		 * the rights to use, copy, modify, merge, publish, distribute, sublicense,
-		 * and/or sell copies of the Software, and to permit persons to whom the
-		 * Software is furnished to do so, subject to the following conditions:
-		 *
-		 * The above copyright notice and this permission notice shall be included in
-		 * all copies or substantial portions of the Software.
-		 *
-		 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-		 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-		 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-		 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-		 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-		 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-		 * DEALINGS IN THE SOFTWARE.
-		 */
-
-		// This file is generated from %s. Do not edit!
-		""" % (datetime.date.today().year, idl.location.filename()))
-	writeln(header)
+	writeln(COPYRIGHT_HEADER)
+	writeln()
+	writeln("// This file is generated from %s. Do not edit!" % idl.location.filename().replace("/","\\"))
+	writeln()
 	writeln("package %s;" % (".".join(package)))
 	writeln()
 	writeIdl(idl)
 	file.close()
+
+# find all WebGL extensions and create an enum so we can type getExtension(name)
+def generateWebGLExtensionEnum(idls, outputDir):
+	# search search through idls for webgl extensions
+	extensions = []
+	for idl in idls:
+		if isinstance(idl, IDLInterfaceOrNamespace) and isAvailable(idl):
+			name = stripTrailingUnderscore(idl.identifier.name)
+			if isWebGLExtension(name):
+				extensions.append(name)
+
+	extensions.sort()
+
+	package = ["js", "html", "webgl"]
+	dir = "%s/%s" % (outputDir, "/".join(package))
+	fileName = dir + "/Extension.hx";
+
+	print("Generating %s..." % fileName)
+	
+	file = open(fileName, "w")
+	file.write(COPYRIGHT_HEADER + "\n")
+	file.write("\n")
+	file.write("// This file is automatically generated. Do not edit!\n")
+	file.write("\n")
+	file.write("package %s;\n" % (".".join(package)))
+	file.write("\n")
+	file.write("import js.html.webgl.extension.*;\n")
+	file.write("\n")
+	file.write("enum abstract Extension<T>(String) from String to String {\n")
+
+	for name in extensions:
+		file.write("\tvar %s: Extension<%s> = '%s';\n" % (name, toHaxeType(name), name))
+
+	file.write("}\n")
+
+def determineHaxeType(idlInterfaceOrNamespace):
+	# it's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
+	# if the type has constants then we need a concrete class to host them
+	idl = idlInterfaceOrNamespace
+	if idl.identifier.name in FORCE_INTERFACE:
+		return "interface"
+	elif (idl.isCallback() or idl.getExtendedAttribute("NoInterfaceObject")) and not idl.hasConstants():
+		if not idl.isCallback() and len(idl.interfacesImplementingSelf) > 0:
+			return "interface"
+		else:
+			return "typedef"
+	else:
+		return "class"
+
+def getCallbackInterfaceSignature(callbackInterface):
+	# find the callback interface's method signature from the first method
+	for member in callbackInterface.members:
+		if member.isMethod():
+			return member.signatures()[0]
+	return None
+
+def countUnionMembers(idlType):
+	if isinstance(idlType, IDLParametrizedType):
+		return countUnionMembers(idlType.inner)
+	elif idlType.isUnion():
+		return len(idlType.memberTypes)
+	else:
+		return 0
+
+def getUnionMembersRecursive(idlType):
+	if idlType == None:
+		return []
+	elif idlType.nullable():
+		return getUnionMembersRecursive(idlType.inner)
+	elif idlType.isUnion():
+		allMemberTypes = []
+		for subType in idlType.memberTypes:
+			allMemberTypes += getUnionMembersRecursive(subType)
+		return allMemberTypes
+	else:
+		return [idlType]
 
 def isDefinedInParents (idl, member, checkMembers=False):
 	if idl.parent and isDefinedInParents(idl.parent, member, True):
@@ -735,16 +1150,18 @@ def toHaxeType (name):
 	name = re.sub("^HTML(.+Element)", "\\1", name)
 	if name.startswith("SVG"):
 		name = name[len("SVG"):]
+	elif name.startswith("WebGL2"):
+		pass
 	elif name.startswith("WebGL"):
 		name = name[len("WebGL"):]
 	elif name.startswith("WEBGL_"):
-		name = "Extension"+toCamelCase(name[len("WEBGL_"):])
+		name = "WEBGL"+toCamelCase(name[len("WEBGL_"):])
 	elif name.startswith("EXT_"):
-		name = "Extension"+toCamelCase(name[len("EXT_"):])
+		name = "EXT"+toCamelCase(name[len("EXT_"):])
 	elif name.startswith("OES_"):
-		name = "Extension"+toCamelCase(name[len("OES_"):])
+		name = "OES"+toCamelCase(name[len("OES_"):])
 	elif name.startswith("ANGLE_"):
-		name = "Extension"+toCamelCase(name[len("ANGLE_"):])
+		name = "ANGLE"+toCamelCase(name[len("ANGLE_"):])
 	elif name.startswith("IDB"):
 		name = name[len("IDB"):]
 	elif name.startswith("RTC"):
@@ -755,20 +1172,19 @@ def toHaxeType (name):
 				name = name[len(group.removePrefix):]
 				break
 
-	if name.startswith("ExtensionCompressedTexture"):
-		name = "ExtensionCompressedTexture" + name[len("ExtensionCompressedTexture"):].upper()
-	elif name == "ExtensionSrgb":
-		name = "ExtensionSRGB"
-	elif name == "ExtensionBlendMinmax":
-		name = "ExtensionBlendMinMax"
-
 	return name
+
+def isWebGLExtension(name):
+	return name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_") or name.startswith("ANGLE_")
 
 def toHaxePackage (name):
 	name = stripTrailingUnderscore(name)
 	package = ["js", "html"]
-	if name.startswith("WebGL") or name.startswith("WEBGL_") or name.startswith("EXT_") or name.startswith("OES_") or name.startswith("ANGLE_"):
+	if name.startswith("WebGL"):
 		package.append("webgl")
+	elif isWebGLExtension(name):
+		package.append("webgl")
+		package.append("extension")
 	elif name.startswith("IDB"):
 		package.append("idb")
 	elif name.startswith("SVG"):
@@ -806,17 +1222,30 @@ def isDisabled (attrs, whitelist):
 				return True
 	return False
 
-def isAvailable (idl):
+def isWhitelisted(idl):
 	if idl.identifier.name in WHITELIST:
 		return True
+
+def isBlacklisted(idl):
+	# blacklist all chrome-webidl/ files
+	if "chrome-webidl" in idl.location.filename():
+		return True
+
 	if idl.identifier.name in BLACKLIST:
-		return False
+		return True
 
 	if isMozPrefixed(idl.identifier.name):
 		# Hack for WebRTC, which is moz prefixed but we want it
 		if not idl.identifier.name.startswith("mozRTC"):
-			return False
+			return True
 
+def isAvailable (idl):
+	if isWhitelisted(idl):
+		return True
+	if isBlacklisted(idl):
+		return False
+
+	# check feature preferences
 	if hasattr(idl, "getExtendedAttribute"):
 		if idl.getExtendedAttribute("ChromeOnly") or \
 				idl.getExtendedAttribute("AvailableIn") or \

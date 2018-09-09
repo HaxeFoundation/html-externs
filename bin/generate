@@ -1,6 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 from distutils import dir_util
+import sys
 import collections
 import glob
 import os
@@ -11,24 +12,49 @@ import textwrap
 import WebIDL
 import Haxe
 
+stdDir = None
+
+if len(sys.argv) < 2:
+	sys.exit('The path to the haxe/std directory is required as a command line argument (eg: ./generate ./haxe/std)')
+else:
+	stdDir = sys.argv[1]
+
+
 CONFIG = collections.defaultdict(lambda: False, {
 	"MOZ_BUILD_APP": "browser",
 	"MOZ_EME": True,
 	"MOZ_GAMEPAD": True,
 	"MOZ_WEBSPEECH": True,
 	"MOZ_WEBRTC": True,
+	"MOZ_WIDGET_ANDROID": True, # for Window.{orientation,onorientationchange}
 })
 MOZ_WHITELIST = set([
 	"ErrorEvent.webidl",
 	"TrackEvent.webidl",
 ])
 MOZ_BLACKLIST = set([
-	"EventListener.webidl",
 	"LegacyQueryInterface.webidl",
 	"MozIcc.webidl",
 	"MozIccManager.webidl",
 	"MozIccInfo.webidl",
+	"MozApplicationEvent.webidl",
 ])
+
+# moz.build uses a 'Files' class which is normally provided by the moz.build execution sandbox 
+# we create a stub that lets us collect the values in BUG_COMPONENT, which indicate how webidl files can be grouped into packages
+webidlPackageGroups = []
+class Files:
+	def __init__(self, files):
+		self.files = files
+		return
+	def __enter__(self):
+		return
+	def __exit__(self, type, value, traceback):
+		global webidlPackageGroups
+		# moz.build should set BUG_COMPONENT to something like ("Core", "Web Audio")
+		webidlPackageGroups.append((self.files, BUG_COMPONENT))
+		return
+
 execfile("webidl/mozilla/moz.build")
 
 parser = WebIDL.Parser()
@@ -37,7 +63,7 @@ def parse (file):
 	defines = []
 	for key, value in CONFIG.iteritems():
 		if value:
-			defines += ["-D", key]
+			defines += ["-D" + key]
 	process = subprocess.Popen(["cpp"] + defines + ["-C", "-P", file], stdout=subprocess.PIPE)
 	stdout, stderr = process.communicate()
 	parser.parse(stdout, os.path.relpath(file, "webidl"))
@@ -47,8 +73,12 @@ def parse (file):
 for file in glob.glob("webidl/*.webidl"):
 	parse(file)
 
+# Include all files in chrome-webidl
+for file in glob.glob("webidl/mozilla/webidl/chrome-webidl/*.webidl"):
+	parse(file)
+
 # Include all files from mozilla
-for file in (set(WEBIDL_FILES + PREPROCESSED_WEBIDL_FILES) | MOZ_WHITELIST) - MOZ_BLACKLIST:
+for file in (set(WEBIDL_FILES + PREPROCESSED_WEBIDL_FILES + GENERATED_EVENTS_WEBIDL_FILES) | MOZ_WHITELIST) - MOZ_BLACKLIST:
 	parse("webidl/mozilla/"+file)
 
 idls = parser.finish()
@@ -57,12 +87,8 @@ haxe = Haxe.Program(idls)
 with open("CSS.txt") as file:
 	haxe.cssProperties += file.readlines()
 
-stdDir = "../haxe/std"
-
 # Delete all files in js/html
 for root, dirs, files in os.walk(stdDir+"/js/html", topdown=False):
-	if os.path.normpath(root) == os.path.normpath(stdDir+"/js/html/compat"):
-		continue # Don't touch the compat directory
 	for file in files:
 		os.remove(root+"/"+file)
 

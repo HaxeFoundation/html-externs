@@ -1,0 +1,11 @@
+-js none.js
+--no-output
+--macro include("js.Browser", true)
+--macro include("js.html", true)
+--macro include("js.html.webgl", true)
+--macro include("js.html.webgl.extension", true)
+--macro include("js.html.audio", true)
+--macro include("js.html.idb", true)
+--macro include("js.html.rtc", true)
+--macro include("js.html.svg", true)
+-main Validate

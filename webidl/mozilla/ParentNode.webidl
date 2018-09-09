@@ -18,7 +18,15 @@ interface ParentNode {
   [Pure]
   readonly attribute unsigned long childElementCount;
 
-  // Not implemented yet
-  // void prepend((Node or DOMString)... nodes);
-  // void append((Node or DOMString)... nodes);
+  [Func="IsChromeOrXBL"]
+  HTMLCollection getElementsByAttribute(DOMString name,
+                                        [TreatNullAs=EmptyString] DOMString value);
+  [Throws, Func="IsChromeOrXBL"]
+  HTMLCollection getElementsByAttributeNS(DOMString? namespaceURI, DOMString name,
+                                          [TreatNullAs=EmptyString] DOMString value);
+
+  [CEReactions, Throws, Unscopable]
+  void prepend((Node or DOMString)... nodes);
+  [CEReactions, Throws, Unscopable]
+  void append((Node or DOMString)... nodes);
 };

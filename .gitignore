@@ -1,4 +1,7 @@
 webidlyacc.py
 parser.out
 *.pyc
-webidl/mozilla/.svn
+.svn/
+*.n
+_mdn-docs-cache/
+_output_documented_html/
