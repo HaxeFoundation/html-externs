@@ -2,5 +2,6 @@ webidlyacc.py
 parser.out
 *.pyc
 .svn/
+*.n
 _mdn-docs-cache/
 _output_documented_html/
