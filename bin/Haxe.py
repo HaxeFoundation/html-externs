@@ -1224,9 +1224,9 @@ def toHaxePackage (name):
 def toEnumValue (value):
 	if value == "":
 		return "NONE"
-	value = toHaxeIdentifier(value)
-	value = re.sub(r"([a-z])([A-Z])", r"\1_\2", value)
 	value = value.upper()
+	value = re.sub(r"([a-z])([A-Z])", r"\1_\2", value)
+	value = toHaxeIdentifier(value)
 	if re.search(r"^[0-9]", value):
 		value = "_"+value
 	return value
