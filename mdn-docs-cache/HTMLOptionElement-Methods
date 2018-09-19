@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>Option()</dt>
+ <dd>Is a constructor creating an <code>HTMLOptionElement</code> object. It has four values: the text to display, <code>text</code>, the value associated, <code>value</code>, the value of <code>defaultSelected</code>, and the value of <code>selected</code>. The last three values are optional.</dd>
+</dl>
+

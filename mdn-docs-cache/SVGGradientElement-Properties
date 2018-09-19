@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGElement")}}, and implements those of {{domxref("SVGURIReference")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGGradientElement.gradientUnits")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("gradientUnits")}} attribute on the given element. Takes one of the constants defined in {{domxref("SVGUnitTypes")}}.</dd>
+ <dt>{{domxref("SVGGradientElement.gradientTransform")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedTransformList")}} corresponding to attribute {{SVGAttr("gradientTransform")}} on the given element.</dd>
+ <dt>{{domxref("SVGGradientElement.spreadMethod")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedEnumeration")}} corresponding to attribute {{SVGAttr("spreadMethod")}} on the given element. One of the spread method types defined on this interface.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <code>SVGAnimateTransformElement</code> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/animateTransform" title="The animateTransform element animates a transformation attribute on a target element, thereby allowing animations to control translation, scaling, rotation and/or skewing."><code>&lt;animateTransform&gt;</code></a> element.

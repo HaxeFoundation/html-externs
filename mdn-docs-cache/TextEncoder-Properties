@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>TextEncoder</code> interface doesn't inherit any property.</em></p>
+
+<dl>
+ <dt>{{domxref("TextEncoder.encoding")}} {{readonlyInline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the name of the encoder, that is a string describing the method the <code>TextEncoder</code> will use.</dd>
+</dl>
+

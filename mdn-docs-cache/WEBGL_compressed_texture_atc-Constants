@@ -1,0 +1,13 @@
+<h2 id="Constants">Constants</h2>
+
+<p>The compressed texture formats are exposed by 3 constants and can be used in two functions: {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} and {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}}.</p>
+
+<dl>
+ <dt><code>ext.COMPRESSED_RGB_ATC_WEBGL</code></dt>
+ <dd>Compresses RGB textures with no alpha channel.</dd>
+ <dt><code>ext.COMPRESSED_RGBA_ATC_EXPLICIT_ALPHA_WEBGL</code></dt>
+ <dd>Compresses RGBA textures using explicit alpha encoding (useful when alpha transitions are sharp).</dd>
+ <dt><code>ext.COMPRESSED_RGBA_ATC_INTERPOLATED_ALPHA_WEBGL</code></dt>
+ <dd>Compresses RGBA textures using interpolated alpha encoding (useful when alpha transitions are gradient).</dd>
+</dl>
+

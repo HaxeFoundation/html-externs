@@ -1,0 +1,1 @@
+An object implementing the <code>StyleSheet</code> interface represents a single style sheet. CSS style sheets will further implement the more specialized <a href="/en-US/docs/Web/API/CSSStyleSheet" title="The CSSStyleSheet interface represents a single CSS style sheet. It inherits properties and methods from its parent, StyleSheet."><code>CSSStyleSheet</code></a> interface.

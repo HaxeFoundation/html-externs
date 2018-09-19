@@ -1,0 +1,17 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+</dl>
+
+<p><em><em>The <code>TextEncoder</code> interface doesn't inherit any </em>method</em>.</p>
+
+<dl>
+ <dt>{{domxref("TextEncoder.encode()")}}</dt>
+ <dd>Returns a <a href="/en-US/docs/Web/JavaScript/Typed_arrays/Uint8Array" title="/en-US/docs/Web/JavaScript/Typed_arrays/Uint8Array"><code>Uint8Array</code></a> containing utf-8 encoded text.</dd>
+</dl>
+
+<p> </p>
+
+<dl>
+</dl>
+

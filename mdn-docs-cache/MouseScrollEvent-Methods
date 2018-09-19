@@ -1,0 +1,6 @@
+<h2 id="Methods">Methods</h2>
+
+<h3 id="initMouseScrollEvent()">initMouseScrollEvent()</h3>
+
+<p>See <a href="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDOMMouseScrollEvent#initMouseScrollEvent%28%29" title="https://developer.mozilla.org/en-US/docs/XPCOM_Interface_Reference/nsIDOMMouseScrollEvent#initMouseScrollEvent%28%29">nsIDOMMouseScrollEvent::initMouseScrollEvent()</a>.</p>
+

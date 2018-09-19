@@ -1,0 +1,21 @@
+<h2 id="Methods">Methods</h2>
+
+<p>AudioParam<em> Inherits methods from its parent, </em><code>AudioNode</code>.</p>
+
+<dl>
+ <dt>{{domxref("AudioParam.setValueAtTime()")}}</dt>
+ <dd>Schedules an instant change to the value of the <code>AudioParam</code> at a precise time, as measured against {{domxref("AudioContext.currentTime")}}. The new value is given by the <code>value</code> parameter.</dd>
+ <dt>{{domxref("AudioParam.linearRampToValueAtTime()")}}</dt>
+ <dd>Schedules a gradual linear change in the value of the <code>AudioParam</code>. The change starts at the time specified for the <em>previous</em> event, follows a linear ramp to the new value given in the <code>value</code> parameter, and reaches the new value at the time given in the <code>endTime</code> parameter.</dd>
+ <dt>{{domxref("AudioParam.exponentialRampToValueAtTime()")}}</dt>
+ <dd>Schedules a gradual exponential change in the value of the <code>AudioParam</code>. The change starts at the time specified for the <em>previous</em> event, follows an exponential ramp to the new value given in the <code>value</code> parameter, and reaches the new value at the time given in the <code>endTime</code> parameter.</dd>
+ <dt>{{domxref("AudioParam.setTargetAtTime()")}}</dt>
+ <dd>Schedules the start of a change to the value of the <code>AudioParam</code>. The change starts at the time specified in <code>startTime</code> and exponentially moves towards the value given by the <code>target</code> parameter. The exponential decay rate is defined by the <code>timeConstant</code> parameter, which is a time measured in seconds.</dd>
+ <dt>{{domxref("AudioParam.setValueCurveAtTime()")}}</dt>
+ <dd>Schedules the values of the <code>AudioParam</code> to follow a set of values, defined by an array of floating-point numbers scaled to fit into the given interval, starting at a given start time and spanning a given duration of time.</dd>
+ <dt>{{domxref("AudioParam.cancelScheduledValues()")}}</dt>
+ <dd>Cancels all scheduled future changes to the <code>AudioParam</code>.</dd>
+ <dt>{{domxref("AudioParam.cancelAndHoldAtTime()")}}</dt>
+ <dd>Cancels all scheduled future changes to the <code>AudioParam</code> but holds its value at a given time until further changes are made using other methods.</dd>
+</dl>
+

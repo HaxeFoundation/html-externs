@@ -1,0 +1,36 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface inherits methods from its parent, </em><em>{{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MediaStream.addTrack()")}}</dt>
+ <dd>Stores a copy of the {{domxref("MediaStreamTrack")}} given as argument. If the track has already been added to the <code>MediaStream</code> object, nothing happens.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("MediaStream.clone()")}}</dt>
+ <dd>Returns a clone of the <code>MediaStream</code> object. The clone will, however, have a unique value for {{domxref("MediaStream.id", "id")}}.</dd>
+</dl>
+
+<dl>
+ <dt><span style="line-height: 1.572;">{{domxref("MediaStream.getAudioTracks()")}}</span></dt>
+ <dd><span style="line-height: 1.572;">Returns a list of the {{domxref("MediaStreamTrack")}} objects stored in the </span><code style="font-size: 14px;">MediaStream</code><span style="line-height: 1.572;"> object that have their </span><code style="font-size: 14px;">kind</code><span style="line-height: 1.572;"> attribute set to </span><code style="font-size: 14px;">"audio"</code><span style="line-height: 1.572;">. The order is not defined, and may not only vary from one browser to another, but also from one call to another.</span></dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("MediaStream.getTrackById()")}}</dt>
+ <dd>Returns the track whose ID corresponds to the one given in parameters, <code style="font-size: 14px;">trackid</code>. If no parameter is given, or if no track with that ID does exist, it returns <code style="font-size: 14px;">null</code>. If several tracks have the same ID, it returns the first one.</dd>
+ <dt>{{domxref("MediaStream.getTracks()")}}</dt>
+ <dd>Returns a list of all {{domxref("MediaStreamTrack")}} objects stored in the <code>MediaStream</code> object, regardless of the value of the <code>kind</code> attribute. The order is not defined, and may not only vary from one browser to another, but also from one call to another.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("MediaStream.getVideoTracks()")}}</dt>
+ <dd>Returns a list of the {{domxref("MediaStreamTrack")}} objects stored in the <code>MediaStream</code> object that have their <code>kind</code> attribute set to <code>"video"</code>. The order is not defined, and may not only vary from one browser to another, but also from one call to another.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("MediaStream.removeTrack()")}}</dt>
+ <dd>Removes the {{domxref("MediaStreamTrack")}} given as argument. If the track is not part of the <code style="font-size: 14px;">MediaStream</code> object, nothing happens.</dd>
+</dl>
+

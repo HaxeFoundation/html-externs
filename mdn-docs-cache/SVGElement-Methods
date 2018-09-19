@@ -1,0 +1,4 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>The <code>SVGElement</code> interface doesn't provide any additional methods, but inherits methods from its parent, {{domxref("Element")}}.</em></p>
+

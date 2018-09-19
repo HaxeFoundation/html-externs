@@ -1,0 +1,21 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SourceBuffer.abort()")}}</dt>
+ <dd>Aborts the current segment and resets the segment parser.</dd>
+ <dt>{{domxref("SourceBuffer.appendBuffer()")}}</dt>
+ <dd>Appends media segment data from an {{domxref("ArrayBuffer")}} or {{domxref("ArrayBufferView")}} object to the <code>SourceBuffer</code>.</dd>
+ <dt>{{domxref("SourceBuffer.appendBufferAsync()")}} {{experimental_inline}}</dt>
+ <dd>Starts the process of asynchronously appending the specified buffer to the <code>SourceBuffer</code>. Returns a {{jsxref("Promise")}} which is fulfilled once the buffer has been appended.</dd>
+ <dt>{{domxref("SourceBuffer.appendStream()")}}</dt>
+ <dd>Appends media segment data from a <code>ReadableStream</code> object to the <code>SourceBuffer</code>.</dd>
+ <dt>{{domxref("SourceBuffer.changeType()")}}</dt>
+ <dd>Changes the {{Glossary("MIME type")}} that future calls to {{domxref("SourceBuffer.appendBuffer", "appendBuffer()")}} will expect the new data to conform to.</dd>
+ <dt>{{domxref("SourceBuffer.remove()")}}</dt>
+ <dd>Removes media segments within a specific time range from the <code>SourceBuffer</code>.</dd>
+ <dt>{{domxref("SourceBuffer.removeAsync()")}} {{experimental_inline}}</dt>
+ <dd>Starts the process of asynchronously removing media segments in the specified range from the <code>SourceBuffer</code>. Returns a {{jsxref("Promise")}} which is fulfilled once all matching segments have been removed.</dd>
+</dl>
+

@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("EventTarget")}}, and implements methods from {{domxref("AbstractWorker")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("Worker.postMessage()")}}</dt>
+ <dd>Sends a message — which can consist of <code>any</code> JavaScript object — to the worker's inner scope.</dd>
+ <dt>{{domxref("Worker.terminate()")}}</dt>
+ <dd>Immediately terminates the worker. This does not offer the worker an opportunity to finish its operations; it is simply stopped at once. ServiceWorker instances do not support this method.</dd>
+</dl>
+

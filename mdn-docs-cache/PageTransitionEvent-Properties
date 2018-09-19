@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("Event")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("PageTransitionEvent.persisted")}} {{readonlyInline}}</dt>
+ <dd>Indicates if the document is loading from a cache.</dd>
+</dl>
+

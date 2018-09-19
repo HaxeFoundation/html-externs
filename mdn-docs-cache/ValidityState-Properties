@@ -1,0 +1,29 @@
+<h2 id="Properties">Properties</h2>
+
+<p>For each of these Boolean properties, a value of <code>true</code> indicates that the specified reason validation may have failed is true, with the exception of the valid property, which is <code>true</code> if the element's value obeys all constraints.</p>
+
+<dl>
+	<dt>{{domxref("ValidityState.badInput")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the user has provided input that the browser is unable to convert.</dd>
+	<dt>{{domxref("ValidityState.customError")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the element's custom validity message has been set to a non-empty string by calling the element's <code>setCustomValidity()</code> method.</dd>
+	<dt>{{domxref("ValidityState.patternMismatch")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value does not match the specified {{htmlattrxref("pattern", "input")}}.</dd>
+	<dt>{{domxref("ValidityState.rangeOverflow")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value is greater than the maximum specified by the {{htmlattrxref("max", "input")}} attribute.</dd>
+	<dt>{{domxref("ValidityState.rangeUnderflow")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value is less than the minimum specified by the {{htmlattrxref("min", "input")}} attribute.</dd>
+	<dt>{{domxref("ValidityState.stepMismatch")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value does not fit the rules determined by the {{htmlattrxref("step", "input")}} attribute (that is, it's not evenly divisible by the step value).</dd>
+	<dt>{{domxref("ValidityState.tooLong")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value exceeds the specified <code>maxlength</code> for {{domxref("HTMLInputElement")}} or {{domxref("HTMLTextAreaElement")}} objects. <em><strong>Note:</strong> This will never be <code>true</code> in Gecko, because elements' values are prevented from being longer than <code>maxlength</code>.</em></dd>
+	<dt>{{domxref("ValidityState.tooShort")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value fails to meet the specified <code>minlength</code> for {{domxref("HTMLInputElement")}} or {{domxref("HTMLTextAreaElement")}} objects.</dd>
+	<dt>{{domxref("ValidityState.typeMismatch")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the value is not in the required syntax (when {{htmlattrxref("type", "input")}} is <code>email</code> or <code>url</code>).</dd>
+	<dt>{{domxref("ValidityState.valid")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the element meets all constraint validations, and is therefore considered to be valid.</dd>
+	<dt>{{domxref("ValidityState.valueMissing")}} {{ReadOnlyInline}}</dt>
+	<dd>Is a {{jsxref("Boolean")}} indicating the element has a {{htmlattrxref("required", "input")}} attribute, but no value.</dd>
+</dl>
+

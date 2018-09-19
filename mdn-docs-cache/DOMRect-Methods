@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em><code>DOMRect</code> inherits methods from its parent, {{domxref("DOMRectReadOnly")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("DOMRectReadOnly.fromRect()")}}</dt>
+	<dd>Creates a new <code>DOMRect</code> object with a given location and dimensions.</dd>
+</dl>
+

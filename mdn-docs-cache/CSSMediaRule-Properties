@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p>As a {{ domxref("CSSConditionRule") }}, and therefore both a {{domxref("CSSGroupingRule")}} and a {{ domxref("CSSRule") }}, <code>CSSMediaRule</code> also implements the properties of these interfaces. It has the following specific propert<code>y:</code></p>
+
+<dl>
+ <dt>{{domxref("CSSMediaRule.media")}} {{readonlyinline()}}</dt>
+ <dd>Specifies a {{domxref("MediaList")}} representing the intended destination medium for style information.</dd>
+</dl>
+

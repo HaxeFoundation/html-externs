@@ -1,0 +1,177 @@
+<h2 id="Methods">Methods</h2>
+
+<h3 id="readAsArrayBuffer()">readAsArrayBuffer()</h3>
+
+<p>This method reads the contents of the specified <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code>. When the read operation is finished, it returns an <code><a rel="internal" href="../API/ArrayBuffer">ArrayBuffer</a></code> representing the file's data. If an error happened during the read, the adequate exception is sent.</p>
+
+<pre class="eval">ArrayBuffer readAsArrayBuffer(
+  in Blob blob
+);
+</pre>
+
+<h4 id="Parameters">Parameters</h4>
+
+<dl>
+ <dt><code>blob</code></dt>
+ <dd>The DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> to read into the <code><a rel="internal" href="../API/ArrayBuffer">ArrayBuffer</a></code>.</dd>
+</dl>
+
+<h4 id="Return_value">Return value</h4>
+
+<p>An <code><a rel="internal" href="../API/ArrayBuffer">ArrayBuffer</a></code> representing the file's data.</p>
+
+<h4 id="Exceptions">Exceptions</h4>
+
+<p>The following exceptions can be raised by this method:</p>
+
+<dl>
+ <dt><code>NotFoundError</code></dt>
+ <dd>is raised when the resource represented by the DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> cannot be found, e. g. because it has been erased.</dd>
+ <dt><code>SecurityError</code></dt>
+ <dd>is raised when one of the following problematic situation is detected:
+ <ul style="margin-left: 40px;">
+  <li>the resource has been modified by a third party;</li>
+  <li>too many read are performed simultaneously;</li>
+  <li>the file pointed by the resource is unsafe for a use from the Web (like it is a system file).</li>
+ </ul>
+ </dd>
+ <dt><code>NotReadableError</code></dt>
+ <dd>is raised when the resource cannot be read due to a permission problem, like a concurrent lock.</dd>
+ <dt><code>EncodingError</code></dt>
+ <dd>is raised when the resource is a data URL and exceed the limit length defined by each browser.</dd>
+</dl>
+
+<h3 id="readAsBinaryString()_deprecated_inline()">readAsBinaryString() {{ deprecated_inline() }}</h3>
+
+<p>This method reads the contents of the specified <code><a rel="custom" href="Blob">Blob</a></code>, which may be a <code><a rel="custom" href="File">File</a></code>. When the read operation is finished, it returns a <a href="/en/DOM/DOMString" title="DOMString"><code>DOMString</code></a> containing the raw binary data from the file. If an error happened during the read, the adequate exception is sent.</p>
+
+<div class="note"><strong>Note</strong> <strong>: </strong>This method is deprecated and <code>readAsArrayBuffer()</code> should be used instead.</div>
+
+<pre class="eval">String readAsBinaryString(
+  in Blob blob
+);
+</pre>
+
+<h4 id="Parameters_2">Parameters</h4>
+
+<dl>
+ <dt><code>blob</code></dt>
+ <dd>The DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> to read into the <a href="/en/DOM/DOMString" title="DOMString"><code>DOMString</code></a>.</dd>
+</dl>
+
+<h4 id="Return_value_2">Return value</h4>
+
+<p><code>A </code><a href="/en/DOM/DOMString" title="DOMString"><code>DOMString</code></a> containing the raw binary data from the resource</p>
+
+<h4 id="Exceptions_2" class="editable">Exceptions</h4>
+
+<p>The following exceptions can be raised by this method:</p>
+
+<dl>
+ <dt><code>NotFoundError</code></dt>
+ <dd>is raised when the resource represented by the DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> cannot be found, e. g. because it has been erased.</dd>
+ <dt><code>SecurityError</code></dt>
+ <dd>is raised when one of the following problematic situation is detected:
+ <ul style="margin-left: 40px;">
+  <li>the resource has been modified by a third party;</li>
+  <li>two many read are performed simultaneously;</li>
+  <li>the file pointed by the resource is unsafe for a use from the Web (like it is a system file).</li>
+ </ul>
+ </dd>
+ <dt><code>NotReadableError</code></dt>
+ <dd>is raised when the resource cannot be read due to a permission problem, like a concurrent lock.</dd>
+ <dt><code>EncodingError</code></dt>
+ <dd>is raised when the resource is a data URL and exceed the limit length defined by each browser.</dd>
+</dl>
+
+<h3 id="readAsText()">readAsText()</h3>
+
+<p>This methods reads the specified blob's contents. When the read operation is finished, it returns a <a href="/en/DOM/DOMString" title="DOMString"><code>DOMString</code></a> containing the file represented as a text string. The optional <strong><code>encoding</code></strong> parameter indicates the encoding to be used. If not present, the method will apply a detection algorithm for it. If an error happened during the read, the adequate exception is sent.</p>
+
+<pre class="eval">String readAsText(
+  in Blob blob,
+  in DOMString encoding {{ optional_inline() }}
+);
+</pre>
+
+<h4 id="Parameters_3">Parameters</h4>
+
+<dl>
+ <dt><code>blob</code></dt>
+ <dd>The DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> to read into the <a href="/en/DOM/DOMString" title="DOMString"><code>DOMString</code></a>.</dd>
+ <dt><code>encoding</code></dt>
+ <dd>Optional. A string representing the encoding to be used, like <strong>iso-8859-1</strong> or <strong>UTF-8</strong>.</dd>
+</dl>
+
+<h4 id="Return_value_3">Return value</h4>
+
+<p>A <a rel="internal" href="../../En/DOM/DOMString" title="DOMString"><code>DOMString</code></a> containing the raw binary data from the resource</p>
+
+<h4 id="Exceptions_3">Exceptions</h4>
+
+<p>The following exceptions can be raised by this method:</p>
+
+<dl>
+ <dt><code>NotFoundError</code></dt>
+ <dd>is raised when the resource represented by the DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> cannot be found, e. g. because it has been erased.</dd>
+ <dt><code>SecurityError</code></dt>
+ <dd>is raised when one of the following problematic situation is detected:
+ <ul style="margin-left: 40px;">
+  <li>the resource has been modified by a third party;</li>
+  <li>two many read are performed simultaneously;</li>
+  <li>the file pointed by the resource is unsafe for a use from the Web (like it is a system file).</li>
+ </ul>
+ </dd>
+ <dt><code>NotReadableError</code></dt>
+ <dd>is raised when the resource cannot be read due to a permission problem, like a concurrent lock.</dd>
+</dl>
+
+<h3 id="readAsDataURL()" class="editable"><span>readAsDataURL()</span></h3>
+
+<p>This method reads the contents of the specified <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code>. When the read operation is finished, it returns a data URL representing the file's data. If an error happened during the read, the adequate exception is sent.</p>
+
+<pre class="eval">String readAsDataURL(
+  in Blob file
+);
+</pre>
+
+<div id="section_5">
+<h4 id="Parameters_4" class="editable"><span>Parameters</span></h4>
+
+<dl>
+ <dt><code>blob</code></dt>
+ <dd>The DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> to read.</dd>
+</dl>
+</div>
+
+<div id="section_6">
+<h4 id="Return_value_4" class="editable"><span>Return value</span></h4>
+
+<p>An <a href="/en/DOM/DOMString" title="DOMString"><code>DOMString</code></a> representing the file's data as a data URL.</p>
+</div>
+
+<h4 id="Exceptions_4" class="editable"><span>Exceptions</span></h4>
+
+<p>The following exceptions can be raised by this method:</p>
+
+<dl>
+ <dt><code>NotFoundError</code></dt>
+ <dd>is raised when the resource represented by the DOM <code><a rel="custom" href="Blob">Blob</a></code> or <code><a rel="custom" href="File">File</a></code> cannot be found, e. g. because it has been erased.</dd>
+ <dt><code>SecurityError</code></dt>
+ <dd>is raised when one of the following problematic situation is detected:
+ <ul style="margin-left: 40px;">
+  <li>the resource has been modified by a third party;</li>
+  <li>too many read are performed simultaneously;</li>
+  <li>the file pointed by the resource is unsafe for a use from the Web (like it is a system file).</li>
+ </ul>
+ </dd>
+ <dt><code>NotReadableError</code></dt>
+ <dd>is raised when the resource cannot be read due to a permission problem, like a concurrent lock.</dd>
+ <dt><code>EncodingError</code></dt>
+ <dd>is raised when the resource is a data URL and exceed the limit length defined by each browser.</dd>
+</dl>
+
+<dl>
+ <dt> </dt>
+</dl>
+

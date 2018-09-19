@@ -1,0 +1,7 @@
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{ domxref("PluginArray.length") }} {{readonlyinline}}</dt>
+ <dd>The number of plugins in the array.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <code><strong>WEBGL_color_buffer_float</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and adds the ability to render to 32-bit floating-point color buffers.

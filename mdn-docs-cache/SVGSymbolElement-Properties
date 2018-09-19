@@ -1,0 +1,4 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface doesn't implement any specific properties, but inherits properties from its parent interface, {{domxref("SVGGraphicsElement")}}, and implements properties from {{domxref("SVGFitToViewBox")}}.</em></p>
+

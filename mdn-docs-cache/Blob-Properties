@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("Blob.size")}} {{readonlyinline}}</dt>
+ <dd>The size, in bytes, of the data contained in the <code>Blob</code> object.</dd>
+ <dt>{{domxref("Blob.type")}} {{readonlyinline}}</dt>
+ <dd>A string indicating the MIME type of the data contained in the <code>Blob</code>. If the type is unknown, this string is empty.</dd>
+</dl>
+

@@ -1,0 +1,43 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface doesn't inherit any method.</em></p>
+
+<dl>
+	<dt>{{domxref("DOMMatrixReadOnly.flipX()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being flipped around the x-axis, that is multiplied by the <code>DOMMatrix(-1, 0, 0, 1, 0, 0)</code>. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.flipY()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being flipped around the y-axis, that is multiplied by the <code>DOMMatrix(1, 0, 0, -1, 0, 0)</code>. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.inverse()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being inverted. The original matrix is not modified. If the matrix cannot be inverted, all its components are set to <code>NaN</code> and <code>is2D()</code> returns <code>false</code>.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.multiply()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being multiplied by the given {{domxref("DOMMatrix")}}. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.rotateAxisAngle()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being rotated by the given angle and the given vector. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.rotate()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being rotated by the given angle, with the rotation centered on the origin given. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.rotateFromVector()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being rotated by the angle between the given vector and (1,0), centered on the origin given. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.scale()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the matrix x and y dimensions being scaled by the given factor, centered on the origin given. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.scale3d()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the matrix x, y and z dimension being scaled by the given factor, centered on the origin given. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.scaleNonUniform()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the matrix x, y and z dimension being scaled by the given factor for each dimension, centered on the origin given. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.skewX()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being skewed along the x-axis by the given factor. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.skewY()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the original matrix being skewed along the y-axis by the given factor. The original matrix is not modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.toFloat32Array()")}}</dt>
+	<dd>Returns a {{jsxref("Float32Array")}} containing the 6 components (<code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code>, <code>f</code>) in the case of a 2D matrix or the 16 components (<code>m11</code>, <code>m12</code>, <code>m13</code>, <code>m14</code>, <code>m21</code>, <code>m22</code>, <code>m23</code>, <code>m24</code>, <code>m31</code>, <code>m32</code>, <code>m33</code>, <code>m34</code>, <code>m41</code>, <code>m42</code>, <code>m43</code>, <code>m44</code>) for a 3D matrix.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.toFloat64Array()")}}</dt>
+	<dd>Returns a {{jsxref("Float64Array")}} containing the 6 components (<code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code>, <code>f</code>) in the case of a 2D matrix or the 16 components (<code>m11</code>, <code>m12</code>, <code>m13</code>, <code>m14</code>, <code>m21</code>, <code>m22</code>, <code>m23</code>, <code>m24</code>, <code>m31</code>, <code>m32</code>, <code>m33</code>, <code>m34</code>, <code>m41</code>, <code>m42</code>, <code>m43</code>, <code>m44</code>) for a 3D matrix.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.toJSON()")}}</dt>
+	<dd>Returns a JSON representation of the <code>DOMMatrixReadOnly</code> object.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.toString()")}}</dt>
+	<dd>Returns a {{domxref("DOMString")}} containing the 6 components separated by a <code>','</code> and prefixed by the CSS matrix functional notation, as <code>'matrix (a, b, c, d, e, f)',</code> in the case of a 2D matrix or matrix3d functional notation and the 16 components,<code>'matrix3d(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44)'</code>, for a 3D matrix.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.transformPoint()")}}</dt>
+	<dd>Returns a {{domxref("DOMPoint")}} that is the point given in parameter multiplied by the matrix. But the original point and the matrix aren't modified.</dd>
+	<dt>{{domxref("DOMMatrixReadOnly.translate()")}}</dt>
+	<dd>Returns a {{domxref("DOMMatrix")}} containing a new matrix being the result of the matrix being translated by the given vector. The original matrix is not modified.</dd>
+</dl>
+

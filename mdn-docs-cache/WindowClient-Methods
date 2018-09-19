@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em><code>WindowClient</code> inherits methods from its parent interface, {{domxref("Client")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("WindowClient.focus()")}}</dt>
+ <dd>Gives user input focus to the current client. </dd>
+ <dt>{{domxref("WindowClient.navigate()")}}</dt>
+ <dd>Loads a specified URL into a controlled client page.</dd>
+</dl>
+

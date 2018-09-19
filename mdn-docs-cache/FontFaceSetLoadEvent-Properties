@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("FontFaceSetLoadEvent.fontfaces")}}{{readonlyInline}}</dt>
+ <dd>Returns an array of {{domxref("FontFace")}} instances each of which represents a single usable font.</dd>
+</dl>
+

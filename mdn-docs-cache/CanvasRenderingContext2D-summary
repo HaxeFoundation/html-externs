@@ -1,0 +1,1 @@
+To get an object of this interface, call <a href="/en-US/docs/Web/API/HTMLCanvasElement/getContext" title="The HTMLCanvasElement.getContext() method returns a drawing context on the canvas, or null if the context identifier is not supported."><code>getContext()</code></a> on a <code>&lt;canvas&gt; element</code>, supplying "2d" as the argument:

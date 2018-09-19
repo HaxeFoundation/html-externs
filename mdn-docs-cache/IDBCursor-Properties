@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("IDBCursor.source")}} {{readonlyInline}}</dt>
+ <dd>Returns the {{domxref("IDBObjectStore")}} or {{domxref("IDBIndex")}} that the cursor is iterating. This function never returns null or throws an exception, even if the cursor is currently being iterated, has iterated past its end, or its transaction is not active.</dd>
+ <dt>{{domxref("IDBCursor.direction")}} {{readonlyInline}}</dt>
+ <dd>Returns the direction of traversal of the cursor. See <a href="#const_next">Constants</a> for possible values.</dd>
+ <dt>{{domxref("IDBCursor.key")}} {{readonlyInline}}</dt>
+ <dd>Returns the key for the record at the cursor's position. If the cursor is outside its range, this is set to <code>undefined</code>. The cursor's key can be any data type.</dd>
+ <dt>{{domxref("IDBCursor.value")}} {{readonlyInline}}</dt>
+ <dd>Returns the value for the record at the cursor's position. The cursor's value can be any data type.</dd>
+ <dt>{{domxref("IDBCursor.primaryKey")}} {{readonlyInline}}</dt>
+ <dd>Returns the cursor's current effective primary key. If the cursor is currently being iterated or has iterated outside its range, this is set to <code>undefined</code>. The cursor's primary key can be any data type.</dd>
+</dl>
+

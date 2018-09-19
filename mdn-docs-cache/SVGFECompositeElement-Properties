@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}, and also implements properties of {{domxref("SVGFilterPrimitiveStandardAttributes")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFECompositeElement.in1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFECompositeElement.type")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("type")}} attribute of the given element. It takes one of the <code>SVG_FECOMPOSITE_OPERATOR_*</code> constants defined on this interface.</dd>
+ <dt>{{domxref("SVGFECompositeElement.values")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumberList")}} corresponding to the {{SVGAttr("values")}} attribute of the given element.</dd>
+</dl>
+

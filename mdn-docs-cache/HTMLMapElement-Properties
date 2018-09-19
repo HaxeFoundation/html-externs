@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLMapElement.name")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the {{HTMLElement("map")}} element for referencing it other context. If the <code>id</code> attribute is set, this must have the same value; and it cannot be <code>null</code> or empty.</dd>
+ <dt>{{domxref("HTMLMapElement.areas")}} {{readonlyInline}}</dt>
+ <dd>Is a live {{domxref("HTMLCollection")}} representing the {{HTMLElement("area")}} elements associated to this {{HTMLElement("map")}}.</dd>
+</dl>
+

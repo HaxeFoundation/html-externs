@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The CSS interface is a utility interface and no object of this type can be created: only static properties are defined on it.</em></p>
+
+<h3 id="Static_properties">Static properties</h3>
+
+<dl>
+ <dt>{{domxref("CSS.paintWorklet")}} {{experimental_inline}}</dt>
+ <dd>Provides access to the Worklet responsible for all the classes related to painting.</dd>
+</dl>
+

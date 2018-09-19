@@ -1,0 +1,11 @@
+<h2 id="Constants">Constants</h2>
+
+<p>This extension adds two new constants, which can be used in {{domxref("WebGLRenderingContext.blendEquation()")}} and {{domxref("WebGLRenderingContext.blendEquationSeparate()")}}:</p>
+
+<dl>
+ <dt><code>ext.MIN_EXT</code></dt>
+ <dd>Produces the minimum color components of the source and destination colors.</dd>
+ <dt><code>ext.MAX_EXT</code></dt>
+ <dd>Produces the maximum color components of the source and destination colors.</dd>
+</dl>
+

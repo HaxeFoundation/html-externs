@@ -1,0 +1,1 @@
+The <code><strong>CSS</strong></code> interface holds useful CSS-related methods. No object with this interface are implemented: it contains only static methods and therefore is a utilitarian interface.

@@ -1,0 +1,27 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td>Constant</td>
+   <td>Value</td>
+   <td>Description</td>
+  </tr>
+  <tr>
+   <td>LENGTHADJUST_UNKNOWN</td>
+   <td>0</td>
+   <td>Some other value.</td>
+  </tr>
+  <tr>
+   <td>LENGTHADJUST_SPACING</td>
+   <td>1</td>
+   <td>The <code>spacing</code> keyword.</td>
+  </tr>
+  <tr>
+   <td>LENGTHADJUST_SPACINGANDGLYPHS</td>
+   <td>2</td>
+   <td>The <code>spacingAndGlyphs</code> keyword.</td>
+  </tr>
+ </tbody>
+</table>
+

@@ -1,0 +1,19 @@
+<h2 id="Methods">Methods</h2>
+
+<p>This extension exposes three new methods.</p>
+
+<dl>
+ <dt>{{domxref("ANGLE_instanced_arrays.drawArraysInstancedANGLE()", "ext.drawArraysInstancedANGLE()")}}</dt>
+ <dd>
+ <p>Behaves identically to {{domxref("WebGLRenderingContext.drawArrays()", "gl.drawArrays()")}} except that multiple instances of the range of elements are executed, and the instance advances for each iteration.</p>
+ </dd>
+ <dt>{{domxref("ANGLE_instanced_arrays.drawElementsInstancedANGLE()", "ext.drawElementsInstancedANGLE()")}}</dt>
+ <dd>
+ <p>Behaves identically to {{domxref("WebGLRenderingContext.drawElements()", "gl.drawElements()")}} except that multiple instances of the set of elements are executed and the instance advances between each set.</p>
+ </dd>
+ <dt>{{domxref("ANGLE_instanced_arrays.vertexAttribDivisorANGLE()", "ext.vertexAttribDivisorANGLE()")}}</dt>
+ <dd>
+ <p>Modifies the rate at which generic vertex attributes advance when rendering multiple instances of primitives with {{domxref("ANGLE_instanced_arrays.drawArraysInstancedANGLE()", "ext.drawArraysInstancedANGLE()")}} and {{domxref("ANGLE_instanced_arrays.drawElementsInstancedANGLE()", "ext.drawElementsInstancedANGLE()")}}.</p>
+ </dd>
+</dl>
+

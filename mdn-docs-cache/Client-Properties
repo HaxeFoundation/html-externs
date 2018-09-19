@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("Client.id")}} {{readonlyInline}}</dt>
+ <dd>The universally unique identifier of the client as a string.</dd>
+ <dt>{{domxref("Client.type")}} {{readonlyInline}}</dt>
+ <dd>The client's type as a string. It can be "<code>window"</code>, "<code>worker"</code>, or "<code>sharedworker"</code>.</dd>
+ <dt>{{domxref("Client.url")}} {{readonlyInline}}</dt>
+ <dd>The URL of the client as a string.</dd>
+</dl>
+

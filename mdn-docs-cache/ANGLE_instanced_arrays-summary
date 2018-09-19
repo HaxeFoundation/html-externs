@@ -1,0 +1,1 @@
+The <code><strong>ANGLE_instanced_arrays</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and allows to draw the same object, or groups of similar objects multiple times, if they share the same vertex data, primitive count and type.

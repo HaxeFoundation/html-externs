@@ -1,0 +1,68 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods from its parent, {{domxref("SVGGraphicsElement")}} and also implements the ones from {{domxref("SVGZoomAndPan")}}, {{domxref("SVGFitToViewBox")}}, and {{domxref("WindowEventHandlers")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGSVGElement.suspendRedraw()")}} {{deprecated_inline}}</dt>
+ <dd>
+ <p>Takes a time-out value which indicates that redraw shall not occur until:</p>
+ the corresponding unsuspendRedraw() call has been made, an unsuspendRedrawAll() call has been made, or its timer has timed out.
+
+ <p>In environments that do not support interactivity (e.g., print media), then redraw shall not be suspended. Calls to <code>suspendRedraw()</code> and <code>unsuspendRedraw()</code> should, but need not be, made in balanced pairs.</p>
+
+ <p>To suspend redraw actions as a collection of SVG DOM changes occur, precede the changes to the SVG DOM with a method call similar to:</p>
+
+ <pre class="brush: js">suspendHandleID = suspendRedraw(maxWaitMilliseconds);</pre>
+
+ <p>and follow the changes with a method call similar to:</p>
+
+ <pre class="brush: js">unsuspendRedraw(suspendHandleID);</pre>
+
+ <p>Note that multiple suspendRedraw calls can be used at once and that each such method call is treated independently of the other suspendRedraw method calls.</p>
+ </dd>
+ <dt>{{domxref("SVGSVGElement.unsuspendRedraw()")}} {{deprecated_inline}}</dt>
+ <dd>Cancels a specified <code>suspendRedraw()</code> by providing a unique suspend handle ID that was returned by a previous <code>suspendRedraw()</code> call.</dd>
+ <dt>{{domxref("SVGSVGElement.unsuspendRedrawAll()")}} {{deprecated_inline}}</dt>
+ <dd>Cancels all currently active <code>suspendRedraw()</code> method calls. This method is most useful at the very end of a set of SVG DOM calls to ensure that all pending <code>suspendRedraw()</code> method calls have been cancelled.</dd>
+ <dt>{{domxref("SVGSVGElement.forceRedraw()")}} {{deprecated_inline}}</dt>
+ <dd>In rendering environments supporting interactivity, forces the user agent to immediately redraw all regions of the viewport that require updating.</dd>
+ <dt>{{domxref("SVGSVGElement.pauseAnimations()")}}</dt>
+ <dd>Suspends (i.e., pauses) all currently running animations that are defined within the SVG document fragment corresponding to this {{SVGElement("svg")}} element, causing the animation clock corresponding to this document fragment to stand still until it is unpaused.</dd>
+ <dt>{{domxref("SVGSVGElement.unpauseAnimations()")}}</dt>
+ <dd>Unsuspends (i.e., unpauses) currently running animations that are defined within the SVG document fragment, causing the animation clock to continue from the time at which it was suspended.</dd>
+ <dt>{{domxref("SVGSVGElement.animationsPaused()")}}</dt>
+ <dd>Returns true if this SVG document fragment is in a paused state.</dd>
+ <dt>{{domxref("SVGSVGElement.getCurrentTime()")}}</dt>
+ <dd>Returns the current time in seconds relative to the start time for the current SVG document fragment. If getCurrentTime is called before the document timeline has begun (for example, by script running in a {{SVGElement("script")}} element before the document's SVGLoad event is dispatched), then 0 is returned.</dd>
+ <dt>{{domxref("SVGSVGElement.setCurrentTime()")}}</dt>
+ <dd>Adjusts the clock for this SVG document fragment, establishing a new current time. If <code>setCurrentTime</code> is called before the document timeline has begun (for example, by script running in a {{SVGElement("script")}} element before the document's SVGLoad event is dispatched), then the value of seconds in the last invocation of the method gives the time that the document will seek to once the document timeline has begun.</dd>
+ <dt>{{domxref("SVGSVGElement.getIntersectionList()")}}</dt>
+ <dd>Returns a {{domxref("NodeList")}} of graphics elements whose rendered content intersects the supplied rectangle. Each candidate graphics element is to be considered a match only if the same graphics element can be a target of pointer events as defined in {{SVGAttr("pointer-events")}} processing.</dd>
+ <dt>{{domxref("SVGSVGElement.getEnclosureList()")}}</dt>
+ <dd>Returns a {{domxref("NodeList")}} of graphics elements whose rendered content is entirely contained within the supplied rectangle. Each candidate graphics element is to be considered a match only if the same graphics element can be a target of pointer events as defined in {{SVGAttr("pointer-events")}} processing.</dd>
+ <dt>{{domxref("SVGSVGElement.checkIntersection()")}}</dt>
+ <dd>Returns <code>true</code> if the rendered content of the given element intersects the supplied rectangle. Each candidate graphics element is to be considered a match only if the same graphics element can be a target of pointer events as defined in {{SVGAttr("pointer-events")}} processing.</dd>
+ <dt>{{domxref("SVGSVGElement.checkEnclosure()")}}</dt>
+ <dd>Returns <code>true</code> if the rendered content of the given element is entirely contained within the supplied rectangle. Each candidate graphics element is to be considered a match only if the same graphics element can be a target of pointer events as defined in {{SVGAttr("pointer-events")}} processing.</dd>
+ <dt>{{domxref("SVGSVGElement.deselectAll()")}}</dt>
+ <dd>Unselects any selected objects, including any selections of text strings and type-in bars.</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGNumber()")}}</dt>
+ <dd>Creates an {{domxref("SVGNumber")}} object outside of any document trees. The object is initialized to a value of zero.</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGLength()")}}</dt>
+ <dd>Creates an {{domxref("SVGLength")}} object outside of any document trees. The object is initialized to a value of zero user units.</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGAngle()")}}</dt>
+ <dd>Creates an {{domxref("SVGAngle")}} object outside of any document trees. The object is initialized to a value of zero degrees (unitless).</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGPoint()")}}</dt>
+ <dd>Creates an {{domxref("SVGPoint")}} object outside of any document trees. The object is initialized to the point (0,0) in the user coordinate system.</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGMatrix()")}}</dt>
+ <dd>Creates an {{domxref("SVGMatrix")}} object outside of any document trees. The object is initialized to the identity matrix.</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGRect()")}}</dt>
+ <dd>Creates an {{domxref("SVGRect")}} object outside of any document trees. The object is initialized such that all values are set to 0 user units.</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGTransform()")}}</dt>
+ <dd>Creates an {{domxref("SVGTransform")}} object outside of any document trees. The object is initialized to an identity matrix transform (<code>SVG_TRANSFORM_MATRIX</code>).</dd>
+ <dt>{{domxref("SVGSVGElement.createSVGTransformFromMatrix()")}}</dt>
+ <dd>Creates an {{domxref("SVGTransform")}} object outside of any document trees. The object is initialized to the given matrix transform (i.e., <code>SVG_TRANSFORM_MATRIX</code>). The values from the parameter matrix are copied, the matrix parameter is not adopted as <code>SVGTransform::matrix</code>.</dd>
+ <dt>{{domxref("SVGSVGElement.getElementById()")}}</dt>
+ <dd>Searches this SVG document fragment (i.e., the search is restricted to a subset of the document tree) for an Element whose id is given by <em>elementId</em>. If an Element is found, that Element is returned. If no such element exists, returns null. Behavior is not defined if more than one element has this id.</dd>
+</dl>
+

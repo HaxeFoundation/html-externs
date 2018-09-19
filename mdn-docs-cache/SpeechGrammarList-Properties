@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("SpeechGrammarList.length")}} {{readonlyinline}}</dt>
+	<dd>Returns the number of {{domxref("SpeechGrammar")}} objects contained in the <code>SpeechGrammarList</code>.</dd>
+</dl>
+

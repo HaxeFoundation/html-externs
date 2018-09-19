@@ -1,0 +1,21 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>The <code>History</code></em> <em>interface doesn't inherit any methods.</em></p>
+
+<dl>
+ <dt>{{domxref("History.back()")}}</dt>
+ <dd>Goes to the previous page in session history, the same action as when the user clicks the browser's Back button. Equivalent to <code>history.go(-1)</code>.
+ <div class="note">Calling this method to go back beyond the first page in the session history has no effect and doesn't raise an exception.</div>
+ </dd>
+ <dt>{{domxref("History.forward()")}}</dt>
+ <dd>Goes to the next page in session history, the same action as when the user clicks the browser's Forward button; this is equivalent to <code>history.go(1)</code>.
+ <div class="note">Calling this method to go forward beyond the most recent page in the session history has no effect and doesn't raise an exception.</div>
+ </dd>
+ <dt>{{domxref("History.go()")}}</dt>
+ <dd>Loads a page from the session history, identified by its relative location to the current page, for example -1 for the previous page or 1  for the next page. If you specify an out-of-bounds value (for instance, specifying -1 when there are no previously-visited pages in the session history), this method silently has no effect. Calling <code>go()</code> without parameters or a value of 0 reloads the current page. Internet Explorer <a href="http://msdn.microsoft.com/en-us/library/ms536443(VS.85).aspx">lets you also specify a string</a> to go to a specific page in the history list.</dd>
+ <dt>{{domxref("History.pushState()")}} {{ gecko_minversion_inline("2.0") }}</dt>
+ <dd>Pushes the given data onto the session history stack with the specified title and, if provided, URL. The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.  Note that Firefox currently ignores the title parameter; for more information, see <a href="/en-US/docs/Web/API/History_API">manipulating the browser history</a>.</dd>
+ <dt>{{domxref("History.replaceState()")}} {{ gecko_minversion_inline("2.0") }}</dt>
+ <dd>Updates the most recent entry on the history stack to have the specified data, title, and, if provided, URL. The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.  Note that Firefox currently ignores the title parameter; for more information, see <a href="/en-US/docs/Web/API/History_API">manipulating the browser history</a>.</dd>
+</dl>
+

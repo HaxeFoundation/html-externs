@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, </em><em>{{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLCanvasElement.height")}}</dt>
+ <dd>Is a positive <code>integer</code> reflecting the {{htmlattrxref("height", "canvas")}} HTML attribute of the {{HTMLElement("canvas")}} element interpreted in CSS pixels. When the attribute is not specified, or if it is set to an invalid value, like a negative, the default value of <code>150</code> is used.</dd>
+ <dt>{{domxref("HTMLCanvasElement.mozOpaque")}} {{non-standard_inline}} {{deprecated_inline}}</dt>
+ <dd>Is a {{jsxref("Boolean")}} reflecting the {{htmlattrxref("moz-opaque", "canvas")}} HTML attribute of the {{HTMLElement("canvas")}} element. It lets the canvas know whether or not translucency will be a factor. If the canvas knows there's no translucency, painting performance can be optimized. This is only supported in Mozilla-based browsers, use the standardized {{domxref("HTMLCanvasElement.getContext()", "canvas.getContext('2d', { alpha: false })")}} instead.</dd>
+ <dt>{{domxref("HTMLCanvasElement.width")}}</dt>
+ <dd>Is a positive <code>integer</code> reflecting the {{htmlattrxref("width", "canvas")}} HTML attribute of the {{HTMLElement("canvas")}} element interpreted in CSS pixels. When the attribute is not specified, or if it is set to an invalid value, like a negative, the default value of <code>300</code> is used.</dd>
+ <dt>{{domxref("HTMLCanvasElement.mozPrintCallback")}}{{non-standard_inline}}</dt>
+ <dd>Is a <code>function</code> that is Initially null, Web content can set this to a JavaScript function that will be called if the page is printed. This function can then redraw the canvas at a higher resolution that is suitable for the printer being used. <a href="https://blog.mozilla.org/labs/2012/09/a-new-way-to-control-printing-output/">See this blog post.</a></dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SourceBufferList.SourceBuffer()")}}</dt>
+ <dd>This getter allows the <code>SourceBuffer</code> objects in the list to be accessed with an array operator (i.e. <code>[]</code>.)</dd>
+</dl>
+

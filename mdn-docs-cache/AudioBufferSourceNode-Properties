@@ -1,0 +1,23 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, </em><em>{{domxref("AudioNode")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("AudioBufferSourceNode.buffer")}}</dt>
+ <dd>An {{domxref("AudioBuffer")}} that defines the audio asset to be played, or when set to the value <code>null</code>, defines a single channel of silence (in which every sample is 0.0).</dd>
+ <dt>{{domxref("AudioBufferSourceNode.detune")}}</dt>
+ <dd>Is a <a href="/en-US/docs/DOM/AudioParam#k-rate">k-rate</a> {{domxref("AudioParam")}} representing detuning of playback in <a href="http://en.wikipedia.org/wiki/Cent_%28music%29">cents</a>. This value is compounded with <code>playbackRate</code> to determine the speed at which the sound is played. Its default value is <code>0</code> (meaning no detuning), and its nominal range is -∞ to ∞.</dd>
+ <dt>{{domxref("AudioBufferSourceNode.loop")}}</dt>
+ <dd>A Boolean attribute indicating if the audio asset must be replayed when the end of the {{domxref("AudioBuffer")}} is reached. Its default value is <code>false</code>.</dd>
+ <dt>{{domxref("AudioBufferSourceNode.loopStart")}} {{optional_inline}}</dt>
+ <dd>A floating-point value indicating the time, in seconds, at which playback of the {{domxref("AudioBuffer")}} must begin when <code>loop</code> is <code>true</code>. Its default value is <code>0</code> (meaning that at the beginning of each loop, playback begins at the start of the audio buffer).</dd>
+ <dt>{{domxref("AudioBufferSourceNode.loopEnd")}} {{optional_inline}}</dt>
+ <dd>A floating-point number indicating the time, in seconds, at which playback of the {{domxref("AudioBuffer")}} stops and loops back to the time indicated by <code>loopStart</code>, if <code>loop</code> is <code>true</code>. The default value is <code>0</code>.</dd>
+ <dt>{{domxref("AudioBufferSourceNode.playbackRate")}}</dt>
+ <dd>An <a href="/en-US/docs/Web/API/AudioParam#a-rate">a-rate</a> {{domxref("AudioParam")}} that defines the speed factor at which the audio asset will be played, where a value of 1.0 is the sound's natural sampling rate. Since no pitch correction is applied on the output, this can be used to change the pitch of the sample. This value is compounded with <code>detune</code> to determine the final playback rate.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<p><em>Inherits event handlers from its parent, </em><em>{{domxref("AudioScheduledSourceNode")}}</em>.</p>
+

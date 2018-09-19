@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MediaSource.sourceBuffers")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("SourceBufferList")}} object containing the list of {{domxref("SourceBuffer")}} objects associated with this <code>MediaSource</code>.</dd>
+ <dt>{{domxref("MediaSource.activeSourceBuffers")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("SourceBufferList")}} object containing a subset of the {{domxref("SourceBuffer")}} objects contained within {{domxref("MediaSource.sourceBuffers")}} — the list of objects providing the selected video track,  enabled audio tracks, and shown/hidden text tracks.</dd>
+ <dt>{{domxref("MediaSource.readyState")}} {{readonlyInline}}</dt>
+ <dd>Returns an enum representing the state of the current <code>MediaSource</code>, whether it is not currently attached to a media element (<code>closed</code>), attached and ready to receive {{domxref("SourceBuffer")}} objects (<code>open</code>), or attached but the stream has been ended via {{domxref("MediaSource.endOfStream()")}} (<code>ended</code>.)</dd>
+ <dt>{{domxref("MediaSource.duration")}}</dt>
+ <dd>Gets and sets the duration of the current media being presented.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("MediaSource.onsourceclose")}}</dt>
+ <dd>The event handler for the <code>sourceclose</code> event.</dd>
+ <dt>{{domxref("MediaSource.onsourceended")}}</dt>
+ <dd>The event handler for the <code>sourceended</code> event.</dd>
+ <dt>{{domxref("MediaSource.onsourceopen")}}</dt>
+ <dd>The event handler for the <code>sourceopen</code> event.</dd>
+</dl>
+

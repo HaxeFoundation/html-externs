@@ -1,0 +1,18 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>The CSS interface is a utility interface and no object of this type can be created: only static methods are defined on it.</em></p>
+
+<h3 id="Static_methods">Static methods</h3>
+
+<p><em>No inherited static methods</em>.</p>
+
+<dl>
+ <dt>{{domxref("CSS.supports()")}}</dt>
+ <dd>Returns a {{domxref("Boolean")}} indicating if the pair <em>property-value</em>, or the condition, given in parameter is supported.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("CSS.escape()")}} {{experimental_inline}}</dt>
+ <dd>Can be used to escape a string mostly for use as part of a CSS selector.</dd>
+</dl>
+

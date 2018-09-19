@@ -1,0 +1,53 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("EventTarget")}}</em>.<sup>[1]</sup></p>
+
+<dl>
+ <dt>{{domxref("Node.appendChild()")}}</dt>
+ <dd>Adds the specified childNode argument as the last child to the current node.<br>
+ If the argument referenced an existing node on the DOM tree, the node will be detached from its current position and attached at the new position.</dd>
+ <dt>{{domxref("Node.cloneNode()")}}</dt>
+ <dd>Clone a {{domxref("Node")}}, and optionally, all of its contents. By default, it clones the content of the node.</dd>
+ <dt>{{domxref("Node.compareDocumentPosition()")}}</dt>
+ <dd>Compares the position of the current node against another node in any other document.</dd>
+ <dt>{{domxref("Node.contains()")}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} value indicating whether a node is a descendant of a given node or not.</dd>
+ <dt>{{domxref("Node.getRootNode()")}}</dt>
+ <dd>Returns the context object's root which optionally includes the shadow root if it is available. </dd>
+ <dt>{{domxref("Node.hasChildNodes()")}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} indicating if the element has any child nodes, or not.</dd>
+ <dt>{{domxref("Node.insertBefore()")}}</dt>
+ <dd>Inserts a {{domxref("Node")}} before the reference node as a child of a specified parent node.</dd>
+ <dt>{{domxref("Node.isDefaultNamespace()")}}</dt>
+ <dd>Accepts a namespace URI as an argument and returns a {{jsxref("Boolean")}} with a value of <code>true</code> if the namespace is the default namespace on the given node or <code>false</code> if not.</dd>
+ <dt>{{domxref("Node.isEqualNode()")}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} which indicates whether or not two nodes are of the same type and all their defining data points match.</dd>
+ <dt>{{domxref("Node.isSameNode()")}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} value indicating whether or not the two nodes are the same (that is, they reference the same object).</dd>
+ <dt>{{domxref("Node.lookupPrefix()")}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the prefix for a given namespace URI, if present, and <code>null</code> if not. When multiple prefixes are possible, the result is implementation-dependent.</dd>
+ <dt>{{domxref("Node.lookupNamespaceURI()")}}</dt>
+ <dd>Accepts a prefix and returns the namespace URI associated with it on the given node if found (and <code>null</code> if not). Supplying <code>null</code> for the prefix will return the default namespace.</dd>
+ <dt>{{domxref("Node.normalize()")}}</dt>
+ <dd>Clean up all the text nodes under this element (merge adjacent, remove empty).</dd>
+ <dt>{{domxref("Node.removeChild()")}}</dt>
+ <dd>Removes a child node from the current element, which must be a child of the current node.</dd>
+ <dt>{{domxref("Node.replaceChild()")}}</dt>
+ <dd>Replaces one child {{domxref("Node")}} of the current one with the second one given in parameter.</dd>
+</dl>
+
+<h3 id="Obsolete_methods">Obsolete methods</h3>
+
+<dl>
+ <dt>{{domxref("Node.getFeature()")}} {{obsolete_inline}}</dt>
+ <dd> </dd>
+ <dt>{{domxref("Node.getUserData()")}} {{obsolete_inline}}</dt>
+ <dd>Allows a user to get some {{domxref("DOMUserData")}} from the node.</dd>
+ <dt>{{domxref("Node.hasAttributes()")}} {{obsolete_inline}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} indicating if the element has any attributes, or not.</dd>
+ <dt>{{domxref("Node.isSupported()")}} {{obsolete_inline}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} flag containing the result of a test whether the DOM implementation implements a specific feature and this feature is supported by the specific node.</dd>
+ <dt>{{domxref("Node.setUserData()")}} {{obsolete_inline}}</dt>
+ <dd>Allows a user to attach, or remove, {{domxref("DOMUserData")}} to the node.</dd>
+</dl>
+

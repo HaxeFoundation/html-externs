@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("CustomEvent.initCustomEvent()")}} {{deprecated_inline}}</dt>
+ <dd>
+ <p>Initializes a <code>CustomEvent</code> object. If the event has already being dispatched, this method does nothing.</p>
+ </dd>
+</dl>
+
+<p><em>This interface inherits methods from its parent, </em>{{domxref("Event")}}:</p>
+
+<p>{{Page("/en-US/docs/Web/API/Event", "Methods")}}</p>
+

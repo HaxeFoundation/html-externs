@@ -1,0 +1,14 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("FileSystemFileEntry.file", "file()")}}</dt>
+ <dd>Creates a new {{domxref("File")}} object which can be used to read the file.</dd>
+</dl>
+
+<h3 name="basic_concepts" id="basic_concepts">Obsolete methods</h3>
+
+<dl>
+ <dt>{{domxref("FileSystemFileEntry.createWriter", "createWriter()")}} {{obsolete_inline}}</dt>
+ <dd>Creates a new {{domxref("FileWriter")}} object which allows writing to the file represented by the file system entry.</dd>
+</dl>
+

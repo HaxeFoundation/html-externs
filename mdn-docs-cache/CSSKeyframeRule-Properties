@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p>As a {{domxref("CSSRule")}}, <code>CSSKeyframeRule</code> also implements the properties of these interfaces. It has two specific properties:</p>
+
+<dl>
+ <dt>{{domxref("CSSKeyframe.keyText")}}</dt>
+ <dd>Represents the key of the keyframe, like <code>'10%'</code>, <code>'75%'</code>. The <code>from</code> keyword maps to <code>'0%'</code> and the <code>to</code> keyword maps to <code>'100%'</code>.</dd>
+ <dt id="cssRules">{{domxref("CSSKeyframe.style")}}  {{readOnlyInline}}</dt>
+ <dd>Returns a {{domxref("CSSStyleDeclaration")}} of the CSS style associated with the keyfrom.</dd>
+</dl>
+

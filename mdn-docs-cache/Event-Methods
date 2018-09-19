@@ -1,0 +1,33 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<dl>
+	<dt>{{domxref("Event.createEvent()")}} </dt>
+	<dd>
+	<p>Creates a new event, which must then be initialized by calling its <code>initEvent()</code> method.</p>
+	</dd>
+	<dt>{{domxref("Event.composedPath()")}}</dt>
+	<dd>Returns the event’s path (objects on which listeners will be invoked). This does not include nodes in shadow trees if the shadow root was created with its {{domxref("ShadowRoot.mode")}} closed.</dd>
+</dl>
+
+<dl>
+	<dt>{{domxref("Event.initEvent()")}} {{deprecated_inline}}</dt>
+	<dd>Initializes the value of an Event created. If the event has already being dispatched, this method does nothing.</dd>
+	<dt>{{domxref("Event.preventDefault()")}}</dt>
+	<dd>Cancels the event (if it is cancelable).</dd>
+	<dt>{{domxref("Event.stopImmediatePropagation()")}}</dt>
+	<dd>For this particular event, no other listener will be called. Neither those attached on the same element, nor those attached on elements which will be traversed later (in capture phase, for instance)</dd>
+	<dt>{{domxref("Event.stopPropagation()")}}</dt>
+	<dd>Stops the propagation of events further along in the DOM.</dd>
+</dl>
+
+<h3 id="Obsolete_methods">Obsolete methods</h3>
+
+<dl>
+	<dt>{{domxref("Event.getPreventDefault()")}} {{non-standard_inline}}</dt>
+	<dd>Non-standard. Returns the value of {{domxref("Event.defaultPrevented")}}. Use {{domxref("Event.defaultPrevented")}} instead.</dd>
+	<dt>{{domxref("Event.preventBubble()")}} {{non-standard_inline}} {{Obsolete_inline(24)}}</dt>
+	<dd>Prevents the event from bubbling. Obsolete, use {{domxref("event.stopPropagation")}} instead.</dd>
+	<dt>{{domxref("Event.preventCapture()")}} {{non-standard_inline}} {{Obsolete_inline(24)}}</dt>
+	<dd>Obsolete, use {{domxref("event.stopPropagation")}} instead.</dd>
+</dl>
+

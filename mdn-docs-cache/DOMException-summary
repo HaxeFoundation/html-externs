@@ -1,0 +1,1 @@
+The <code><strong>DOMException</strong></code> interface represents an abnormal event (called an <strong>exception</strong>) which occurs as a result of calling a method or accessing a property of a web API.

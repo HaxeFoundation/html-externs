@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("CustomEvent.detail")}} {{readonlyinline}}</dt>
+ <dd>Any data passed when initializing the event.</dd>
+</dl>
+
+<p><em>This interface inherits properties from its parent, </em>{{domxref("Event")}}:</p>
+
+<p>{{Page("/en-US/docs/Web/API/Event", "Properties")}}</p>
+

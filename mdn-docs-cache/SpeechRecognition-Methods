@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em><code>SpeechRecognition</code> also inherits methods from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("SpeechRecognition.abort()")}}</dt>
+	<dd>Stops the speech recognition service from listening to incoming audio, and doesn't attempt to return a {{domxref("SpeechRecognitionResult")}}.</dd>
+	<dt>{{domxref("SpeechRecognition.start()")}}</dt>
+	<dd>Starts the speech recognition service listening to incoming audio with intent to recognize grammars associated with the current <code>SpeechRecognition</code>.</dd>
+	<dt>{{domxref("SpeechRecognition.stop()")}}</dt>
+	<dd>Stops the speech recognition service from listening to incoming audio, and attempts to return a {{domxref("SpeechRecognitionResult")}} using the audio captured so far.</dd>
+</dl>
+

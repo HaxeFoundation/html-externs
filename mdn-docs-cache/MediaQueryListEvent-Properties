@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>MediaQueryListEvent</code> interface inherits properties from its parent interface, {{domxref("Event")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MediaQueryListEvent.matches")}} {{readonlyInline}}</dt>
+ <dd> A {{domxref("Boolean")}} that returns <code>true</code> if the {{domxref("document")}} currently matches the media query list, or <code>false</code> if not.</dd>
+ <dt>{{domxref("MediaQueryListEvent.media")}} {{readonlyInline}}</dt>
+ <dd> A {{domxref("DOMString")}} representing a serialized media query.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent interface, {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("MediaRecorderErrorEvent.error", "error")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMException")}} containing information about the error that occurred. Read only.</dd>
+</dl>
+

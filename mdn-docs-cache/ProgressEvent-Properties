@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("ProgressEvent.lengthComputable")}} {{readonlyInline}}</dt>
+ <dd>Is a {{domxref("Boolean")}} flag indicating if the total work to be done, and the amount of work already done, by the underlying process is calculable. In other words, it tells if the progress is measurable or not.</dd>
+ <dt>{{domxref("ProgressEvent.loaded")}} {{readonlyInline}}</dt>
+ <dd>Is an <code>unsigned long long</code> representing the amount of work already performed by the underlying process. The ratio of work done can be calculated with the property and <code>ProgressEvent.total</code>. When downloading a resource using HTTP, this only represent the part of the content itself, not headers and other overhead.</dd>
+ <dt>{{domxref("ProgressEvent.total")}} {{readonlyInline}}</dt>
+ <dd>Is an <code>unsigned long long</code> representing the total amount of work that the underlying process is in the progress of performing. When downloading a resource using HTTP, this only represent the content itself, not headers and other overhead.</dd>
+</dl>
+

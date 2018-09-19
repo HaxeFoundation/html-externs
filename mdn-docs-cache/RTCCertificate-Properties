@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("RTCCertificate.expires")}} {{readonlyinline}}</dt>
+ <dd>Returns the expiration date of the certificate.</dd>
+</dl>
+

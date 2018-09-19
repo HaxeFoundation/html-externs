@@ -1,0 +1,1 @@
+The <strong><code>SVGDescElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/desc" title="Each container element or graphics element in an SVG drawing can supply a description string using the &lt;desc&gt; element where the description is text-only."><code>&lt;desc&gt;</code></a> element.

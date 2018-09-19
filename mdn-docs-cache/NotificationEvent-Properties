@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its ancestor, {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("NotificationEvent.notification")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Notification")}} object representing the notification that was clicked to fire the event.</dd>
+ <dt>{{domxref("NotificationEvent.action")}} {{readonlyinline}}</dt>
+ <dd>Returns the string ID of the notification button the user clicked. This value returns <code>undefined</code> if the user clicked the notification somewhere other than an action button, or the notification does not have a button.</dd>
+</dl>
+

@@ -1,0 +1,30 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("Response.headers")}} {{readonlyinline}}</dt>
+ <dd>Contains the {{domxref("Headers")}} object associated with the response.</dd>
+ <dt>{{domxref("Response.ok")}} {{readonlyinline}}</dt>
+ <dd>Contains a boolean stating whether the response was successful (status in the range 200-299) or not.</dd>
+ <dt>{{domxref("Response.redirected")}} {{ReadOnlyInline}}</dt>
+ <dd>Indicates whether or not the response is the result of a redirect; that is, its URL list has more than one entry.</dd>
+ <dt>{{domxref("Response.status")}} {{readonlyinline}}</dt>
+ <dd>Contains the status code of the response (e.g., <code>200</code> for a success).</dd>
+ <dt>{{domxref("Response.statusText")}} {{readonlyinline}}</dt>
+ <dd>Contains the status message corresponding to the status code (e.g., <code>OK</code> for <code>200</code>).</dd>
+ <dt>{{domxref("Response.type")}} {{readonlyinline}}</dt>
+ <dd>Contains the type of the response (e.g., <code>basic</code>, <code>cors</code>).</dd>
+ <dt>{{domxref("Response.url")}} {{readonlyinline}}</dt>
+ <dd>Contains the URL of the response.</dd>
+ <dt>{{domxref("Response.useFinalURL")}}</dt>
+ <dd>Contains a boolean stating whether this is the final URL of the response.</dd>
+</dl>
+
+<p><code>Response</code> implements {{domxref("Body")}}, so it also has the following properties available to it:</p>
+
+<dl>
+ <dt>{{domxref("Body.body")}} {{readonlyInline}}</dt>
+ <dd>A simple getter used to expose a {{domxref("ReadableStream")}} of the body contents.</dd>
+ <dt>{{domxref("Body.bodyUsed")}} {{readonlyInline}}</dt>
+ <dd>Stores a {{domxref("Boolean")}} that declares whether the body has been used in a response yet.</dd>
+</dl>
+

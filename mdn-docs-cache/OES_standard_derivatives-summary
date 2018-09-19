@@ -1,0 +1,1 @@
+The <code><strong>OES_standard_derivatives</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and adds the GLSL derivative functions <code>dFdx</code>, <code>dFdy</code>, and <code>fwidth</code>.

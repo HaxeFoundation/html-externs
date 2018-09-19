@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("NodeList.length")}}</dt>
+ <dd>The number of nodes in the <code>NodeList</code>.</dd>
+</dl>
+

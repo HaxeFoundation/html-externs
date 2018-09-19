@@ -1,0 +1,9 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("XPathResult.iterateNext()")}}</dt>
+ <dd>...</dd>
+ <dt>{{domxref("XPathResult.snapshotItem()")}}</dt>
+ <dd>...</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <strong><code>SVGUnitTypes</code></strong> interface defines a commonly used set of constants used for reflecting <code><a href="/en-US/docs/Web/SVG/Attribute/gradientUnits">gradientUnits</a></code>, <code><a href="/en-US/docs/Web/SVG/Attribute/patternContentUnits">patternContentUnits</a></code> and other similar attributes.

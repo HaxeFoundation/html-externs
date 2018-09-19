@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface inherits the properties of {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLTemplateElement.content")}}{{readonlyinline}}</dt>
+ <dd>{{domxref("DocumentFragment")}}: Returns the {{HTMLElement("template")}} element's template contents.</dd>
+</dl>
+

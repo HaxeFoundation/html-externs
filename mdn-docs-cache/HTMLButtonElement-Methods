@@ -1,0 +1,28 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<table class="standard-table">
+	<thead>
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Return Type</th>
+			<th scope="col">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>checkValidity()</code></td>
+			<td>{{domxref("Boolean")}}</td>
+			<td>Not supported for button elements.</td>
+		</tr>
+		<tr>
+			<td><code>setCustomValidity(in DOMString error)</code></td>
+			<td><code>void</code></td>
+			<td>Not supported for button elements.</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>WIth Gecko-based browser, use the {{cssxref(":-moz-submit-invalid")}} pseudo-class to style submit buttons based on the validation of a form.</p>
+

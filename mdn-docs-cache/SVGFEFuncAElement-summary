@@ -1,0 +1,1 @@
+The <strong><code>SVGFEFuncAElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feFuncA" title="The &lt;feFuncA&gt; SVG filter primitive defines the transfer function for the alpha component of the input graphic of its parent &lt;feComponentTransfer&gt; element."><code>&lt;feFuncA&gt;</code></a> element.

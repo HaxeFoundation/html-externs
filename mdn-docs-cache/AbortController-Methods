@@ -1,0 +1,7 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("AbortController.abort()")}}</dt>
+ <dd>Aborts a DOM request before it has completed. This is able to abort <a href="/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch">fetch requests</a>, consumption of any response {{domxref("Body")}}, and streams.</dd>
+</dl>
+

@@ -1,0 +1,39 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("URL.hash")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing a <code>'#'</code> followed by the fragment identifier of the URL.</dd>
+ <dt>{{domxref("URL.host")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the domain (that is the <em>hostname</em>) followed by (if a port was specified) a <code>':'</code> and the <em>port</em> of the URL.</dd>
+ <dt>{{domxref("URL.hostname")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the domain of the URL.</dd>
+ <dt>{{domxref("URL.href")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the whole URL.</dd>
+ <dt>{{domxref("URL.origin")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the origin of the URL, that is its scheme, its domain and its port.</dd>
+ <dt>{{domxref("URL.password")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the password specified before the domain name.</dd>
+ <dt>{{domxref("URL.pathname")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing an initial <code>'/'</code> followed by the path of the URL.</dd>
+ <dt>{{domxref("URL.port")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the port number of the URL.</dd>
+ <dt>{{domxref("URL.protocol")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the protocol scheme of the URL, including the final <code>':'</code>.</dd>
+ <dt>{{domxref("URL.search")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing a <code>'?'</code> followed by the parameters of the URL.</dd>
+ <dt>{{domxref("URL.searchParams")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("URLSearchParams")}} object allowing to access the GET query arguments contained in the URL.</dd>
+ <dt>{{domxref("URL.username")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the username specified before the domain name.</dd>
+ <dt>Methods</dt>
+</dl>
+
+<p><em>The <code>URL</code> interface implements methods defined in {{domxref("URLUtils")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("URLUtils.toString()")}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the whole URL. It is a synonym for {{domxref("URLUtils.href")}}, though it can't be used to modify the value.</dd>
+ <dt>{{domxref("URL.toJSON()")}} <sup>[available since Firefox v54]</sup></dt>
+ <dd>Returns a {{domxref("DOMString")}}  containing the whole URL. It returns the same string as the <code>href</code> property.</dd>
+</dl>
+

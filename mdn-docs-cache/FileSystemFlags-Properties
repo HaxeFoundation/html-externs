@@ -1,0 +1,67 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("FileSystemFlags.create", "create")}} {{optional_inline}}</dt>
+ <dd>If this property is <code>true</code>, and the requested file or directory doesn't exist, the user agent should create it. The default is <code>false</code>. The parent directory must already exist.</dd>
+ <dt>{{domxref("FileSystemFlags.exclusive", "exclusive")}} {{optional_inline}}</dt>
+ <dd>If <code>true</code>, and the <code>create</code> option is also <code>true</code>, the file must not exist prior to issuing the call. Instead, it must be possible for it to be created newly at call time. The default is <code>false</code>.</dd>
+</dl>
+
+<h3 id="Values_and_results">Values and results</h3>
+
+<p>The table below describes the result of each possible combination of these flags depending on whether or not the target file or directory path already exists.</p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th colspan="3" scope="col" rowspan="1" style="text-align: center;">Option values</th>
+   <th scope="col" rowspan="2">File/directory condition</th>
+   <th scope="col" rowspan="2">Result</th>
+  </tr>
+  <tr>
+   <th colspan="2" scope="col">{{domxref("FileSystemFlags.create", "create")}}</th>
+   <th scope="col">{{domxref("FileSystemFlags.exclusive", "exclusive")}}</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td colspan="2"><code>false</code></td>
+   <td>n/a<sup>[1]</sup></td>
+   <td>Path exists and matches the desired type (depending on whether the function called is <code>getFile()</code> or <code>getDirectory()</code></td>
+   <td>The <code>successCallback</code> is called with a {{domxref("FileSystemFileEntry")}} if <code>getFile()</code> was called or a {{domxref("FileSystemDirectoryEntry")}} if <code>getDirectory()</code> was called.</td>
+  </tr>
+  <tr>
+   <td colspan="2"><code>false</code></td>
+   <td>n/a<sup>[1]</sup></td>
+   <td>Path exists but doesn't match the desired type</td>
+   <td>The <code>errorCallback</code> is called with an appropriate error code (if the callback was provided).</td>
+  </tr>
+  <tr>
+   <td colspan="2"><code>true</code></td>
+   <td><code>false</code></td>
+   <td>Path exists</td>
+   <td>The existing file or directory is removed and replaced with a new one, then the <code>successCallback</code> is called with a {{domxref("FileSystemFileEntry")}} or a {{domxref("FileSystemDirectoryEntry")}}, as appropriate.</td>
+  </tr>
+  <tr>
+   <td colspan="2"><code>true</code></td>
+   <td><code>false</code></td>
+   <td>Path doesn't exist</td>
+   <td>The file or directory is created, then a {{domxref("FileSystemFileEntry")}} or a {{domxref("FileSystemDirectoryEntry")}} is passed to the <code>successCallback</code>, as appropriate.</td>
+  </tr>
+  <tr>
+   <td colspan="2"><code>true</code></td>
+   <td><code>true</code></td>
+   <td>Path exists</td>
+   <td>The <code>errorCallback</code> is called with an appropriate error, such as <code>FileError.PATH_EXISTS_ERR</code>.</td>
+  </tr>
+  <tr>
+   <td colspan="2"><code>true</code></td>
+   <td><code>true</code></td>
+   <td>Path doesn't exist</td>
+   <td>The file or directory is created, then a {{domxref("FileSystemFileEntry")}} or a {{domxref("FileSystemDirectoryEntry")}} is passed to the <code>successCallback</code>, as appropriate.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p>[1] When <code>create</code> is <code>false</code>, the value of <code>exclusive</code> is irrelevant and ignored.</p>
+

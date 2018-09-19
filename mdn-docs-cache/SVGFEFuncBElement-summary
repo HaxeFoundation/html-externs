@@ -1,0 +1,1 @@
+The <strong><code>SVGFEFuncBElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feFuncB" title="The &lt;feFuncB&gt; SVG filter primitive defines the transfer function for the blue component of the input graphic of its parent &lt;feComponentTransfer&gt; element."><code>&lt;feFuncB&gt;</code></a> element.

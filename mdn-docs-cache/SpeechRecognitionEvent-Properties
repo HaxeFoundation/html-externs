@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em><code>SpeechRecognitionEvent</code> also inherits properties from its parent interface, {{domxref("Event")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("SpeechRecognitionEvent.emma")}} {{readonlyinline}}</dt>
+	<dd>Returns an <cite>E</cite><cite>xtensible MultiModal Annotation markup language (EMMA) — XML — representation of the result.</cite></dd>
+	<dt>{{domxref("SpeechRecognitionEvent.interpretation")}} {{readonlyinline}}</dt>
+	<dd>Returns the semantic meaning of what the user said.</dd>
+	<dt>{{domxref("SpeechRecognitionEvent.resultIndex")}} {{readonlyinline}}</dt>
+	<dd>Returns the lowest index value result in the {{domxref("SpeechRecognitionResultList")}} "array" that has actually changed.</dd>
+	<dt>{{domxref("SpeechRecognitionEvent.results")}} {{readonlyinline}}</dt>
+	<dd>Returns a {{domxref("SpeechRecognitionResultList")}} object representing all the speech recognition results for the current session.</dd>
+</dl>
+

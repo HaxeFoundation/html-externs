@@ -1,0 +1,19 @@
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<table class="standard-table">
+	<thead>
+		<tr>
+			<td class="header">Name</td>
+			<td class="header">Type</td>
+			<td class="header">Description</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><code>length</code></td>
+			<td><a href="/en-US/docs/unsigned_long" title="unsigned long"><code>unsigned long</code></a></td>
+			<td>As optionally allowed by the spec, Mozilla allows this property to be set, either removing options at the end when using a shorter length, or adding blank options at the end when setting a longer length. Other implementations could potentially throw a <a href="/en-US/docs/DOM/DOMException" title="DOM/DOMException">DOMException</a>.</td>
+		</tr>
+	</tbody>
+</table>
+

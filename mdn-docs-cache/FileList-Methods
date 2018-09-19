@@ -1,0 +1,22 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<h3 name="item()" id="item()">item()</h3>
+
+<p>Returns a <a href="/en-US/docs/DOM/File" title="DOM/File"><code>File</code></a> object representing the file at the specified index in the file list.</p>
+
+<pre> File item(
+   index
+ );
+</pre>
+
+<h6 name="Parameters" id="Parameters">Parameters</h6>
+
+<dl>
+ <dt><code>index</code></dt>
+ <dd>The zero-based index of the file to retrieve from the list.</dd>
+</dl>
+
+<h6 name="Return_value" id="Return_value">Return value</h6>
+
+<p>The <a href="/en-US/docs/DOM/File" title="DOM/File"><code>File</code></a> representing the requested file.</p>
+

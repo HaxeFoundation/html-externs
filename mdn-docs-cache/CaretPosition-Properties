@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface doesn't inherit any property.</em></p>
+
+<dl>
+ <dt>{{domxref("CaretPosition.offsetNode")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Node")}} containing the found node at the caret's position.</dd>
+ <dt>{{domxref("CaretPosition.offset")}} {{readonlyInline}}</dt>
+ <dd>Returns a <code>long</code> representing the character offset in the caret position node.</dd>
+</dl>
+

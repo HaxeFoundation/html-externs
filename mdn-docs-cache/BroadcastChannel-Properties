@@ -1,0 +1,16 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("BroadcastChannel.name")}}</dt>
+ <dd>Returns a {{domxref("DOMString")}}, the name of the channel.</dd>
+ <dt>
+ <h3 id="Event_handlers">Event handlers</h3>
+ </dt>
+ <dt>{{domxref("BroadcastChannel.onmessage")}}</dt>
+ <dd>An {{domxref("EventHandler")}} property that specifies the function to execute when a {{event("message")}} event is fired on this object.</dd>
+ <dt>{{domxref("BroadcastChannel.onmessageerror")}}</dt>
+ <dd>An {{domxref("EventHandler")}} called when a {{domxref("MessageEvent")}} of type {{domxref("MessageError")}} is fired—that is, when it receives a message that cannot be deserialized.</dd>
+</dl>
+

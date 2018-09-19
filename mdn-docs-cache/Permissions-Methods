@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Permissions.query()")}}</dt>
+ <dd>Returns the user permission status for a given API.</dd>
+ <dt>{{domxref("Permissions.request()")}}</dt>
+ <dd>Requests permission to use a given API. This is not currently supported in any browser.</dd>
+ <dt>{{domxref("Permissions.revoke()")}}</dt>
+ <dd>Revokes the permission currently set on a given API.</dd>
+</dl>
+

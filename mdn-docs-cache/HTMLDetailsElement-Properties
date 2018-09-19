@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLDetailsElement.open")}}</dt>
+ <dd>Is a {{domxref("boolean")}} reflecting the {{htmlattrxref("open", "details")}} HTML attribute, indicating whether or not the element’s contents (not counting the {{HTMLElement("summary")}}) is to be shown to the user.</dd>
+</dl>
+

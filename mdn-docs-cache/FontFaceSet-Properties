@@ -1,0 +1,18 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("FontFaceSet.status")}} {{readonlyinline}}</dt>
+ <dd>Indicates the font-face's loading status. It will be one of <code>'loading'</code> or <code>'loaded'</code>.</dd>
+</dl>
+
+<h3 id="Events">Events</h3>
+
+<dl>
+ <dt>{{domxref("FontFaceSet.onloading")}}</dt>
+ <dd>An {{domxref("EventListener")}} called whenever an event of type {{event("loading")}} is fired, indicating a font-face set has started loading.</dd>
+ <dt>{{domxref("FontFaceSet.onloadingdone")}}</dt>
+ <dd>An {{domxref("EventListener")}} called whenever an event of type {{event("loadingdone")}} is fired, indicating that a font face set has finished loading.</dd>
+ <dt>{{domxref("FontFaceSet.onloadingerror")}}</dt>
+ <dd>An {{domxref("EventListener")}} called whenever an event of type {{event("loadingerror")}} is fired, indicating that an error occurred whilst loading a font-face set.</dd>
+</dl>
+

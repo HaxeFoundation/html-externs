@@ -1,0 +1,1 @@
+The <strong><code>SVGFEImageElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feImage" title="The &lt;feImage&gt; SVG filter primitive fetches image data from an external source and provides the pixel data as output (meaning if the external source is an SVG image, it is rasterized.)"><code>&lt;feImage&gt;</code></a> element.

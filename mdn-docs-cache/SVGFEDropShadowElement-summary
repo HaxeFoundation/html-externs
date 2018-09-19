@@ -1,0 +1,1 @@
+The <strong><code>SVGFEDropShadowElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feDropShadow" title="The &lt;feDropShadow&gt; filter primitive creates a drop shadow of the input image. It is a shorthand filter, and is defined in terms of combinations of other filter primitives."><code>&lt;feDropShadow&gt;</code></a> element.

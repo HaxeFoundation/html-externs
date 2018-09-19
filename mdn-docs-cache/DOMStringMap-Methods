@@ -1,0 +1,87 @@
+<h2 id="Methods">Methods</h2>
+
+<p>{{ method_noscript("getDataAttr") }}</p>
+
+<pre class="eval">DOMString getDataAttr(
+  in DOMString prop
+);
+</pre>
+
+<h4 id="Parameters">Parameters</h4>
+
+<dl>
+ <dt><code>prop</code></dt>
+ <dd>The property for which to retrieve the value.</dd>
+</dl>
+
+<h4 id="Return_value">Return value</h4>
+
+<p>The value for the specified property name.</p>
+
+<p>{{ method_notxpcom("hasDataAttr") }}</p>
+
+<pre class="eval">boolean hasDataAttr(
+  in DOMString prop
+);
+</pre>
+
+<h4 id="Parameters_2">Parameters</h4>
+
+<dl>
+ <dt><code>prop</code></dt>
+ <dd>The property for which to check for the existence of a value.</dd>
+</dl>
+
+<h4 id="Return_value_2">Return value</h4>
+
+<p><code>true</code> if the property exists; otherwise <code>false</code>.</p>
+
+<p>{{ method_notxpcom("removeDataAttr") }}</p>
+
+<pre class="eval">void removeDataAttr(
+  in DOMString prop
+);
+</pre>
+
+<h4 id="Parameters_3">Parameters</h4>
+
+<dl>
+ <dt><code>prop</code></dt>
+ <dd>The property to remove from the data set.</dd>
+</dl>
+
+<p>{{ method_notxpcom("removeProp") }}</p>
+
+<p>Removes the property from the dataset object. Used to update the dataset object when data-* attribute has been removed from the element.</p>
+
+<pre class="eval">void removeProp(
+  in nsIAtom attr
+);
+</pre>
+
+<h4 id="Parameters_4">Parameters</h4>
+
+<dl>
+ <dt><code>attr</code></dt>
+ <dd>The property to remove from the dataset.</dd>
+</dl>
+
+<p>{{ method_noscript("setDataAttr") }}</p>
+
+<p>Sets the value of the specified property.</p>
+
+<pre class="eval">void setDataAttr(
+  in DOMString prop,
+  in DOMString value
+);
+</pre>
+
+<h4 id="Parameters_5">Parameters</h4>
+
+<dl>
+ <dt><code>prop</code></dt>
+ <dd>The property whose value is to be set.</dd>
+ <dt><code>value</code></dt>
+ <dd>The property's new value.</dd>
+</dl>
+

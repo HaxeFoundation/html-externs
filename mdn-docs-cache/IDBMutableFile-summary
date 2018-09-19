@@ -1,0 +1,1 @@
+The <code>IDBMutableFile</code> interface provides access in read or write mode to a file, dealing with all the necessary locks.

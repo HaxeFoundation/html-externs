@@ -1,0 +1,1 @@
+The <strong><code>SVGClipPathElement</code></strong> interface provides access to the properties of <a href="/en-US/docs/Web/SVG/Element/clipPath" title="The &lt;clipPath&gt; SVG element defines a clipping path. A clipping path is used/referenced using the clip-path property."><code>&lt;clipPath&gt;</code></a> elements, as well as methods to manipulate them.

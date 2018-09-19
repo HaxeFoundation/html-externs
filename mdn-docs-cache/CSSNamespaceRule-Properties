@@ -1,0 +1,21 @@
+<h2 name="Properties" id="Properties">Syntax</h2>
+
+<p>The syntax is described using the <a href="http://dev.w3.org/2006/webapi/WebIDL/" title="http://dev.w3.org/2006/webapi/WebIDL/">WebIDL</a> format.</p>
+
+<pre>interface CSSNamespaceRule : CSSRule {
+    readonly attribute DOMString namespaceURI;
+    readonly attribute DOMString? prefix;
+};
+</pre>
+
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<p>As a {{ domxref("CSSRule") }}, <code>CSSNamespaceRule</code> also implements the properties of that interface. It has some specific properties:</p>
+
+<dl>
+ <dt id="cssRules">{{domxref("CSSNamespaceRule.namespaceURI")}}</dt>
+ <dd>Returns a {{ domxref("DOMString") }} containing the text of the URI of the given namespace.</dd>
+ <dt>{{domxref("CSSNamespaceRule.prefix")}}</dt>
+ <dd>Returns a {{ domxref("DOMString") }} with the name of the prefix associated to this namespace. If there is no such prefix, returns  <code>null</code>.</dd>
+</dl>
+

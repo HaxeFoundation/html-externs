@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em><code>SpeechRecognitionError</code> also inherits properties from its parent interface, {{domxref("Event")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("SpeechRecognitionError.error")}} {{readonlyinline}}</dt>
+	<dd>Returns the type of error raised.</dd>
+	<dt>{{domxref("SpeechRecognitionError.message")}} {{readonlyinline}}</dt>
+	<dd>Returns a message describing the error in more detail.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+<strong><code>HTMLOptionsCollection</code></strong> is an interface representing a collection of HTML option elements (in document order) and offers methods and properties for traversing the list as well as optionally altering its items. This type is returned solely by the "options" property of <a href="/en-US/docs/DOM/HTMLSelectElement" title="DOM/select">select</a>.

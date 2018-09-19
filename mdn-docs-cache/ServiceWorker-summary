@@ -1,0 +1,1 @@
+The <code>ServiceWorker</code> interface of the <a href="/en-US/docs/Web/API/ServiceWorker_API">ServiceWorker API</a> provides a reference to a service worker. Multiple browsing contexts (e.g. pages, workers, etc.) can be associated with the same service worker, each through a unique <code>ServiceWorker</code> object.

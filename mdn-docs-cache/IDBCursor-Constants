@@ -1,0 +1,15 @@
+<h2 id="Constants">Constants</h2>
+
+<div>{{ deprecated_header(13) }}</div>
+
+<div class="warning">
+<p>These constants are no longer available — they were removed in Gecko 25. You should use the string constants directly instead. ({{ bug(891944) }})</p>
+</div>
+
+<ul>
+ <li><code>NEXT </code>: <code>"next"</code> : The cursor shows all records, including duplicates. It starts at the lower bound of the key range and moves upwards (monotonically increasing in the order of keys).</li>
+ <li><code>NEXTUNIQUE</code> : <code>"nextunique"</code> : The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first one iterated is retrieved. It starts at the lower bound of the key range and moves upwards.</li>
+ <li><code>PREV </code>: <code>"prev"</code> : The cursor shows all records, including duplicates. It starts at the upper bound of the key range and moves downwards (monotonically decreasing in the order of keys).</li>
+ <li><code>PREVUNIQUE </code>: <code>"prevunique"</code> : The cursor shows all records, excluding duplicates. If multiple records exist with the same key, only the first one iterated is retrieved. It starts at the upper bound of the key range and moves downwards.</li>
+</ul>
+

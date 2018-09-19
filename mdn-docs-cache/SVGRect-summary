@@ -1,0 +1,1 @@
+The <strong><code>SVGRect</code></strong> represents a rectangle. Rectangles consist of an x and y coordinate pair identifying a minimum x value, a minimum y value, and a width and height, which are constrained to be non-negative.

@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>Position</code> interface </em><em><em>doesn't inherit any property</em></em>.</p>
+
+<dl>
+ <dt>{{domxref("Position.coords")}} {{readonlyInline}} {{securecontext_inline}}</dt>
+ <dd>Returns a {{domxref("Coordinates")}} object defining the current location.</dd>
+ <dt>{{domxref("Position.timestamp")}} {{readonlyInline}} {{securecontext_inline}}</dt>
+ <dd>Returns a {{domxref("DOMTimeStamp")}} representing the time at which the location was retrieved.</dd>
+</dl>
+

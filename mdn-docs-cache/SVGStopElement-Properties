@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGStopElement.offset")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("offset")}} of the given element.</dd>
+</dl>
+

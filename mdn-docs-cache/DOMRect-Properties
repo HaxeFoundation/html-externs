@@ -1,0 +1,26 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+</dl>
+
+<p><em><code>DOMRect</code> inherits properties from its parent, {{domxref("DOMRectReadOnly")}}. The difference is that they are not read-only anymore.</em></p>
+
+<dl>
+	<dt>{{domxref("DOMRectReadOnly.x")}}</dt>
+	<dd>The x coordinate of the <code>DOMRect</code>'s origin.</dd>
+	<dt>{{domxref("DOMRectReadOnly.y")}}</dt>
+	<dd>The y coordinate of the <code>DOMRect</code>'s origin.</dd>
+	<dt>{{domxref("DOMRectReadOnly.width")}}</dt>
+	<dd>The width of the <code>DOMRect</code>.</dd>
+	<dt>{{domxref("DOMRectReadOnly.height")}}</dt>
+	<dd>The height of the <code>DOMRect</code>.</dd>
+	<dt>{{domxref("DOMRectReadOnly.top")}}</dt>
+	<dd>Returns the top coordinate value of the <code>DOMRect</code> (has the same value as <code>y</code>, or <code>y + height</code> if <code>height</code> is negative.)</dd>
+	<dt>{{domxref("DOMRectReadOnly.right")}}</dt>
+	<dd>Returns the right coordinate value of the <code>DOMRect</code> (has the same value as <code>x + width</code>, or <code>x</code> if <code>width</code> is negative.)</dd>
+	<dt>{{domxref("DOMRectReadOnly.bottom")}}</dt>
+	<dd>Returns the bottom coordinate value of the <code>DOMRect</code> (has the same value as <code>y + height</code>, or <code>y</code> if <code>height</code> is negative.)</dd>
+	<dt>{{domxref("DOMRectReadOnly.left")}}</dt>
+	<dd>Returns the left coordinate value of the <code>DOMRect</code> (has the same value as <code>x</code>, or <code>x + width</code> if <code>width</code> is negative.)</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Constants">Constants</h2>
+
+<dl>
+ <dt>ext.UNMASKED_VENDOR_WEBGL</dt>
+ <dd>Vendor string of the graphics driver.</dd>
+ <dt>ext.UNMASKED_RENDERER_WEBGL</dt>
+ <dd>Renderer string of the graphics driver.</dd>
+</dl>
+

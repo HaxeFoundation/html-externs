@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>baseVal</code></td>
+   <td>{{ domxref("SVGLength") }}</td>
+   <td>The base value of the given attribute before applying any animations.</td>
+  </tr>
+  <tr>
+   <td><code>animVal</code></td>
+   <td>{{ domxref("SVGLength") }}</td>
+   <td>If the given attribute or property is being animated, contains the current animated value of the attribute or property. If the given attribute or property is not currently being animated, contains the same value as <code>baseVal</code>.</td>
+  </tr>
+ </tbody>
+</table>
+

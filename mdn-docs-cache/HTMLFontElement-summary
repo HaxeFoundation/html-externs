@@ -1,0 +1,1 @@
+Implements the document object model (DOM) representation of the font element. The HTML Font Element <a href="/en-US/docs/Web/HTML/Element/font" title="The HTML Font Element (&lt;font&gt;) defines the font size, color and face for its content."><code>&lt;font&gt;</code></a> defines the font size, font face and color of text.

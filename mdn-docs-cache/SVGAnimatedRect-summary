@@ -1,0 +1,1 @@
+The <code>SVGAnimatedRect</code> interface is used for attributes of basic <a href="/en-US/docs/Web/API/SVGRect" title="The SVGRect represents a rectangle. Rectangles consist of an x and y coordinate pair identifying a minimum x value, a minimum y value, and a width and height, which are constrained to be non-negative."><code>SVGRect</code></a> which can be animated.

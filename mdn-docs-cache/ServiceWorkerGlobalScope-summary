@@ -1,0 +1,1 @@
+The <code>ServiceWorkerGlobalScope</code> interface of the <a href="/en-US/docs/Web/API/ServiceWorker_API">ServiceWorker API</a> represents the global execution context of a service worker.

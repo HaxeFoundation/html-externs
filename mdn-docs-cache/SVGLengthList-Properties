@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>numberOfItem</code></td>
+   <td>unsigned long</td>
+   <td>The number of items in the list.</td>
+  </tr>
+  <tr>
+   <td><code>length </code>{{ fx_minversion_inline(5.0) }} {{ non-standard_inline() }}</td>
+   <td>unsigned long</td>
+   <td>The number of items in the list.</td>
+  </tr>
+ </tbody>
+</table>
+

@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("ImageCapture.track")}} {{readonlyinline}}</dt>
+ <dd>Returns a reference to the {{domxref("MediaStreamTrack")}} passed to the constructor.</dd>
+</dl>
+

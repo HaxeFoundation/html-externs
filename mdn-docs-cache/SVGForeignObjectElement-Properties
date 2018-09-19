@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGGraphicsElement")}} and implements properties from {{domxref("SVGURIReference")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGForeignObjectElement.x")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("x")}} attribute of the given {{SVGElement("foreignObject")}} element.</dd>
+ <dt>{{domxref("SVGForeignObjectElement.y")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("x")}} attribute of the given {{SVGElement("foreignObject")}} element.</dd>
+ <dt>{{domxref("SVGForeignObjectElement.width")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("width")}} attribute of the given {{SVGElement("foreignObject")}} element.</dd>
+ <dt>{{domxref("SVGForeignObjectElement.height")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("height")}} attribute of the given {{SVGElement("foreignObject")}} element.</dd>
+</dl>
+

@@ -1,0 +1,7 @@
+<h2 name="Methods" id="Methods">Constructor</h2>
+
+<dl>
+ <dt>{{domxref("Text.Text", "Text()")}} {{experimental_inline}}</dt>
+ <dd>Returns a <code>Text</code> node with the parameter as its textual content.</dd>
+</dl>
+

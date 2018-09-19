@@ -1,0 +1,30 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em><code>VisualViewport</code> also inherits properties from its parent, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("VisualViewport.offsetleft")}} {{readonlyinline}}</dt>
+ <dd>Returns the offset of the left edge of the visual viewport from the left edge of the layout viewport in CSS pixels.</dd>
+ <dt>{{domxref("VisualViewport.offsetTop")}} {{readonlyinline}}</dt>
+ <dd>Returns the offset of the top edge of the visual viewport from the top edge of the layout viewport in CSS pixels.</dd>
+ <dt>{{domxref("VisualViewport.pageLeft")}} {{readonlyinline}}</dt>
+ <dd>Returns the x coordinate relative to the initial containing block origin of the top edge of the visual viewport in CSS pixels.</dd>
+ <dt>{{domxref("VisualViewport.pageTop")}} {{readonlyinline}}</dt>
+ <dd>Returns the y coordinate relative to the initial containing block origin of the top edge of the visual viewport in CSS pixels.</dd>
+ <dt>{{domxref("VisualViewport.width")}} {{readonlyinline}}</dt>
+ <dd>Returns the width of the visual viewport in CSS pixels.</dd>
+ <dt>{{domxref("VisualViewport.height")}} {{readonlyinline}}</dt>
+ <dd>Returns the height of the visual viewport in CSS pixels.</dd>
+ <dt>{{domxref("VisualViewport.scale")}} {{readonlyinline}}</dt>
+ <dd>Returns the pinch-zoom scaling factor applied to the visual viewport.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("VisualViewport.onresize")}}</dt>
+ <dd>An event handler attribute for the resize event.</dd>
+ <dt>{{domxref("VisualViewport.onscroll")}}</dt>
+ <dd>An event handler attribute for the scroll event.</dd>
+</dl>
+

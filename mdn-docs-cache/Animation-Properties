@@ -1,0 +1,52 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("Animation.currentTime")}}</dt>
+ <dd>The current time value of the animation in milliseconds, whether running or paused. If the animation lacks a {{domxref("AnimationTimeline", "timeline")}}, is inactive or hasn't been played yet, its value is <code>null</code>.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.effect")}}</dt>
+ <dd>Gets and sets the {{domxref("AnimationEffectReadOnly")}} associated with this animation. This will usually be a {{domxref("KeyframeEffect")}} object.</dd>
+ <dt>{{domxref("Animation.finished")}} {{readOnlyInline}}</dt>
+ <dd>Returns the current finished Promise for this animation.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.id")}}</dt>
+ <dd>Gets and sets the <code>String</code> used to identify the animation.</dd>
+ <dt>{{domxref("Animation.pending")}} {{readonlyinline}}</dt>
+ <dd>Indicates whether the animation is currently waiting for an asynchronous operation such as initiating playback or pausing a running animation.</dd>
+ <dt>{{domxref("Animation.playState")}} {{readOnlyInline}}</dt>
+ <dd>Returns an enumerated value describing the playback state of an animation.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.playbackRate")}}</dt>
+ <dd>Gets or sets the playback rate of the animation.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.ready")}} {{readOnlyInline}}</dt>
+ <dd>Returns the current ready Promise for this animation.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.startTime")}}</dt>
+ <dd>Gets or sets the scheduled time when an animation's playback should begin.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.timeline")}}</dt>
+ <dd>Gets or sets the {{domxref("AnimationTimeline", "timeline")}} associated with this animation.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("Animation.oncancel")}}</dt>
+ <dd>Gets and sets the event handler for the <code>cancel</code> event.</dd>
+ <dt>{{domxref("Animation.onfinish")}}</dt>
+ <dd>Gets and sets the event handler for the <code>finish</code> event.</dd>
+</dl>
+

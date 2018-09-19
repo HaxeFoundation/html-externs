@@ -1,0 +1,73 @@
+<h2 id="Properties">Properties</h2>
+
+<h3 id="Static_properties">Static properties</h3>
+
+<p>These properties are available only on the <code>Notification</code> object itself.</p>
+
+<dl>
+ <dt>{{domxref("Notification.permission")}} {{readonlyinline}}</dt>
+ <dd>A string representing the current permission to display notifications. Possible values are:
+ <ul>
+  <li><code>denied</code> — The user refuses to have notifications displayed.</li>
+  <li><code>granted</code> — The user accepts having notifications displayed.</li>
+  <li><code>default</code> — The user choice is unknown and therefore the browser will act as if the value were denied.</li>
+ </ul>
+ </dd>
+</dl>
+
+<h3 id="Instance_properties">Instance properties</h3>
+
+<p>These properties are available only on instances of the <code>Notification</code> object.</p>
+
+<dl>
+ <dt>{{domxref("Notification.actions")}} {{readonlyinline}}</dt>
+ <dd>The actions array of the notification as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.badge")}} {{readonlyinline}}</dt>
+ <dd>The URL of the image used to represent the notification when there is not enough space to display the notification itself.</dd>
+ <dt>{{domxref("Notification.body")}} {{readonlyinline}}</dt>
+ <dd>The body string of the notification as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.data")}} {{readonlyinline}}</dt>
+ <dd>Returns a structured clone of the notification’s data.</dd>
+ <dt>{{domxref("Notification.dir")}} {{readonlyinline}}</dt>
+ <dd>The text direction of the notification as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.lang")}} {{readonlyinline}}</dt>
+ <dd>The language code of the notification as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.tag")}} {{readonlyinline}}</dt>
+ <dd>The ID of the notification (if any) as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.icon")}} {{readonlyinline}}</dt>
+ <dd>The URL of the image used as an icon of the notification as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.image")}} {{readonlyinline}}</dt>
+ <dd>The URL of an image to be displayed as part of the notification, as specified in the constructor's <code>options</code> parameter.</dd>
+ <dt>{{domxref("Notification.renotify")}} {{readonlyinline}}</dt>
+ <dd>Specifies whether the user should be notified after a new notification replaces an old one.</dd>
+ <dt>{{domxref("Notification.requireInteraction")}} {{readonlyinline}}</dt>
+ <dd>A {{jsxref("Boolean")}} indicating that a notification should remain active until the user clicks or dismisses it, rather than closing automatically.</dd>
+ <dt>{{domxref("Notification.silent")}} {{readonlyinline}}</dt>
+ <dd>Specifies whether the notification should be silent — i.e., no sounds or vibrations should be issued, regardless of the device settings.</dd>
+ <dt>{{domxref("Notification.timestamp")}} {{readonlyinline}}</dt>
+ <dd>Specifies the time at which a notification is created or applicable (past, present, or future).</dd>
+ <dt>{{domxref("Notification.title")}} {{readonlyinline}}</dt>
+ <dd>The title of the notification as specified in the first parameter of the constructor.</dd>
+ <dt>{{domxref("Notification.vibrate")}} {{readonlyinline}}</dt>
+ <dd>Specifies a vibration pattern for devices with vibration hardware to emit.</dd>
+</dl>
+
+<h4 id="Event_handlers">Event handlers</h4>
+
+<dl>
+ <dt>{{domxref("Notification.onclick")}}</dt>
+ <dd>A handler for the {{event("click")}} event. It is triggered each time the user clicks on the notification.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Notification.onclose")}}</dt>
+ <dd>A handler for the {{event("close")}} event. It is triggered when the user closes the notification.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Notification.onerror")}}</dt>
+ <dd>A handler for the {{event("error")}} event. It is triggered each time the notification encounters an error.</dd>
+ <dt>{{domxref("Notification.onshow")}}</dt>
+ <dd>A handler for the {{event("show")}} event. It is triggered when the notification is displayed.</dd>
+</dl>
+

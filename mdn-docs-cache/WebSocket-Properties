@@ -1,0 +1,25 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("WebSocket.binaryType")}}</dt>
+ <dd>The binary data type used by the connection.</dd>
+ <dt>{{domxref("WebSocket.bufferedAmount")}} {{readonlyinline}}</dt>
+ <dd>The number of bytes of queued data.</dd>
+ <dt>{{domxref("WebSocket.extensions")}} {{readonlyinline}}</dt>
+ <dd>The extensions selected by the server.</dd>
+ <dt>{{domxref("WebSocket.onclose")}}</dt>
+ <dd>An event listener to be called when the connection is closed.</dd>
+ <dt>{{domxref("WebSocket.onerror")}}</dt>
+ <dd>An event listener to be called when an error occurs.</dd>
+ <dt>{{domxref("WebSocket.onmessage")}}</dt>
+ <dd>An event listener to be called when a message is received from the server.</dd>
+ <dt>{{domxref("WebSocket.onopen")}}</dt>
+ <dd>An event listener to be called when the connection is opened.</dd>
+ <dt>{{domxref("WebSocket.protocol")}} {{readonlyinline}}</dt>
+ <dd>The sub-protocol selected by the server.</dd>
+ <dt>{{domxref("WebSocket.readyState")}} {{readonlyinline}}</dt>
+ <dd>The current state of the connection.</dd>
+ <dt>{{domxref("WebSocket.url")}} {{readonlyinline}}</dt>
+ <dd>The absolute URL of the WebSocket.</dd>
+</dl>
+

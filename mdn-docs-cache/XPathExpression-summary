@@ -1,0 +1,1 @@
+An <code>XPathExpression</code> is a compiled XPath query returned from <a href="/en-US/docs/Web/API/Document/createExpression" title="This method compiles an XPathExpression which can then be used for (repeated) evaluations."><code>document.createExpression()</code></a>. It has a method <code>evaluate()</code> which can be used to execute the compiled XPath.

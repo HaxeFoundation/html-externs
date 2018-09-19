@@ -1,0 +1,47 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Value</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The unit type is not one of predefined unit types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_MATRIX</code></td>
+   <td>1</td>
+   <td>A <code>matrix(…)</code> transformation</td>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_TRANSLATE</code></td>
+   <td>2</td>
+   <td>A <code>translate(…)</code> transformation</td>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_SCALE</code></td>
+   <td>3</td>
+   <td>A <code>scale(…)</code> transformation</td>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_ROTATE</code></td>
+   <td>4</td>
+   <td>A <code>rotate(…)</code> transformation</td>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_SKEWX</code></td>
+   <td>5</td>
+   <td>A <code>skewx(…)</code> transformation</td>
+  </tr>
+  <tr>
+   <td><code>SVG_TRANSFORM_SKEWY</code></td>
+   <td>6</td>
+   <td>A <code>skewy(…)</code> transformation</td>
+  </tr>
+ </tbody>
+</table>
+

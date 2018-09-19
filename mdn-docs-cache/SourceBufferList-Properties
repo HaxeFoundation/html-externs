@@ -1,0 +1,16 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("SourceBufferList.length")}} {{readonlyInline}}</dt>
+ <dd>Returns the number of {{domxref("SourceBuffer")}} objects in the list.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("SourceBufferList.onaddsourcebuffer")}}</dt>
+ <dd>The event handler for the <code>addsourcebuffer</code> event.</dd>
+ <dt>{{domxref("SourceBufferList.onremovesourcebuffer")}}</dt>
+ <dd>The event handler for the <code>removesourcebuffer</code> event.</dd>
+</dl>
+

@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p>This extension exposes one new methods.</p>
+
+<dl>
+ <dt>{{domxref("WEBGL_compressed_texture_astc.getSupportedProfiles", "ext.getSupportedProfiles()")}}</dt>
+ <dd>
+ <p>Returns an array of strings containing the names of the ASTC profiles supported by the implementation.</p>
+ </dd>
+</dl>
+

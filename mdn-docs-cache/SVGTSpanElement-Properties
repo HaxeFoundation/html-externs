@@ -1,0 +1,4 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface doesn't provide any specific properties, but inherits the properties from its parent, {{domxref("SVGTextPositioningElement")}}.</em></p>
+

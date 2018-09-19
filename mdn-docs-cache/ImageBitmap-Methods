@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("ImageBitmap.close()")}}</dt>
+ <dd>
+ <p>Disposes of all graphical resources associated with an <code>ImageBitmap</code>.</p>
+ </dd>
+</dl>
+

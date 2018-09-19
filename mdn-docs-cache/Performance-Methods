@@ -1,0 +1,29 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em><em>The <code>Performance</code> interface doesn't inherit any </em>methods</em>.</p>
+
+<dl>
+ <dt>{{domxref("Performance.clearMarks()")}}</dt>
+ <dd>Removes the given <em>mark</em> from the browser's performance entry buffer.</dd>
+ <dt>{{domxref("Performance.clearMeasures()")}}</dt>
+ <dd>Removes the given <em>measure</em> from the browser's performance entry buffer.</dd>
+ <dt>{{domxref("Performance.clearResourceTimings()")}}</dt>
+ <dd>Removes all {{domxref("PerformanceEntry","performance entries")}} with a {{domxref("PerformanceEntry.entryType","entryType")}} of "<code>resource</code>" from the browser's performance data buffer.</dd>
+ <dt>{{domxref("Performance.getEntries()")}}</dt>
+ <dd>Returns a list of {{domxref("PerformanceEntry")}} objects based on the given <em>filter</em>.</dd>
+ <dt>{{domxref("Performance.getEntriesByName()")}}</dt>
+ <dd>Returns a list of {{domxref("PerformanceEntry")}} objects based on the given <em>name</em> and <em>entry type</em>.</dd>
+ <dt>{{domxref("Performance.getEntriesByType()")}}</dt>
+ <dd>Returns a list of {{domxref("PerformanceEntry")}} objects of the given <em>entry type</em>.</dd>
+ <dt>{{domxref("Performance.mark()")}}</dt>
+ <dd>Creates a {{domxref("DOMHighResTimeStamp","timestamp")}} in the browser's <em>performance entry buffer</em> with the given name.</dd>
+ <dt>{{domxref("Performance.measure()")}}</dt>
+ <dd>Creates a named {{domxref("DOMHighResTimeStamp","timestamp")}} in the browser's performance entry buffer between two specified marks (known as the <em>start mark</em> and <em>end mark</em>, respectively).</dd>
+ <dt>{{domxref("Performance.now()")}}</dt>
+ <dd>Returns a {{domxref("DOMHighResTimeStamp")}} representing the number of milliseconds elapsed since a reference instant.</dd>
+ <dt>{{domxref("Performance.setResourceTimingBufferSize()")}}</dt>
+ <dd>Sets the browser's resource timing buffer size to the specified number of "<code>resource</code>" {{domxref("PerformanceEntry.entryType","type")}} {{domxref("PerformanceEntry","performance entry")}} objects.</dd>
+ <dt>{{domxref("Performance.toJSON()")}} {{NotAvailableInWorkerInline}}</dt>
+ <dd>Is a jsonizer returning a json object representing the <code>Performance</code> object.</dd>
+</dl>
+

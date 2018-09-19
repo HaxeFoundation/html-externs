@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface doesn't inherit any property.</em></p>
+
+<dl>
+ <dt>{{domxref("NamedNodeMap.length")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns the amount of objects in the map.</dd>
+</dl>
+

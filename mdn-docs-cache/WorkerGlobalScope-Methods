@@ -1,0 +1,46 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface inherits methods from the {{domxref("EventTarget")}} interface and implements properties from the {{domxref("WindowOrWorkerGlobalScope")}} and {{domxref("WindowEventHandlers")}} mixins.</em></p>
+
+<h3 id="Standard_methods">Standard methods</h3>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.importScripts()")}}</dt>
+	<dd>Imports one or more scripts into the worker's scope. You can specify as many as you'd like, separated by commas. For example:<code> importScripts('foo.js', 'bar.js');</code></dd>
+</dl>
+
+<h3 id="Non-standard_methods">Non-standard methods</h3>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.dump()")}} {{non-standard_inline}}</dt>
+	<dd>Allows you to write a message to stdout — i.e. in your terminal. This is the same as Firefox's {{domxref("window.dump")}}, but for workers.</dd>
+</dl>
+
+<h3 id="Methods_implemented_from_elsewhere">Methods implemented from elsewhere</h3>
+
+<dl>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.atob()")}}</dt>
+	<dd>Decodes a string of data which has been encoded using base-64 encoding.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.btoa()")}}</dt>
+	<dd>Creates a base-64 encoded ASCII string from a string of binary data.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.clearInterval()")}}</dt>
+	<dd>Cancels the repeated execution set using {{domxref("WindowOrWorkerGlobalScope.setInterval()")}}.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.clearTimeout()")}}</dt>
+	<dd>Cancels the delayed execution set using {{domxref("WindowOrWorkerGlobalScope.setTimeout()")}}.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.createImageBitmap()")}}</dt>
+	<dd>Accepts a variety of different image sources, and returns a {{domxref("Promise")}} which resolves to an {{domxref("ImageBitmap")}}. Optionally the source is cropped to the rectangle of pixels originating at <em>(sx, sy)</em> with width sw, and height sh.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.fetch()")}}</dt>
+	<dd>Starts the process of fetching a resource from the network.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.setInterval()")}}</dt>
+	<dd>Schedules a function to execute every time a given number of milliseconds elapses.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.setTimeout()")}}</dt>
+	<dd>Schedules a function to execute in a given amount of time.</dd>
+</dl>
+
+<h3 id="Deprecated_methods">Deprecated methods</h3>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.close()")}}</dt>
+	<dd>Discards any tasks queued in the <code>WorkerGlobalScope</code>'s event loop, effectively closing this particular scope. In newer browser versions, <code>close()</code> is available on <code>DedicatedWorkerGlobalScope</code> and {{domxref("SharedWorkerGlobalScope.close", "SharedWorkerGlobalScope")}} instead. This change was made to stop <code>close()</code> being available on service workers, as it isn't supposed to be used there and always throws an exception when called (see {{bug(1336043)}}).</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <code><strong>WEBGL_debug_renderer_info</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and exposes two constants with information about the graphics driver for debugging purposes.

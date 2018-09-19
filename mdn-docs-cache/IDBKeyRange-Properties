@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("IDBKeyRange.lower")}} {{readonlyInline}}</dt>
+ <dd>Lower bound of the key range.</dd>
+ <dt>{{domxref("IDBKeyRange.upper")}} {{readonlyInline}}</dt>
+ <dd>Upper bound of the key range.</dd>
+ <dt>{{domxref("IDBKeyRange.lowerOpen")}} {{readonlyInline}}</dt>
+ <dd>Returns false if the lower-bound value is included in the key range.</dd>
+ <dt>{{domxref("IDBKeyRange.upperOpen")}} {{readonlyInline}}</dt>
+ <dd>Returns false if the upper-bound value is included in the key range.</dd>
+</dl>
+

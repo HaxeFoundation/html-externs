@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MessageChannel.port1")}} {{readonlyInline}}</dt>
+ <dd>Returns port1 of the channel.</dd>
+ <dt>{{domxref("MessageChannel.port2")}} {{readonlyInline}}</dt>
+ <dd>Returns port2 of the channel.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface implements properties defined on {{domxref("RandomSource")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("Crypto.subtle")}} {{experimental_inline}}{{readOnlyInline}}</dt>
+ <dd>Returns a {{domxref("SubtleCrypto")}} object providing access to common cryptographic primitives, like hashing, signing, encryption or decryption.</dd>
+</dl>
+

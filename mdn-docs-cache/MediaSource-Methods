@@ -1,0 +1,17 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MediaSource.addSourceBuffer()")}}</dt>
+ <dd>Creates a new {{domxref("SourceBuffer")}} of the given MIME type and adds it to the {{domxref("MediaSource.sourceBuffers")}} list.</dd>
+ <dt>{{domxref("MediaSource.clearLiveSeekableRange()")}}</dt>
+ <dd>Clears a seekable range privious set with a call to <code>setLiveSeekableRange()</code>.</dd>
+ <dt>{{domxref("MediaSource.endOfStream()")}}</dt>
+ <dd>Signals the end of the stream.</dd>
+ <dt>{{domxref("MediaSource.removeSourceBuffer()")}}</dt>
+ <dd>Removes the given {{domxref("SourceBuffer")}} from the {{domxref("MediaSource.sourceBuffers")}} list.</dd>
+ <dt>{{domxref("MediaSource.setLiveSeekableRange()")}}</dt>
+ <dd>Sets the range that the user can seek to in the media element.</dd>
+</dl>
+

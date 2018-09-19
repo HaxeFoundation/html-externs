@@ -1,0 +1,1 @@
+<img src="https://mdn.mozillademos.org/files/5157/WebAudioScriptProcessingNode.png" alt="The ScriptProcessorNode stores the input in a buffer, send the audioprocess event. The EventHandler takes the input buffer and fill the output buffer which is sent to the output by the ScriptProcessorNode." style="display: block; height: 174px; margin: 0px auto; width: 306px;">

@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("TouchList.length")}} {{readonlyInline}}</dt>
+ <dd>The number of {{domxref("Touch")}} objects in the <code>TouchList</code>.</dd>
+</dl>
+

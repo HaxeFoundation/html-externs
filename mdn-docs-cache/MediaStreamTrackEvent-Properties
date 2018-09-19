@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent interface, {{domxref("Event")}}.</em></p>
+
+<dl>
+ <dt><code>track</code> {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("MediaStreamTrack")}} object representing the track which was added to the stream.</dd>
+</dl>
+

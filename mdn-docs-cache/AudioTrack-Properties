@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("AudioTrack.enabled", "enabled")}}</dt>
+ <dd>A Boolean value which controls whether or not the audio track's sound is enabled. Setting this value to <code>false</code> mutes the track's audio.</dd>
+ <dt>{{domxref("AudioTrack.id", "id")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} which uniquely identifies the track within the media. This ID can be used to locate a specific track within an audio track list by calling {{domxref("AudioTrackList.getTrackById()")}}. The ID can also be used as the fragment part of the URL if the media supports seeking by media fragment per the <a href="https://www.w3.org/TR/media-frags/">Media Fragments URI specification</a>.</dd>
+ <dt>{{domxref("AudioTrack.kind", "kind")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} specifying the category into which the track falls. For example, the main audio track would have a <code>kind</code> of <code>"main"</code>.</dd>
+ <dt>{{domxref("AudioTrack.label", "label")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} providing a human-readable label for the track. For example, an audio commentary track for a movie might have a <code>label</code> of <code>"Commentary with director John Q. Public and actors John Doe and Jane Eod."</code> This string is empty if no label is provided.</dd>
+ <dt>{{domxref("AudioTrack.language", "language")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} specifying the audio track's primary language, or an empty string if unknown. The language is specified as a BCP 47 ({{RFC(5646)}}) language code, such as <code>"en-US"</code> or <code>"pt-BR"</code>.</dd>
+</dl>
+

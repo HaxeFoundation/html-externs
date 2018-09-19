@@ -1,0 +1,1 @@
+The <code>SVGTransformList</code> defines a list of <a href="/en-US/docs/Web/API/SVGTransform" title="SVGTransform is the interface for one of the component transformations within an SVGTransformList; thus, an SVGTransform object corresponds to a single component (e.g., scale(…) or matrix(…)) within a transform attribute."><code>SVGTransform</code></a> objects.

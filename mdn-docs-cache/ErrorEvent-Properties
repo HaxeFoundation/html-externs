@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent {{domxref("Event")}}</em>.</p>
+
+<dl>
+	<dt>{{domxref("ErrorEvent.message")}} {{readonlyInline}}</dt>
+	<dd>Is a {{domxref("DOMString")}} containing a human-readable error message describing the problem.</dd>
+	<dt>{{domxref("ErrorEvent.filename")}} {{readonlyInline}}</dt>
+	<dd>Is a {{domxref("DOMString")}} containing the name of the script file in which the error occurred.</dd>
+	<dt>{{domxref("ErrorEvent.lineno")}} {{readonlyInline}}</dt>
+	<dd>Is an <code>integer</code> containing the line number of the script file on which the error occurred.</dd>
+	<dt>{{domxref("ErrorEvent.colno")}} {{readonlyInline}}</dt>
+	<dd>Is an <code>integer</code> containing the column number of the script file on which the error occurred.</dd>
+	<dt>{{domxref("ErrorEvent.error")}} {{readonlyInline}} {{experimental_inline}}</dt>
+	<dd>Is a JavaScript <code>Object</code> that is concerned by the event.</dd>
+</dl>
+

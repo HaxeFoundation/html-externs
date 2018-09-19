@@ -1,0 +1,16 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("ScreenOrientation.type")}} {{readonlyinline}}</dt>
+ <dd>Returns the document's current orientation type, one of "portrait-primary", "portrait-secondary", "landscape-primary", or "landscape-secondary".</dd>
+ <dt>{{domxref("ScreenOrientation.angle")}} {{readonlyinline}}</dt>
+ <dd>Returns the document's current orientation angle.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("ScreenOrientation.onchange")}}</dt>
+ <dd>Fired whenever is the {{domxref("EventHandler")}} called when the screen changes orientation.</dd>
+</dl>
+

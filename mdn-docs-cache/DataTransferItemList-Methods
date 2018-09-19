@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("DataTransferItemList.add()")}}</dt>
+ <dd>Adds an item (either a {{domxref("File")}} object or a {{domxref("DOMString","string")}}) to the drag item list and returns a {{domxref("DataTransferItem")}} object for the new item.</dd>
+ <dt>{{domxref("DataTransferItemList.remove()")}}</dt>
+ <dd>Removes the drag item from the list at the given index.</dd>
+ <dt>{{domxref("DataTransferItemList.clear()")}}</dt>
+ <dd>Removes all of the drag items from the list.</dd>
+ <dt>{{domxref("DataTransferItemList.DataTransferItem()")}}</dt>
+ <dd>Getter that returns a {{domxref("DataTransferItem")}} at the given index.</dd>
+</dl>
+

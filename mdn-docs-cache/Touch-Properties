@@ -1,0 +1,40 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface has no parent, and doesn't inherits or implements any other property.</em></p>
+
+<h3 id="Basic_properties">Basic properties</h3>
+
+<dl>
+ <dt>{{ domxref("Touch.identifier") }} {{readonlyInline}}</dt>
+ <dd>Returns a unique identifier for this <code>Touch</code> object. A given touch point (say, by a finger) will have the same identifier for the duration of its movement around the surface. This lets you ensure that you're tracking the same touch all the time.</dd>
+ <dt><strong>{{ domxref("Touch.screenX") }} </strong>{{readonlyInline}}</dt>
+ <dd>Returns the X coordinate of the touch point relative to the left edge of the screen.</dd>
+ <dt><strong>{{ domxref("Touch.screenY") }} </strong>{{readonlyInline}}</dt>
+ <dd>Returns the Y coordinate of the touch point relative to the top edge of the screen.</dd>
+ <dt><strong>{{ domxref("Touch.clientX") }} </strong>{{readonlyInline}}</dt>
+ <dd>Returns the X coordinate of the touch point relative to the left edge of the browser viewport, not including any scroll offset.</dd>
+ <dt><strong>{{ domxref("Touch.clientY") }} </strong>{{readonlyInline}}</dt>
+ <dd>Returns the Y coordinate of the touch point relative to the top edge of the browser viewport, not including any scroll offset.</dd>
+ <dt>{{ domxref("Touch.pageX") }} {{readonlyInline}}</dt>
+ <dd>Returns the X coordinate of the touch point relative to the left edge of the document. Unlike <code>clientX</code>, this value includes the horizontal scroll offset, if any.</dd>
+ <dt>{{ domxref("Touch.pageY") }} {{readonlyInline}}</dt>
+ <dd>Returns the Y coordinate of the touch point relative to the top of the document. Unlike <code>clientY,</code> this value includes the vertical scroll offset, if any.</dd>
+ <dt>{{ domxref("Touch.target") }} {{readonlyInline}}</dt>
+ <dd>Returns the {{ domxref("Element")}} on which the touch point started when it was first placed on the surface, even if the touch point has since moved outside the interactive area of that element or even been removed from the document.</dd>
+</dl>
+
+<h3 id="Touch_area">Touch area</h3>
+
+<p>{{SeeCompatTable}}</p>
+
+<dl>
+ <dt>{{ domxref("Touch.radiusX") }} {{readonlyInline}} {{experimental_inline}}</dt>
+ <dd>Returns the X radius of the ellipse that most closely circumscribes the area of contact with the screen. The value is in pixels of the same scale as <code>screenX</code>.</dd>
+ <dt>{{ domxref("Touch.radiusY") }} {{readonlyInline}} {{experimental_inline}}</dt>
+ <dd>Returns the Y radius of the ellipse that most closely circumscribes the area of contact with the screen. The value is in pixels of the same scale as <code>screenY</code>.</dd>
+ <dt>{{ domxref("Touch.rotationAngle") }} {{readonlyInline}} {{experimental_inline}}</dt>
+ <dd>Returns the angle (in degrees) that the ellipse described by radiusX and radiusY must be rotated, clockwise, to most accurately cover the area of contact between the user and the surface.</dd>
+ <dt>{{ domxref("Touch.force") }}{{readonlyInline}} {{experimental_inline}}</dt>
+ <dd>Returns the amount of pressure being applied to the surface by the user, as a <code>float</code> between <code>0.0</code> (no pressure) and <code>1.0</code> (maximum pressure).</dd>
+</dl>
+

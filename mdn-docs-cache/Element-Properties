@@ -1,0 +1,102 @@
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent interface, {{domxref("Node")}}, and by extension that interface's parent, {{domxref("EventTarget")}}. It implements the properties of {{domxref("ParentNode")}}, {{domxref("ChildNode")}}, {{domxref("NonDocumentTypeChildNode")}}, </em>and {{domxref("Animatable")}}.</p>
+
+<dl>
+ <dt>{{ domxref("Element.attributes") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{ domxref("NamedNodeMap") }} object containing the assigned attributes of the corresponding HTML element.</dd>
+ <dt>{{ domxref("Element.classList") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{ domxref("DOMTokenList") }} containing the list of class attributes.</dd>
+ <dt>{{ domxref("Element.className") }}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the class of the element.</dd>
+ <dt>{{ domxref("Element.clientHeight") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the inner height of the element.</dd>
+ <dt>{{ domxref("Element.clientLeft") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the width of the left border of the element.</dd>
+ <dt>{{ domxref("Element.clientTop") }}  {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the width of the top border of the element.</dd>
+ <dt>{{ domxref("Element.clientWidth") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the inner width of the element.</dd>
+ <dt>{{domxref("Element.computedName")}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the label exposed to accessibility.</dd>
+ <dt>{{domxref("Element.computedRole")}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the ARIA role that has been applied to a particular element. </dd>
+ <dt>{{ domxref("Element.id") }}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the id of the element.</dd>
+ <dt>{{ domxref("Element.innerHTML") }}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the markup of the element's content.</dd>
+ <dt>{{ domxref("Element.localName") }} {{readOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the local part of the qualified name of the element.</dd>
+ <dt>{{domxref("Element.namespaceURI")}} {{readonlyInline}}</dt>
+ <dd>The namespace URI of the element, or <code>null</code> if it is no namespace.
+ <div class="note">
+ <p><strong>Note:</strong> In Firefox 3.5 and earlier, HTML elements are in no namespace. In later versions, HTML elements are in the <code><a href="http://www.w3.org/1999/xhtml" class="linkification-ext external" title="Linkification: http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a></code> namespace in both HTML and XML trees. {{ gecko_minversion_inline("1.9.2") }}</p>
+ </div>
+ </dd>
+ <dt>{{ domxref("NonDocumentTypeChildNode.nextElementSibling") }} {{readOnlyInline}}</dt>
+ <dd>Is an {{ domxref("Element") }}, the element immediately following the given one in the tree, or <code>null</code> if there's no sibling node.</dd>
+ <dt>{{ domxref("Element.outerHTML") }}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the markup of the element including its content. When used as a setter, replaces the element with nodes parsed from the given string.</dd>
+ <dt>{{ domxref("Element.prefix") }} {{readOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the namespace prefix of the element, or <code>null</code> if no prefix is specified.</dd>
+ <dt>{{ domxref("NonDocumentTypeChildNode.previousElementSibling") }} {{readOnlyInline}}</dt>
+ <dd>Is a {{ domxref("Element") }}, the element immediately preceding the given one in the tree, or <code>null</code> if there is no sibling element.</dd>
+ <dt>{{ domxref("Element.scrollHeight") }}  {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the scroll view height of an element.</dd>
+ <dt>{{ domxref("Element.scrollLeft") }}</dt>
+ <dd>Is a {{jsxref("Number")}} representing the left scroll offset of the element.</dd>
+ <dt>{{ domxref("Element.scrollLeftMax") }} {{non-standard_inline}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the maximum left scroll offset possible for the element.</dd>
+ <dt>{{ domxref("Element.scrollTop") }}</dt>
+ <dd>A {{jsxref("Number")}} representing number of pixels the top of the document is scrolled vertically.</dd>
+ <dt>{{ domxref("Element.scrollTopMax") }} {{non-standard_inline}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the maximum top scroll offset possible for the element.</dd>
+ <dt>{{ domxref("Element.scrollWidth") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("Number")}} representing the scroll view width of the element.</dd>
+ <dt>{{domxref("Element.shadowRoot") }}{{readOnlyInline}}</dt>
+ <dd>Returns the open shadow root that is hosted by the element, or null if no open shadow root is present.</dd>
+ <dt>{{domxref("Element.openOrClosedShadowRoot")}} {{non-standard_inline}}{{readOnlyInline}}</dt>
+ <dd>Returns the shadow root that is hosted by the element, regardless if its open or closed. <strong>Available only to <a href="/en-US/docs/Mozilla/Add-ons/WebExtensions">WebExtensions</a>.</strong></dd>
+ <dt>{{domxref("Element.slot")}} {{experimental_inline}}</dt>
+ <dd>Returns the name of the shadow DOM slot the element is inserted in.</dd>
+ <dt>{{domxref("Element.tabStop")}} {{non-standard_inline}}</dt>
+ <dd>Is a {{jsxref("Boolean")}} indicating if the element can receive input focus via the tab key.</dd>
+ <dt>{{ domxref("Element.tagName") }} {{readOnlyInline}}</dt>
+ <dd>Returns a {{jsxref("String")}} with the name of the tag for the given element.</dd>
+ <dt>{{ domxref("Element.undoManager")}} {{experimental_inline}} {{readOnlyInline}}</dt>
+ <dd>Returns the {{domxref("UndoManager")}} associated with the element.</dd>
+ <dt>{{ domxref("Element.undoScope")}} {{experimental_inline}}</dt>
+ <dd>Is a {{jsxref("Boolean")}} indicating if the element is an undo scope host, or not.</dd>
+</dl>
+
+<div class="note">
+<p><strong>Note:</strong> DOM Level 3 defined <code>namespaceURI</code>, <code>localName</code> and <code>prefix</code> on the {{domxref("Node")}} interface. In DOM4 they were moved to <code>Element</code>.</p>
+
+<p>This change is implemented in Chrome since version 46.0 and Firefox since version 48.0.</p>
+</div>
+
+<h3 id="Properties_included_from_Slotable">Properties included from Slotable</h3>
+
+<p><em>The <code>Element</code> interface includes the following property, defined on the {{domxref("Slotable")}} mixin.</em></p>
+
+<dl>
+ <dt>{{domxref("Slotable.assignedSlot")}}{{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("HTMLSlotElement")}} representing the {{htmlelement("slot")}} the node is inserted in.</dd>
+</dl>
+
+<h3 name="Handlers" id="Handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{ domxref("Element.ongotpointercapture") }}</dt>
+ <dd>Returns the event handler for the {{event("gotpointercapture")}} event type.</dd>
+ <dt>{{ domxref("Element.onlostpointercapture") }}</dt>
+ <dd>Returns the event handler for the {{event("lostpointercapture")}} event type.</dd>
+</dl>
+
+<h4 id="Obsolete_event_handlers">Obsolete event handlers</h4>
+
+<dl>
+ <dt>{{ domxref("Element.onwheel") }}</dt>
+ <dd>Returns the event handling code for the {{ domeventxref("wheel") }} event. <strong>This is now implemented on {{domxref("GlobalEventHandlers.onwheel", "GlobalEventHandlers")}}.</strong></dd>
+</dl>
+

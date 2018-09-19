@@ -1,0 +1,37 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLTableElement.caption")}}</dt>
+ <dd>Is a {{domxref("HTMLTableCaptionElement")}} representing the first {{HTMLElement("caption")}} that is a child of the element, or <code>null</code> if none is found. When set, if the object doesn't represent a <code>&lt;caption&gt;</code>, a {{domxref("DOMException")}} with the <code>HierarchyRequestError</code> name is thrown. If a correct object is given, it is inserted in the tree as the first child of this element and the first <code>&lt;caption&gt;</code> that is a child of this element is removed from the tree, if any.</dd>
+ <dt>{{domxref("HTMLTableElement.tHead")}}</dt>
+ <dd>Is a {{domxref("HTMLTableSectionElement")}} representing the first {{HTMLElement("thead")}} that is a child of the element, or <code>null</code> if none is found. When set, if the object doesn't represent a <code>&lt;thead&gt;</code>, a {{domxref("DOMException")}} with the <code>HierarchyRequestError</code> name is thrown. If a correct object is given, it is inserted in the tree immediately before the first element that is neither a {{HTMLElement("caption")}}, nor a {{HTMLElement("colgroup")}}, or as the last child if there is no such element, and the first <code>&lt;thead&gt;</code> that is a child of this element is removed from the tree, if any.</dd>
+ <dt>{{domxref("HTMLTableElement.tFoot")}}</dt>
+ <dd>Is a {{domxref("HTMLTableSectionElement")}} representing the first {{HTMLElement("tfoot")}} that is a child of the element, or <code>null</code> if none is found. When set, if the object doesn't represent a <code>&lt;tfoot&gt;</code>, a {{domxref("DOMException")}} with the <code>HierarchyRequestError</code> name is thrown. If a correct object is given, it is inserted in the tree immediately before the first element that is neither a {{HTMLElement("caption")}}, a {{HTMLElement("colgroup")}}, nor a {{HTMLElement("thead")}}, or as the last child if there is no such element, and the first <code>&lt;tfoot&gt;</code> that is a child of this element is removed from the tree, if any.</dd>
+ <dt>{{domxref("HTMLTableElement.rows")}} {{readonlyInline}}</dt>
+ <dd>Returns a live {{domxref("HTMLCollection")}} containing all the rows of the element, that is all {{HTMLElement("tr")}} that are a child of the element, or a child or one of its {{HTMLElement("thead")}}, {{HTMLElement("tbody")}} and {{HTMLElement("tfoot")}} children. The rows members of a <code>&lt;thead&gt;</code> appear first, in tree order, and those members of a <code>&lt;tbody&gt;</code> last, also in tree order. The <code>HTMLCollection</code> is live and is automatically updated when the <code>HTMLTableElement</code> changes.</dd>
+ <dt>{{domxref("HTMLTableElement.tBodies")}} {{readonlyInline}}</dt>
+ <dd>Returns a live {{domxref("HTMLCollection")}} containing all the {{HTMLElement("tbody")}} of the element. The <code>HTMLCollection</code> is live and is automatically updated when the <code>HTMLTableElement</code> changes.</dd>
+ <dt>{{domxref("HTMLTableElement.sortable")}} {{experimental_inline}}</dt>
+ <dd>Is a {{domxref("Boolean")}} value indicating if the user agent is allowed to provide sorting mechanism for the table, if it supports such a feature. This property reflects the {{htmlattrxref("sortable", "table")}} attribute.</dd>
+ <dt>{{domxref("HTMLTableElement.align")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing an enumerated value reflecting the {{htmlattrxref("align", "table")}} attribute. It indicates the alignment of the element's contents with respect to the surrounding context. The possible values are <code>"left"</code>, <code>"right"</code>, and <code>"center"</code>.</dd>
+ <dt>{{domxref("HTMLTableElement.bgColor")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the background color of the cells. It reflects the obsolete {{htmlattrxref("bgColor", "table")}} attribute.</dd>
+ <dt>{{domxref("HTMLTableElement.border")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the width in pixels of the border of the table. It reflects the obsolete {{htmlattrxref("border", "table")}} attribute.</dd>
+ <dt>{{domxref("HTMLTableElement.cellPadding")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the width in pixels of the horizontal and vertical sapce between cell content and cell borders. It reflects the obsolete {{htmlattrxref("cellpadding", "table")}} attribute.</dd>
+ <dt>{{domxref("HTMLTableElement.cellSpacing")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the width in pixels of the horizontal and vertical separation between cells. It reflects the obsolete {{htmlattrxref("cellspacing", "table")}} attribute.</dd>
+ <dt>{{domxref("HTMLTableElement.frame")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the type of the external borders of the table. It reflects the obsolete {{htmlattrxref("frame", "table")}} attribute and can take one of the following values: <code>"void"</code>, <code>"above"</code>, <code>"below"</code>, <code>"hsides"</code>, <code>"vsides"</code>, <code>"lhs"</code>, <code>"rhs"</code>, <code>"box"</code>, or <code>"border"</code>.</dd>
+ <dt>{{domxref("HTMLTableElement.rules")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the type of the internal borders of the table. It reflects the obsolete {{htmlattrxref("rules", "table")}} attribute and can take one of the following values: <code>"none"</code>, <code>"groups"</code>, <code>"rows"</code>, <code>"cols"</code>, or <code>"all"</code>.</dd>
+ <dt>{{domxref("HTMLTableElement.summary")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing a description of the purpose or the structure of the table. It reflects the obsolete {{htmlattrxref("summary", "table")}} attribute.</dd>
+ <dt>{{domxref("HTMLTableElement.width")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the length in pixels or in percentage of the desired width fo the entire table. It reflects the obsolete {{htmlattrxref("width", "table")}} attribute.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <strong><code>EventListener</code></strong> interface represents an object that can handle an event dispatched by an <a href="/en-US/docs/Web/API/EventTarget" title="EventTarget is an interface implemented by objects that can receive events and may have listeners for them."><code>EventTarget</code></a> object.

@@ -1,0 +1,29 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent {{domxref("CSSRule")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("CSSCounterStyleRule.name")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("&lt;counter-style-name&gt;")}} defined for the associated rule.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.system")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/system", "system")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.symbols")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/symbols", "symbols")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.additiveSymbols")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/additive-symbols", "additive-symbols")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.negative")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/negative", "negative")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.prefix")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/prefix", "prefix")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.suffix")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/suffix", "suffix")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.range")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/range", "range")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.pad")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/pad", "pad")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.speakAs")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/speak-as", "speak-as")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+ <dt>{{domxref("CSSCounterStyleRule.fallback")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} object that contains the serialization of the {{cssxref("@counter-style/fallback", "fallback")}} descriptor defined for the associated rule. If the descriptor was not specified in the associated rule, the attribute returns an empty string.</dd>
+</dl>
+

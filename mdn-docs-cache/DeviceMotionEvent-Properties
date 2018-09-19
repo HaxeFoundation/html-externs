@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("DeviceMotionEvent.acceleration")}} {{readonlyinline}}</dt>
+ <dd>An object giving the acceleration of the device on the three axis X, Y and Z. Acceleration is expressed in <a href="https://en.wikipedia.org/wiki/Meter_per_second_squared" title="https://en.wikipedia.org/wiki/Meter_per_second_squared">m/s<sup>2</sup></a>.</dd>
+ <dt>{{domxref("DeviceMotionEvent.accelerationIncludingGravity")}} {{readonlyinline}}</dt>
+ <dd>An object giving the acceleration of the device on the three axis X, Y and Z with the effect of gravity. Acceleration is expressed in <a href="https://en.wikipedia.org/wiki/Meter_per_second_squared" title="https://en.wikipedia.org/wiki/Meter_per_second_squared">m/s<sup>2</sup></a>.</dd>
+ <dt>{{domxref("DeviceMotionEvent.rotationRate")}} {{readonlyinline}}</dt>
+ <dd>An object giving the rate of change of the device's orientation on the three orientation axis alpha, beta and gamma. Rotation rate is expressed in degrees per seconds.</dd>
+ <dt>{{domxref("DeviceMotionEvent.interval")}} {{readonlyinline}}</dt>
+ <dd>A number representing the interval of time, in milliseconds, at which data is obtained from the device.</dd>
+</dl>
+

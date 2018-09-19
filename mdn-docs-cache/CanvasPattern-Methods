@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>There are no inherited method.</em></p>
+
+<dl>
+	<dt>{{domxref("CanvasPattern.setTransform()")}} {{experimental_inline}}</dt>
+	<dd>Applies an {{domxref("SVGMatrix")}} representing a linear transform to the pattern.</dd>
+</dl>
+

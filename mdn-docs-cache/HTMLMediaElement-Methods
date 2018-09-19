@@ -1,0 +1,33 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods from its ancestors {{domxref("HTMLElement")}}, {{domxref('Element')}}, {{domxref('Node')}}, and {{domxref('EventTarget')}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLMediaElement.addTextTrack()")}}</dt>
+ <dd>Adds a text track (such as a track for subtitles) to a media element.</dd>
+ <dt>{{domxref("HTMLMediaElement.captureStream()")}} {{experimental_inline}}</dt>
+ <dd>Returns {{domxref("MediaStream")}}, captures a stream of the media content.</dd>
+ <dt>{{domxref("HTMLMediaElement.canPlayType()")}}</dt>
+ <dd>Determines whether the specified media type can be played back.</dd>
+ <dt>{{domxref("HTMLMediaElement.fastSeek()")}}</dt>
+ <dd>Directly seeks to the given time.</dd>
+ <dt>{{domxref("HTMLMediaElement.load()")}}</dt>
+ <dd>Resets the media element and restarts the media resource. Any pending events are discarded. How much media data is fetched is still affected by the <code>preload</code> attribute. This method can be useful for releasing resources after any <code>src</code> attribute and <code>source</code> element descendants have been removed. Otherwise, it is usually unnecessary to use this method, unless required to rescan <code>source</code> element children after dynamic changes.</dd>
+ <dt>{{domxref("HTMLMediaElement.mozCaptureStream()")}} {{non-standard_inline}}</dt>
+ <dd>[enter description]</dd>
+ <dt>{{domxref("HTMLMediaElement.mozCaptureStreamUntilEnded()")}} {{non-standard_inline}}</dt>
+ <dd>[enter description]</dd>
+ <dt>{{domxref("HTMLMediaElement.mozGetMetadata()")}} {{non-standard_inline}}</dt>
+ <dd>Returns {{jsxref('Object')}}, which contains properties that represent metadata from the playing media resource as <code>{key: value}</code> pairs. A separate copy of the data is returned each time the method is called. This method must be called after the <a href="/en-US/docs/Web/Events/loadedmetadata">loadedmetadata</a> event fires.</dd>
+ <dt>{{domxref("HTMLMediaElement.pause()")}}</dt>
+ <dd>Pauses the media playback.</dd>
+ <dt>{{domxref("HTMLMediaElement.play()")}}</dt>
+ <dd>Begins playback of the media.</dd>
+ <dt>{{domxref("HTMLMediaElement.seekToNextFrame()")}} {{non-standard_inline}} {{experimental_inline}}</dt>
+ <dd>Seeks to the next frame in the media. This non-standard, experimental method makes it possible to manually drive reading and rendering of media at a custom speed, or to move through the media frame-by-frame to perform filtering or other operations.</dd>
+ <dt>{{domxref("HTMLMediaElement.setMediaKeys()")}} {{experimental_inline}}</dt>
+ <dd>Returns {{jsxref("Promise")}}. Sets the {{domxref("MediaKeys")}} keys to use when decrypting media during playback.</dd>
+ <dt>{{domxref("HTMLMediaElement.setSinkId()")}} {{experimental_inline}}</dt>
+ <dd>Sets the ID of the audio device to use for output and returns a {{jsxref("Promise")}}. This only works when the application is authorized to use the specified device.</dd>
+</dl>
+

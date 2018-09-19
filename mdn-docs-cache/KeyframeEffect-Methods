@@ -1,0 +1,20 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface inherits some of its methods from its parent, {{domxref("AnimationEffect")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("AnimationEffect.getComputedTiming()")}}</dt>
+ <dd>Returns the calculated, current timing values for this keyframe effect.</dd>
+ <dt>{{domxref("KeyframeEffect.getKeyframes()")}}</dt>
+ <dd>Returns the computed keyframes that make up this effect along with their computed keyframe offsets.</dd>
+ <dt>{{domxref("AnimationEffect.getTiming()")}}</dt>
+ <dd>The {{domxref("EffectTiming")}} object associated with the animation containing all the animation's timing values.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("KeyframeEffect.setKeyframes()")}}</dt>
+ <dd>Replaces the set of keyframes that make up this effect.</dd>
+ <dt>{{domxref("AnimationEffect.updateTiming()")}}</dt>
+ <dd>Updates the specified timing properties.</dd>
+</dl>
+

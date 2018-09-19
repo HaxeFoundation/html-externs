@@ -1,0 +1,46 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em><code>SpeechRecognition</code> also inherits properties from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("SpeechRecognition.grammars")}}</dt>
+	<dd>Returns and sets a collection of {{domxref("SpeechGrammar")}} objects that represent the grammars that will be understood by the current <code>SpeechRecognition</code>.</dd>
+	<dt>{{domxref("SpeechRecognition.lang")}}</dt>
+	<dd>Returns and sets the language of the current <code>SpeechRecognition</code>. If not specified, this defaults to the HTML {{htmlattrxref("lang","html")}} attribute value, or the user agent's language setting if that isn't set either.</dd>
+	<dt>{{domxref("SpeechRecognition.continuous")}}</dt>
+	<dd>Controls whether continuous results are returned for each recognition, or only a single result. Defaults to single (<code>false</code>.)</dd>
+	<dt>{{domxref("SpeechRecognition.interimResults")}}</dt>
+	<dd>Controls whether interim results should be returned (<code>true</code>) or not (<code>false</code>.) Interim results are results that are not yet final (e.g. the {{domxref("SpeechRecognitionResult.isFinal")}} property is <code>false</code>.)</dd>
+	<dt>{{domxref("SpeechRecognition.maxAlternatives")}}</dt>
+	<dd>Sets the maximum number of {{domxref("SpeechRecognitionAlternative")}}s provided per result. The default value is 1.</dd>
+	<dt>{{domxref("SpeechRecognition.serviceURI")}}</dt>
+	<dd>Specifies the location of the speech recognition service used by the current <code>SpeechRecognition</code> to handle the actual recognition. The default is the user agent's default speech service.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+	<dt>{{domxref("SpeechRecognition.onaudiostart")}}</dt>
+	<dd>Fired when the user agent has started to capture audio.</dd>
+	<dt>{{domxref("SpeechRecognition.onaudioend")}}</dt>
+	<dd>Fired when the user agent has finished capturing audio.</dd>
+	<dt>{{domxref("SpeechRecognition.onend")}}</dt>
+	<dd>Fired when the speech recognition service has disconnected.</dd>
+	<dt>{{domxref("SpeechRecognition.onerror")}}</dt>
+	<dd>Fired when a speech recognition error occurs.</dd>
+	<dt>{{domxref("SpeechRecognition.onnomatch")}}</dt>
+	<dd>Fired when the speech recognition service returns a final result with no significant recognition. This may involve some degree of recognition, which doesn't meet or exceed the {{domxref("SpeechRecognitionAlternative.confidence","confidence")}} threshold.</dd>
+	<dt>{{domxref("SpeechRecognition.onresult")}}</dt>
+	<dd>Fired when the speech recognition service returns a result — a word or phrase has been positively recognized and this has been communicated back to the app.</dd>
+	<dt>{{domxref("SpeechRecognition.onsoundstart")}}</dt>
+	<dd>Fired when any sound — recognisable speech or not — has been detected.</dd>
+	<dt>{{domxref("SpeechRecognition.onsoundend")}}</dt>
+	<dd>Fired when any sound — recognisable speech or not — has stopped being detected.</dd>
+	<dt>{{domxref("SpeechRecognition.onspeechstart")}}</dt>
+	<dd>Fired when sound that is recognised by the speech recognition service as speech has been detected.</dd>
+	<dt>{{domxref("SpeechRecognition.onspeechend")}}</dt>
+	<dd>Fired when speech recognised by the speech recognition service has stopped being detected.</dd>
+	<dt>{{domxref("SpeechRecognition.onstart")}}</dt>
+	<dd>Fired when the speech recognition service has begun listening to incoming audio with intent to recognize grammars associated with the current <code>SpeechRecognition</code>.</dd>
+</dl>
+

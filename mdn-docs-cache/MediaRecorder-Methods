@@ -1,0 +1,17 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("MediaRecorder.canRecordMimeType()", "MediaRecorder.isTypeSupported()")}}</dt>
+ <dd> Returns a {{domxref("Boolean")}} value indicating if the given MIME type is supported by the current user agent . </dd>
+ <dt>{{domxref("MediaRecorder.pause()")}}</dt>
+ <dd>Pauses the recording of media.</dd>
+ <dt>{{domxref("MediaRecorder.requestData()")}}</dt>
+ <dd>Requests a {{domxref("Blob")}} containing the saved data received thus far (or since the last time <code>requestData()</code> was called. After calling this method, recording continues, but in a new <code>Blob</code>.</dd>
+ <dt>{{domxref("MediaRecorder.resume()")}}</dt>
+ <dd>Resumes recording of media after having been paused.</dd>
+ <dt>{{domxref("MediaRecorder.start()")}}</dt>
+ <dd>Begins recording media; this method can optionally be passed a <code>timeslice</code> argument with a value in milliseconds. If this is specified, the media will be captured in separate chunks of that duration, rather than the default behavior of recording the media in a single large chunk.</dd>
+ <dt>{{domxref("MediaRecorder.stop()")}}</dt>
+ <dd>Stops recording, at which point a {{event("dataavailable")}} event containing the final <code>Blob</code> of saved data is fired. No more recording occurs.</dd>
+</dl>
+

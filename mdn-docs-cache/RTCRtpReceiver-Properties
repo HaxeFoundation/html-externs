@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("RTCRtpReceiver.track")}} {{readonlyinline}}</dt>
+ <dd>Returns the {{domxref("MediaStreamTrack")}} associated with the current <code>RTCRtpReceiver</code> instance. </dd>
+ <dt>{{domxref("RTCRtpReceiver.rtcpTransport")}} {{readonlyinline}}</dt>
+ <dd>Returns the {{domxref("RTCDtlsTransport")}} instance over which RTCP is sent and received.</dd>
+ <dt>{{domxref("RTCRtpReceiver.transport")}} {{readonlyinline}}</dt>
+ <dd>Returns the {{domxref("RTCDtlsTransport")}} instance over which the media for the receiver's track is received.</dd>
+</dl>
+

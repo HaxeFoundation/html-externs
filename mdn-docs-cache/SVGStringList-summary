@@ -1,0 +1,1 @@
+The <code>SVGStringList</code> defines a list of <a href="/en-US/docs/Web/API/DOMString" title="DOMString is a UTF-16 String. As JavaScript already uses such strings, DOMString is mapped directly to a String."><code>DOMString</code></a> objects.

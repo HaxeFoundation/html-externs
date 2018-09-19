@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLHeadElement.profile")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the URIs of one or more metadata profiles (white space separated).</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <code><strong>WEBGL_compressed_texture_etc</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and exposes 10 <a href="https://en.wikipedia.org/wiki/Ericsson_Texture_Compression">ETC/EAC compressed texture formats</a>.

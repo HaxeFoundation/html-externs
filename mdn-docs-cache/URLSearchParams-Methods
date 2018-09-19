@@ -1,0 +1,29 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface doesn't inherit any methods.</em></p>
+
+<dl>
+ <dt>{{domxref("URLSearchParams.append()")}}</dt>
+ <dd>Appends a specified key/value pair as a new search parameter.</dd>
+ <dt>{{domxref("URLSearchParams.delete()")}}</dt>
+ <dd>Deletes the given search parameter, and its associated value, from the list of all search parameters.</dd>
+ <dt>{{domxref("URLSearchParams.entries()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols","iterator")}} allowing to go through all key/value pairs contained in this object.</dd>
+ <dt>{{domxref("URLSearchParams.get()")}}</dt>
+ <dd>Returns the first value associated to the given search parameter.</dd>
+ <dt>{{domxref("URLSearchParams.getAll()")}}</dt>
+ <dd>Returns all the values associated with a given search parameter.</dd>
+ <dt>{{domxref("URLSearchParams.has()")}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} indicating if such a search parameter exists.</dd>
+ <dt>{{domxref("URLSearchParams.keys()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing to go through all <strong>keys </strong>of the key/value pairs contained in this object.</dd>
+ <dt>{{domxref("URLSearchParams.set()")}}</dt>
+ <dd>Sets the value associated to a given search parameter to the given value. If there were several values, delete the others.</dd>
+ <dt>{{domxref("URLSearchParams.sort()")}}</dt>
+ <dd>Sorts all key/value pairs, if any, by their keys.</dd>
+ <dt>{{domxref("URLSearchParams.toString()")}}</dt>
+ <dd>Returns a string containing a query string suitable for use in a URL.</dd>
+ <dt>{{domxref("URLSearchParams.values()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing to go through all <strong>values </strong>of the key/value pairs contained in this object.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <strong><code>Animation</code></strong> interface of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a> represents a single animation player and provides playback controls and a timeline for an animation node or source.

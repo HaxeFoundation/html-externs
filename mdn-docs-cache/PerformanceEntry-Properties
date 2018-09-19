@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("PerformanceEntry.name")}} {{readonlyInline}}</dt>
+ <dd>A value that further specifies the value returned by the {{domxref("PerformanceEntry.entryType")}} property. The value of both depends on the subtype. See property page for valid values.</dd>
+ <dt>{{domxref("PerformanceEntry.entryType")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the type of performance metric such as, for example, "<code>mark</code>". See property page for valid values.</dd>
+ <dt>{{domxref("PerformanceEntry.startTime")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMHighResTimeStamp")}} representing the starting time for the performance metric.</dd>
+ <dt>{{domxref("PerformanceEntry.duration")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMHighResTimeStamp")}} representing the time value of the duration of the performance event.</dd>
+</dl>
+

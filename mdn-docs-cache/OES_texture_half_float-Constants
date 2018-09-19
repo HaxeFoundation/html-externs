@@ -1,0 +1,7 @@
+<h2 id="Constants">Constants</h2>
+
+<dl>
+ <dt><code>ext.HALF_FLOAT_OES</code></dt>
+ <dd>Half floating-point type (16-bit).</dd>
+</dl>
+

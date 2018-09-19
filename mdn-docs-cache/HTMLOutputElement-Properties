@@ -1,0 +1,27 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLOutputElement.defaultValue")}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the default value of the element, initially the empty string.</dd>
+ <dt>{{domxref("HTMLOutputElement.form")}}{{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("HTMLFormElement")}} indicating the form associated with the control, reflecting the {{htmlattrxref("form", "output")}} HTML attribute if it is defined.</dd>
+ <dt>{{domxref("HTMLOutputElement.htmlFor")}}{{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMTokenList")}} reflecting the {{htmlattrxref("for", "output")}} HTML attribute, containing a list of IDs of other elements in the same document that contribute to (or otherwise affect) the calculated <code>value</code>.</dd>
+ <dt>{{domxref("HTMLOutputElement.labels")}}{{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("NodeList")}} of {{HTMLElement("label")}} elements associated with the element.</dd>
+ <dt>{{domxref("HTMLOutputElement.name")}}</dt>
+ <dd>A {{domxref("DOMString")}} reflecting the {{htmlattrxref("name", "output")}} HTML attribute, containing the name for the control that is submitted with form data.</dd>
+ <dt>{{domxref("HTMLOutputElement.type")}}{{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("DOMString")}} <code>"output"</code>.</dd>
+ <dt>{{domxref("HTMLOutputElement.validationMessage")}}{{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing a localized message that describes the validation constraints that the control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (<code>willValidate</code> is <code>false</code>), or it satisfies its constraints.</dd>
+ <dt>{{domxref("HTMLOutputElement.validity")}}{{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("ValidityState")}} representing the validity states that this element is in.</dd>
+ <dt>{{domxref("HTMLOutputElement.value")}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the value of the contents of the elements. Behaves like the {{domxref("Node.textContent")}} property.</dd>
+ <dt>{{domxref("HTMLOutputElement.willValidate")}}{{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("Boolean")}} indicating whether the element is a candidate for constraint validation.</dd>
+</dl>
+

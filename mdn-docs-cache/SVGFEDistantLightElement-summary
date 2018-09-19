@@ -1,0 +1,1 @@
+The <strong><code>SVGFEDistantLightElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feDistantLight" title="The &lt;feDistantLight&gt; filter primitive defines a distant light source that can be used within a lighting filter primitive: &lt;feDiffuseLighting&gt; or &lt;feSpecularLighting&gt;."><code>&lt;feDistantLight&gt;</code></a> element.

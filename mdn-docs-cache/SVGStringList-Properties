@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>numberOfItems</code></td>
+   <td><code>unsigned long</code></td>
+   <td>The number of items in the list.</td>
+  </tr>
+  <tr>
+   <td><code>length</code></td>
+   <td><code>unsigned long</code></td>
+   <td>A mirror of the value in <code>numberOfItems</code>, for consistency with other interfaces. {{non-standard_inline}}</td>
+  </tr>
+ </tbody>
+</table>
+

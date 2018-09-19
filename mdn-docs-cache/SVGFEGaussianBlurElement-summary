@@ -1,0 +1,1 @@
+The <strong><code>SVGFEGaussianBlurElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feGaussianBlur" title="The &lt;feGaussianBlur&gt; SVG filter primitive blurs the input image by the amount specified in stdDeviation, which defines the bell-curve."><code>&lt;feGaussianBlur&gt;</code></a> element.

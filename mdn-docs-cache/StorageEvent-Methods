@@ -1,0 +1,39 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<h3 name="initStorageEvent()" id="initStorageEvent()">initStorageEvent()</h3>
+
+<p>Initializes the event in a manner analogous to the similarly-named method in the DOM Events interfaces.</p>
+
+<pre class="eval">void initStorageEvent(
+  in DOMString typeArg,
+  in boolean canBubbleArg,
+  in boolean cancelableArg,
+  in DOMString keyArg,
+  in DOMString oldValueArg,
+  in DOMString newValueArg,
+  in DOMString urlArg,
+  in nsIDOMStorage storageAreaArg
+);
+</pre>
+
+<h6 name="Parameters" id="Parameters">Parameters</h6>
+
+<dl>
+ <dt><code>typeArg</code></dt>
+ <dd>The name of the event.</dd>
+ <dt><code>canBubbleArg</code></dt>
+ <dd>A boolean indicating whether the event bubbles up through the DOM or not.</dd>
+ <dt><code>cancelableArg</code></dt>
+ <dd>A boolean indicating whether the event is cancelable.</dd>
+ <dt><code>keyArg</code></dt>
+ <dd>The key whose value is changing as a result of this event.</dd>
+ <dt><code>oldValueArg</code></dt>
+ <dd>The key's old value.</dd>
+ <dt><code>newValueArg</code></dt>
+ <dd>The key's new value.</dd>
+ <dt><code>urlArg</code></dt>
+ <dd>The URL of the document initiating the change.</dd>
+ <dt><code>storageAreaArg</code></dt>
+ <dd>The DOM {{ domxref("Storage") }} object representing the storage area on which this event occurred.</dd>
+</dl>
+

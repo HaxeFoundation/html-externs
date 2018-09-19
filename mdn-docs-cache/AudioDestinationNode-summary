@@ -1,0 +1,1 @@
+<code>AudioDestinationNode</code> has no output (as it <em>is</em> the output, no more <code>AudioNode</code> can be linked after it in the audio graph) and one input. The number of channels in the input must be between <code>0</code> and the <code>maxChannelCount</code> value or an exception is raised.

@@ -1,0 +1,1 @@
+<code>EventTarget</code> is an interface implemented by objects that can receive events and may have listeners for them.

@@ -1,0 +1,8 @@
+<h2 id="Constants">Constants</h2>
+
+<h3 id="Standard_values_for_latencyHint">Standard values for latencyHint</h3>
+
+<p>The {{domxref("AudioContextOptions.latencyHint", "latencyHint")}} property can be number specifying a preferred maximum latency in seconds or a string from the {{domxref("AudioContextLatencyCategory")}} enumerated string, which selects a standard value for a given type of audio usage:</p>
+
+<p>{{page("/en-US/docs/Web/API/AudioContextLatencyCategory", "Values")}}</p>
+

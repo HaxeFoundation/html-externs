@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}, and also implements properties of {{domxref("SVGFilterPrimitiveStandardAttributes")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFEGaussianBlurElement.in1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEGaussianBlurElement.stdDeviationX")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the (possibly automatically computed) X component of the {{SVGAttr("stdDeviation")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEGaussianBlurElement.stdDeviationY")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the (possibly automatically computed) Y component of the {{SVGAttr("stdDeviation")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEGaussianBlurElement.edgeMode")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("edgeMode")}} attribute of the given element. Takes one of the <code>SVG_EDGEMODE_*</code> constants defined on this interface.</dd>
+</dl>
+

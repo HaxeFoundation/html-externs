@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+</dl>
+
+<dl>
+	<dt>{{domxref("DOMRectReadOnly.x")}} {{readonlyInline}}</dt>
+	<dd>The x coordinate of the <code>DOMRect</code>'s origin.</dd>
+	<dt>{{domxref("DOMRectReadOnly.y")}} {{readonlyInline}}</dt>
+	<dd>The y coordinate of the <code>DOMRect</code>'s origin.</dd>
+	<dt>{{domxref("DOMRectReadOnly.width")}} {{readonlyInline}}</dt>
+	<dd>The width of the <code>DOMRect</code>.</dd>
+	<dt>{{domxref("DOMRectReadOnly.height")}} {{readonlyInline}}</dt>
+	<dd>The height of the <code>DOMRect</code>.</dd>
+	<dt>{{domxref("DOMRectReadOnly.top")}} {{readonlyInline}}</dt>
+	<dd>Returns the top coordinate value of the <code>DOMRect</code> (usually the same as <code>y</code>.)</dd>
+	<dt>{{domxref("DOMRectReadOnly.right")}} {{readonlyInline}}</dt>
+	<dd>Returns the right coordinate value of the <code>DOMRect</code> (usually the same as <code>x + width</code>).</dd>
+	<dt>{{domxref("DOMRectReadOnly.bottom")}} {{readonlyInline}}</dt>
+	<dd>Returns the bottom coordinate value of the <code>DOMRect</code> (usually the same as y + height).</dd>
+	<dt>{{domxref("DOMRectReadOnly.left")}} {{readonlyInline}}</dt>
+	<dd>Returns the left coordinate value of the <code>DOMRect</code> (usually the same as <code>x</code>).</dd>
+</dl>
+

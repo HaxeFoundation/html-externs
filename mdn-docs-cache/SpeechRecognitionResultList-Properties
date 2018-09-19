@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("SpeechRecognitionResultList.length")}} {{readonlyinline}}</dt>
+	<dd>Returns <cite>the length of the "array" — the </cite>number of {{domxref("SpeechRecognitionResult")}} objects in the list.</dd>
+</dl>
+

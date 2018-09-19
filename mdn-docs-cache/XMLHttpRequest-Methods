@@ -1,0 +1,35 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("XMLHttpRequest.abort()")}}</dt>
+ <dd>Aborts the request if it has already been sent.</dd>
+ <dt>{{domxref("XMLHttpRequest.getAllResponseHeaders()")}}</dt>
+ <dd>Returns all the response headers, separated by <a href="https://developer.mozilla.org/en-US/docs/Glossary/CRLF">CRLF</a>, as a string, or <code>null</code> if no response has been received.</dd>
+ <dt>{{domxref("XMLHttpRequest.getResponseHeader()")}}</dt>
+ <dd>Returns the string containing the text of the specified header, or <code>null</code> if either the response has not yet been received or the header doesn't exist in the response.</dd>
+ <dt>{{domxref("XMLHttpRequest.open()")}}</dt>
+ <dd>Initializes a request. This method is to be used from JavaScript code; to initialize a request from native code, use <a href="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIXMLHttpRequest#openRequest()" class="internal"><code>openRequest()</code></a> instead.</dd>
+ <dt>{{domxref("XMLHttpRequest.overrideMimeType()")}}</dt>
+ <dd>Overrides the MIME type returned by the server.</dd>
+ <dt>{{domxref("XMLHttpRequest.send()")}}</dt>
+ <dd>Sends the request. If the request is asynchronous (which is the default), this method returns as soon as the request is sent.</dd>
+ <dt>{{domxref("XMLHttpRequest.setRequestHeader()")}}</dt>
+ <dd>Sets the value of an HTTP request header. You must call <code>setRequestHeader()</code>after <a href="#open"><code>open()</code></a>, but before <code>send()</code>.</dd>
+</dl>
+
+<h3 id="Non-standard_methods">Non-standard methods</h3>
+
+<dl>
+ <dt>{{domxref("XMLHttpRequest.init()")}}</dt>
+ <dd>Initializes the object for use from C++ code.</dd>
+</dl>
+
+<div class="warning"><strong>Warning:</strong> This method must <em>not</em> be called from JavaScript.</div>
+
+<dl>
+ <dt>{{domxref("XMLHttpRequest.openRequest()")}}</dt>
+ <dd>Initializes a request. This method is to be used from native code; to initialize a request from JavaScript code, use <a href="/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIXMLHttpRequest#open()" class="internal"><code>open()</code></a> instead. See the documentation for <code>open()</code>.</dd>
+ <dt>{{domxref("XMLHttpRequest.sendAsBinary()")}}{{deprecated_inline()}}</dt>
+ <dd>A variant of the <code>send()</code> method that sends binary data.</dd>
+</dl>
+

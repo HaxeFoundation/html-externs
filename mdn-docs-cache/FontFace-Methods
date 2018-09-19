@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface doesn't inherit any method.</em></p>
+
+<dl>
+ <dt>{{domxref("FontFace.load()")}}</dt>
+ <dd>Loads the font, returning a {{domxref("Promise")}} to a <code>FontFace</code> that fulfills when the font is completely loaded and rejects when an error happens.</dd>
+</dl>
+

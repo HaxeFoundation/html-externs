@@ -1,0 +1,1 @@
+The <a href="/en-US/docs/Web_Audio_API" title="/en-US/docs/Web_Audio_API">Web Audio API</a> <code>AudioProcessingEvent</code> represents events that occur when a <a href="/en-US/docs/Web/API/ScriptProcessorNode" title=""><code>ScriptProcessorNode</code></a> input buffer is ready to be processed.

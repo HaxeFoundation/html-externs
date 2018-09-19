@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("SpeechGrammar.src")}}</dt>
+ <dd>Sets and returns a string containing the grammar from within in the <code>SpeechGrammar</code> object instance.</dd>
+ <dt>{{domxref("SpeechGrammar.weight")}} {{optional_inline}}</dt>
+ <dd>Sets and returns the weight of the <code>SpeechGrammar</code> object.</dd>
+</dl>
+

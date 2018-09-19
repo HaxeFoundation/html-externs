@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("AbortController.signal")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("AbortSignal")}} object instance, which can be used to communicate with/abort a DOM request.</dd>
+</dl>
+

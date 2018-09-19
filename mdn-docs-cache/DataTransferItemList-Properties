@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("DataTransferItemList.length")}} {{readonlyInline}}</dt>
+ <dd>An <code>unsigned long</code> that is the number of drag items in the list.</dd>
+</dl>
+

@@ -1,0 +1,92 @@
+<h2 id="Methods">Methods</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Name &amp; Arguments</th>
+   <th>Return</th>
+   <th>Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><strong>setMatrix</strong>(in {{ domxref("SVGMatrix") }} <em>matrix</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Sets the transform type to <code>SVG_TRANSFORM_MATRIX</code>, with parameter matrix defining the new transformation. Note that the values from the parameter <code>matrix</code> are copied.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when attempting to modify a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><code><strong>setTranslate</strong>(in float <em>tx</em> , in float <em>ty</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Sets the transform type to <code>SVG_TRANSFORM_TRANSLATE</code>, with parameters <code>tx</code> and <code>ty</code> defining the translation amounts.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when attempting to modify a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><code><strong>setScale</strong>(in float <em>sx</em> , in float <em>sy</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Sets the transform type to <code>SVG_TRANSFORM_SCALE</code>, with parameters <code>sx</code> and <code>sy</code> defining the scale amounts.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when attempting to modify a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><code><strong>setRotate</strong>(in float <em>angle</em>, in float <em>cx</em> , in float <em>cy</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Sets the transform type to <code>SVG_TRANSFORM_ROTATE</code>, with parameter <code>angle</code> defining the rotation angle and parameters <code>cx</code> and <code>cy</code> defining the optional center of rotation.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when attempting to modify a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><code><strong>setSkewX</strong>(in float <em>angle</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Sets the transform type to <code>SVG_TRANSFORM_SKEWX</code>, with parameter <code>angle</code> defining the amount of skew.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when attempting to modify a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><code><strong>setSkewY</strong>(in float <em>angle</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Sets the transform type to <code>SVG_TRANSFORM_SKEWY</code>, with parameter <code>angle</code> defining the amount of skew.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when attempting to modify a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+ </tbody>
+</table>
+

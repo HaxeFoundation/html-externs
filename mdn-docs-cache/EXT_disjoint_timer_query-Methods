@@ -1,0 +1,31 @@
+<h2 id="Methods">Methods</h2>
+
+<p>This extension exposes eight new methods.</p>
+
+<dl>
+ <dt>{{domxref("EXT_disjoint_timer_query.createQueryEXT()", "ext.createQueryEXT()")}}</dt>
+ <dd>
+ <p>Creates a new {{domxref("WebGLQuery")}}.</p>
+ </dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.deleteQueryEXT()", "ext.deleteQueryEXT()")}}</dt>
+ <dd>
+ <p>Deletes a given {{domxref("WebGLQuery")}}.</p>
+ </dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.isQueryEXT()", "ext.isQueryEXT()")}}</dt>
+ <dd>
+ <p>Returns <code>true</code> if a given object is a {{domxref("WebGLQuery")}}.</p>
+ </dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.beginQueryEXT()", "ext.beginQueryEXT()")}}</dt>
+ <dd>The timer starts when all commands prior to <code>beginQueryEXT</code> have been fully executed.</dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.endQueryEXT()", "ext.endQueryEXT()")}}</dt>
+ <dd>The timer stops when all commands prior to <code>endQueryEXT</code> have been fully executed.</dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.queryCounterEXT()", "ext.queryCounterEXT()")}}</dt>
+ <dd>
+ <p>Records the current time into the corresponding query object.</p>
+ </dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.getQueryEXT()", "ext.getQueryEXT()")}}</dt>
+ <dd>Returns information about a query target.</dd>
+ <dt>{{domxref("EXT_disjoint_timer_query.getQueryObjectEXT()", "ext.getQueryObjectEXT()")}}</dt>
+ <dd>Return the state of a query object.</dd>
+</dl>
+

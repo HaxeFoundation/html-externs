@@ -1,0 +1,4 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em><code>SpeechSynthesisErrorEvent</code> extends the {{domxref("SpeechSynthesisEvent")}} interface, which inherits methods from its parent interface, {{domxref("Event")}}.</em></p>
+

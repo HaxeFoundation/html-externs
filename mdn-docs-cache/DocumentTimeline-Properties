@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface inherits its property from its parent, {{domxref("AnimationTimeline")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("AnimationTimeline.currentTime")}}</dt>
+ <dd>Returns the time value in milliseconds for this timeline or <code>null</code> if it is inactive.</dd>
+</dl>
+

@@ -1,0 +1,37 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Selection.addRange()")}}</dt>
+ <dd>A {{domxref("Range")}} object that will be added to the selection.</dd>
+ <dt>{{domxref("Selection.collapse()")}}</dt>
+ <dd>Collapses the current selection to a single point.</dd>
+ <dt>{{domxref("Selection.collapseToEnd()")}}</dt>
+ <dd>Collapses the selection to the end of the last range in the selection.</dd>
+ <dt>{{domxref("Selection.collapseToStart()")}}</dt>
+ <dd>Collapses the selection to the start of the first range in the selection.</dd>
+ <dt>{{domxref("Selection.containsNode()")}}</dt>
+ <dd>Indicates if a certain node is part of the selection.</dd>
+ <dt>{{domxref("Selection.deleteFromDocument()")}}</dt>
+ <dd>Deletes the selection's content from the document.</dd>
+ <dt><code>Selection.empty()</code></dt>
+ <dd>Removes all ranges from the selection. This is an alias for <code>removeAllRanges()</code> — See {{domxref("Selection.removeAllRanges()")}} for more details.</dd>
+ <dt>{{domxref("Selection.extend()")}}</dt>
+ <dd>Moves the focus of the selection to a specified point.</dd>
+ <dt>{{domxref("Selection.getRangeAt()")}}</dt>
+ <dd>Returns a {{domxref("Range")}} object representing one of the ranges currently selected.</dd>
+ <dt>{{domxref("Selection.modify()")}}{{non-standard_inline}}</dt>
+ <dd>Changes the current selection.</dd>
+ <dt>{{domxref("Selection.removeRange()")}}</dt>
+ <dd>Removes a range from the selection.</dd>
+ <dt>{{domxref("Selection.removeAllRanges()")}}</dt>
+ <dd>Removes all ranges from the selection.</dd>
+ <dt>{{domxref("Selection.selectAllChildren()")}}</dt>
+ <dd>Adds all the children of the specified node to the selection.</dd>
+ <dt>{{domxref("Selection.setBaseAndExtent()")}}</dt>
+ <dd>Sets the selection to be a range including all or parts of two specified DOM nodes, and any content located between them.</dd>
+ <dt><code>Selection.setPosition()</code></dt>
+ <dd>Collapses the current selection to a single point. This is an alias for <code>collapse()</code> — See {{domxref("Selection.collapse()")}} for more details.</dd>
+ <dt>{{domxref("Selection.toString()")}}</dt>
+ <dd>Returns a string currently being represented by the selection object, i.e. the currently selected text.</dd>
+</dl>
+

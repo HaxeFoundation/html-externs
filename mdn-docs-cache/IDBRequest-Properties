@@ -1,0 +1,28 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("IDBRequest.error")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMException")}} in the event of an unsuccessful request, indicating what went wrong.</dd>
+ <dt>{{domxref("IDBRequest.result")}} {{readonlyInline}}</dt>
+ <dd>
+ <p>Returns the result of the request. If the the request failed and the result is not available, an InvalidStateError exception is thrown.</p>
+ </dd>
+ <dt>{{domxref("IDBRequest.source")}} {{readonlyInline}}</dt>
+ <dd>The source of the request, such as an {{domxref("IDBIndex")}} or an {{domxref("IDBObjectStore")}}. If no source exists (such as when calling {{domxref("IDBFactory.open")}}), it returns null.</dd>
+ <dt>{{domxref("IDBRequest.readyState")}} {{readonlyInline}}</dt>
+ <dd>The state of the request. Every request starts in the <code>pending</code> state. The state changes to <code>done</code> when the request completes successfully or when an error occurs.</dd>
+ <dt>{{domxref("IDBRequest.transaction")}} {{readonlyInline}}</dt>
+ <dd>The transaction for the request. This property can be null for certain requests, for example those returned from {{domxref("IDBFactory.open")}} unless an upgrade is needed. (You're just connecting to a database, so there is no transaction to return).</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("IDBRequest.onerror")}}</dt>
+ <dd>The event handler for the error event.</dd>
+ <dt>{{domxref("IDBRequest.onsuccess")}}</dt>
+ <dd>The event handler for the success event.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("DOMTokenList.length")}} {{ReadOnlyInline}}</dt>
+ <dd>Is an <code>integer</code> representing the number of objects stored in the object.</dd>
+ <dt>{{domxref("DOMTokenList.value")}}</dt>
+ <dd>The value of the list as a {{domxref("DOMString")}}.</dd>
+</dl>
+

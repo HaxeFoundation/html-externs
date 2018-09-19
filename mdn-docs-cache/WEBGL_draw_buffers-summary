@@ -1,0 +1,1 @@
+The <code><strong>WEBGL_draw_buffers</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and enables a fragment shader to write to several textures, which is useful for <a href="https://hacks.mozilla.org/2014/01/webgl-deferred-shading/">deferred shading</a>, for example.

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("DOMError.name")}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{ domxref("DOMString") }} representing one of the error type names (see below).</dd>
+ <dt>{{domxref("DOMError.message")}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{ domxref("DOMString") }} representing a message or description associated with the given error type name.</dd>
+</dl>
+

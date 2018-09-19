@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}, and also implements properties of {{domxref("SVGFilterPrimitiveStandardAttributes")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFETileElement.in1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in")}} attribute of the given element.</dd>
+</dl>
+

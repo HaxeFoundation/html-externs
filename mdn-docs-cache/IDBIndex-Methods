@@ -1,0 +1,21 @@
+<h2 id="Methods">Methods</h2>
+
+<p>Inherits from: <a href="/en/DOM/EventTarget" title="en/DOM/EventTarget">EventTarget</a></p>
+
+<dl>
+ <dt>{{domxref("IDBIndex.count()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and in a separate thread, returns the number of records within a key range.</dd>
+ <dt>{{domxref("IDBIndex.get()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, finds either the value in the referenced object store that corresponds to the given key or the first corresponding value, if <code>key</code> is an {{domxref("IDBKeyRange")}}.</dd>
+ <dt>{{domxref("IDBIndex.getKey()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, finds either the given key or the primary key, if <code>key</code> is an {{domxref("IDBKeyRange")}}.</dd>
+ <dt>{{domxref("IDBIndex.getAll()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, in a separate thread, finds all matching values in the referenced object store that correspond to the given key or are in range, if <code>key</code> is an {{domxref("IDBKeyRange")}}.</dd>
+ <dt>{{domxref("IDBIndex.getAllKeys()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, in a separate thread, finds all matching keys in the referenced object store that correspond to the given key or are in range, if <code>key</code> is an {{domxref("IDBKeyRange")}}.</dd>
+ <dt>{{domxref("IDBIndex.openCursor()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, creates a <a href="/en/IndexedDB#gloss_cursor" title="en/IndexedDB#gloss cursor">cursor</a> over the specified key range.</dd>
+ <dt>{{domxref("IDBIndex.openKeyCursor()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, creates a cursor over the specified key range, as arranged by this index.</dd>
+</dl>
+

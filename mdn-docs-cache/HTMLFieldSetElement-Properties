@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLFieldSetElement.disabled")}}</dt>
+ <dd>A {{jsxref("Boolean")}} reflecting the {{htmlattrxref("disabled", "fieldset")}} HTML attribute, indicating whether the user can interact with the control.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.elements")}}{{ReadOnlyInline}}</dt>
+ <dd>The elements belonging to this field set. The type of this property depends on the version of the spec that is implemented by the browser.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.form")}}{{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("HTMLFormControlsCollection")}} or {{domxref("HTMLCollection")}} referencing the containing form element, if this element is in a form.<br>
+ If the field set is not a descendant of a form element, then the attribute can be the ID of any form element in the same document it is related to, or the <code>null</code> value if none matches.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.name")}}</dt>
+ <dd>A {{domxref("DOMString")}} reflecting the {{htmlattrxref("name", "fieldset")}} HTML attribute, containing the name of the field set, used for submitting the form.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.type")}}{{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("DOMString")}} <code>"fieldset"</code>.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.validationMessage")}}</dt>
+ <dd>A {{domxref("DOMString")}} representing a localized message that describes the validation constraints that the element does not satisfy (if any). This is the empty string if the element is not a candidate for constraint validation (<code>willValidate</code> is <code>false</code>), or it satisfies its constraints.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.validity")}}</dt>
+ <dd>A {{domxref("ValidityState")}} representing the validity states that this element is in.</dd>
+ <dt>{{domxref("HTMLFieldSetElement.willValidate")}}</dt>
+ <dd>A {{jsxref("Boolean")}} <code>false</code>, because {{HTMLElement("fieldset")}} objects are never candidates for constraint validation.</dd>
+</dl>
+

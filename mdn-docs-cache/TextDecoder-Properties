@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>TextDecoder</code> interface doesn't inherit any properties.</em></p>
+
+<dl>
+ <dt>{{domxref("TextDecoder.encoding")}} {{readonlyInline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the name of the decoder, that is a string describing the method the <code>TextDecoder</code> will use.</dd>
+ <dt>{{domxref("TextDecoder.fatal")}} {{readonlyinline}}</dt>
+ <dd>Is a {{jsxref('Boolean')}} indicating whether the error mode is fatal.</dd>
+ <dt>{{domxref("TextDecoder.ignoreBOM")}} {{readonlyinline}}</dt>
+ <dd>Is a {{jsxref('Boolean')}} indicating whether the byte order marker is ignored.</dd>
+</dl>
+

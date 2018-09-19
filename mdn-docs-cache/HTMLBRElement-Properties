@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLBRElement.clear")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} indicating the flow of text around floating objects.</dd>
+</dl>
+

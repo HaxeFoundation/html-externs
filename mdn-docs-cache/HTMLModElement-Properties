@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("HTMLModElement.cite")}}</dt>
+	<dd>Is a {{domxref("DOMString")}} reflecting the {{htmlattrxref("cite", "del")}} HTML attribute, containing a URI of a resource explaining the change.</dd>
+	<dt>{{domxref("HTMLModElement.datetime")}}</dt>
+	<dd>Is a {{domxref("DOMString")}} reflecting the {{htmlattrxref("datetime", "del")}} HTML attribute, containing a date-and-time string representing a timestamp for the change.</dd>
+</dl>
+

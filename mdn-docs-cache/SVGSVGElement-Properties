@@ -1,0 +1,60 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGGraphicsElement")}} and also implements the ones from {{domxref("SVGZoomAndPan")}}, {{domxref("SVGFitToViewBox")}}, and {{domxref("WindowEventHandlers")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGSVGElement.x")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("x")}} attribute of the given {{SVGElement("svg")}} element.</dd>
+ <dt>{{domxref("SVGSVGElement.y")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("y")}} attribute of the given {{SVGElement("svg")}} element.</dd>
+ <dt>{{domxref("SVGSVGElement.width")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("width")}} attribute of the given {{SVGElement("svg")}} element.</dd>
+ <dt>{{domxref("SVGSVGElement.height")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("height")}} attribute of the given {{SVGElement("svg")}} element.</dd>
+ <dt>{{domxref("SVGSVGElement.contentScriptType")}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("contentScriptType")}} attribute of the given {{SVGElement("svg")}} element.</dd>
+ <dt>{{domxref("SVGSVGElement.contentStyleType")}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("contentStyleType")}} attribute of the given {{SVGElement("svg")}} element.</dd>
+ <dt>{{domxref("SVGSVGElement.viewport")}}</dt>
+ <dd>An {{domxref("SVGRect")}} containing the position and size of the viewport (implicit or explicit) that corresponds to the given {{SVGElement("svg")}} element. When the browser is actually rendering the content, then the position and size values represent the actual values when rendering. The position and size values are unitless values in the coordinate system of the parent element. If no parent element exists (i.e., {{SVGElement("svg")}} element represents the root of the document tree), if this SVG document is embedded as part of another document (e.g., via the HTML {{HTMLElement("object")}} element), then the position and size are unitless values in the coordinate system of the parent document. (If the parent uses CSS or XSL layout, then unitless values represent pixel units for the current CSS or XSL viewport.)</dd>
+ <dt>{{domxref("SVGSVGElement.pixelUnitToMillimeterX")}} {{deprecated_inline}}</dt>
+ <dd>A float representing the size of the pixel unit (as defined by CSS2) along the x-axis of the viewport, which represents a unit somewhere in the range of 70dpi to 120dpi, and, on systems that support this, might actually match the characteristics of the target medium. On systems where it is impossible to know the size of a pixel, a suitable default pixel size is provided.</dd>
+ <dt>{{domxref("SVGSVGElement.pixelUnitToMillimeterY")}} {{deprecated_inline}}</dt>
+ <dd>A float representing the size of a pixel unit along the y-axis of the viewport.</dd>
+ <dt>{{domxref("SVGSVGElement.screenPixelToMillimeterX")}} {{deprecated_inline}}</dt>
+ <dd>User interface (UI) events in DOM Level 2 indicate the screen positions at which the given UI event occurred. When the browser actually knows the physical size of a "screen unit", this float attribute will express that information; otherwise, user agents will provide a suitable default value such as .28mm.</dd>
+ <dt>{{domxref("SVGSVGElement.screenPixelToMillimeterY")}} {{deprecated_inline}}</dt>
+ <dd>Corresponding size of a screen pixel along the y-axis of the viewport.</dd>
+ <dt>{{domxref("SVGSVGElement.useCurrentView")}}</dt>
+ <dd>The initial view (i.e., before magnification and panning) of the current innermost SVG document fragment can be either the "standard" view, i.e., based on attributes on the {{SVGElement("svg")}} element such as {{SVGAttr("viewBox")}}) or on a "custom" view (i.e., a hyperlink into a particular {{SVGElement("view")}} or other element). If the initial view is the "standard" view, then this attribute is <code>false</code>. If the initial view is a "custom" view, then this attribute is <code>true</code>.</dd>
+ <dt>{{domxref("SVGSVGElement.currentView")}}</dt>
+ <dd>An {{domxref("SVGViewSpec")}} defining the initial view (i.e., before magnification and panning) of the current innermost SVG document fragment. The meaning depends on the situation: If the initial view was a "standard" view, then:
+ <ul>
+  <li>the values for {{SVGAttr("viewBox")}}, {{SVGAttr("preserveAspectRatio")}} and {{SVGAttr("zoomAndPan")}} within {{SVGAttr("currentView")}} will match the values for the corresponding DOM attributes that are on <code>SVGSVGElement</code> directly</li>
+  <li>the values for {{SVGAttr("transform")}} and {{SVGAttr("viewTarget")}} within {{SVGAttr("currentView")}} will be null</li>
+ </ul>
+ If the initial view was a link into a {{SVGElement("view")}} element, then:
+
+ <ul>
+  <li>the values for {{SVGAttr("viewBox")}}, {{SVGAttr("preserveAspectRatio")}} and {{SVGAttr("zoomAndPan")}} within {{SVGAttr("currentView")}} will correspond to the corresponding attributes for the given {{SVGElement("view")}} element</li>
+  <li>the values for {{SVGAttr("transform")}} and {{SVGAttr("viewTarget")}} within {{SVGAttr("currentView")}} will be null</li>
+ </ul>
+ If the initial view was a link into another element (i.e., other than a {{SVGElement("view")}}), then:
+
+ <ul>
+  <li>the values for {{SVGAttr("viewBox")}}, {{SVGAttr("preserveAspectRatio")}} and {{SVGAttr("zoomAndPan")}} within {{SVGAttr("currentView")}} will match the values for the corresponding DOM attributes that are on <code>SVGSVGElement</code> directly for the closest ancestor {{SVGElement("svg")}} element</li>
+  <li>the values for {{SVGAttr("transform")}} within {{SVGAttr("currentView")}} will be null</li>
+  <li>the {{SVGAttr("viewTarget")}} within {{SVGAttr("currentView")}} will represent the target of the link</li>
+ </ul>
+ If the initial view was a link into the SVG document fragment using an SVG view specification fragment identifier (i.e., #svgView(...)), then:
+
+ <ul>
+  <li>the values for {{SVGAttr("viewBox")}}, {{SVGAttr("preserveAspectRatio")}}, {{SVGAttr("zoomAndPan")}}, {{SVGAttr("transform")}} and {{SVGAttr("viewTarget")}} within {{SVGAttr("currentView")}} will correspond to the values from the SVG view specification fragment identifier</li>
+ </ul>
+ </dd>
+ <dt>{{domxref("SVGSVGElement.currentScale")}}</dt>
+ <dd>On an outermost {{SVGElement("svg")}} element, this float attribute indicates the current scale factor relative to the initial view to take into account user magnification and panning operations. DOM attributes <code>currentScale</code> and <code>currentTranslate</code> are equivalent to the 2x3 matrix <code>[a b c d e f] = [currentScale 0 0 currentScale currentTranslate.x currentTranslate.y]</code>. If "magnification" is enabled (i.e., <code>zoomAndPan="magnify"</code>), then the effect is as if an extra transformation were placed at the outermost level on the SVG document fragment (i.e., outside the outermost {{SVGElement("svg")}} element).</dd>
+ <dt>{{domxref("SVGSVGElement.currentTranslate")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGPoint")}} representing the translation factor that takes into account user "magnification" corresponding to an outermost {{SVGElement("svg")}} element. The behavior is undefined for &lt;svg&gt; elements that are not at the outermost level.</dd>
+</dl>
+

@@ -1,0 +1,18 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>ServiceWorker</code> interface inherits properties from its parent, {{domxref("Worker")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("ServiceWorker.scriptURL")}} {{readonlyinline}}</dt>
+ <dd>Returns the <code>ServiceWorker</code> serialized script URL defined as part of {{domxref("ServiceWorkerRegistration")}}. The URL must be on the same origin as the document that registers the <code>ServiceWorker</code>.</dd>
+ <dt>{{domxref("ServiceWorker.state")}} {{readonlyinline}}</dt>
+ <dd>Returns the state of the service worker. It returns one of the following values: <code>installing</code>, <code>installed,</code> <code>activating</code>, <code>activated</code>, or <code>redundant</code>.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("ServiceWorker.onstatechange")}} {{readonlyinline}}</dt>
+ <dd>An {{domxref("EventListener")}} property called whenever an event of type <code>statechange</code> is fired; it is basically fired anytime the {{domxref("ServiceWorker.state")}} changes.</dd>
+</dl>
+

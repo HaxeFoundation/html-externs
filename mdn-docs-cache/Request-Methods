@@ -1,0 +1,26 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Request.clone()")}}</dt>
+ <dd>Creates a copy of the current <code>Request</code> object.</dd>
+</dl>
+
+<p><code>Request</code> implements {{domxref("Body")}}, so it also has the following methods available to it:</p>
+
+<dl>
+ <dt>{{domxref("Body.arrayBuffer()")}}</dt>
+ <dd>Returns a promise that resolves with an {{domxref("ArrayBuffer")}} representation of the request body.</dd>
+ <dt>{{domxref("Body.blob()")}}</dt>
+ <dd>Returns a promise that resolves with a {{domxref("Blob")}} representation of the request body.</dd>
+ <dt>{{domxref("Body.formData()")}}</dt>
+ <dd>Returns a promise that resolves with a {{domxref("FormData")}} representation of the request body.</dd>
+ <dt>{{domxref("Body.json()")}}</dt>
+ <dd>Returns a promise that resolves with a {{domxref("JSON")}} representation of the request body.</dd>
+ <dt>{{domxref("Body.text()")}}</dt>
+ <dd>Returns a promise that resolves with an {{domxref("USVString")}} (text) representation of the request body.</dd>
+</dl>
+
+<div class="note">
+<p><strong>Note</strong>: The {{domxref("Body")}} functions can be run only once; subsequent calls will resolve with empty strings/ArrayBuffers.</p>
+</div>
+

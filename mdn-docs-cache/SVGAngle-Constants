@@ -1,0 +1,15 @@
+<h2 id="Constants">Constants</h2>
+
+<dl>
+ <dt>SVG_ANGLETYPE_UNKNOWN</dt>
+ <dd>Some unknown type of value.</dd>
+ <dt>SVG_ANGLETYPE_UNSPECIFIED</dt>
+ <dd>A unitless {{cssxref("&lt;number&gt;")}} interpreted as a value in degrees.</dd>
+ <dt>SVG_ANGLETYPE_DEG</dt>
+ <dd>An {{cssxref("&lt;angle&gt;")}} with a <code>deg</code> unit.</dd>
+ <dt>SVG_ANGLETYPE_RAD</dt>
+ <dd>An {{cssxref("&lt;angle&gt;")}} with a <code>rad</code> unit.</dd>
+ <dt>SVG_ANGLETYPE_GRAD</dt>
+ <dd>An {{cssxref("&lt;angle&gt;")}} with a <code>grad</code> unit.</dd>
+</dl>
+

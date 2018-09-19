@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("HTMLElement")}}, and implements those from {{domxref("HTMLHyperlinkElementUtils")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLElement.blur()")}}</dt>
+ <dd>Removes the  keyboard focus from the current element.</dd>
+ <dt>{{domxref("HTMLElement.focus()")}}</dt>
+ <dd>Gives the keyboard focus to the current element.</dd>
+ <dt>{{domxref("HTMLHyperlinkElementUtils.toString()")}}</dt>
+ <dd>Returns a {{domxref("USVString")}} containing the whole URL. It is a synonym for {{domxref("URLUtils.href")}}, though it can't be used to modify the value.</dd>
+</dl>
+
+<p>The <code>blur()</code> and <code>focus()</code> methods are inherited from {{domxref("HTMLElement")}} from HTML5 on, but were defined on <code>HTMLAnchorElement</code> in DOM Level 2 HTML and earlier specifications.</p>
+

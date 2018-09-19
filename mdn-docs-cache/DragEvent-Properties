@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref('DragEvent.dataTransfer')}} {{readonlyInline}}</dt>
+ <dd>The data that is transferred during a drag and drop interaction.</dd>
+</dl>
+

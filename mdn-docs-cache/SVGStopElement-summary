@@ -1,0 +1,1 @@
+The <strong><code>SVGStopElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/stop" title="The &lt;stop&gt; SVG element defines the ramp of colors to use on a gradient, which is a child element to either the &lt;linearGradient&gt; or the &lt;radialGradient&gt; element."><code>&lt;stop&gt;</code></a> element.
