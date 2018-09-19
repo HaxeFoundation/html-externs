@@ -532,16 +532,23 @@ class Main
 	}
 
 	private function deleteDirectory(path: String) {
+		if (!sys.FileSystem.exists(path)) return;
 		if (sys.FileSystem.absolutePath(path) == '/') return;
-		if (!sys.FileSystem.isDirectory(path)) return;
 
-		for (filename in sys.FileSystem.readDirectory(path)) {
-			var subPath = haxe.io.Path.join([path, filename]);
-			if (sys.FileSystem.isDirectory(subPath)) {
-				deleteDirectory(subPath);
-			} else {
-				sys.FileSystem.deleteFile(subPath);
+		try {
+			if (!sys.FileSystem.isDirectory(path)) return;
+
+			for (filename in sys.FileSystem.readDirectory(path)) {
+				var subPath = haxe.io.Path.join([path, filename]);
+				if (sys.FileSystem.isDirectory(subPath)) {
+					deleteDirectory(subPath);
+				} else {
+					sys.FileSystem.deleteFile(subPath);
+				}
 			}
+
+		} catch (e: Any) {
+			trace('Error deleting directory: $e, $path');
 		}
 	}
 	
