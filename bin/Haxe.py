@@ -829,6 +829,29 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 					}
 				"""))
 
+			if nativeName == "ArrayBuffer":
+				writeln()
+				write(textwrap.dedent("""
+					#if (js_es <= 5)
+					@:ifFeature('js.html.ArrayBuffer.slice')
+					private class ArrayBufferCompat {
+
+						static function sliceImpl(begin, ?end) {	
+							var u = new js.html.Uint8Array(js.Lib.nativeThis, begin, end == null ? null : (end - begin));
+							var resultArray = new js.html.Uint8Array(u.byteLength);	
+							resultArray.set(u);	
+							return resultArray.buffer;
+						}
+
+						static inline function __init__(): Void untyped {
+							// IE10 ArrayBuffer.slice polyfill
+							if( __js__("ArrayBuffer").prototype.slice == null ) __js__("ArrayBuffer").prototype.slice = sliceImpl;
+						}
+
+					}
+					#end
+				"""))
+
 		elif isinstance(idl, IDLDictionary):
 			# writeln("typedef ", idl.identifier, " =")
 			writeln("typedef ", toHaxeType(idl.identifier.name), " =")
