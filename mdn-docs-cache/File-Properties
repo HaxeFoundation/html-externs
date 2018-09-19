@@ -1,0 +1,22 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("File.lastModified")}} {{readonlyinline}}</dt>
+ <dd>Returns the last modified time of the file, in millisecond since the UNIX epoch (January 1st, 1970 at Midnight).</dd>
+ <dt>{{domxref("File.lastModifiedDate")}} {{readonlyinline}} {{deprecated_inline}} {{gecko_minversion_inline("15.0")}}</dt>
+ <dd>Returns the last modified <code><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code> of the file referenced by the <code>File</code> object.</dd>
+ <dt>{{domxref("File.name")}} {{readonlyinline}}</dt>
+ <dd>Returns the name of the file referenced by the <code>File</code> object.</dd>
+ <dt>{{domxref("File.webkitRelativePath")}} {{readonlyinline}} {{non-standard_inline}}</dt>
+ <dd>Returns the path the URL of the {{domxref("File")}} is relative to.</dd>
+</dl>
+
+<p><code>File</code> implements {{domxref("Blob")}}, so it also has the following properties available to it:</p>
+
+<dl>
+ <dt>{{domxref("File.size")}} {{readonlyinline}}</dt>
+ <dd>Returns the size of the file in bytes.</dd>
+ <dt>{{domxref("File.type")}} {{readonlyinline}}</dt>
+ <dd>Returns the <a href="/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MIME </a>type of the file.</dd>
+</dl>
+

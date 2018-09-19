@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+	<dt>{{domxref("HTMLCollection.item()")}}</dt>
+	<dd>Returns the specific node at the given zero-based <code>index</code> into the list. Returns <code>null</code> if the <code>index</code> is out of range.</dd>
+	<dt>{{domxref("HTMLCollection.namedItem()")}}</dt>
+	<dd>Returns the specific node whose ID or, as a fallback, name matches the string specified by <code>name</code>. Matching by name is only done as a last resort, only in HTML, and only if the referenced element supports the <code>name</code> attribute. Returns <code>null</code> if no node exists by the given name.</dd>
+</dl>
+

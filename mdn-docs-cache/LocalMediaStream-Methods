@@ -1,0 +1,7 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt><code>LocalMediaStream.stop()</code></dt>
+ <dd>Stops the stream. When the source of the stream is a connected device (such as a camera or microphone), capture of media from the device is halted.</dd>
+</dl>
+

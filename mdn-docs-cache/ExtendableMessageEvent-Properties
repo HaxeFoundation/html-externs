@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, </em><em>{{domxref("ExtendableEvent")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("ExtendableMessageEvent.data")}} {{readonlyinline}}</dt>
+ <dd>Returns the event's data. It can be any data type.</dd>
+ <dt>{{domxref("ExtendableMessageEvent.origin")}} {{readonlyinline}}</dt>
+ <dd>Returns the origin of the {{domxref("ServiceWorkerClient")}} that sent the message</dd>
+ <dt>{{domxref("ExtendableMessageEvent.lastEventId")}} {{readonlyinline}}</dt>
+ <dd>Represents, in <a href="en-US/docs/Server-sent_events/Using_server-sent_events">server-sent events</a>, the last event ID of the event source.</dd>
+ <dt>{{domxref("ExtendableMessageEvent.source")}} {{readonlyinline}}</dt>
+ <dd>Returns a reference to the service worker that sent the message.</dd>
+ <dt>{{domxref("ExtendableMessageEvent.ports")}} {{readonlyinline}}</dt>
+ <dd>Returns the array containing the {{domxref("MessagePort")}} objects representing the ports of the associated message channel.</dd>
+</dl>
+

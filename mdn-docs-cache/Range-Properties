@@ -1,0 +1,19 @@
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<p><em>There are no inherited properties.</em></p>
+
+<dl>
+ <dt>{{domxref("Range.collapsed")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Boolean")}} indicating whether the range's start and end points are at the same position.</dd>
+ <dt>{{domxref("Range.commonAncestorContainer")}} {{readonlyInline}}</dt>
+ <dd>Returns the deepest {{ domxref("Node") }} that contains the <code>startContainer</code> and <code>endContainer</code> nodes.</dd>
+ <dt>{{domxref("Range.endContainer")}} {{readonlyInline}}</dt>
+ <dd>Returns the {{ domxref("Node") }} within which the <code>Range</code> ends.</dd>
+ <dt>{{domxref("Range.endOffset")}} {{readonlyInline}}</dt>
+ <dd>Returns a number representing where in the <code>endContainer</code> the <code>Range</code> ends.</dd>
+ <dt>{{domxref("Range.startContainer")}} {{readonlyInline}}</dt>
+ <dd>Returns the {{ domxref("Node") }} within which the <code>Range</code> starts.</dd>
+ <dt>{{domxref("Range.startOffset")}} {{readonlyInline}}</dt>
+ <dd>Returns a number representing where in the <code>startContainer</code> the <code>Range</code> starts.</dd>
+</dl>
+

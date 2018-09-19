@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods of its parents, {{domxref("UIEvent")}} and {{domxref("Event")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MouseEvent.getModifierState()")}}</dt>
+ <dd>Returns the current state of the specified modifier key. See the {{domxref("KeyboardEvent.getModifierState")}}() for details.</dd>
+ <dt>{{domxref("MouseEvent.initMouseEvent()")}} {{deprecated_inline}}</dt>
+ <dd>Initializes the value of a <code>MouseEvent</code> created. If the event has already being dispatched, this method does nothing.</dd>
+</dl>
+

@@ -1,0 +1,23 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+	<dt>{{domxref("FormData.append()")}}</dt>
+	<dd>Appends a new value onto an existing key inside a <code>FormData</code> object, or adds the key if it does not already exist.</dd>
+	<dt>{{domxref("FormData.delete()")}}</dt>
+	<dd>Deletes a key/value pair from a <code>FormData</code> object.</dd>
+	<dt>{{domxref("FormData.entries()")}}</dt>
+	<dd>Returns an {{jsxref("Iteration_protocols","iterator")}} allowing to go through all key/value pairs contained in this object.</dd>
+	<dt>{{domxref("FormData.get()")}}</dt>
+	<dd>Returns the first value associated with a given key from within a <code>FormData</code> object.</dd>
+	<dt>{{domxref("FormData.getAll()")}}</dt>
+	<dd>Returns an array of all the values associated with a given key from within a <code>FormData</code>.</dd>
+	<dt>{{domxref("FormData.has()")}}</dt>
+	<dd>Returns a boolean stating whether a <code>FormData</code> object contains a certain key/value pair.</dd>
+	<dt>{{domxref("FormData.keys()")}}</dt>
+	<dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing to go through all keys of the key/value pairs contained in this object.</dd>
+	<dt>{{domxref("FormData.set()")}}</dt>
+	<dd>Sets a new value for an existing key inside a <code>FormData </code>object, or adds the key/value if it does not already exist.</dd>
+	<dt>{{domxref("FormData.values()")}}</dt>
+	<dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing to go through all values of the key/value pairs contained in this object.</dd>
+</dl>
+

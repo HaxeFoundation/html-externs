@@ -1,0 +1,32 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Also inherits methods from its parent interface, {{domxref("BaseAudioContext")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("AudioContext.close()")}}</dt>
+ <dd>Closes the audio context, releasing any system audio resources that it uses.</dd>
+ <dt>{{domxref("AudioContext.createMediaElementSource()")}}</dt>
+ <dd>Creates a {{domxref("MediaElementAudioSourceNode")}} associated with an {{domxref("HTMLMediaElement")}}. This can be used to play and manipulate audio from {{HTMLElement("video")}} or {{HTMLElement("audio")}} elements.</dd>
+ <dt>{{domxref("AudioContext.createMediaStreamSource()")}}</dt>
+ <dd>Creates a {{domxref("MediaStreamAudioSourceNode")}} associated with a {{domxref("MediaStream")}} representing an audio stream which may come from the local computer microphone or other sources.</dd>
+ <dt>{{domxref("AudioContext.createMediaStreamDestination()")}}</dt>
+ <dd>Creates a {{domxref("MediaStreamAudioDestinationNode")}} associated with a {{domxref("MediaStream")}} representing an audio stream which may be stored in a local file or sent to another computer.</dd>
+ <dt>{{domxref("AudioContext.createMediaStreamTrackSource()")}}</dt>
+ <dd>Creates a {{domxref("MediaStreamTrackAudioSourceNode")}} associated with a {{domxref("MediaStream")}} representing an media stream track.</dd>
+ <dt>{{domxref("AudioContext.getOutputTimestamp()")}}</dt>
+ <dd>Returns a new <code>AudioTimestamp</code> object containing two correlated context's audio stream position values.</dd>
+ <dt>{{domxref("AudioContext.suspend()")}}</dt>
+ <dd>Suspends the progression of time in the audio context, temporarily halting audio hardware access and reducing CPU/battery usage in the process.</dd>
+</dl>
+
+<h3 id="Deprecated_methods">Deprecated methods</h3>
+
+<dl>
+ <dt>{{domxref("AudioContext.resume()")}}</dt>
+ <dd>Resumes the progression of time in an audio context that has previously been suspended.</dd>
+</dl>
+
+<div class="note">
+<p><strong>Note</strong>: The <code>resume()</code> method is still available — it is now defined on the {{domxref("BaseAudioContext")}} interface (see {{domxref("BaseAudioContext.resume()")}}) and thus can be accessed by both the {{domxref("AudioContext")}} and {{domxref("OfflineAudioContext")}} interfaces.</p>
+</div>
+

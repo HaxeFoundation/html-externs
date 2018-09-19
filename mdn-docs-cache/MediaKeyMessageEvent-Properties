@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p>Inherits properties from its parent, {{domxref("Event")}}.</p>
+
+<dl>
+ <dt>{{domxref("MediaKeyMessageEvent.message")}} {{readonlyinline}}</dt>
+ <dd>Returns an {{jsxref("ArrayBuffer")}} with a message from the content decryption module. Messages vary by key system.</dd>
+ <dt>{{domxref("MediaKeyMessageEvent.messageType")}} {{readonlyinline}}</dt>
+ <dd>Indicates the type of message. May be one of <code>license-request</code>, <code>license-renewal</code>, <code>license-renewal</code>, or <code>individualization-request</code>.</dd>
+</dl>
+

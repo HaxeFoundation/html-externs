@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}, and also implements properties of {{domxref("SVGFilterPrimitiveStandardAttributes")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFEDisplacementMapElement.in1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDisplacementMapElement.in2")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in2")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDisplacementMapElement.scale")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("scale")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDisplacementMapElement.xChannelSelector")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("xChannelSelect")}} attribute of the given element. It takes one of the <code>SVG_CHANNEL_*</code> constants defined on this interface.</dd>
+ <dt>{{domxref("SVGFEDisplacementMapElement.yChannelSelector")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("yChannelSelect")}} attribute of the given element. It takes one of the <code>SVG_CHANNEL_*</code> constants defined on this interface.</dd>
+</dl>
+

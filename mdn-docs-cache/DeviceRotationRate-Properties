@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{ domxref("DeviceRotationRate.alpha") }} {{readonlyInline}}</dt>
+	<dd>The amount of rotation around the Z axis, in degrees per second.</dd>
+	<dt>{{ domxref("DeviceRotationRate.beta") }} {{readonlyInline}}</dt>
+	<dd>The amount of rotation around the X axis, in degrees per second.</dd>
+	<dt>{{ domxref("DeviceRotationRate.gamma") }} {{readonlyInline}}</dt>
+	<dd>The amount of rotation around the Y axis, in degrees per second.</dd>
+</dl>
+

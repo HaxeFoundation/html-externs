@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLHtmlElement.version")}}  {{ obsolete_inline() }}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the version of the HTML Document Type Definition (DTD) that governs this document. This property should not be used any more as it is non-conforming. Simply omit it.</dd>
+</dl>
+

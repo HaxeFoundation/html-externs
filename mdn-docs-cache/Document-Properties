@@ -1,0 +1,194 @@
+<h2 name="Properties" id="Properties">Constructor</h2>
+
+<dl>
+ <dt>{{domxref("Document.Document","Document()")}}{{non-standard_inline}}</dt>
+ <dd>Creates a new <code>Document</code> object.</dd>
+</dl>
+
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<p><em>This interface also inherits from the {{domxref("Node")}} and {{domxref("EventTarget")}} interfaces.</em></p>
+
+<dl>
+ <dt>{{domxref("Document.anchors")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of all of the anchors in the document.</dd>
+ <dt>{{domxref("Document.body")}}</dt>
+ <dd>Returns the {{HTMLElement("body")}} or {{htmlelement("frameset")}} node of the current document.</dd>
+ <dt>{{domxref("Document.characterSet")}} {{readonlyinline}}</dt>
+ <dd>Returns the character set being used by the document.</dd>
+ <dt>{{domxref("Document.compatMode")}} {{readonlyinline}} {{experimental_inline}}</dt>
+ <dd>Indicates whether the document is rendered in <em>quirks</em> or <em>strict</em> mode.</dd>
+ <dt>{{domxref("Document.contentType")}} {{readonlyinline}} {{experimental_inline}}</dt>
+ <dd>Returns the Content-Type from the MIME Header of the current document.</dd>
+ <dt>{{domxref("Document.doctype")}} {{readonlyinline}}</dt>
+ <dd>Returns the Document Type Definition (DTD) of the current document.</dd>
+ <dt>{{domxref("Document.documentElement")}} {{readonlyinline}}</dt>
+ <dd>Returns the {{domxref("Element")}} that is a direct child of the document. For HTML documents, this is normally the <span class="seoSummary">{{domxref("HTMLElement")}}</span> element.</dd>
+ <dt>{{domxref("Document.documentURI")}} {{readonlyinline}}</dt>
+ <dd>Returns the document location as a string.</dd>
+ <dt>{{domxref("Document.embeds")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of the embedded {{HTMLElement('embed')}} elements within the current document.</dd>
+ <dt>{{domxref("Document.forms")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of the {{HTMLElement("form")}} elements within the current document.</dd>
+ <dt>{{domxref("Document.head")}} {{readonlyinline}}</dt>
+ <dd>Returns the {{HTMLElement("head")}} element of the current document.</dd>
+ <dt>{{domxref("Document.hidden")}} {{readonlyinline}}</dt>
+ <dd>…</dd>
+ <dt>{{domxref("Document.images")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of the images in the current document.</dd>
+ <dt>{{domxref("Document.implementation")}} {{readonlyinline}}</dt>
+ <dd>Returns the DOM implementation associated with the current document.</dd>
+ <dt>{{domxref("Document.lastStyleSheetSet")}} {{readonlyinline}}</dt>
+ <dd>Returns the name of the style sheet set that was last enabled. Has the value <code>null</code> until the style sheet is changed by setting the value of {{domxref("document.selectedStyleSheetSet","selectedStyleSheetSet")}}.</dd>
+ <dt>{{domxref("Document.links")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of all the hyperlinks in the document.</dd>
+ <dt>{{domxref("Document.mozSyntheticDocument")}} {{non-standard_inline}} {{gecko_minversion_inline("8.0")}}</dt>
+ <dd>Returns a {{jsxref("Boolean")}} that is <code>true</code> only if this document is synthetic, such as a standalone image, video, audio file, or the like.</dd>
+ <dt>{{domxref("Document.mozFullScreenElement")}} {{readonlyinline}} {{non-standard_inline}} {{gecko_minversion_inline("9.0")}}</dt>
+ <dd>The element that's currently in full screen mode for this document.</dd>
+ <dt>{{domxref("Document.mozFullScreenEnabled")}} {{readonlyinline}} {{non-standard_inline}} {{gecko_minversion_inline("9.0")}}</dt>
+ <dd><code>true</code> if calling {{domxref("Element.mozRequestFullscreen()")}} would succeed in the curent document.</dd>
+ <dt>{{domxref("Document.plugins")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of the available plugins.</dd>
+ <dt>{{domxref("Document.policy")}} {{readonlyinline}}{{experimental_inline}}</dt>
+ <dd>Returns the {{domxref("Policy")}} interface which provides a simple API for introspecting the feature policies applied to a specific document.</dd>
+ <dt>{{domxref("Document.preferredStyleSheetSet")}} {{readonlyinline}}</dt>
+ <dd>Returns the preferred style sheet set as specified by the page author.</dd>
+ <dt>{{domxref("Document.scripts")}} {{readonlyinline}}</dt>
+ <dd>Returns all the {{HTMLElement("script")}} elements on the document.</dd>
+ <dt>{{domxref("Document.scrollingElement")}} {{readonlyinline}}</dt>
+ <dd>Returns a reference to the {{domxref("Element")}} that scrolls the document.</dd>
+ <dt>{{domxref("Document.selectedStyleSheetSet")}}</dt>
+ <dd>Returns which style sheet set is currently in use.</dd>
+ <dt>{{domxref("Document.styleSheetSets")}} {{readonlyinline}}</dt>
+ <dd>Returns a list of the style sheet sets available on the document.</dd>
+ <dt>{{domxref("Document.timeline")}} {{readonlyinline}}</dt>
+ <dd>…</dd>
+ <dt>{{domxref("Document.undoManager")}} {{readonlyinline}} {{experimental_inline}}</dt>
+ <dd>…</dd>
+ <dt>{{domxref("Document.visibilityState")}} {{readonlyinline}}</dt>
+ <dd>Returns a <code>string</code> denoting the visibility state of the document. Possible values are <code>visible</code>,  <code>hidden</code>,  <code>prerender</code>, and <code>unloaded</code>.</dd>
+</dl>
+
+<p>The <code>Document</code> interface is extended with the {{domxref("ParentNode")}} interface:</p>
+
+<p>{{page("/en-US/docs/Web/API/ParentNode","Properties")}}</p>
+
+<h3 id="Extensions_for_HTMLDocument">Extensions for HTMLDocument</h3>
+
+<p><em>The <code>Document</code> interface for HTML documents inherits from the {{domxref("HTMLDocument")}} interface or, since HTML5,  is extended for such documents.</em></p>
+
+<dl>
+ <dt>{{domxref("Document.cookie")}}</dt>
+ <dd>Returns a semicolon-separated list of the cookies for that document or sets a single cookie.</dd>
+ <dt>{{domxref("Document.defaultView")}} {{readonlyinline}}</dt>
+ <dd>Returns a reference to the window object.</dd>
+ <dt>{{domxref("Document.designMode")}}</dt>
+ <dd>Gets/sets the ability to edit the whole document.</dd>
+ <dt>{{domxref("Document.dir")}} {{readonlyinline}}</dt>
+ <dd>Gets/sets directionality (rtl/ltr) of the document.</dd>
+ <dt>{{domxref("Document.domain")}}</dt>
+ <dd>Gets/sets the domain of the current document.</dd>
+ <dt>{{domxref("Document.lastModified")}} {{readonlyinline}}</dt>
+ <dd>Returns the date on which the document was last modified.</dd>
+ <dt>{{domxref("Document.location")}} {{readonlyinline}}</dt>
+ <dd>Returns the URI of the current document.</dd>
+ <dt>{{domxref("Document.readyState")}} {{readonlyinline}} {{gecko_minversion_inline("1.9.2")}}</dt>
+ <dd>Returns loading status of the document.</dd>
+ <dt>{{domxref("Document.referrer")}} {{readonlyinline}}</dt>
+ <dd>Returns the URI of the page that linked to this page.</dd>
+ <dt>{{domxref("Document.title")}}</dt>
+ <dd>Sets or gets the title of the current document.</dd>
+ <dt>{{domxref("Document.URL")}} {{readonlyInline}}</dt>
+ <dd>Returns the document location as a string.</dd>
+</dl>
+
+<h3 id="Properties_included_from_DocumentOrShadowRoot">Properties included from DocumentOrShadowRoot</h3>
+
+<p><em>The <code>Document</code> interface includes the following properties defined on the {{domxref("DocumentOrShadowRoot")}} mixin. Note that this is currently only implemented by Chrome; other browsers still implement them directly on the {{domxref("Document")}} interface.</em></p>
+
+<dl>
+ <dt>{{domxref("DocumentOrShadowRoot.activeElement")}} {{readonlyInline}}</dt>
+ <dd>Returns the {{domxref('Element')}} within the shadow tree that has focus.</dd>
+ <dt>{{domxref("Document.fullscreenElement")}} {{readonlyinline}}</dt>
+ <dd>The element that's currently in full screen mode for this document.</dd>
+ <dt>{{domxref("DocumentOrShadowRoot.pointerLockElement")}} {{readonlyinline}} {{experimental_inline}}</dt>
+ <dd>Returns the element set as the target for mouse events while the pointer is locked. <code>null</code> if lock is pending, pointer is unlocked, or if the target is in another document.</dd>
+ <dt>{{domxref("DocumentOrShadowRoot.styleSheets")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref('StyleSheetList')}} of {{domxref('CSSStyleSheet')}} objects for stylesheets explicitly linked into, or embedded in a document.</dd>
+</dl>
+
+<h3 name="Event_handlers" id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("Document.onafterscriptexecute")}} {{non-standard_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("afterscriptexecute")}} event.</dd>
+ <dt>{{domxref("Document.onbeforescriptexecute")}} {{non-standard_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("beforescriptexecute")}} event.</dd>
+ <dt>{{domxref("Document.oncopy")}} {{non-standard_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("copy")}} event.</dd>
+ <dt>{{domxref("Document.oncut")}} {{non-standard_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("cut")}} event.</dd>
+ <dt>{{domxref("Document.onfullscreenchange")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("fullscreenchange")}} event is raised.</dd>
+ <dt>{{domxref("Document.onfullscreenerror")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("fullscreenerror")}} event is raised.</dd>
+ <dt>{{domxref("Document.onpaste")}} {{non-standard_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("paste")}} event.</dd>
+ <dt>{{domxref("Document.onpointerlockchange")}} {{experimental_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("pointerlockchange")}} event.</dd>
+ <dt>{{domxref("Document.onpointerlockerror")}} {{experimental_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("pointerlockerror")}} event.</dd>
+ <dt>{{domxref("Document.onreadystatechange")}} {{gecko_minversion_inline("1.9.2")}}</dt>
+ <dd>Represents the event handling code for the {{event("readystatechange")}} event.</dd>
+ <dt>{{domxref("Document.onselectionchange")}} {{experimental_inline}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("selectionchange")}} event is raised.</dd>
+ <dt>{{domxref("Document.onvisibilitychange")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("visibilitychange")}} event is raised.</dd>
+ <dt>{{domxref("Document.onwheel")}} {{non-standard_inline}}</dt>
+ <dd>Represents the event handling code for the {{event("wheel")}} event.</dd>
+</dl>
+
+<p>The <code>Document</code> interface is extended with the {{domxref("GlobalEventHandlers")}} interface:</p>
+
+<p>{{Page("/en-US/docs/Web/API/GlobalEventHandlers", "Properties")}}</p>
+
+<h3 id="Deprecated_properties">Deprecated properties</h3>
+
+<dl>
+ <dt>{{domxref("Document.alinkColor")}} {{Deprecated_inline}}</dt>
+ <dd>Returns or sets the color of active links in the document body.</dd>
+ <dt>{{domxref("Document.all")}} {{Deprecated_inline}} {{non-standard_inline}}</dt>
+ <dd>Provides access to all elements in the document. This is a legacy, non-standard property and should not be used.</dd>
+ <dt>{{domxref("Document.applets")}} {{Deprecated_inline}} {{readonlyinline}}</dt>
+ <dd>Returns an ordered list of the applets within a document.</dd>
+ <dt>{{domxref("Document.async")}} {{Deprecated_inline}}</dt>
+ <dd>Used with {{domxref("Document.load")}} to indicate an asynchronous request.</dd>
+ <dt>{{domxref("Document.bgColor")}} {{Deprecated_inline}}</dt>
+ <dd>Gets/sets the background color of the current document.</dd>
+ <dt>{{domxref("Document.charset")}} {{readonlyinline}} {{Deprecated_inline}}</dt>
+ <dd>Alias of {{domxref("Document.characterSet")}}. Use this property instead.</dd>
+ <dt>{{domxref("Document.domConfig")}} {{Deprecated_inline}}</dt>
+ <dd>Should return a {{domxref("DOMConfiguration")}} object.</dd>
+ <dt>{{domxref("document.fgColor")}} {{Deprecated_inline}}</dt>
+ <dd>Gets/sets the foreground color, or text color, of the current document.</dd>
+ <dt>{{domxref("Document.fullscreen")}} {{obsolete_inline}}</dt>
+ <dd><code>true</code> when the document is in {{domxref("Using_full-screen_mode","full-screen mode")}}.</dd>
+ <dt>{{domxref("Document.height")}} {{non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Gets/sets the height of the current document.</dd>
+ <dt>{{domxref("Document.inputEncoding")}} {{readonlyinline}} {{Deprecated_inline}}</dt>
+ <dd>Alias of {{domxref("Document.characterSet")}}. Use this property instead.</dd>
+ <dt>{{domxref("Document.linkColor")}} {{Deprecated_inline}}</dt>
+ <dd>Gets/sets the color of hyperlinks in the document.</dd>
+ <dt>{{domxref("Document.vlinkColor")}} {{Deprecated_inline}}</dt>
+ <dd>Gets/sets the color of visited hyperlinks.</dd>
+ <dt>{{domxref("Document.width")}} {{non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Returns the width of the current document.</dd>
+ <dt>{{domxref("Document.xmlEncoding")}} {{Deprecated_inline}}</dt>
+ <dd>Returns the encoding as determined by the XML declaration.</dd>
+ <dt>{{domxref("Document.xmlStandalone")}} {{obsolete_inline("10.0")}}</dt>
+ <dd>Returns <code>true</code> if the XML declaration specifies the document to be standalone (<em>e.g.,</em> An external part of the DTD affects the document's content), else <code>false</code>.</dd>
+ <dt>{{domxref("Document.xmlVersion")}} {{obsolete_inline("10.0")}}</dt>
+ <dd>Returns the version number as specified in the XML declaration or <code>"1.0"</code> if the declaration is absent.</dd>
+</dl>
+

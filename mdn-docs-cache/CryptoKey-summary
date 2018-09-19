@@ -1,0 +1,1 @@
+The <strong><code>CryptoKey</code></strong> interface represents a cryptographic <a href="/en-US/docs/Glossary/key" class="glossaryLink" title="key: A key is a piece of information used by a cipher for encryption and/or decryption.">key</a> derived from a specific key algorithm.

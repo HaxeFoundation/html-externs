@@ -1,0 +1,40 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface <em>inherits properties from its parents, {{domxref("MouseEvent")}}, {{domxref("UIEvent")}} and {{domxref("Event")}}.</em></em></p>
+
+<dl id="raw_prop">
+ <dt>{{domxref("WheelEvent.deltaX")}} {{readonlyinline}}</dt>
+ <dd>Returns a <code>double</code> representing the horizontal scroll amount.</dd>
+ <dt>{{domxref("WheelEvent.deltaY")}} {{readonlyinline}}</dt>
+ <dd>Returns a <code>double</code> representing the vertical scroll amount.</dd>
+ <dt>{{domxref("WheelEvent.deltaZ")}} {{readonlyinline}}</dt>
+ <dd>Returns a <code>double</code> representing the scroll amount for the z-axis.</dd>
+ <dt>{{domxref("WheelEvent.deltaMode")}} {{readonlyinline}}</dt>
+ <dd>Returns an <code>unsigned long</code> representing the unit of the delta values scroll amount. Permitted values are:
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <td class="header">Constant</td>
+    <td class="header">Value</td>
+    <td class="header">Description</td>
+   </tr>
+   <tr>
+    <td><code>DOM_DELTA_PIXEL</code></td>
+    <td><code>0x00</code></td>
+    <td>The delta values are specified in pixels.</td>
+   </tr>
+   <tr>
+    <td><code>DOM_DELTA_LINE</code></td>
+    <td><code>0x01</code></td>
+    <td>The delta values are specified in lines.</td>
+   </tr>
+   <tr>
+    <td><code>DOM_DELTA_PAGE</code></td>
+    <td><code>0x02</code></td>
+    <td>The delta values are specified in pages.</td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+</dl>
+

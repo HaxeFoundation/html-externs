@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("ImageData.data")}} {{readonlyInline}}</dt>
+ <dd>Is a {{jsxref("Uint8ClampedArray")}} representing a one-dimensional array containing the data in the RGBA order, with integer values between <code>0</code> and <code>255</code> (included).</dd>
+ <dt>{{domxref("ImageData.height")}} {{readonlyInline}}</dt>
+ <dd>Is an <code>unsigned</code> <code>long</code> representing the actual height, in pixels, of the <code>ImageData</code>.</dd>
+ <dt>{{domxref("ImageData.width")}} {{readonlyInline}}</dt>
+ <dd>Is an <code>unsigned</code> <code>long</code> representing the actual width, in pixels, of the <code>ImageData</code>.</dd>
+</dl>
+

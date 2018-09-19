@@ -1,0 +1,9 @@
+<h2 id="Constants">Constants</h2>
+
+<p>This extension exposes one new constant, which can be used in the {{domxref("WebGLRenderingContext.getParameter()", "gl.getParameter()")}} method:</p>
+
+<dl>
+	<dt><code>ext.VERTEX_ARRAY_BINDING_OES</code></dt>
+	<dd>Returns a {{domxref("WebGLVertexArrayObject")}} object when used in the {{domxref("WebGLRenderingContext.getParameter()", "gl.getParameter()")}} method as the <code>pname</code> parameter.</dd>
+</dl>
+

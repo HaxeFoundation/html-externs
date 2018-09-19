@@ -1,0 +1,12 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+</dl>
+
+<p><em><em>The <code>TextDecoder</code> interface doesn't inherit any </em>method</em>.</p>
+
+<dl>
+ <dt>{{domxref("TextDecoder.decode()")}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the text decoded with the method of the specific <code>TextDecoder</code> object.</dd>
+</dl>
+

@@ -1,0 +1,18 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Storage.key()")}}</dt>
+ <dd>When passed a number n, this method will return the name of the nth key in the storage.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Storage.getItem()")}}</dt>
+ <dd>When passed a key name, will return that key's value.</dd>
+ <dt>{{domxref("Storage.setItem()")}}</dt>
+ <dd>When passed a key name and value, will add that key to the storage, or update that key's value if it already exists.</dd>
+ <dt>{{domxref("Storage.removeItem()")}}</dt>
+ <dd>When passed a key name, will remove that key from the storage.</dd>
+ <dt>{{domxref("Storage.clear()")}}</dt>
+ <dd>When invoked, will empty all keys out of the storage.</dd>
+</dl>
+

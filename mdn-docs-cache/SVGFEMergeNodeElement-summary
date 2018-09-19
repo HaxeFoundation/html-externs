@@ -1,0 +1,1 @@
+The <strong><code>SVGFEMergeNodeElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feMergeNode" title="The feMergeNode takes the result of another filter to be processed by its parent &lt;feMerge&gt;."><code>&lt;feMergeNode&gt;</code></a> element.

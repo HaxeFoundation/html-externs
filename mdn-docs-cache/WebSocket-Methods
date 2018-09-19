@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("WebSocket.close", "WebSocket.close([code[, reason]])")}}</dt>
+ <dd>Closes the connection.</dd>
+ <dt>{{domxref("WebSocket.send", "WebSocket.send(data)")}}</dt>
+ <dd>Enqueues data to be transmitted.</dd>
+</dl>
+

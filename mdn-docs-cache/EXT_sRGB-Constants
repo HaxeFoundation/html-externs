@@ -1,0 +1,15 @@
+<h2 id="Constants">Constants</h2>
+
+<p>This extension exposes the following constants, which can be used in the {{domxref("WebGLRenderingContext.texImage2D()", "texImage2D()")}}, {{domxref("WebGLRenderingContext.texSubImage2D()", "texSubImage2D()")}}, {{domxref("WebGLRenderingContext.renderbufferStorage()", "renderbufferStorage()")}} and {{domxref("WebGLRenderingContext.getFramebufferAttachmentParameter()", "getFramebufferAttachmentParameter()")}} methods.</p>
+
+<dl>
+ <dt><code>ext.SRGB_EXT</code></dt>
+ <dd>Unsized sRGB format that leaves the precision up to the driver.</dd>
+ <dt><code>ext.SRGB_ALPHA_EXT</code></dt>
+ <dd>Unsized sRGB format with unsized alpha component.</dd>
+ <dt><code>ext.SRGB8_ALPHA8_EXT</code></dt>
+ <dd>Sized (8-bit) sRGB and alpha formats.</dd>
+ <dt><code>ext.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT</code></dt>
+ <dd>Returns the framebuffer color encoding (<code>gl.LINEAR</code> or <code>ext.SRGB_EXT</code>).</dd>
+</dl>
+

@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p>As a {{domxref("CSSRule")}}, <code>CSSKeyframesRule</code> also implements the properties of these interfaces. It has two properties :</p>
+
+<dl>
+ <dt>{{domxref("CSSKeyframesRule.name")}}</dt>
+ <dd>Represents the name of the animation, used by the {{cssxref("animation-name")}} property.</dd>
+ <dt id="cssRules">{{domxref("CSSKeyframesRule.cssRules")}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{domxref("CSSRuleList")}} of the CSS rules in the media rule.</dd>
+</dl>
+

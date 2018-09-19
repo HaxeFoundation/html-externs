@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("HTMLCollection.length")}} {{readonlyInline}}</dt>
+	<dd>Returns the number of items in the collection.</dd>
+</dl>
+

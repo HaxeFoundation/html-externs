@@ -1,0 +1,21 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLMeterElement.high")}}</dt>
+ <dd>A <code>double</code> representing the value of the high boundary, reflecting the {{htmlattrxref("high","meter")}} attribute.</dd>
+ <dt>{{domxref("HTMLMeterElement.low")}}</dt>
+ <dd>A <code>double</code> representing the value of the low boundary, reflecting the {{htmlattrxref("low","meter")}}attribute.</dd>
+ <dt>{{domxref("HTMLMeterElement.max")}}</dt>
+ <dd>A <code>double</code> representing the maximum value, reflecting the {{htmlattrxref("max","meter")}} attribute.</dd>
+ <dt>{{domxref("HTMLMeterElement.min")}}</dt>
+ <dd>A <code>double</code> representing the minimum value, reflecting the {{htmlattrxref("min","meter")}} attribute.</dd>
+ <dt>{{domxref("HTMLMeterElement.optimum")}}</dt>
+ <dd>A <code>double</code> representing the optimum, reflecting the {{htmlattrxref("optimum","meter")}} attribute.</dd>
+ <dt>{{domxref("HTMLMeterElement.value")}}</dt>
+ <dd>A <code>double</code> representing the currrent value, reflecting the {{htmlattrxref("value","meter")}} attribute.</dd>
+ <dt>{{domxref("HTMLMeterElement.labels")}}{{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("NodeList")}} of {{HTMLElement("label")}} elements that are associated with the element.</dd>
+</dl>
+

@@ -1,0 +1,67 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Value</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The unit type is not one of predefined unit types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>NUMBER</code></td>
+   <td>1</td>
+   <td>No unit type was provided (i.e., a unitless value was specified), which indicates a value in user units.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>PERCENTAGE</code></td>
+   <td>2</td>
+   <td>A percentage value was specified.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>EMS</code></td>
+   <td>3</td>
+   <td>A value was specified using the em units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>EXS</code></td>
+   <td>4</td>
+   <td>A value was specified using the ex units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>PX</code></td>
+   <td>5</td>
+   <td>A value was specified using the px units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>CM</code></td>
+   <td>6</td>
+   <td>A value was specified using the cm units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>MM</code></td>
+   <td>7</td>
+   <td>A value was specified using the mm units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>IN</code></td>
+   <td>8</td>
+   <td>A value was specified using the in units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>PT</code></td>
+   <td>9</td>
+   <td>A value was specified using the pt units defined in CSS2.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_LENGTHTYPE_</code><code>PC</code></td>
+   <td>10</td>
+   <td>A value was specified using the pc units defined in CSS2.</td>
+  </tr>
+ </tbody>
+</table>
+

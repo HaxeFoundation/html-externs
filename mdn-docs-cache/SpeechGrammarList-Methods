@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+	<dt>{{domxref("SpeechGrammarList.item()")}}</dt>
+	<dd>Standard getter — allows individual {{domxref("SpeechGrammar")}} objects to be retrieved from the <code>SpeechGrammarList</code> using array syntax.</dd>
+	<dt>{{domxref("SpeechGrammarList.addFromURI()")}}</dt>
+	<dd>Takes a grammar present at a specific URI and adds it to the <code>SpeechGrammarList</code> as a new {{domxref("SpeechGrammar")}} object.</dd>
+	<dt>{{domxref("SpeechGrammarList.addFromString()")}}</dt>
+	<dd>Takes a grammar present in a specific {{domxref("DOMString")}} within the code base (e.g. stored in a variable) and adds it to the <code>SpeechGrammarList</code> as a new {{domxref("SpeechGrammar")}} object.</dd>
+</dl>
+

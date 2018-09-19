@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, </em><em>{{domxref("AudioNode")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("GainNode.gain")}} {{readonlyinline}}</dt>
+ <dd>Is an <a href="/en-US/docs/Web/API/AudioParam#a-rate">a-rate</a> {{domxref("AudioParam")}} representing the amount of gain to apply. You have to set {{domxref("AudioParam.value")}} or use the methods of <code>AudioParam</code> to change the effect of gain.</dd>
+</dl>
+

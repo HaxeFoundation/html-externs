@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>A {{domxref("MediaStreamEvent")}} being an {{domxref("Event")}}, this event also implements these properties</em>.</p>
+
+<dl>
+ <dt>{{domxref("MediaStreamEvent.stream")}} {{readOnlyInline}}</dt>
+ <dd>Contains the {{domxref("MediaStream")}} containing the stream associated with the event.</dd>
+</dl>
+

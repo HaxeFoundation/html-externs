@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Clients.get()")}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} for a {{domxref("Client")}} matching a given {{domxref("Client.id", "id")}}.</dd>
+ <dt>{{domxref("Clients.matchAll()")}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} for an array of {{domxref("Client")}} objects. An options argument allows you to control the types of clients returned. </dd>
+ <dt>{{domxref("Clients.openWindow()")}}</dt>
+ <dd>Opens a new browser window for a given url and returns a {{jsxref("Promise")}} for the new {{domxref("WindowClient")}}.</dd>
+ <dt>{{domxref("Clients.claim()")}}</dt>
+ <dd>Allows an active service worker to set itself as the {{domxref("ServiceWorkerContainer.controller", "controller")}} for all clients within its {{domxref("ServiceWorkerRegistration.scope", "scope")}}. </dd>
+</dl>
+

@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("DataTransferItem.getAsFile()")}}</dt>
+ <dd>Returns the {{domxref("File")}} object associated with the drag data item (or null if the drag item is not a file).</dd>
+ <dt>{{domxref("DataTransferItem.getAsString()")}}</dt>
+ <dd>Invokes the specified callback with the drag data item string as its argument.</dd>
+ <dt>{{domxref("DataTransferItem.webkitGetAsEntry()")}} {{Non-standard_inline}}</dt>
+ <dd>Returns an object based on {{domxref("FileSystemEntry")}} representing the selected file's entry in its file system. This will generally be either a {{domxref("FileSystemFileEntry")}} or {{domxref("FileSystemDirectoryEntry")}} object.</dd>
+</dl>
+

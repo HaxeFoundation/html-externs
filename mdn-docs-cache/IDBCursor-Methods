@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("IDBCursor.advance()")}}</dt>
+ <dd>Sets the number times a cursor should move its position forward.</dd>
+ <dt>{{domxref("IDBCursor.continue()")}}</dt>
+ <dd>Advances the cursor to the next position along its direction, to the item whose key matches the optional <code>key</code> parameter.</dd>
+ <dt>{{domxref("IDBCursor.continuePrimaryKey()")}}</dt>
+ <dd>Sets the cursor to the given index key and primary key given as arguments.</dd>
+ <dt>{{domxref("IDBCursor.delete()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, deletes the record at the cursor's position, without changing the cursor's position. This can be used to delete specific records.</dd>
+ <dt>{{domxref("IDBCursor.update()")}}</dt>
+ <dd>Returns an {{domxref("IDBRequest")}} object, and, in a separate thread, updates the value at the current position of the cursor in the object store. This can be used to update specific records.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent {{domxref("UIEvent")}}, and indirectly from {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("FocusEvent.relatedTarget")}} {{readonlyInline}}</dt>
+ <dd>Is an {{domxref("EventTarget")}} representing a secondary target for this event. As in some cases (like when tabbing in or out a page), this property may be set to <code>null</code> for security reasons.</dd>
+</dl>
+

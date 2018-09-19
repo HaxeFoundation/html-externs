@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("ImageBitmap.height")}} {{readonlyInline}}</dt>
+ <dd>Is an <code>unsigned</code> <code>long</code> representing the height, in CSS pixels, of the <code>ImageData</code>.</dd>
+ <dt>{{domxref("ImageBitmap.width")}} {{readonlyInline}}</dt>
+ <dd>Is an <code>unsigned</code> <code>long</code> representing the width, in CSS pixels, of the <code>ImageData</code>.</dd>
+</dl>
+

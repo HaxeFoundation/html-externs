@@ -1,0 +1,30 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>Location</code></em><em> interface doesn't inherit any property, but implements those from {{domxref("URLUtils")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("Location.href")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the entire URL. If changed, the associated document navigates to the new page. It can be set from a different origin than the associated document.</dd>
+ <dt>{{domxref("Location.protocol")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the protocol scheme of the URL, including the final <code>':'</code>.</dd>
+ <dt>{{domxref("Location.host")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the host, that is the <em>hostname</em>, a <code>':'</code>, and the <em>port</em> of the URL.</dd>
+ <dt>{{domxref("Location.hostname")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the domain of the URL.</dd>
+ <dt>{{domxref("Location.port")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the port number of the URL.</dd>
+ <dt>{{domxref("Location.pathname")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing an initial <code>'/'</code> followed by the path of the URL.</dd>
+ <dt>{{domxref("Location.search")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing a <code>'?'</code> followed by the parameters or "querystring" of the URL. Modern browsers provide <a href="/en-US/docs/Web/API/URLSearchParams/get#Example">URLSearchParams</a> and <a href="/en-US/docs/Web/API/URL/searchParams#Example">URL.searchParams</a> to make it easy to parse out the parameters from the querystring.</dd>
+ 
+ <dt>{{domxref("Location.hash")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing a <code>'#'</code> followed by the fragment identifier of the URL.</dd>
+ <dt>{{domxref("Location.username")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the username specified before the domain name.</dd>
+ <dt>{{domxref("Location.password")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} containing the password specified before the domain name.</dd>
+ <dt>{{domxref("Location.origin")}} {{readOnlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the canonical form of the origin of the specific location.</dd>
+</dl>
+

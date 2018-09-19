@@ -1,0 +1,7 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{ domxref('PointerEvent.getCoalescedEvents()')}}</dt>
+ <dd>Returns a sequence of all <code>PointerEvent</code> instances that were coalesced into the dispatched {{event("pointermove")}} event.</dd>
+</dl>
+

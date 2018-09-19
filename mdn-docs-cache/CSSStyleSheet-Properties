@@ -1,0 +1,14 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("StyleSheet")}}.</em></p>
+
+<dl>
+ <dt id="cssRules">{{domxref("CSSStyleSheet.cssRules")}}</dt>
+ <dd>Returns a live {{domxref("CSSRuleList")}}, listing the {{domxref("CSSRule")}} objects in the style sheet.<br>
+ This is normally used to access individual rules like this:<br>
+ <code>   styleSheet.cssRules[i] // where i = 0..cssRules.length-1</code><br>
+ To add or remove items in <code>cssRules</code>, use the <code>CSSStyleSheet</code>'s <code>deleteRule()</code> and <code>insertRule()</code> methods, described below.</dd>
+ <dt id="ownerRule">{{domxref("CSSStyleSheet.ownerRule")}}</dt>
+ <dd>If this style sheet is imported into the document using an {{cssxref("@import")}} rule, the <code>ownerRule</code> property will return that {{domxref("CSSImportRule")}}, otherwise it returns <code>null</code>.</dd>
+</dl>
+

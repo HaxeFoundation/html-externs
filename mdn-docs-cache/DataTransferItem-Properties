@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("DataTransferItem.kind")}} {{readonlyInline}}</dt>
+ <dd>The <em>kind</em> of drag data item, <code>string</code> or <code>file</code>.</dd>
+ <dt>{{domxref("DataTransferItem.type")}} {{readonlyInline}}</dt>
+ <dd>The drag data item's type, typically a MIME type.</dd>
+</dl>
+

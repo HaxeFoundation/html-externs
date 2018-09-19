@@ -1,0 +1,1 @@
+The <strong><code>FileSystemDirectoryEntry</code></strong> interface of the <a href="/en-US/docs/Web/API/File_and_Directory_Entries_API">File and Directory Entries API</a> represents a directory in a file system. It provides methods which make it possible to access and manipulate the files in a directory, as well as to access the entries within the directory.

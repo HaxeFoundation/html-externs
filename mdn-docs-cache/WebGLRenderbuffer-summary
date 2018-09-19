@@ -1,0 +1,1 @@
+The <strong>WebGLRenderbuffer</strong> interface is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and represents a buffer that can contain an image, or can be source or target of an rendering operation.

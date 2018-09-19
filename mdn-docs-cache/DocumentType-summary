@@ -1,0 +1,1 @@
+The <strong><code>DocumentType</code></strong> interface represents a <a href="/en-US/docs/Web/API/Node" title="Node is an interface from which a number of DOM API object types inherit. It allows those types to be treated similarly; for example, inheriting the same set of methods, or being tested in the same way."><code>Node</code></a> containing a doctype.

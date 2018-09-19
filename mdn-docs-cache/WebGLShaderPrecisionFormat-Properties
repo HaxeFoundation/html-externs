@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("WebGLShaderPrecisionFormat.rangeMin")}}</dt>
+ <dd>The base 2 log of the absolute value of the minimum value that can be represented.</dd>
+ <dt>{{domxref("WebGLShaderPrecisionFormat.rangeMax")}}</dt>
+ <dd>The base 2 log of the absolute value of the maximum value that can be represented.</dd>
+ <dt>{{domxref("WebGLShaderPrecisionFormat.precision")}}</dt>
+ <dd>The number of bits of precision that can be represented. For integer formats this value is always 0.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <code>FileReaderSync</code> interface allows to read <code>File</code> or <code>Blob</code> objects in a synchronous way.

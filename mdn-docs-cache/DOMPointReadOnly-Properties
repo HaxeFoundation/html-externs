@@ -1,0 +1,21 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("DOMPointReadOnly.x")}} {{readonlyInline}}</dt>
+	<dd>The point's horizontal coordinate, <code>x</code>.</dd>
+	<dt>{{domxref("DOMPointReadOnly.y")}} {{readonlyInline}}</dt>
+	<dd>The point's vertical coordinate, <code>y</code>.</dd>
+	<dt>{{domxref("DOMPointReadOnly.z")}} {{readonlyInline}}</dt>
+	<dd>The point's depth coordinate, <code>z</code>.</dd>
+	<dt>{{domxref("DOMPointReadOnly.w")}} {{readonlyInline}}</dt>
+	<dd>The point's perspective value, <code>w</code>.</dd>
+</dl>
+
+<dl>
+	<dt>
+	<h2 id="Static_methods">Static methods</h2>
+	</dt>
+	<dt>{{domxref("DOMPointReadOnly.fromPoint()")}}</dt>
+	<dd>A static method that creates a new <code>DOMPointReadOnly</code> object given the coordinates provided in the specified {{domxref("DOMPointInit")}} object.</dd>
+</dl>
+

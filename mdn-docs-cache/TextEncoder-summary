@@ -1,0 +1,1 @@
+<strong>TextEncoder </strong>takes a stream of code points as input and emits a stream of bytes. For a more scalable, non-native library, see <a href="/en-US/Add-ons/Code_snippets/StringView" title="/en-US/docs/Web/JavaScript/Typed_arrays/StringView"><code>StringView</code> – a C-like representation of strings based on typed arrays</a>.

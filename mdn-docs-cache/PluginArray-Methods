@@ -1,0 +1,11 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{ domxref("PluginArray.item") }}</dt>
+ <dd>Returns the {{ domxref("Plugin") }} at the specified index into the array.</dd>
+ <dt>{{ domxref("PluginArray.namedItem") }}</dt>
+ <dd>Returns the {{ domxref("Plugin") }} with the specified name.</dd>
+ <dt>{{ domxref("PluginArray.refresh") }}</dt>
+ <dd>Refreshes all plugins on the current page, optionally reloading documents.</dd>
+</dl>
+

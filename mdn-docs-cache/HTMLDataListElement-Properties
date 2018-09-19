@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}} </em></p>
+
+<dl>
+ <dt>{{domxref("HTMLDataListElement.options")}} {{readonlyInline}}</dt>
+ <dd>Is a {{domxref("HTMLCollection")}} representing a collection of the contained option elements.</dd>
+</dl>
+

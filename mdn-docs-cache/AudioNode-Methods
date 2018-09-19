@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Also implements methods from the interface </em>{{domxref("EventTarget")}}.</p>
+
+<dl>
+ <dt>{{domxref("AudioNode.connect()")}}</dt>
+ <dd>Allows us to connect the output of this node to be input into another node, either as audio data or as the value of an {{domxref("AudioParam")}}.</dd>
+ <dt>{{domxref("AudioNode.disconnect()")}}</dt>
+ <dd>Allows us to disconnect the current node from another one it is already connected to.</dd>
+</dl>
+

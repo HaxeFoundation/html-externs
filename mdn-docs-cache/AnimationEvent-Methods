@@ -1,0 +1,12 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+</dl>
+
+<p><em>Also inherits methods from its parent {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("AnimationEvent.initAnimationEvent()")}} {{non-standard_inline}}{{deprecated_inline}}</dt>
+ <dd>Initializes a <code>AnimationEvent</code> created using the deprecated {{domxref("Document.createEvent()", "Document.createEvent(\"AnimationEvent\")")}} method.</dd>
+</dl>
+

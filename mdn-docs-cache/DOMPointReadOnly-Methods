@@ -1,0 +1,12 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+	<dt>{{domxref("DOMPointReadOnly.matrixTransform", "matrixTransform()")}}</dt>
+	<dd>Applies a matrix transform specified as a {{domxref("DOMMatrixInit")}} object to the <code>DOMPointReadOnly</code> object.</dd>
+	<dt>{{domxref("DOMPointReadOnly.toJSON()", "toJSON()")}}</dt>
+	<dd>Returns a JSON representation of the <code>DOMPointReadOnly</code> object.</dd>
+</dl>
+
+<dl>
+</dl>
+

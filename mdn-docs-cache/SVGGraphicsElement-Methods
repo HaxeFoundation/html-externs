@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods from its parent, {{domxref("SVGElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGGraphicsElement.getBBox()")}}</dt>
+ <dd>Returns a {{domxref("DOMRect")}} representing the computed bounding box of the current element.</dd>
+ <dt>{{domxref("SVGGraphicsElement.getCTM()")}}</dt>
+ <dd>Returns a {{domxref("DOMMatrix")}} representing the matrix that transforms the current element's coordinate system to its SVG viewport's coordinate system.</dd>
+ <dt>{{domxref("SVGGraphicsElement.getScreenCTM()")}}</dt>
+ <dd>Returns a {{domxref("DOMMatrix")}} representing the matrix that transforms the current element's coordinate system to the coordinate system of the SVG viewport for the SVG document fragment.</dd>
+</dl>
+

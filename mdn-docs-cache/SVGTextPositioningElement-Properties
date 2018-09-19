@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGTextContentElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGTextPositioningElement.x")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedLengthList")}} reflecting the {{SVGAttr("x")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGTextPositioningElement.y")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedLengthList")}} reflecting the {{SVGAttr("y")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGTextPositioningElement.dx")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedLengthList")}} reflecting the {{SVGAttr("dx")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGTextPositioningElement.dy")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedLengthList")}} reflecting the {{SVGAttr("dy")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGTextPositioningElement.rotate")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an {{domxref("SVGAnimatedNumberList")}} reflecting the {{SVGAttr("rotate")}} attribute of the given element.</dd>
+</dl>
+

@@ -1,0 +1,55 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("HTMLMediaElement")}}, and from {{domxref("HTMLElement")}}.</em></p>
+
+<h3 id="Constructor">Constructor</h3>
+
+<h4 id="Syntax">Syntax</h4>
+
+<pre class="syntaxbox">mySound = new Audio([<em>URLString</em>]);
+</pre>
+
+<h4 id="Description">Description</h4>
+
+<p>Constructor for audio elements. The <code>preload</code> property of the returned object is set to <code>auto</code> and the <code>src</code> property is set to the argument value. The browser begins <em>asynchronously</em> selecting the resource before returning the object.</p>
+
+<p><em>Note: A</em><em>n Audio element constructed with <code>new Audio()</code> won't be garbage collected as long as playback is in progress. It will continue playing and be audible until <code>pause()</code> is called or playback finishes.</em></p>
+
+<h4 id="Parameters">Parameters</h4>
+
+<dl>
+ <dt><code>URLString</code> (expected type: {{domxref("DOMString")}}; optional)</dt>
+ <dd>The <code>src</code> property of the constructed <code>HTMLAudioElement</code>.</dd>
+</dl>
+
+<p> </p>
+
+<h3 id="Regular_methods">Regular methods</h3>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Name &amp; Arguments</th>
+   <th scope="col">Return</th>
+   <th scope="col">Description</th>
+  </tr>
+  <tr>
+   <td><code>mozCurrentSampleOffset()</code> {{non-standard_inline}}</td>
+   <td><code>unsigned long long</code></td>
+   <td>Indicates the current offset of the audio stream that was created by a call to <code>mozWriteAudio()</code>. This offset is specified as the number of samples since the beginning of the stream.</td>
+  </tr>
+  <tr>
+   <td>
+    <p><code>mozSetup(in PRUint32 channels, in PRUint32 rate)</code> {{non-standard_inline}}</p>
+   </td>
+   <td><code>void</code></td>
+   <td>Sets up the audio stream for writing. You specify as parameters the number of channels (<code>1</code> for mono or <code>2</code> for stereo), then the sampling rate (<code>44100</code> for 44.1kHz, for example).</td>
+  </tr>
+  <tr>
+   <td><code>mozWriteAudio(in jsval data) </code>{{non-standard_inline}}</td>
+   <td><code>unsigned long</code></td>
+   <td>Writes audio into the stream at the current offset. Returns the number of bytes actually written to the stream.</td>
+  </tr>
+ </tbody>
+</table>
+

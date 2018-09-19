@@ -1,0 +1,140 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface inherits methods from the {{domxref("EventTarget")}} interface and implements methods from {{domxref("WindowOrWorkerGlobalScope")}} and {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("Window.alert()")}}</dt>
+ <dd>Displays an alert dialog.</dd>
+ 
+ <dt>{{domxref("Window.back()")}} {{Non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Moves back one in the window history. This method is obsolete; you should instead use {{domxref("History.back", "window.history.back()")}}.</dd>
+ <dt>{{domxref("Window.blur()")}}</dt>
+ <dd>Sets focus away from the window.</dd>
+ <dt>{{domxref("Window.cancelAnimationFrame()")}} {{experimental_inline}}</dt>
+ <dd>Enables you to cancel a callback previously scheduled with {{domxref("Window.requestAnimationFrame")}}.</dd>
+ <dt>{{domxref("Window.cancelIdleCallback()")}} {{experimental_inline}}</dt>
+ <dd>Enables you to cancel a callback previously scheduled with {{domxref("Window.requestIdleCallback")}}.</dd>
+ <dt>{{domxref("Window.captureEvents()")}} {{Deprecated_inline}}</dt>
+ <dd>Registers the window to capture all events of the specified type.</dd>
+ <dt>{{domxref("Window.clearImmediate()")}}</dt>
+ <dd>Cancels the repeated execution set using <code>setImmediate</code>.</dd>
+ <dt>{{domxref("Window.close()")}}</dt>
+ <dd>Closes the current window.</dd>
+ <dt>{{domxref("Window.confirm()")}}</dt>
+ <dd>Displays a dialog with a message that the user needs to respond to.</dd>
+ <dt>{{domxref("Window.disableExternalCapture()")}} {{obsolete_inline(24)}}</dt>
+ <dd>{{todo("NeedsContents")}}</dd>
+ <dt>{{domxref("Window.dispatchEvent()")}}</dt>
+ <dd>Used to trigger an event.</dd>
+ <dt>{{domxref("Window.dump()")}} {{Non-standard_inline}}</dt>
+ <dd>Writes a message to the console.</dd>
+ <dt>{{domxref("Window.enableExternalCapture()")}} {{obsolete_inline(24)}}</dt>
+ <dd>{{todo("NeedsContents")}}</dd>
+ <dt>{{domxref("Window.find()")}}</dt>
+ <dd>Searches for a given string in a window.</dd>
+ <dt>{{domxref("Window.focus()")}}</dt>
+ <dd>Sets focus on the current window.</dd>
+ <dt>{{domxref("Window.forward()")}} {{Non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Moves the window one document forward in the history. This method is obsolete; you should instead use {{domxref("History.forward", "window.history.forward()")}}.</dd>
+ <dt>{{domxref("Window.getAttention()")}} {{Non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Flashes the application icon.</dd>
+ <dt>{{domxref("Window.getAttentionWithCycleCount()")}}</dt>
+ <dd>{{todo("NeedsContents")}}</dd>
+ <dt>{{domxref("Window.getComputedStyle()")}}</dt>
+ <dd>Gets computed style for the specified element. Computed style indicates the computed values of all CSS properties of the element.</dd>
+ <dt>{{domxref("Window.getDefaultComputedStyle()")}} {{Non-standard_inline}}</dt>
+ <dd>Gets default computed style for the specified element, ignoring author stylesheets.</dd>
+ <dt>{{domxref("Window.getSelection()")}}</dt>
+ <dd>Returns the selection object representing the selected item(s).</dd>
+ <dt>{{domxref("Window.home()")}} {{Non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Returns the browser to the home page.</dd>
+ <dt>{{domxref("Window.matchMedia()")}} {{gecko_minversion_inline("6.0")}}</dt>
+ <dd>Returns a {{domxref("MediaQueryList")}} object representing the specified media query string.</dd>
+ <dt>{{domxref("Window.maximize()")}}</dt>
+ <dd>{{todo("NeedsContents")}}</dd>
+ <dt>{{domxref("Window.minimize()")}} (top-level XUL windows only)</dt>
+ <dd>Minimizes the window.</dd>
+ <dt>{{domxref("Window.moveBy()")}}</dt>
+ <dd>Moves the current window by a specified amount.</dd>
+ <dt>{{domxref("Window.moveTo()")}}</dt>
+ <dd>Moves the window to the specified coordinates.</dd>
+ <dt>{{domxref("Window.open()")}}</dt>
+ <dd>Opens a new window.</dd>
+ <dt>{{domxref("Window.openDialog()")}} {{Non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Opens a new dialog window.</dd>
+ <dt>{{domxref("Window.postMessage()")}} {{Fx_minversion_inline(3)}}</dt>
+ <dd>Provides a secure means for one window to send a string of data to another window, which need not be within the same domain as the first.</dd>
+ <dt>{{domxref("Window.print()")}}</dt>
+ <dd>Opens the Print Dialog to print the current document.</dd>
+ <dt>{{domxref("Window.prompt()")}}</dt>
+ <dd>Returns the text entered by the user in a prompt dialog.</dd>
+ <dt>{{domxref("Window.releaseEvents()")}} {{Non-standard_inline}} {{Deprecated_inline}}</dt>
+ <dd>Releases the window from trapping events of a specific type.</dd>
+ <dt>{{domxref("Window.requestAnimationFrame()")}} {{gecko_minversion_inline("2.0")}}</dt>
+ <dd>Tells the browser that an animation is in progress, requesting that the browser schedule a repaint of the window for the next animation frame.</dd>
+ <dt>{{domxref("Window.requestIdleCallback()")}}  {{experimental_inline}}</dt>
+ <dd>Enables the scheduling of tasks during a browser's idle periods.</dd>
+ <dt>{{domxref("Window.resizeBy()")}}</dt>
+ <dd>Resizes the current window by a certain amount.</dd>
+ <dt>{{domxref("Window.resizeTo()")}}</dt>
+ <dd>Dynamically resizes window.</dd>
+ <dt>{{domxref("Window.restore()")}} {{Non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>{{todo("NeedsContents")}}</dd>
+ <dt>{{domxref("Window.routeEvent()")}} {{obsolete_inline(24)}}</dt>
+ <dd>{{todo("NeedsContents")}}</dd>
+ <dt>{{domxref("Window.scroll()")}}</dt>
+ <dd>Scrolls the window to a particular place in the document.</dd>
+ <dt>{{domxref("Window.scrollBy()")}}</dt>
+ <dd>Scrolls the document in the window by the given amount.</dd>
+ <dt>{{domxref("Window.scrollByLines()")}} {{Non-standard_inline}}</dt>
+ <dd>Scrolls the document by the given number of lines.</dd>
+ <dt>{{domxref("Window.scrollByPages()")}} {{Non-standard_inline}}</dt>
+ <dd>Scrolls the current document by the specified number of pages.</dd>
+ <dt>{{domxref("Window.scrollTo()")}}</dt>
+ <dd>Scrolls to a particular set of coordinates in the document.</dd>
+ <dt>{{domxref("Window.setCursor()")}} {{Non-standard_inline}} (top-level XUL windows only)</dt>
+ <dd>Changes the cursor for the current window</dd>
+ <dt>{{domxref("Window.setImmediate()")}}</dt>
+ <dd>Executes a function after the browser has finished other heavy tasks</dd>
+ <dt>{{domxref("Window.setResizable()")}} {{Non-standard_inline}}</dt>
+ <dd>Toggles a user's ability to resize a window.</dd>
+ <dt>{{domxref("Window.sizeToContent()")}} {{Non-standard_inline}}</dt>
+ <dd>Sizes the window according to its content.</dd>
+ <dt>{{domxref("Window.stop()")}}</dt>
+ <dd>This method stops window loading.</dd>
+ <dt>{{domxref("Window.updateCommands()")}} {{Non-standard_inline}}</dt>
+ <dd>Updates the state of commands of the current chrome window (UI).</dd>
+</dl>
+
+<h3 id="Methods_implemented_from_elsewhere">Methods implemented from elsewhere</h3>
+
+<dl>
+ <dt>{{domxref("EventTarget.addEventListener()")}}</dt>
+ <dd>Register an event handler to a specific event type on the window.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.atob()")}}</dt>
+ <dd>Decodes a string of data which has been encoded using base-64 encoding.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.btoa()")}}</dt>
+ <dd>Creates a base-64 encoded ASCII string from a string of binary data.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.clearInterval()")}}</dt>
+ <dd>Cancels the repeated execution set using {{domxref("WindowOrWorkerGlobalScope.setInterval()")}}.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.clearTimeout()")}}</dt>
+ <dd>Cancels the delayed execution set using {{domxref("WindowOrWorkerGlobalScope.setTimeout()")}}.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.createImageBitmap()")}}</dt>
+ <dd>Accepts a variety of different image sources, and returns a {{domxref("Promise")}} which resolves to an {{domxref("ImageBitmap")}}. Optionally the source is cropped to the rectangle of pixels originating at <em>(sx, sy)</em> with width sw, and height sh.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.fetch()")}}</dt>
+ <dd>Starts the process of fetching a resource from the network.</dd>
+ <dt>{{domxref("EventTarget.removeEventListener")}}</dt>
+ <dd>Removes an event listener from the window.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.setInterval()")}}</dt>
+ <dd>Schedules a function to execute every time a given number of milliseconds elapses.</dd>
+ <dt>{{domxref("WindowOrWorkerGlobalScope.setTimeout()")}}</dt>
+ <dd>Schedules a function to execute in a given amount of time.</dd>
+</dl>
+
+<h3 id="Obsolete_methods">Obsolete methods</h3>
+
+<dl>
+ <dt>{{domxref("Window.showModalDialog()")}} {{obsolete_inline}}</dt>
+ <dd>Displays a modal dialog. <strong>This method was removed completely in Chrome 43, and Firefox 55.</strong></dd>
+</dl>
+

@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGGradientElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGRadialGradientElement.cx")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("cx")}} attribute of the given {{SVGElement("RadialGradient")}} element.</dd>
+ <dt>{{domxref("SVGRadialGradientElement.cx")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("cy")}} attribute of the given {{SVGElement("RadialGradient")}} element.</dd>
+ <dt>{{domxref("SVGRadialGradientElement.r")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("r")}} attribute of the given {{SVGElement("RadialGradient")}} element.</dd>
+ <dt>{{domxref("SVGRadialGradientElement.fx")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("fx")}} attribute of the given {{SVGElement("RadialGradient")}} element.</dd>
+ <dt>{{domxref("SVGRadialGradientElement.fy")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("fy")}} attribute of the given {{SVGElement("RadialGradient")}} element.</dd>
+</dl>
+

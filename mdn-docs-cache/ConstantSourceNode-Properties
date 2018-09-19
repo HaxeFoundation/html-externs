@@ -1,0 +1,22 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent interface, {{domxref("AudioScheduledSourceNode")}}, and adds the following properties:</em></p>
+
+<dl>
+ <dt>{{domxref("ConstantSourceNode.offset", "offset")}}</dt>
+ <dd>An {{domxref("AudioParam")}} which specifies the value that this source continuously outputs. The default value is 1.0.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<p><em>Inherits event handlers from its parent interface, {{domxref("AudioScheduledSourceNode")}}.</em></p>
+
+<div class="note">
+<p>Some browsers' implementations of this event handler are part of the  {{domxref("AudioScheduledSourceNode")}} interface.</p>
+</div>
+
+<dl>
+ <dt>{{domxref("AudioScheduledSourceNode.onended()","onended")}}</dt>
+ <dd>Fired whenever the {{domxref('ConstantSourceNode')}} data has stopped playing.</dd>
+</dl>
+

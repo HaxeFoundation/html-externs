@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MediaKeySystemAccess.keySystem")}} {{readonlyinline}}</dt>
+ <dd>Returns a {{domxref('DOMString')}} identifying the key system being used.</dd>
+</dl>
+

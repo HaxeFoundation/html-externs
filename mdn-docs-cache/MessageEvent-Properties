@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("Event")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MessageEvent.data")}} {{readonlyInline}}</dt>
+ <dd>The data sent by the message emitter.</dd>
+ <dt>{{domxref("MessageEvent.origin")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("USVString")}} representing the origin of the message emitter.</dd>
+ <dt>{{domxref("MessageEvent.lastEventId")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing a unique ID for the event.</dd>
+ <dt>{{domxref("MessageEvent.source")}} {{readonlyInline}}</dt>
+ <dd>A <code>MessageEventSource</code> (which can be a {{domxref("WindowProxy")}}, {{domxref("MessagePort")}}, or {{domxref("ServiceWorker")}} object) representing the message emitter.</dd>
+ <dt>{{domxref("MessageEvent.ports")}} {{readonlyInline}}</dt>
+ <dd>An array of {{domxref("MessagePort")}} objects representing the ports associated with the channel the message is being sent through (where appropriate, e.g. in channel messaging or when sending a message to a shared worker).</dd>
+</dl>
+

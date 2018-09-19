@@ -1,0 +1,32 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("IDBTransaction.db")}} {{readonlyInline}}</dt>
+ <dd>The database connection with which this transaction is associated.</dd>
+ <dt>{{domxref("IDBTransaction.error")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMException")}} indicating the type of error that occured when there is an unsuccessful transaction. This property is <code>null</code> if the transaction is not finished, is finished and successfully committed, or was aborted with {{domxref("IDBTransaction.abort")}} function.</dd>
+ <dt>{{domxref("IDBTransaction.mode")}} {{readonlyInline}}</dt>
+ <dd>The mode for isolating access to data in the object stores that are in the scope of the transaction. For possible values, see the Constants section below. The default value is <code><a href="#const_read_only">readonly</a></code>.</dd>
+ <dt>{{domxref("IDBTransaction.objectStoreNames")}} {{readonlyinline}}</dt>
+ <dd>Returns a {{domxref("DOMStringList")}} of the names of {{domxref("IDBObjectStore")}} objects.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("IDBTransaction.onabort")}} {{readonlyInline}}</dt>
+ <dd>The event handler for the <code>abort</code> event, fired when the transaction is aborted. This can happen due to:
+ <ul>
+  <li>bad requests, e.g. trying to add() the same key twice, or put() with the same index key with a uniqueness constraint and there is no error handler on the request to call preventDefault() on the event,</li>
+  <li>an explicit abort() call from script</li>
+  <li>uncaught exception in request's success/error handler,</li>
+  <li>an I/O error (actual failure to write to disk, e.g. disk detached, or other OS/hardware failure), or</li>
+  <li>quota exceeded.</li>
+ </ul>
+ </dd>
+ <dt>{{domxref("IDBTransaction.oncomplete")}} {{readonlyInline}}</dt>
+ <dd>The event handler for the <code>complete</code> event, thrown when the transaction completes successfully.</dd>
+ <dt>{{domxref("IDBTransaction.onerror")}} {{readonlyInline}}</dt>
+ <dd>The event handler for the <code>error</code> event, thrown when the transaction fails to complete.</dd>
+</dl>
+

@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLOptGroupElement.disabled")}}</dt>
+ <dd>Is a {{domxref("boolean")}} representing whether or not the whole list of children {{HTMLElement("option")}} is disabled (true) or not (false).</dd>
+ <dt>{{domxref("HTMLOptGroupElement.label")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the label for the group.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("SpeechRecognitionAlternative.transcript")}} {{readonlyinline}}</dt>
+	<dd>Returns a string containing the transcript of the recognised word.</dd>
+	<dt>{{domxref("SpeechRecognitionAlternative.confidence")}} {{readonlyinline}}</dt>
+	<dd>Returns a numeric estimate of how confident the speech recognition system is that the recognition is correct.</dd>
+</dl>
+

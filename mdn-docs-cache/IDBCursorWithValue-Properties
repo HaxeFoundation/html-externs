@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p>Inherits properties from its parent interface, {{domxref("IDBCursor")}}.</p>
+
+<dl>
+ <dt>{{domxref("IDBCursorWithValue.value")}} {{readonlyInline}}</dt>
+ <dd>Returns the value of the current cursor.</dd>
+</dl>
+

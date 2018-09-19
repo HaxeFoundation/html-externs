@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods from its parent, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("BroadcastChannel.postMessage()")}}</dt>
+ <dd>Sends the message, of any type of object, to each <code>BroadcastChannel</code> object listening to the same channel.</dd>
+ <dt>{{domxref("BroadcastChannel.close()")}}</dt>
+ <dd>Closes the channel object, indicating it won't get any new messages, and allowing it to be, eventually, garbage collected.</dd>
+</dl>
+

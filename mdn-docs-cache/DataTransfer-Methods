@@ -1,0 +1,34 @@
+<h2 id="Methods">Methods</h2>
+
+<h3 id="Standard_methods">Standard methods</h3>
+
+<dl>
+ <dt>{{domxref("DataTransfer.clearData()")}}</dt>
+ <dd>Remove the data associated with a given type. The type argument is optional. If the type is empty or not specified, the data associated with all types is removed. If data for the specified type does not exist, or the data transfer contains no data, this method will have no effect.</dd>
+ <dt>{{domxref("DataTransfer.getData()")}}</dt>
+ <dd>Retrieves the data for a given type, or an empty string if data for that type does not exist or the data transfer contains no data.</dd>
+ <dt>{{domxref("DataTransfer.setData()")}}</dt>
+ <dd>Set the data for a given type. If data for the type does not exist, it is added at the end, such that the last item in the types list will be the new format. If data for the type already exists, the existing data is replaced in the same position.</dd>
+ <dt>{{domxref("DataTransfer.setDragImage()")}}</dt>
+ <dd>Set the image to be used for dragging if a custom one is desired.</dd>
+</dl>
+
+<h3 id="Gecko_methods">Gecko methods</h3>
+
+<p>{{Non-standard_header()}}</p>
+
+<div class="note"><strong>Note:</strong> All of the methods in this section are Gecko-specific.</div>
+
+<dl>
+ <dt>{{domxref("DataTransfer.addElement()")}}</dt>
+ <dd>Sets the drag source to the given element.</dd>
+ <dt>{{domxref("DataTransfer.mozClearDataAt()")}}</dt>
+ <dd>Removes the data associated with the given format for an item at the specified index. The index is in the range from zero to the number of items minus one.</dd>
+ <dt>{{domxref("DataTransfer.mozGetDataAt()")}}</dt>
+ <dd>Retrieves the data associated with the given format for an item at the specified index, or null if it does not exist. The index should be in the range from zero to the number of items minus one.</dd>
+ <dt>{{domxref("DataTransfer.mozSetDataAt()")}}</dt>
+ <dd>A data transfer may store multiple items, each at a given zero-based index. <code>mozSetDataAt()</code> may only be called with an index argument less than <code>mozItemCount</code> in which case an existing item is modified, or equal to <code>mozItemCount</code> in which case a new item is added, and the <code>mozItemCount</code> is incremented by one.</dd>
+ <dt>{{domxref("DataTransfer.mozTypesAt()")}}</dt>
+ <dd>Holds a list of the format types of the data that is stored for an item at the specified index. If the index is not in the range from 0 to the number of items minus one, an empty string list is returned.</dd>
+</dl>
+

@@ -1,0 +1,37 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Value</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOLORMATRIX_TYPE_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The type is not one of predefined types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOLORMATRIX_TYPE_MATRIX</code></td>
+   <td>1</td>
+   <td>Corresponds to the <code>matrix</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOLORMATRIX_TYPE_SATURATE</code></td>
+   <td>2</td>
+   <td>Corresponds to the <code>saturate</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOLORMATRIX_TYPE_HUEROTATE</code></td>
+   <td>3</td>
+   <td>Corresponds to <code>hueRotate</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOLORMATRIX_TYPE_LUMINANCETOALPHA</code></td>
+   <td>4</td>
+   <td>Corresponds to <code>luminanceToAlpha</code> value.</td>
+  </tr>
+ </tbody>
+</table>
+

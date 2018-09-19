@@ -1,0 +1,22 @@
+<h2 id="Methods">Methods</h2>
+
+<h3 id="Static_methods">Static methods</h3>
+
+<dl>
+ <dt>{{domxref("IDBKeyRange.bound()")}}</dt>
+ <dd>Creates a new key range with upper and lower bounds.</dd>
+ <dt>{{domxref("IDBKeyRange.only()")}}</dt>
+ <dd>Creates a new key range containing a single value.</dd>
+ <dt>{{domxref("IDBKeyRange.lowerBound()")}}</dt>
+ <dd>Creates a new key range with only a lower bound.</dd>
+ <dt>{{domxref("IDBKeyRange.upperBound()")}}</dt>
+ <dd>Creates a new upper-bound key range.</dd>
+</dl>
+
+<h3 id="Instance_methods">Instance methods</h3>
+
+<dl>
+ <dt>{{domxref("IDBKeyRange.includes()")}}</dt>
+ <dd>Returns a boolean indicating whether a specified key is inside the key range.</dd>
+</dl>
+

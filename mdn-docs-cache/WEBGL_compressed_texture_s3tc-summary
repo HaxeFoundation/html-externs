@@ -1,0 +1,1 @@
+The <code><strong>WEBGL_compressed_texture_s3tc</strong></code> extension is part of the <a href="/en-US/docs/Web/API/WebGL_API">WebGL API</a> and exposes four <a href="https://en.wikipedia.org/wiki/S3_Texture_Compression">S3TC compressed texture formats</a>.

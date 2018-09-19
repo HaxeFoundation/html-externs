@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>The <code>PerformanceTiming</code></em> <em>interface doesn't inherit any methods.</em></p>
+
+<dl>
+ <dt>{{deprecated_inline}}  {{domxref("PerformanceTiming.toJSON()")}} {{non-Standard_Inline}}</dt>
+ <dd>Returns a <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" title="/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON object</a> representing this <code>PerformanceTiming</code> object.</dd>
+</dl>
+

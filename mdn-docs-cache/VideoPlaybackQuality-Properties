@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>VideoPlaybackQuality</code> interface doesn't inherit any property.</em></p>
+
+<dl>
+ <dt>{{domxref("VideoPlaybackQuality.creationTime")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMHighResTimeStamp")}} containing the time in miliseconds since the start of the navigation and the creation of the object.</dd>
+ <dt>{{domxref("VideoPlaybackQuality.totalVideoFrames")}} {{readonlyInline}}</dt>
+ <dd>An <code>unsigned long</code> giving the number of video frames created and dropped since the creation of the associated {{domxref("HTMLVideoElement")}}.</dd>
+ <dt>{{domxref("VideoPlaybackQuality.droppedVideoFrames")}} {{readonlyInline}}</dt>
+ <dd>An <code>unsigned long</code> giving the number of video frames dropped since the creation of the associated {{domxref("HTMLVideoElement")}}.</dd>
+ <dt>{{domxref("VideoPlaybackQuality.corruptedVideoFrames")}} {{readonlyInline}}</dt>
+ <dd>An <code>unsigned long</code> giving the number of video frames corrupted since the creation of the associated {{domxref("HTMLVideoElement")}}. A corrupted frame may be created or dropped.</dd>
+ <dt>{{domxref("VideoPlaybackQuality.totalFrameDelay")}} {{readonlyInline}} {{ obsolete_inline(30) }}</dt>
+ <dd>A <code>double</code> containing the sum of the frame delay since the creation of the associated {{domxref("HTMLVideoElement")}}. The frame delay is the difference between a frame's theoretical presentation time and its effective display time.</dd>
+</dl>
+

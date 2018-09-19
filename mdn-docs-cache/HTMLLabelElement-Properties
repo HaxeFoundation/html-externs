@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLLabelElement.control")}} {{ReadOnlyInline}}</dt>
+ <dd>Is a {{domxref("HTMLElement")}} representing the control with which the label is associated.</dd>
+ <dt>{{domxref("HTMLLabelElement.form")}} {{ReadOnlyInline}}</dt>
+ <dd>Is a {{domxref("HTMLFormElement")}} object representing the form with which the labeled control is associated, or <code>null</code> if there is no associated control, or if that control isn't associated with a form. In other words, this is just a shortcut for <code><em>HTMLLabelElement</em>.control.form</code>.</dd>
+ <dt>{{domxref("HTMLLabelElement.htmlFor")}}</dt>
+ <dd>Is a string containing the ID of the labeled control. This reflects the {{htmlattrxref("for", "label")}} attribute.</dd>
+</dl>
+

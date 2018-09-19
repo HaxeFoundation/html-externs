@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p>Inherits from: {{domxref("EventTarget")}}</p>
+
+<dl>
+ <dt>{{domxref("IDBTransaction.abort")}}</dt>
+ <dd>Rolls back all the changes to objects in the database associated with this transaction. If this transaction has been aborted or completed, then this method throws an error event.</dd>
+ <dt>{{domxref("IDBTransaction.objectStore")}}</dt>
+ <dd>Returns an {{domxref("IDBObjectStore")}} object representing an <span class="internalDFN">object store</span> that is part of the <span class="internalDFN">scope</span> of this <span class="internalDFN">transaction</span>.</dd>
+</dl>
+

@@ -1,0 +1,7 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+	<dt>{{domxref("SpeechRecognitionResult.item")}}</dt>
+	<dd>A standard getter that allows {{domxref("SpeechRecognitionAlternative")}} objects within the result to be accessed via array syntax.</dd>
+</dl>
+

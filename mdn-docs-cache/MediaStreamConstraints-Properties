@@ -1,0 +1,20 @@
+<h2 id="Properties">Properties</h2>
+
+<p>Some combination—but not necessarily all—of the following properties will exist on the object.</p>
+
+<h3 id="Track_constraints">Track constraints</h3>
+
+<dl>
+ <dt>{{domxref("MediaStreamConstraints.audio", "audio")}}</dt>
+ <dd>Either a Boolean (which indicates whether or not an audio track is requested) or a {{domxref("MediaTrackConstraints")}} object providing the constraints which must be met by the audio track included in the returned {{domxref("MediaStream")}}. If constraints are specified, an audio track is inherently requested.</dd>
+ <dt>{{domxref("MediaStreamConstraints.video", "video")}}</dt>
+ <dd>Either a Boolean (which indicates whether or not a video track is requested) or a {{domxref("MediaTrackConstraints")}} object providing the constraints which must be met by the video track included in the returned {{domxref("MediaStream")}}. If constraints are specified, a video track is inherently requested.</dd>
+</dl>
+
+<h3 id="Security">Security</h3>
+
+<dl>
+ <dt>{{domxref("MediaStreamConstraints.peerIdentity", "peerIdentity")}}</dt>
+ <dd>A {{domxref("DOMString")}} identifying the peer who has sole access to the stream. If this property is specified, only the indicated peer can receive and use the stream. Streams isolated in this way can only be displayed in a media element ({{HTMLElement("audio")}} or {{HTMLElement("video")}}) where the content is protected just as if {{Glossary("CORS")}} cross-origin rules were in effect. When a peer identity is set, {{domxref("MediaStreamTrack")}}s from that peer have their {{domxref("MediaStreamTrack.isolated", "isolated")}} flag set to <code>true</code>.</dd>
+</dl>
+

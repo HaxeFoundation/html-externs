@@ -1,0 +1,35 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface inherits properties from the {{domxref("WorkerGlobalScope")}} interface, and its parent {{domxref("EventTarget")}}, and therefore implements properties from {{domxref("WindowTimers")}}, {{domxref("WindowBase64")}}, and {{domxref("WindowEventHandlers")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("DedicatedWorkerGlobalScope.name")}} {{readOnlyinline}}</dt>
+	<dd>The name that the {{domxref("Worker")}} was (optionally) given when it was created using the {{domxref("Worker.Worker", "Worker()")}} constructor. This is mainly useful for debugging purposes.</dd>
+</dl>
+
+<h3 id="Properties_inherited_from_WorkerGlobalScope">Properties inherited from WorkerGlobalScope</h3>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.self")}}</dt>
+	<dd>Returns an object reference to the <code>DedicatedWorkerGlobalScope</code> object itself.</dd>
+	<dt>{{domxref("WorkerGlobalScope.console")}} {{readOnlyinline}}</dt>
+	<dd>Returns the {{domxref("Console")}} associated with the worker.</dd>
+	<dt>{{domxref("WorkerGlobalScope.location")}} {{readOnlyinline}}</dt>
+	<dd>Returns the {{domxref("WorkerLocation")}} associated with the worker. <code>WorkerLocation</code> is a specific location object, mostly a subset of the {{domxref("Location")}} for browsing scopes, but adapted to workers.</dd>
+	<dt>{{domxref("WorkerGlobalScope.navigator")}} {{readOnlyinline}}</dt>
+	<dd>Returns the {{domxref("WorkerNavigator")}} associated with the worker. <code>WorkerNavigator</code> is a specific navigator object, mostly a subset of the {{domxref("Navigator")}} for browsing scopes, but adapted to workers.</dd>
+	<dt>{{domxref("WorkerGlobalScope.performance")}} {{readOnlyinline}} {{Non-standard_inline}}</dt>
+	<dd>Returns the {{domxref("Performance")}} object associated with the worker, which is a regular performance object, but with a subset of its properties and methods available.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<p><em>This interface inherits event handlers from the {{domxref("WorkerGlobalScope")}} interface, and its parent {{domxref("EventTarget")}}, and therefore implements event handlers from {{domxref("WindowTimers")}}, {{domxref("WindowBase64")}}, and {{domxref("WindowEventHandlers")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("DedicatedWorkerGlobalScope.onmessage")}}</dt>
+	<dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("message")}} event is raised. These events are of type {{domxref("MessageEvent")}} and will be called when the worker receives a message from the document that started it (i.e. from the {{domxref("Worker.postMessage")}} method.)</dd>
+	<dt>{{domxref("DedicatedWorkerGlobalScope.onmessageerror")}}</dt>
+	<dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("messageerror")}} event is raised.</dd>
+</dl>
+

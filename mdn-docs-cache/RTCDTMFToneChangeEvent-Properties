@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>In addition to the properties of {{domxref("Event")}}, this interface offers the following:</em></p>
+
+<dl>
+ <dt>{{domxref("RTCDTMFToneChangeEvent.tone")}} {{readOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} specifying the tone which has begun playing, or an empty string (<code>""</code>) if the previous tone has finished playing.</dd>
+</dl>
+

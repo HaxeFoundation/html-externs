@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{ domxref("GamepadEvent.gamepad") }} {{readonlyInline}}</dt>
+	<dd>Returns a {{ domxref("Gamepad") }} object, providing access to the associated gamepad data for the event fired.</dd>
+</dl>
+

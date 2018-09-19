@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLObjectElement.checkValidity()")}}</dt>
+ <dd>Retuns a {{jsxref("Boolean")}} that always is <code>true</code>, because <code>object</code> objects are never candidates for constraint validation.</dd>
+ <dt>{{domxref("HTMLObjectElement.setCustomValidity()")}}</dt>
+ <dd>Sets a custom validity message for the element. If this message is not the empty string, then the element is suffering from a custom validity error, and does not validate.</dd>
+</dl>
+

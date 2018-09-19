@@ -1,0 +1,1 @@
+The <code>WebSocket</code> object provides the API for creating and managing a <a href="/en-US/docs/Web/API/WebSockets_API">WebSocket</a> connection to a server, as well as for sending and receiving data on the connection.

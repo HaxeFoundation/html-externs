@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("RTCRtpTransceiver.setCodecPreferences", "setCodecPreferences()")}}</dt>
+ <dd>A list of {{domxref("RTCRtpCodecParameters")}} objects which override the default preferences used by the {{Glossary("user agent")}} for the transceiver's codecs.</dd>
+ <dt>{{domxref("RTCRtpTransceiver.stop", "stop()")}}</dt>
+ <dd>Permanently stops the <code>RTCRtpTransceiver</code>. The associated sender stops sending data, and the associated receiver likewise stops receiving and decoding incoming data.</dd>
+</dl>
+

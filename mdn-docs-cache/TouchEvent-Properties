@@ -1,0 +1,25 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface inherits properties from its parent, {{domxref("UIEvent")}} and {{domxref("Event")}}.</em></p>
+
+<dl>
+ <dt>{{ domxref("TouchEvent.altKey") }} {{readonlyInline}}</dt>
+ <dd>A Boolean value indicating whether or not the alt key was down when the touch event was fired.</dd>
+ <dt>{{ domxref("TouchEvent.changedTouches") }} {{readonlyInline}}</dt>
+ <dd>A {{ domxref("TouchList") }} of all the {{ domxref("Touch") }} objects representing individual points of contact whose states changed between the previous touch event and this one.</dd>
+ <dt>{{ domxref("TouchEvent.ctrlKey") }} {{readonlyInline}}</dt>
+ <dd>A Boolean value indicating whether or not the control key was down when the touch event was fired.</dd>
+ <dt>{{ domxref("TouchEvent.metaKey") }} {{readonlyInline}}</dt>
+ <dd>A Boolean value indicating whether or not the meta key was down when the touch event was fired.</dd>
+ <dt>{{ domxref("TouchEvent.shiftKey") }} {{readonlyInline}}</dt>
+ <dd>A Boolean value indicating whether or not the shift key was down when the touch event was fired.</dd>
+ <dt>{{ domxref("TouchEvent.targetTouches") }}{{readonlyInline}}</dt>
+ <dd>A {{ domxref("TouchList") }} of all the {{ domxref("Touch") }} objects that are both currently in contact with the touch surface <strong>and</strong> were also started on the same element that is the target of the event.</dd>
+ <dt>{{ domxref("TouchEvent.touches") }} {{readonlyInline}}</dt>
+ <dd>A {{ domxref("TouchList") }} of all the {{ domxref("Touch") }} objects representing all current points of contact with the surface, regardless of target or changed status.</dd>
+ <dt>{{ domxref("TouchEvent.rotation") }} {{non-standard_inline()}} {{readonlyInline}}</dt>
+ <dd>Change in rotation (in degrees) since the event's beginning. Positive values indicate clockwise rotation; negative values indicate anticlockwise rotation. Initial value: <code>0.0</code></dd>
+ <dt>{{ domxref("TouchEvent.scale") }} {{non-standard_inline()}} {{readonlyInline}}</dt>
+ <dd>Distance between two digits since the event's beginning. Expressed as a floating-point multiple of the initial distance between the digits at the beginning of the event. Values below 1.0 indicate an inward pinch (zoom out). Values above 1.0 indicate an outward unpinch (zoom in). Initial value: <code>1.0</code></dd>
+</dl>
+

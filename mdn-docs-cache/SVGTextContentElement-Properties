@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGGraphicsElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGTextContentElement.textLength")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} reflecting the {{SVGAttr("textLength")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGTextContentElement.lengthAdjust")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} reflecting the {{SVGAttr("lengthAdjust")}} attribute of the given element. The numeric type values represent one of the constant values above.</dd>
+</dl>
+

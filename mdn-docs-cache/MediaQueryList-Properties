@@ -1,0 +1,18 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The new version of the <code>MediaQueryList</code> interface inherits properties from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MediaQueryList.matches")}} {{readonlyInline}}</dt>
+ <dd> A {{domxref("Boolean")}} that returns <code>true</code> if the {{domxref("document")}} currently matches the media query list, or <code>false</code> if not.</dd>
+ <dt>{{domxref("MediaQueryList.media")}} {{readonlyInline}}</dt>
+ <dd> A {{domxref("DOMString")}} representing a serialized media query.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("MediaQueryList.onchange")}}</dt>
+ <dd> An event handler property representing a function that is invoked when the {{event("change")}} event fires, i.e when the status of media query support changes. The event object is a {{domxref("MediaQueryListEvent")}} instance, which is recognised as a <code>MediaListQuery</code> instance in older browsers, for backwards compatibility purposes.</dd>
+</dl>
+

@@ -1,0 +1,15 @@
+<h2 id="Constants">Constants</h2>
+
+<p>The compressed texture formats are exposed by four constants and can be used in two functions: {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} and {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}}.</p>
+
+<dl>
+ <dt><code>ext.COMPRESSED_SRGB_S3TC_DXT1_EXT</code></dt>
+ <dd>A DXT1-compressed image in an sRGB image format.</dd>
+ <dt><code>ext.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT</code></dt>
+ <dd>A DXT1-compressed image in an sRGB image format with a simple on/off alpha value.</dd>
+ <dt><code>ext.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT</code></dt>
+ <dd>A DXT3-compressed image in an sRGBA image format.</dd>
+ <dt><code>ext.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT</code></dt>
+ <dd>A DXT5-compressed image in an sRGBA image format.</dd>
+</dl>
+

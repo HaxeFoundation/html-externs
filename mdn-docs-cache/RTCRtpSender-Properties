@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<dl id="property_definitions">
+ <dt>{{domxref("RTCRtpSender.dtmf")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("RTCDTMFSender")}} which can be used to send {{Glossary("DTMF")}} tones using <code>"telephone-event"</code> payloads on the RTP session represented by the <code>RTCRtpSender</code> object. If <code>null</code>, the track and/or the connection doesn't support DTMF. Only audio tracks can support DTMF.</dd>
+ <dt>{{domxref("RTCRtpSender.rtcpTransport")}} {{ReadOnlyInline}}</dt>
+ <dd>The transport over which Real-time Transport Control Protocol (RTCP) information is exchanged. This value is <code>null</code> before the {{domxref("RTCDtlsTransport")}} object is created. When bundling is in use, more than one <code>RTCRtpSender</code> can share the same transport, sending all RTP and RTCP information over that one transport.</dd>
+ <dt>{{domxref("RTCRtpSender.track")}} {{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("MediaStreamTrack")}} which is being handled by the <code>RTCRtpSender</code>. If <code>track</code> is <code>null</code>, the <code>RTCRtpSender</code> doesn't transmit anything.</dd>
+ <dt>{{domxref("RTCRtpSender.transport")}} {{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("RTCDtlsTransport")}} over which media data for the <code>track</code> is being transmitted. The data is transmitted using RTP packets. Before the transport is established, this value is <code>null</code>.</dd>
+</dl>
+

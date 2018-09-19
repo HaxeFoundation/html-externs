@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("SVGElement.dataset")}}{{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMStringMap")}} object which provides a list of key/value pairs of named data attributes which correspond to <a href="/en-US/docs/Web/Guide/HTML/Using_data_attributes">custom data attributes</a> attached to the element. These can also be defined in SVG using attributes of the form {{SVGAttr("data-*")}}, where <code>*</code> is the key name for the pair. This works just like HTML's {{domxref("HTMLElement.dataset")}} property and HTML's {{htmlattrxref("data-*")}} global attribute.</dd>
+ <dt>{{domxref("SVGElement.id")}}{{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the value of the {{SVGAttr("id")}} attribute on the given element, or the empty string if <code>id</code> is not present.</dd>
+ <dt>{{domxref("SVGElement.xmlbase")}}{{readonlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} corresponding to the {{SVGAttr("xml:base")}} attribute on the given element.</dd>
+ <dt>{{domxref("SVGElement.ownerSVGElement")}}{{readonlyInline}}</dt>
+ <dd>An {{domxref("SVGSVGElement")}} referring to the nearest ancestor {{SVGElement("svg")}} element. <code>null</code> if the given element is the outermost <code>&lt;svg&gt;</code> element.</dd>
+ <dt>{{domxref("SVGElement.viewportElement")}}{{readonlyInline}}</dt>
+ <dd>The {{domxref("SVGElement")}}, which established the current viewport. Often, the nearest ancestor {{SVGElement("svg")}} element. <code>null</code> if the given element is the outermost <code>&lt;svg&gt;</code> element.</dd>
+</dl>
+

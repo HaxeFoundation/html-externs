@@ -1,0 +1,27 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Value</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>SVG_MORPHOLOGY_OPERATOR_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The type is not one of predefined types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_MORPHOLOGY_OPERATOR_ERODE</code></td>
+   <td>1</td>
+   <td>Corresponds to the <code>erode</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_MORPHOLOGY_OPERATOR_DILATE</code></td>
+   <td>2</td>
+   <td>Corresponds to <code>dilate</code> value.</td>
+  </tr>
+ </tbody>
+</table>
+

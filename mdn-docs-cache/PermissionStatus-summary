@@ -1,0 +1,1 @@
+The <strong><code>PermissionStatus</code></strong> interface of the <a href="Permissions_API">Permissions API</a> provides the state of an object and an event handler for monitoring changes to said state.

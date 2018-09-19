@@ -1,0 +1,14 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("ServiceWorkerGlobalScope.skipWaiting()")}}</dt>
+ <dd>Allows the current service worker registration to progress from waiting to active state while service worker clients are using it.</dd>
+</dl>
+
+<p><code>ServiceWorkerGlobalScope</code> implements {{domxref("WorkerGlobalScope")}} — which implements {{domxref("GlobalFetch")}}. Therefore it also has the following property available to it:</p>
+
+<dl>
+ <dt>{{domxref("GlobalFetch.fetch()")}}</dt>
+ <dd>Starts the process of fetching a resource. This returns a promise that resolves to the {{domxref("Response")}} object representing the response to your request. This algorithm is the entry point for the fetch handling handed to the service worker context.</dd>
+</dl>
+

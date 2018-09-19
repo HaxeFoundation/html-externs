@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MimeTypeArray.length")}}</dt>
+ <dd>The number of items in the array.</dd>
+</dl>
+

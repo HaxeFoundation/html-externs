@@ -1,0 +1,25 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGGeometryElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGCircleElement.cx")}} {{ReadOnlyInline}}</dt>
+ <dd>
+ <p>This property defines the x-coordinate of the center of the circle element. It is denoted by the {{SVGAttr("cx")}} attribute of the {{SVGElement("circle")}} element. If unspecified, the value of this attribute is assumed to be <code>0</code>.</p>
+
+ <p>It can be animated by SVG's animation elements.</p>
+ </dd>
+ <dt><strong>{{domxref("SVGCircleElement.cy")}}</strong> {{ReadOnlyInline}}</dt>
+ <dd>
+ <p>This property defines the y-coordinate of the center of the circle element. It is denoted by the {{SVGAttr("cy")}} attribute of the {{SVGElement("circle")}} element. If unspecified, the value of this attribute is assumed to be <code>0</code>.</p>
+
+ <p>It can be animated by SVG's animation elements.</p>
+ </dd>
+ <dt><strong>{{domxref("SVGCircleElement.r")}}</strong> {{ReadOnlyInline}}</dt>
+ <dd>
+ <p>This property defines the radius of the circle element. It is denoted by the {{SVGAttr("r")}} of the {{SVGElement("circle")}} element. A negative value gives an error, while <code>0</code> disables the rendering of the element.</p>
+
+ <p>It can be animated by SVG's animation elements.</p>
+ </dd>
+</dl>
+

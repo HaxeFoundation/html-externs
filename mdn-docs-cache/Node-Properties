@@ -1,0 +1,122 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parents {{domxref("EventTarget")}}</em>.<sup>[1]</sup></p>
+
+<dl>
+ <dt>{{domxref("Node.baseURI")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} representing the base URL. The concept of base URL changes from one language to another; in HTML, it corresponds to the protocol, the domain name and the directory structure, that is all until the last <code>'/'</code>.</dd>
+ <dt>{{domxref("Node.baseURIObject")}} {{Non-standard_inline()}} {{ Fx_minversion_inline("3") }}</dt>
+ <dd>(Not available to web content.) The read-only {{ Interface("nsIURI") }} object representing the base URI for the element.</dd>
+ <dt>{{domxref("Node.childNodes")}} {{readonlyInline}}</dt>
+ <dd>Returns a live {{domxref("NodeList")}} containing all the children of this node. {{domxref("NodeList")}} being live means that if the children of the <code>Node</code> change, the {{domxref("NodeList")}} object is automatically updated.</dd>
+ <dt>{{domxref("Node.firstChild")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Node")}} representing the first direct child node of the node, or <code>null</code> if the node has no child.</dd>
+ <dt>{{domxref("Node.isConnected")}} {{readonlyInline}}</dt>
+ <dd>Returns a boolean indicating whether or not the Node is connected (directly or indirectly) to the context object, e.g. the {{domxref("Document")}} object in the case of the normal DOM, or the {{domxref("ShadowRoot")}} in the case of a shadow DOM.</dd>
+ <dt>{{domxref("Node.lastChild")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Node")}} representing the last direct child node of the node, or <code>null</code> if the node has no child.</dd>
+ <dt>{{domxref("Node.nextSibling")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Node")}} representing the next node in the tree, or <code>null</code> if there isn't such node.</dd>
+ <dt>{{domxref("Node.nodeName")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the name of the <code>Node</code>. The structure of the name will differ with the node type. E.g. An {{domxref("HTMLElement")}} will contain the name of the corresponding tag, like <code>'audio'</code> for an {{domxref("HTMLAudioElement")}}, a {{domxref("Text")}} node will have the <code>'#text'</code> string, or a {{domxref("Document")}} node will have the <code>'#document'</code> string.</dd>
+ <dt>{{domxref("Node.nodePrincipal")}} {{Non-standard_inline()}}{{ Fx_minversion_inline("3") }}</dt>
+ <dd>A {{ Interface("nsIPrincipal") }} representing the node principal.</dd>
+ <dt>{{domxref("Node.nodeType")}}{{readonlyInline}}</dt>
+ <dd>Returns an <code>unsigned short</code> representing the type of the node. Possible values are:
+ <table class="standard-table">
+  <tbody>
+   <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Value</th>
+   </tr>
+   <tr>
+    <td><code>ELEMENT_NODE</code></td>
+    <td><code>1</code></td>
+   </tr>
+   <tr>
+    <td><code>ATTRIBUTE_NODE</code> {{deprecated_inline()}}</td>
+    <td><code>2</code></td>
+   </tr>
+   <tr>
+    <td><code>TEXT_NODE</code></td>
+    <td><code>3</code></td>
+   </tr>
+   <tr>
+    <td><code>CDATA_SECTION_NODE</code> {{deprecated_inline()}}</td>
+    <td><code>4</code></td>
+   </tr>
+   <tr>
+    <td><code>ENTITY_REFERENCE_NODE</code> {{deprecated_inline()}}</td>
+    <td><code>5</code></td>
+   </tr>
+   <tr>
+    <td><code>ENTITY_NODE</code> {{deprecated_inline()}}</td>
+    <td><code>6</code></td>
+   </tr>
+   <tr>
+    <td><code>PROCESSING_INSTRUCTION_NODE</code></td>
+    <td><code>7</code></td>
+   </tr>
+   <tr>
+    <td><code>COMMENT_NODE</code></td>
+    <td><code>8</code></td>
+   </tr>
+   <tr>
+    <td><code>DOCUMENT_NODE</code></td>
+    <td><code>9</code></td>
+   </tr>
+   <tr>
+    <td><code>DOCUMENT_TYPE_NODE</code></td>
+    <td><code>10</code></td>
+   </tr>
+   <tr>
+    <td><code>DOCUMENT_FRAGMENT_NODE</code></td>
+    <td><code>11</code></td>
+   </tr>
+   <tr>
+    <td><code>NOTATION_NODE</code> {{deprecated_inline()}}</td>
+    <td><code>12</code></td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+ <dt>{{domxref("Node.nodeValue")}}</dt>
+ <dd>Returns / Sets the value of the current node</dd>
+ <dt>{{domxref("Node.ownerDocument")}} {{readonlyInline}}</dt>
+ <dd>Returns the {{domxref("Document")}} that this node belongs to. If the node is itself a document, returns <code>null</code>.</dd>
+ <dt>{{domxref("Node.parentNode")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Node")}} that is the parent of this node. If there is no such node, like if this node is the top of the tree or if doesn't participate in a tree, this property returns <code>null</code>.</dd>
+ <dt>{{domxref("Node.parentElement")}} {{readonlyInline}}</dt>
+ <dd>Returns an {{domxref("Element")}} that is the parent of this node. If the node has no parent, or if that parent is not an {{domxref("Element")}}, this property returns <code>null</code>.</dd>
+ <dt>{{domxref("Node.previousSibling")}} {{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("Node")}} representing the previous node in the tree, or <code>null</code> if there isn't such node.</dd>
+ <dt>{{domxref("Node.textContent")}}</dt>
+ <dd>Returns / Sets the textual content of an element and all its descendants.</dd>
+</dl>
+
+<h3 id="Deprecated_properties">Deprecated properties</h3>
+
+<dl>
+ <dt>{{domxref("Node.rootNode")}} {{readOnlyInline}} {{deprecated_inline}}</dt>
+ <dd>Returns a {{domxref("Node")}} object representing the topmost node in the tree, or the current node if it's the topmost node in the tree. This has been replaced by {{domxref("Node.getRootNode()")}}.</dd>
+</dl>
+
+<h3 id="Obsolete_properties">Obsolete properties</h3>
+
+<dl>
+ <dt>{{domxref("Node.localName")}} {{obsolete_inline}}{{readonlyInline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} representing the local part of the qualified name of an element.
+ <div class="note">
+ <p><strong>Note:</strong> In Firefox 3.5 and earlier, the property upper-cases the local name for HTML elements (but not XHTML elements). In later versions, this does not happen, so the property is in lower case for both HTML and XHTML. {{gecko_minversion_inline("1.9.2")}}</p>
+ </div>
+ </dd>
+ <dt>{{domxref("Node.namespaceURI")}} {{obsolete_inline}}{{readonlyInline}}</dt>
+ <dd>The namespace URI of this node, or <code>null</code> if it is no namespace.
+ <div class="note">
+ <p><strong>Note:</strong> In Firefox 3.5 and earlier, HTML elements are in no namespace. In later versions, HTML elements are in the <code><a href="https://www.w3.org/1999/xhtml/" class="linkification-ext external">http://www.w3.org/1999/xhtml/</a></code> namespace in both HTML and XML trees. {{gecko_minversion_inline("1.9.2")}}</p>
+ </div>
+ </dd>
+ <dt>{{domxref("Node.prefix")}} {{obsolete_inline}}{{readonlyInline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the namespace prefix of the node, or <code>null</code> if no prefix is specified.</dd>
+</dl>
+

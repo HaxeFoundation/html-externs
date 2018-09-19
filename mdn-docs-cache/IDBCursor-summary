@@ -1,0 +1,1 @@
+The <strong><code>IDBCursor</code></strong> interface of the <a href="/en-US/docs/IndexedDB">IndexedDB API</a> represents a <a href="/en-US/docs/IndexedDB/Basic_Concepts_Behind_IndexedDB#gloss_cursor">cursor</a> for traversing or iterating over multiple records in a database.

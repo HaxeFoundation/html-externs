@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("ImageCapture.takePhoto()")}}</dt>
+ <dd>Takes a single exposure using the video capture device sourcing a {{domxref("MediaStreamTrack")}} and returns a {{jsxref("Promise")}} that resolves with a {{domxref("Blob")}} containing the data.</dd>
+ <dt>{{domxref("ImageCapture.getPhotoCapabilities()")}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} that resolves with a {{domxref("PhotoCapabilities")}} object containing the ranges of available configuration options. </dd>
+ <dt>{{domxref("ImageCapture.getPhotoSettings()")}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} that resolves with a {{domxref("PhotoSettings")}} object containing the current photo configuration settings.</dd>
+ <dt>{{domxref("ImageCapture.grabFrame()")}}</dt>
+ <dd>Takes a snapshot of the live video in a {{domxref("MediaStreamTrack")}}, returning an ImageBitmap, if successful.</dd>
+</dl>
+

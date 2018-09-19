@@ -1,0 +1,7 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("SVGFilterElement.setFilterRes()")}} {{deprecated_inline}}</dt>
+ <dd>Sets the values of the {{SVGAttr("filterRes")}} attribute.</dd>
+</dl>
+

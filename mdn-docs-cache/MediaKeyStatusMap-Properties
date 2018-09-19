@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MediaKeyStatusMap.size")}} {{readonlyinline}}</dt>
+ <dd>Returns the number of key/value pars in the status map.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGGraphicsElement.transform")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedTransformList")}} reflecting the computed value of the {{cssxref("transform")}} property and its corresponding {{SVGAttr("transform")}} attribute of the given element.</dd>
+</dl>
+

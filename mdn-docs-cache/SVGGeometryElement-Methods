@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods from its parent, {{domxref("SVGGraphicsElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGGeometryElement.isPointInFill()")}}</dt>
+ <dd>Determines whether a given point is within the fill shape of an element. Normal hit testing rules apply; the value of the {{cssxref("pointer-events")}} property on the element determines whether a point is considered to be within the fill.</dd>
+ <dt>{{domxref("SVGGeometryElement.isPointInStroke()")}}</dt>
+ <dd>Determines whether a given point is within the stroke shape of an element. Normal hit testing rules apply; the value of the {{cssxref("pointer-events")}} property on the element determines whether a point is considered to be within the stroke.</dd>
+ <dt>{{domxref("SVGGeometryElement.getTotalLength()")}}</dt>
+ <dd>Returns the user agent's computed value for the total length of the path in user units.</dd>
+ <dt>{{domxref("SVGGeometryElement.getPointAtLength()")}}</dt>
+ <dd>Returns the point at a given distance along the path.</dd>
+</dl>
+

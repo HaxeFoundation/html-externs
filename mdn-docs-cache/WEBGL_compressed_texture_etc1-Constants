@@ -1,0 +1,9 @@
+<h2 id="Constants">Constants</h2>
+
+<p>The compressed texture format is exposed by a constant and can be used with the {{domxref("WebGLRenderingContext.compressedTexImage2D", "compressedTexImage2D()")}} method (note that ETC1 is <strong>not</strong> supported with the {{domxref("WebGLRenderingContext.compressedTexSubImage2D", "compressedTexSubImage2D()")}} method).</p>
+
+<dl>
+ <dt><code>ext.COMPRESSED_RGB_ETC1_WEBGL</code></dt>
+ <dd>Compresses 24-bit RGB data with no alpha channel.</dd>
+</dl>
+

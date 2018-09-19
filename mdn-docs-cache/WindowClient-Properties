@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em><code>WindowClient</code> inherits properties from its parent interface, {{domxref("Client")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("WindowClient.focused")}} {{readonlyInline}}</dt>
+ <dd>A boolean that indicates whether the current client has focus.</dd>
+ <dt>{{domxref("WindowClient.visibilityState")}} {{readonlyInline}}</dt>
+ <dd>Indicates the visibility of the current client. This value can be one of <code>hidden</code>, <code>visible</code>, <code>prerender</code>, or <code>unloaded</code>.</dd>
+</dl>
+

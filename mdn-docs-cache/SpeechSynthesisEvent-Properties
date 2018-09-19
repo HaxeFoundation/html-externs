@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The {{domxref("SpeechSynthesisEvent")}} interface also inherits properties from its parent interface, {{domxref("Event")}}.</em></p>
+
+<dl>
+	<dt>{{domxref("SpeechSynthesisEvent.charIndex")}} {{readonlyinline}}</dt>
+	<dd>Returns the index position of the character in the {{domxref("SpeechSynthesisUtterance.text")}} that was being spoken when the event was triggered.</dd>
+	<dt>{{domxref("SpeechSynthesisEvent.elapsedTime")}} {{readonlyinline}}</dt>
+	<dd>Returns the elapsed time in milliseconds after the {{domxref("SpeechSynthesisUtterance.text")}} started being spoken that the event was triggered at.</dd>
+	<dt>{{domxref("SpeechSynthesisEvent.name")}} {{readonlyinline}}</dt>
+	<dd>Returns the name associated with certain types of events occuring as the {{domxref("SpeechSynthesisUtterance.text")}} is being spoken: the name of the <a href="http://www.w3.org/TR/speech-synthesis/#S3.3.2">SSML</a> marker reached in the case of a {{event("mark")}} event, or the type of boundary reached in the case of a {{event("boundary")}} event.</dd>
+	<dt>{{domxref("SpeechSynthesisEvent.utterance")}} {{readonlyinline}}</dt>
+	<dd>Returns the {{domxref("SpeechSynthesisUtterance")}} instance that the event was triggered on.</dd>
+</dl>
+

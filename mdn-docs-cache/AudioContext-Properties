@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent interface, {{domxref("BaseAudioContext")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("AudioContext.baseLatency")}} {{readonlyinline}} {{experimental_inline}}</dt>
+ <dd>Returns the number of seconds of processing latency incurred by the {{domxref("AudioContext")}} passing the audio from the {{domxref("AudioDestinationNode")}} to the audio subsystem.</dd>
+ <dt>{{domxref("AudioContext.outputLatency")}} {{readonlyinline}} {{experimental_inline}}</dt>
+ <dd>Returns an estimation of the output latency of the current audio context.</dd>
+</dl>
+

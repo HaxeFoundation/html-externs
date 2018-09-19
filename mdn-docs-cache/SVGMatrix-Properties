@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("SVGMatrix.a")}}</dt>
+ <dd>A float representing the <em>a</em> component of the matrix.</dd>
+ <dt>{{domxref("SVGMatrix.b")}}</dt>
+ <dd>A float representing the <em>b</em> component of the matrix.</dd>
+ <dt>{{domxref("SVGMatrix.c")}}</dt>
+ <dd>A float representing the <em>c</em> component of the matrix.</dd>
+ <dt>{{domxref("SVGMatrix.d")}}</dt>
+ <dd>A float representing the <em>d</em> component of the matrix.</dd>
+ <dt>{{domxref("SVGMatrix.e")}}</dt>
+ <dd>A float representing the <em>e</em> component of the matrix.</dd>
+ <dt>{{domxref("SVGMatrix.f")}}</dt>
+ <dd>A float representing the <em>f</em> component of the matrix.</dd>
+</dl>
+

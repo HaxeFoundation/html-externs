@@ -1,0 +1,22 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Also inherits methods from its parent interface, {{domxref("BaseAudioContext")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("OfflineAudioContext.suspend()")}}</dt>
+ <dd>Schedules a suspension of the time progression in the audio context at the specified time and returns a promise.</dd>
+ <dt>{{domxref("OfflineAudioContext.startRendering()")}}</dt>
+ <dd>Starts rendering the audio, taking into account the current connections and the current scheduled changes. This page covers both the event-based version and the promise-based version.</dd>
+</dl>
+
+<h3 id="Deprecated_methods">Deprecated methods</h3>
+
+<dl>
+ <dt>{{domxref("OfflineAudioContext.resume()")}}</dt>
+ <dd>Resumes the progression of time in an audio context that has previously been suspended.</dd>
+</dl>
+
+<div class="note">
+<p><strong>Note</strong>: The <code>resume()</code> method is still available — it is now defined on the {{domxref("BaseAudioContext")}} interface (see {{domxref("BaseAudioContext.resume()")}}) and thus can be accessed by both the {{domxref("AudioContext")}} and {{domxref("OfflineAudioContext")}} interfaces.</p>
+</div>
+

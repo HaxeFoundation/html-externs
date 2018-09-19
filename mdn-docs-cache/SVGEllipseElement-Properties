@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGGeometryElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGEllipseElement.cx")}} {{readonlyInline}}</dt>
+ <dd>This property returns a {{domxref("SVGAnimatedLength")}} reflecting the {{SVGAttr("cx")}} attribute of the given {{SVGElement("ellipse")}} element.</dd>
+ <dt>{{domxref("SVGEllipseElement.cy")}} {{readonlyInline}}</dt>
+ <dd>This property returns a {{domxref("SVGAnimatedLength")}} reflecting the {{SVGAttr("cy")}} attribute of the given {{SVGElement("ellipse")}} element.</dd>
+ <dt>{{domxref("SVGEllipseElement.rx")}} {{readonlyInline}}</dt>
+ <dd>This property returns a {{domxref("SVGAnimatedLength")}} reflecting the {{SVGAttr("rx")}} attribute of the given {{SVGElement("ellipse")}} element.</dd>
+ <dt>{{domxref("SVGEllipseElement.ry")}} {{readonlyInline}}</dt>
+ <dd>This property returns a {{domxref("SVGAnimatedLength")}} reflecting the {{SVGAttr("ry")}} attribute of the given {{SVGElement("ellipse")}} element.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Plugin.item")}}</dt>
+ <dd>Returns the MIME type of a supported content type, given the index number into a list of supported types.</dd>
+ <dt>{{domxref("Plugin.namedItem")}}</dt>
+ <dd>Returns the MIME type of a supported item.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h4 id="Properties">Properties</h4>
+
+<dl>
+ <dt><code>droppedFrames</code></dt>
+ <dd>The number of frames which have been</dd>
+ <dt><code>framesEncoded</code></dt>
+ <dd>A long integer which indicates the total number of frames successfully encoded for this RTP stream. This field is only present on video connections.</dd>
+</dl>
+

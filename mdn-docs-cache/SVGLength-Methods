@@ -1,0 +1,33 @@
+<h2 id="Methods">Methods</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Name &amp; Arguments</th>
+   <th>Return</th>
+   <th>Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code><strong>newValueSpecifiedUnits</strong>(in unsigned short <em>unitType</em>, in float <em>valueInSpecifiedUnits</em>)</code></td>
+   <td><em>void</em></td>
+   <td>
+    <p>Reset the value as a number with an associated unitType, thereby replacing the values for all of the attributes on the object.</p>
+
+    <p><strong>Exceptions:</strong></p>
+
+    <ul>
+     <li>a {{ domxref("DOMException") }} with code <code>NOT_SUPPORTED_ERR</code> is raised if <code>unitType</code> is <code>SVG_LENGTHTYPE_UNKNOWN</code> or not a valid unit type constant (one of the other <code>SVG_LENGTHTYPE_*</code> constants defined on this interface).</li>
+     <li>a {{ domxref("DOMException") }} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when the length corresponds to a read only attribute or when the object itself is read only.</li>
+    </ul>
+   </td>
+  </tr>
+  <tr>
+   <td><code><strong>convertToSpecifiedUnits</strong>(in unsigned short <em>unitType</em>)</code></td>
+   <td><em>void</em></td>
+   <td>Preserve the same underlying stored value, but reset the stored unit identifier to the given <code><em>unitType</em></code>. Object attributes <code>unitType</code>, <code>valueInSpecifiedUnits</code> and <code>valueAsString</code> might be modified as a result of this method. For example, if the original value were "<em>0.5cm</em>" and the method was invoked to convert to millimeters, then the <code>unitType</code> would be changed to <code>SVG_LENGTHTYPE_MM</code>, <code>valueInSpecifiedUnits</code> would be changed to the numeric value 5 and <code>valueAsString</code> would be changed to "<em>5mm</em>".</td>
+  </tr>
+ </tbody>
+</table>
+

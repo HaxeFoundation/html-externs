@@ -1,0 +1,1 @@
+The <strong><code>AudioNodeOptions</code></strong> dictionary of the <a href="/en-US/docs/Web/API/Web_Audio_API">Web Audio API</a> specifies options that can be used when creating new <a href="/en-US/docs/Web/API/AudioNode" title="The AudioNode interface is a generic interface for representing an audio processing module. Examples include:"><code>AudioNode</code></a> objects.

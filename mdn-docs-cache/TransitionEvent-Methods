@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Also inherits properties from its parent {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("TransitionEvent.initTransitionEvent()")}} {{non-standard_inline}}{{deprecated_inline}}</dt>
+ <dd>Initializes a <code>TransitionEvent</code> created using the deprecated {{domxref("Document.createEvent()", "Document.createEvent(\"TransitionEvent\")")}} method.</dd>
+</dl>
+

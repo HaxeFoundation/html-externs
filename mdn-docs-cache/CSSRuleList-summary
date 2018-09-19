@@ -1,0 +1,1 @@
+A <code>CSSRuleList</code> is an (indirect-modify only) array-like object containing an ordered collection of <code><a href="/en/DOM/cssRule" title="en/DOM/cssRule">CSSRule</a></code> objects.

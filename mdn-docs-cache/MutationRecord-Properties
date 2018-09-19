@@ -1,0 +1,79 @@
+<h2 id="Properties">Properties</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">Property</td>
+   <td class="header">Type</td>
+   <td class="header">Description</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.type")}}</td>
+   <td><code>String</code></td>
+   <td>Returns <code>"attributes"</code> if the mutation was an attribute mutation,<br>
+    <code>"characterData"</code> if it was a mutation to a <code>CharacterData</code> node,<br>
+    and <code>"childList"</code> if it was a mutation to the tree of nodes.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.target")}}</td>
+   <td><code>{{domxref("Node")}}</code></td>
+   <td>
+    <p>Returns the node the mutation affected, depending on the {{domxref("MutationRecord.type")}}.</p>
+
+    <p>For <code>attributes</code>, it is the element whose attribute changed.</p>
+
+    <p>For <code>characterData</code>, it is the <code>CharacterData</code> node.</p>
+
+    <p>For <code>childList</code>, it is the node whose children changed.</p>
+   </td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.addedNodes")}}</td>
+   <td><code>{{domxref("NodeList")}}</code></td>
+   <td>Return the nodes added. Will be an empty {{domxref("NodeList")}} if no nodes were added.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.removedNodes")}}</td>
+   <td><code>{{domxref("NodeList")}}</code></td>
+   <td>Return the nodes removed. Will be an empty {{domxref("NodeList")}} if no nodes were removed.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.previousSibling")}}</td>
+   <td><code>{{domxref("Node")}}</code></td>
+   <td>Return the previous sibling of the added or removed nodes, or <code>null</code>.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.nextSibling")}}</td>
+   <td><code>{{domxref("Node")}}</code></td>
+   <td>Return the next sibling of the added or removed nodes, or <code>null</code>.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.attributeName")}}</td>
+   <td><code>String</code></td>
+   <td>Returns the local name of the changed attribute, or <code>null</code>.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.attributeNamespace")}}</td>
+   <td><code>String</code></td>
+   <td>Returns the namespace of the changed attribute, or <code>null</code>.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("MutationRecord.oldValue")}}</td>
+   <td><code>String</code></td>
+   <td>
+    <p>The return value depends on the {{domxref("MutationRecord.type")}}.</p>
+
+    <p>For <code>attributes</code>, it is the value of the changed attribute before the change.</p>
+
+    <p>For <code>characterData</code>, it is the data of the changed node before the change.</p>
+
+    <p>For <code>childList</code>, it is <code>null</code>.</p>
+
+    <div class="note">
+    <p>Note that for this to work as expected, <code>attributeOldValue</code> or <code>characterDataOldValue</code> must be set to <code>true</code> in the corresponding <a href="/en-US/docs/Web/API/MutationObserverInit">MutationObserverInit</a> parameter of the <code>MutationObserver</code> <a href="/en-US/docs/Web/API/MutationObserver/observe">observe</a> method</p>
+    </div>
+   </td>
+  </tr>
+ </tbody>
+</table>
+

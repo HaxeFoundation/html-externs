@@ -1,0 +1,37 @@
+<h2 id="Properties">Properties</h2>
+
+<h3 id="Non-Web-exposed_properties">Non-Web-exposed properties</h3>
+
+<p>The following properties are <a href="/en-US/docs/Mozilla/WebIDL_bindings#ChromeOnly"><code>[ChromeOnly]</code></a> and not exposed to Web content:</p>
+
+<dl>
+ <dt><code><a href="/en-US/docs/Mozilla/WebIDL_bindings#ChromeOnly">[ChromeOnly]</a> attribute unsigned long </code>{{domxref("XSLTProcessor.flags")}}</dt>
+ <dd>
+ <p>Flags that tweak the behavior of the processor. Not reset by calling {{domxref("XSLTProcessor.reset()")}}. Default value: <code>0</code></p>
+
+ <p>Possible values are:</p>
+
+ <table class="standard-table">
+  <thead>
+   <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Value</th>
+    <th scope="col">Effect</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>(None)</td>
+    <td><code>0</code></td>
+    <td>None</td>
+   </tr>
+   <tr>
+    <td><code>DISABLE_ALL_LOADS</code></td>
+    <td><code>1</code></td>
+    <td>Disable loading external documents (via e.g. <code>&lt;xsl:import&gt;</code> and <code>document()</code>)</td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+</dl>
+

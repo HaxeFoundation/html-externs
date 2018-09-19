@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent interface, {{domxref("AudioNode")}}, and adds the following methods:</em></p>
+
+<dl>
+ <dt>{{domxref("AudioScheduledSourceNode.start", "start()")}}</dt>
+ <dd>Schedules the node to begin playing the constant sound at the specified time. If no time is specified, the node begins playing immediately.</dd>
+ <dt>{{domxref("AudioScheduledSourceNode.stop", "stop()")}}</dt>
+ <dd>Schedules the node to stop playing at the specified time. If no time is specified, the node stops playing at once.</dd>
+</dl>
+

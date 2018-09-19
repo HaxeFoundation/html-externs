@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("MutableFile.open()")}}</dt>
+ <dd>Returns a {{domxref("LockedFile")}} object to read or write the associated file safely.</dd>
+ <dt>{{domxref("MutableFile.getFile()")}}</dt>
+ <dd>Returns a {{domxref("DOMRequest")}} object. In case of success, the request's result is a {{domxref("File")}} object representing a snapshot of the handled file.</dd>
+</dl>
+

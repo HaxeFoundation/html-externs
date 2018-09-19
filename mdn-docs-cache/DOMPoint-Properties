@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em><code>DOMPoint</code> inherits properties from its parent, {{domxref("DOMPointReadOnly")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("DOMPointReadOnly.x", "DOMPoint.x")}}</dt>
+ <dd>The x coordinate of the <code>DOMPoint</code>.</dd>
+ <dt>{{domxref("DOMPointReadOnly.y", "DOMPoint.y")}}</dt>
+ <dd>The y coordinate of the <code>DOMPoint</code>.</dd>
+ <dt>{{domxref("DOMPointReadOnly.z", "DOMPoint.z")}}</dt>
+ <dd>The z coordinate of the <code>DOMPoint</code>.</dd>
+ <dt>{{domxref("DOMPointReadOnly.w", "DOMPoint.w")}}</dt>
+ <dd>The perspective value of the <code>DOMPoint</code>.</dd>
+</dl>
+

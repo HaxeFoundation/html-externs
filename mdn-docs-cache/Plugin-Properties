@@ -1,0 +1,13 @@
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("Plugin.description")}} {{readonlyinline}}</dt>
+ <dd>A human readable description of the plugin.</dd>
+ <dt>{{domxref("Plugin.filename")}} {{readonlyinline}}</dt>
+ <dd>The filename of the plugin file.</dd>
+ <dt>{{domxref("Plugin.name")}} {{readonlyinline}}</dt>
+ <dd>The name of the plugin.</dd>
+ <dt>{{domxref("Plugin.version")}} {{readonlyinline}}</dt>
+ <dd>The plugin's version number string.</dd>
+</dl>
+

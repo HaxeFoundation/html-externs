@@ -1,0 +1,82 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Value</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The enumeration was set to a value that is not one of predefined types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_NONE</code></td>
+   <td>1</td>
+   <td>Corresponds to value <code>none</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMINYMIN</code></td>
+   <td>2</td>
+   <td>Corresponds to value <code>xMinYMin</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMIDYMIN</code></td>
+   <td>3</td>
+   <td>Corresponds to value <code>xMidYMin</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMAXYMIN</code></td>
+   <td>4</td>
+   <td>Corresponds to value <code>xMaxYMin</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMINYMID</code></td>
+   <td>5</td>
+   <td>Corresponds to value <code>xMinYMid</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMIDYMID</code></td>
+   <td>6</td>
+   <td>Corresponds to value <code>xMidYMid</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMAXYMID</code></td>
+   <td>7</td>
+   <td>Corresponds to value <code>xMaxYMid</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMINYMAX</code></td>
+   <td>8</td>
+   <td>Corresponds to value <code>xMinYMax</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMIDYMAX</code></td>
+   <td>9</td>
+   <td>Corresponds to value <code>xMidYMax</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_</code><code>PRESERVEASPECTRATIO</code><code>_XMAXYMAX</code></td>
+   <td>10</td>
+   <td>Corresponds to value <code>xMaxYMax</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_MEETORSLICE_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The enumeration was set to a value that is not one of predefined types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_MEETORSLICE_MEET</code></td>
+   <td>1</td>
+   <td>Corresponds to value <code>meet</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_MEETORSLICE_SLICE</code></td>
+   <td>2</td>
+   <td>Corresponds to value <code>slice</code> for attribute {{ SVGAttr("preserveAspectRatio") }}.</td>
+  </tr>
+ </tbody>
+</table>
+

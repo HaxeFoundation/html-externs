@@ -1,0 +1,29 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("TextMetrics.width")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the calculated width of a segment of inline text in CSS pixels. It takes into account the current font of the context.</dd>
+ <dt>{{domxref("TextMetrics.actualBoundingBoxLeft")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance parallel to the baseline from the alignment point given by the {{domxref("CanvasRenderingContext2D.textAlign")}} property to the left side of the bounding rectangle of the given text, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.actualBoundingBoxRight")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance parallel to the baseline from the alignment point given by the {{domxref("CanvasRenderingContext2D.textAlign")}} property to the right side of the bounding rectangle of the given text, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.fontBoundingBoxAscent")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} attribute to the top of the highest bounding rectangle of all the fonts used to render the text, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.fontBoundingBoxDescent")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} attribute to the bottom of the bounding rectangle of all the fonts used to render the text, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.actualBoundingBoxAscent")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} attribute to the top of the bounding rectangle used to render the text, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.actualBoundingBoxDescent")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} attribute to the bottom of the bounding rectangle used to render the text, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.emHeightAscent")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} property to the top of the <em>em</em> square in the line box, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.emHeightDescent")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} property to the bottom of the <em>em</em> square in the line box, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.hangingBaseline")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} property to the hanging baseline of the line box, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.alphabeticBaseline")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} property to the alphabetic baseline of the line box, in CSS pixels.</dd>
+ <dt>{{domxref("TextMetrics.ideographicBaseline")}} {{readonlyInline}}</dt>
+ <dd>Is a <code>double</code> giving the distance from the horizontal line indicated by the {{domxref("CanvasRenderingContext2D.textBaseline")}} property to the ideographic baseline of the line box, in CSS pixels.</dd>
+</dl>
+

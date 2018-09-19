@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref('HTMLSlotElement.name')}}</dt>
+ <dd>{{domxref("DOMString")}}: Can be used to get and set the slot's name.</dd>
+</dl>
+

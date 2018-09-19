@@ -1,0 +1,7 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<p>As a {{ domxref("CSSRule") }}, <code>CSSNamespaceRule</code> also implements the methods of that interface. It has <em>no </em>specific methods:</p>
+
+<dl>
+</dl>
+

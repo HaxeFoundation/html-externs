@@ -1,0 +1,37 @@
+<h2 id="Methods">Methods</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td><code>focus()</code></td>
+   <td>Gives focus to this control.</td>
+  </tr>
+  <tr>
+   <td><code>blur()</code></td>
+   <td>Removes focus from this control.</td>
+  </tr>
+  <tr>
+   <td><code>select() </code></td>
+   <td>Selects the contents of the control.</td>
+  </tr>
+  <tr>
+   <td><code>checkValidity()</code></td>
+   <td>Returns <code>false</code> if the button is a candidate for constraint validation, and it does not satisfy its constraints. In this case, it also fires an <code>invalid</code> event at the control. It returns <code>true</code> if the control is not a candidate for constraint validation, or if it satisfies its constraints.</td>
+  </tr>
+  <tr>
+   <td><code>setCustomValidity(string)</code></td>
+   <td>Sets a custom validity message for the element. If this message is not the empty string, then the element is suffering from a custom validity error, and does not validate.</td>
+  </tr>
+  <tr>
+   <td><code>{{domxref("HTMLInputElement/setSelectionRange", "setSelectionRange")}}(selectionStart, selectionEnd, [optional] selectionDirection)</code></td>
+   <td>Selects a range of text, and sets <code>selectionStart</code> and <code>selectionEnd</code>. If either argument is greater than the length of the value, it is treated as pointing to the end of the value. If <code>end</code> is less than <code>start</code>, then both are treated as the value of <code>end</code>.</td>
+  </tr>
+  <tr>
+   <td><code>setRangeText()</code> {{experimental_inline}}</td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<p>The two methods <code>blur()</code> and <code>focus()</code> are inherited from {{domxref("HTMLElement")}} from HTML5 on, but were defined on <code>HTMLTextAreaElement</code> in DOM Level 2 HTML and earlier specifications.</p>
+

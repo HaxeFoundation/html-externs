@@ -1,0 +1,1 @@
+The <code>SVGAnimatedPreserveAspectRatio</code> interface is used for attributes of type <a href="/en-US/docs/Web/API/SVGPreserveAspectRatio" title="The SVGPreserveAspectRatio interface corresponds to the preserveAspectRatio attribute, which is available for some of SVG's elements."><code>SVGPreserveAspectRatio</code></a> which can be animated.

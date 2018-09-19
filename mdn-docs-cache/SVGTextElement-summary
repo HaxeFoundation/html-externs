@@ -1,0 +1,1 @@
+The <strong><code>SVGTextElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/text" title="The SVG &lt;text&gt; element defines a graphics element consisting of text. It's possible to apply a gradient, pattern, clipping path, mask, or filter to &lt;text&gt;, just like any other SVG graphics element."><code>&lt;text&gt;</code></a> elements.

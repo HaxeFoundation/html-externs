@@ -1,0 +1,1 @@
+The <strong><code>Worker</code></strong> interface of the <a href="/en-US/docs/Web/API/Web_Workers_API">Web Workers API</a> represents a background task that can be easily created and can send messages back to its creator. Creating a worker is as simple as calling the <code>Worker()</code> constructor and specifying a script to be run in the worker thread.

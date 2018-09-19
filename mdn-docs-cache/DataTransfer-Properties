@@ -1,0 +1,34 @@
+<h2 id="Properties">Properties</h2>
+
+<h3 id="Standard_properties">Standard properties</h3>
+
+<dl>
+ <dt>{{domxref("DataTransfer.dropEffect")}}</dt>
+ <dd>Gets the type of drag-and-drop operation currently selected or sets the operation to a new type. The value must be <code>none</code>, <code>copy</code>, <code>link</code> or <code>move</code>.</dd>
+ <dt>{{domxref("DataTransfer.effectAllowed")}}</dt>
+ <dd>Provides all of the types of operations that are possible. Must be one of <code>none</code>, <code>copy</code>, <code>copyLink</code>, <code>copyMove</code>, <code>link</code>, <code>linkMove</code>, <code>move</code>, <code>all</code> or <code>uninitialized</code>.</dd>
+ <dt>{{domxref("DataTransfer.files")}}</dt>
+ <dd>Contains a list of all the local files available on the data transfer. If the drag operation doesn't involve dragging files, this property is an empty list.</dd>
+ <dt>{{domxref("DataTransfer.items")}} {{readonlyInline}}</dt>
+ <dd>Gives a {{domxref("DataTransferItemList")}} object which is a list of all of the drag data.</dd>
+ <dt>{{domxref("DataTransfer.types")}} {{readonlyInline}}</dt>
+ <dd>An array of {{domxref("DOMString","strings")}} giving the formats that were set in the {{event("dragstart")}} event.</dd>
+</dl>
+
+<h3 id="Gecko_properties">Gecko properties</h3>
+
+<p>{{SeeCompatTable}}</p>
+
+<div class="note"><strong>Note:</strong> All of the properties in this section are Gecko-specific.</div>
+
+<dl>
+ <dt>{{domxref("DataTransfer.mozCursor")}}</dt>
+ <dd>Gives the drag cursor's state. This is primarily used to control the cursor during tab drags.</dd>
+ <dt>{{domxref("DataTransfer.mozItemCount")}} {{readonlyInline}}</dt>
+ <dd>Gives the number of items in the drag operation.</dd>
+ <dt>{{domxref("DataTransfer.mozSourceNode")}} {{readonlyInline}}</dt>
+ <dd>The {{ domxref("Node") }} over which the mouse cursor was located when the button was pressed to initiate the drag operation. This value is <code>null</code> for external drags or if the caller can't access the node.</dd>
+ <dt>{{domxref("DataTransfer.mozUserCancelled")}} {{readonlyInline}}</dt>
+ <dd>This property applies only to the <code>dragend</code> event, and is <code>true</code> if the user canceled the drag operation by pressing escape. It will be <code>false</code> in all other cases, including if the drag failed for any other reason, for instance due to a drop over an invalid location.</dd>
+</dl>
+

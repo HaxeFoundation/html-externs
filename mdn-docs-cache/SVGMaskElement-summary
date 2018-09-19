@@ -1,0 +1,1 @@
+The <strong><code>SVGMaskElement</code></strong> interface provides access to the properties of <a href="/en-US/docs/Web/SVG/Element/mask" title="The &lt;mask&gt; element defines an alpha mask for compositing the current object into the background. A mask is used/referenced using the mask property."><code>&lt;mask&gt;</code></a> elements, as well as methods to manipulate them.

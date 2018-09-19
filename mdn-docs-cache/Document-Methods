@@ -1,0 +1,139 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<p><em>This interface also inherits from the {{domxref("Node")}} and {{domxref("EventTarget")}} interfaces.</em></p>
+
+<dl>
+ <dt>{{domxref("Document.adoptNode()")}}</dt>
+ <dd>Adopt node from an external document.</dd>
+ <dt>{{domxref("Document.captureEvents()")}} {{Deprecated_inline}}</dt>
+ <dd>See {{domxref("Window.captureEvents")}}.</dd>
+ <dt>{{domxref("Document.caretRangeFromPoint()")}}{{non-standard_inline}}</dt>
+ <dd>Gets a {{Domxref("Range")}} object for the document fragment under the specified coordinates.</dd>
+ <dt>{{domxref("Document.createAttribute()")}}</dt>
+ <dd>Creates a new {{domxref("Attr")}} object and returns it.</dd>
+ <dt>{{domxref("Document.createAttributeNS()")}}</dt>
+ <dd>Creates a new attribute node in a given namespace and returns it.</dd>
+ <dt>{{domxref("Document.createCDATASection()")}}</dt>
+ <dd>Creates a new CDATA node and returns it.</dd>
+ <dt>{{domxref("Document.createComment()")}}</dt>
+ <dd>Creates a new comment node and returns it.</dd>
+ <dt>{{domxref("Document.createDocumentFragment()")}}</dt>
+ <dd>Creates a new document fragment.</dd>
+ <dt>{{domxref("Document.createElement()")}}</dt>
+ <dd>Creates a new element with the given tag name.</dd>
+ <dt>{{domxref("Document.createElementNS()")}}</dt>
+ <dd>Creates a new element with the given tag name and namespace URI.</dd>
+ <dt>{{domxref("Document.createEntityReference()")}} {{obsolete_inline}}</dt>
+ <dd>Creates a new entity reference object and returns it.</dd>
+ <dt>{{domxref("Document.createEvent()")}}</dt>
+ <dd>Creates an event object.</dd>
+ <dt>{{domxref("Document.createNodeIterator()")}}</dt>
+ <dd>Creates a {{domxref("NodeIterator")}} object.</dd>
+ <dt>{{domxref("Document.createProcessingInstruction()")}}</dt>
+ <dd>Creates a new {{domxref("ProcessingInstruction")}} object.</dd>
+ <dt>{{domxref("Document.createRange()")}}</dt>
+ <dd>Creates a {{domxref("Range")}} object.</dd>
+ <dt>{{domxref("Document.createTextNode()")}}</dt>
+ <dd>Creates a text node.</dd>
+ <dt>{{domxref("Document.createTouch()")}} {{Deprecated_inline}}</dt>
+ <dd>Creates a {{domxref("Touch")}} object.</dd>
+ <dt>{{domxref("Document.createTouchList()")}}</dt>
+ <dd>Creates a {{domxref("TouchList")}} object.</dd>
+ <dt>{{domxref("Document.createTreeWalker()")}}</dt>
+ <dd>Creates a {{domxref("TreeWalker")}} object.</dd>
+ <dt>{{domxref("Document.enableStyleSheetsForSet()")}}</dt>
+ <dd>Enables the style sheets for the specified style sheet set.</dd>
+ <dt>{{domxref("Document.exitPointerLock()")}} {{experimental_inline}}</dt>
+ <dd>Release the pointer lock.</dd>
+ <dt>{{domxref("Document.getAnimations()")}} {{experimental_inline}}</dt>
+ <dd>Returns an array of all {{domxref("Animation")}} objects currently in effect, whose target elements are descendants of the <code>document</code>.</dd>
+ <dt>{{domxref("Document.getElementsByClassName()")}}</dt>
+ <dd>Returns a list of elements with the given class name.</dd>
+ <dt>{{domxref("Document.getElementsByTagName()")}}</dt>
+ <dd>Returns a list of elements with the given tag name.</dd>
+ <dt>{{domxref("Document.getElementsByTagNameNS()")}}</dt>
+ <dd>Returns a list of elements with the given tag name and namespace.</dd>
+ <dt>{{domxref("Document.importNode()")}}</dt>
+ <dd>Returns a clone of a node from an external document.</dd>
+ <dt>{{domxref("Document.normalizeDocument()")}} {{obsolete_inline}}</dt>
+ <dd>Replaces entities, normalizes text nodes, etc.</dd>
+ <dt>{{domxref("Document.releaseCapture()")}} {{non-standard_inline}} {{gecko_minversion_inline("2.0")}}</dt>
+ <dd>Releases the current mouse capture if it's on an element in this document.</dd>
+ <dt>{{domxref("Document.releaseEvents()")}} {{non-standard_inline}} {{Deprecated_inline}}</dt>
+ <dd>See {{domxref("Window.releaseEvents()")}}.</dd>
+ <dt>{{domxref("Document.routeEvent()")}} {{non-standard_inline}} {{obsolete_inline(24)}}</dt>
+ <dd>See {{domxref("Window.routeEvent()")}}.</dd>
+ <dt>{{domxref("Document.mozSetImageElement()")}} {{non-standard_inline}} {{gecko_minversion_inline("2.0")}}</dt>
+ <dd>Allows you to change the element being used as the background image for a specified element ID.</dd>
+</dl>
+
+<p>The <code>Document</code> interface is extended with the {{domxref("ParentNode")}} interface:</p>
+
+<dl>
+ <dt>{{domxref("document.getElementById","document.getElementById(String id)")}}</dt>
+ <dd>Returns an object reference to the identified element.</dd>
+ <dt>{{domxref("document.querySelector","document.querySelector(String selector)")}} {{gecko_minversion_inline("1.9.1")}}</dt>
+ <dd>Returns the first Element node within the document, in document order, that matches the specified selectors.</dd>
+ <dt>{{domxref("document.querySelectorAll","document.querySelectorAll(String selector)")}} {{gecko_minversion_inline("1.9.1")}}</dt>
+ <dd>Returns a list of all the Element nodes within the document that match the specified selectors.</dd>
+</dl>
+
+<p>The <code>Document</code> interface is extended with the {{domxref("XPathEvaluator")}} interface:</p>
+
+<dl>
+ <dt>{{domxref("document.createExpression","document.createExpression(String expression, XPathNSResolver resolver)")}}</dt>
+ <dd>Compiles an <code><a href="/en-US/docs/XPathExpression" title="XPathExpression">XPathExpression</a></code> which can then be used for (repeated) evaluations.</dd>
+ <dt>{{domxref("document.createNSResolver","document.createNSResolver(Node resolver)")}}</dt>
+ <dd>Creates an {{domxref("XPathNSResolver")}} object.</dd>
+ <dt>{{domxref("document.evaluate","document.evaluate(String expression, Node contextNode, XPathNSResolver resolver, Number type, Object result)")}}</dt>
+ <dd>Evaluates an XPath expression.</dd>
+</dl>
+
+<h3 id="Extension_for_HTML_documents">Extension for HTML documents</h3>
+
+<p>The <code>Document</code> interface for HTML documents inherit from the {{domxref("HTMLDocument")}} interface or, since HTML5,  is extended for such documents:</p>
+
+<dl>
+ <dt>{{domxref("document.clear()")}} {{non-standard_inline}} {{Deprecated_inline}}</dt>
+ <dd>In majority of modern browsers, including recent versions of Firefox and Internet Explorer, this method does nothing.</dd>
+ <dt>{{domxref("document.close()")}}</dt>
+ <dd>Closes a document stream for writing.</dd>
+ <dt>{{domxref("document.execCommand","document.execCommand(String command[, Boolean showUI[, String value]])")}}</dt>
+ <dd>On an editable document, executes a formating command.</dd>
+ <dt>{{domxref("document.getElementsByName","document.getElementsByName(String name)")}}</dt>
+ <dd>Returns a list of elements with the given name.</dd>
+ <dt>{{domxref("document.hasFocus()")}}</dt>
+ <dd>Returns <code>true</code> if the focus is currently located anywhere inside the specified document.</dd>
+ <dt>{{domxref("document.open()")}}</dt>
+ <dd>Opens a document stream for writing.</dd>
+ <dt>{{domxref("document.queryCommandEnabled","document.queryCommandEnabled(String command)")}}</dt>
+ <dd>Returns true if the formating command can be executed on the current range.</dd>
+ <dt>{{domxref("document.queryCommandIndeterm","document.queryCommandIndeterm(String command)")}}</dt>
+ <dd>Returns true if the formating command is in an indeterminate state on the current range.</dd>
+ <dt>{{domxref("document.queryCommandState","document.queryCommandState(String command)")}}</dt>
+ <dd>Returns true if the formating command has been executed on the current range.</dd>
+ <dt>{{domxref("document.queryCommandSupported","document.queryCommandSupported(String command)")}}</dt>
+ <dd>Returns true if the formating command is supported on the current range.</dd>
+ <dt>{{domxref("document.queryCommandValue","document.queryCommandValue(String command)")}}</dt>
+ <dd>Returns the current value of the current range for a formating command.</dd>
+ <dt>{{domxref("document.write","document.write(String text)")}}</dt>
+ <dd>Writes text in a document.</dd>
+ <dt>{{domxref("document.writeln","document.writeln(String text)")}}</dt>
+ <dd>Writes a line of text in a document.</dd>
+</dl>
+
+<h3 id="Methods_included_from_DocumentOrShadowRoot">Methods included from DocumentOrShadowRoot</h3>
+
+<p><em>The <code>Document</code> interface includes the following methods defined on the {{domxref("DocumentOrShadowRoot")}} mixin. Note that this is currently only implemented by Chrome; other browsers still implement them on the {{domxref("Document")}} interface.</em></p>
+
+<dl>
+ <dt>{{domxref("DocumentOrShadowRoot.getSelection()")}}</dt>
+ <dd>Returns a {{domxref('Selection')}} object representing the range of text selected by the user, or the current position of the caret.</dd>
+ <dt>{{domxref("DocumentOrShadowRoot.elementFromPoint()")}}</dt>
+ <dd>Returns the topmost element at the specified coordinates.</dd>
+ <dt>{{domxref("DocumentOrShadowRoot.elementsFromPoint()")}}</dt>
+ <dd>Returns an array of all elements at the specified coordinates.</dd>
+ <dt>{{domxref("DocumentOrShadowRoot.caretPositionFromPoint()")}}</dt>
+ <dd>Returns a {{domxref('CaretPosition')}} object containing the DOM node containing the caret, and caret's character offset within that node.</dd>
+</dl>
+

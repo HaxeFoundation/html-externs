@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("IDBObjectStore.indexNames")}} {{readonlyInline}}</dt>
+ <dd>A list of the names of <a href="/en/IndexedDB#gloss_index" title="en/IndexedDB#gloss index">indexes</a> on objects in this object store.</dd>
+ <dt>{{domxref("IDBObjectStore.keyPath")}} {{readonlyInline}}</dt>
+ <dd>The <a href="/en/IndexedDB#gloss_key_path" title="en/IndexedDB#gloss key path">key path</a> of this object store. If this attribute is <code>null</code>, the application must provide a key for each modification operation.</dd>
+ <dt>{{domxref("IDBObjectStore.name")}}</dt>
+ <dd>The name of this object store.</dd>
+ <dt>{{domxref("IDBObjectStore.transaction")}} {{readonlyInline}}</dt>
+ <dd>The {{domxref("IDBTransaction")}} object to which this object store belongs.</dd>
+ <dt>{{domxref("IDBObjectStore.autoIncrement")}} {{readonlyInline}}</dt>
+ <dd>The value of the auto increment flag for this object store.</dd>
+</dl>
+

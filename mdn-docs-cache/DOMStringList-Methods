@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("DOMStringList.item()")}}</dt>
+ <dd>Returns a {{domxref("DOMString")}}.</dd>
+ <dt>{{domxref("DOMStringList.contains()")}}</dt>
+ <dd>Returns {{jsxref("Boolean")}} indicating if the given string is in the list</dd>
+</dl>
+

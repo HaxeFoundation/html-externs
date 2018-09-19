@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLDataElement.value")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} reflecting the {{htmlattrxref("value", "data")}} HTML attribute, containing a machine-readable form of the element's value.</dd>
+</dl>
+

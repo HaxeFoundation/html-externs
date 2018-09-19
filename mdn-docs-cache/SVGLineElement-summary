@@ -1,0 +1,1 @@
+The <strong><code>SVGLineElement</code></strong> interface provides access to the properties of <a href="/en-US/docs/Web/SVG/Element/line" title="The &lt;line&gt; element is an SVG basic shape used to create a line connecting two points."><code>&lt;line&gt;</code></a> elements, as well as methods to manipulate them.

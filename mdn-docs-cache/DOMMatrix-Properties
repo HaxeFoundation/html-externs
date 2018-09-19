@@ -1,0 +1,50 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface inherits properties from {{domxref("DOMMatrixReadOnly")}}, though some are modified not to be read-only.</em></p>
+
+<dl>
+	<dt><code>is2D</code>{{ReadOnlyInline}}</dt>
+	<dd><code>A boolean</code> flag set to true if current matrix was initialized as a 2D matrix</dd>
+	<dt><code>isIdentity</code>{{ReadOnlyInline}}</dt>
+	<dd><code>A boolean</code> flag returning true if the current matrix is identity.</dd>
+	<dt><code>m11</code>, <code>m12</code>, <code>m13</code>, <code>m14</code>, <code>m21</code>, <code>m22</code>, <code>m23</code>, <code>m24</code>, <code>m31</code>, <code>m32</code>, <code>m33</code>, <code>m34</code>, <code>m41</code>, <code>m42</code>, <code>m43</code>, <code>m44</code></dt>
+	<dd>Are <code>double</code> representing each component of a 4x4 matrix.</dd>
+	<dt><code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>, <code>e</code>, <code>f</code></dt>
+	<dd>Are <code>double</code> representing each component of a 4x4 matrix needed for 2D rotations and translations. They are aliases for some components of the 4x4 matrix:
+	<table class="standard-table">
+		<thead>
+			<tr>
+				<th scope="col"><code>2D</code></th>
+				<th scope="col"><code>3D equivalent</code></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>a</code></td>
+				<td><code>m11</code></td>
+			</tr>
+			<tr>
+				<td><code>b</code></td>
+				<td><code>m12</code></td>
+			</tr>
+			<tr>
+				<td><code>c</code></td>
+				<td><code>m21</code></td>
+			</tr>
+			<tr>
+				<td><code>d</code></td>
+				<td><code>m22</code></td>
+			</tr>
+			<tr>
+				<td><code>e</code></td>
+				<td><code>m41</code></td>
+			</tr>
+			<tr>
+				<td><code>f</code></td>
+				<td><code>m42</code></td>
+			</tr>
+		</tbody>
+	</table>
+	</dd>
+</dl>
+

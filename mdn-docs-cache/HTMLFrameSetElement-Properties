@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}} and from {{domxref("WindowEventHandlers")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLFrameSetElement.cols")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} structured as a comma-seperated list specifing the width of each column inside a frameset.</dd>
+ <dt>{{domxref("HTMLFrameSetElement.rows")}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("DOMString")}} structured as a comma-seperated list specifing the height of each column inside a frameset.</dd>
+</dl>
+

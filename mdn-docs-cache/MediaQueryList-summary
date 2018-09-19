@@ -1,0 +1,1 @@
+A <code>MediaQueryList</code> object stores information on a <a href="/en-US/docs/Web/CSS/Media_Queries">media query</a> applied to a document, and handles sending notifications to listeners when the media query state change (i.e. when the media query test starts or stops evaluating to <code>true</code>).

@@ -1,0 +1,1 @@
+The <strong><code>SVGAElement</code></strong> interface provides access to the properties of <a href="/en-US/docs/Web/SVG/Element/a" title="The &lt;a&gt; SVG element creates a hyperlink to other web pages, files, locations within the same page, email addresses, or any other URL."><code>&lt;a&gt;</code></a> element, as well as methods to manipulate them.

@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("DOMQuad.fromRect()")}}</dt>
+ <dd>Returns a new <code>DOMQuad</code> object based on the passed set of coordinates.</dd>
+ <dt>{{domxref("DOMQuad.fromQuad()")}}</dt>
+ <dd>Returns a new <code>DOMQuad</code> object based on the passed set of coordinates.</dd>
+ <dt>{{domxref("DOMQuad.getBounds()")}}</dt>
+ <dd>Returns a {{domxref("DOMRect")}} object with the coordinates and dimensions of the <code>DOMQuad</code> object.</dd>
+ <dt>{{domxref("DOMQuad.toJSON()")}}</dt>
+ <dd>Returns a JSON representation of the <code>DOMQuad</code> object.</dd>
+</dl>
+

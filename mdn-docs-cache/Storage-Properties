@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("Storage.length")}} {{readonlyInline}}</dt>
+ <dd>Returns an integer representing the number of data items stored in the <code>Storage</code> object.</dd>
+</dl>
+

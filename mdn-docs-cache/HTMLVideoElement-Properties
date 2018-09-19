@@ -1,0 +1,61 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its ancestor interfaces, </em><em>{{domxref("HTMLMediaElement")}}, and </em><em>{{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLVideoElement.height")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} that reflects the {{htmlattrxref("height", "video")}} HTML attribute, which specifies the height of the display area, in CSS pixels.</dd>
+ <dt>{{domxref("HTMLVideoElement.poster")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} that reflects the {{htmlattrxref("poster", "video")}} HTML attribute, which specifies an image to show while no video data is available.</dd>
+ <dt>{{domxref("HTMLVideoElement.videoHeight")}} {{readonlyInline}}</dt>
+ <dd>Returns an <code>unsigned long</code> containing the intrinsic height of the resource in CSS pixels, taking into account the dimensions, aspect ratio, clean aperture, resolution, and so forth, as defined for the format used by the resource. If the element's ready state is <code>HAVE_NOTHING</code>, the value is <code>0</code>.</dd>
+ <dt>{{domxref("HTMLVideoElement.videoWidth")}} {{readonlyInline}}</dt>
+ <dd>Returns an <code>unsigned long</code> containing the intrinsic width of the resource in CSS pixels, taking into account the dimensions, aspect ratio, clean aperture, resolution, and so forth, as defined for the format used by the resource. If the element's ready state is <code>HAVE_NOTHING</code>, the value is <code>0</code>.</dd>
+ <dt>{{domxref("HTMLVideoElement.width")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} that reflects the {{htmlattrxref("width", "video")}} HTML attribute, which specifies the width of the display area, in CSS pixels.</dd>
+</dl>
+
+<h3 id="Gecko-specific_properties">Gecko-specific properties</h3>
+
+<dl>
+ <dt>{{domxref("HTMLVideoElement.mozParsedFrames")}} {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Returns an <code>unsigned long</code> with the count of video frames that have been parsed from the media resource.</dd>
+ <dt>{{domxref("HTMLVideoElement.mozDecodedFrames")}} {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Returns an <code>unsigned long</code> with the count of parsed video frames that have been decoded into images.</dd>
+ <dt>{{domxref("HTMLVideoElement.mozPresentedFrames")}} {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Returns an <code>unsigned long</code> with the count of decoded frames that have been presented to the rendering pipeline for painting.</dd>
+ <dt>{{domxref("HTMLVideoElement.mozPaintedFrames")}} {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Returns an <code>unsigned long</code> with the count of presented frames which were painted on the screen.</dd>
+ <dt>{{domxref("HTMLVideoElement.mozFrameDelay")}} {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Returns an <code>double</code> with the time which the last painted video frame was late by, in seconds.</dd>
+ <dt>{{domxref("HTMLVideoElement.mozHasAudio")}} {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Returns a {{domxref("Boolean")}} indicating if there is some audio associated with the video.</dd>
+</dl>
+
+<h3 id="MicrosoftEdge-specific_properties">MicrosoftEdge-specific properties</h3>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/HTMLVideoElement/msFrameStep">msFrameStep</a> {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Steps the video by one frame forward or one frame backward.</dd>
+</dl>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/HTMLVideoElement/msHorizontalMirror">msHorizontalMirror</a> {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Gets or sets whether a video element is flipped horizontally in the display.</dd>
+</dl>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/HTMLVideoElement/msInsertVideoEffect">msInsertVideoEffect</a> {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Inserts the specified video effect into the media pipeline.</dd>
+</dl>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/HTMLVideoElement/msIsLayoutOptimalForPlayback">msIsLayoutOptimalForPlayback</a> {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Indicates whether the video can be rendered more efficiently.</dd>
+</dl>
+
+<dl>
+ <dt><a href="/en-US/docs/Web/API/HTMLVideoElement/MsIsStereo3D">msIsStereo3D</a> {{readonlyInline}}{{non-standard_inline}}</dt>
+ <dd>Determines whether the system considers the loaded video source to be stereo 3-D or not. Value set to true indicates source is stereo 3D.</dd>
+</dl>
+

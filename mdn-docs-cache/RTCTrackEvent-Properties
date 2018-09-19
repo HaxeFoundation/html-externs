@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Since <code>RTCTrackEvent</code> is based on {{domxref("Event")}}, its properties are also available.</em></p>
+
+<dl>
+ <dt>{{domxref("RTCTrackEvent.receiver", "receiver")}} {{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("RTCRtpReceiver")}} used by the track that's been added to the <code>RTCPeerConnection</code>.</dd>
+ <dt>{{domxref("RTCTrackEvent.streams", "streams")}} {{ReadOnlyInline}} {{optional_inline}}</dt>
+ <dd>An array of {{domxref("MediaStream")}} objects, each representing one of the media streams which comprise the {{domxref("RTCTrackEvent.track", "track")}} that was added to the connection. By default, the array is empty.</dd>
+ <dt>{{domxref("RTCTrackEvent.track", "track")}} {{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("MediaStreamTrack")}} which has been added to the connection.</dd>
+ <dt>{{domxref("RTCTrackEvent.transceiver", "transceiver")}} {{ReadOnlyInline}}</dt>
+ <dd>The {{domxref("RTCRtpTransceiver")}} being used by the new track.</dd>
+</dl>
+

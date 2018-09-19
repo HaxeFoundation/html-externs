@@ -1,0 +1,24 @@
+<h2 id="Constants">Constants</h2>
+
+<h3 id="Delta_modes">Delta modes</h3>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td class="header">Constant</td>
+   <td class="header">Value</td>
+   <td class="header">Description</td>
+  </tr>
+  <tr>
+   <td><code>HORIZONTAL_AXIS</code></td>
+   <td><code>0x01</code></td>
+   <td>The event is caused by horizontal wheel operation.</td>
+  </tr>
+  <tr>
+   <td><code>VERTICAL_AXIS</code></td>
+   <td><code>0x02</code></td>
+   <td>The event is caused by vertical wheel operation.</td>
+  </tr>
+ </tbody>
+</table>
+

@@ -1,0 +1,13 @@
+<h2 id="Constants">Constants</h2>
+
+<dl>
+ <dt><code>ext.RGBA16F_EXT</code></dt>
+ <dd>RGBA 16-bit floating-point color-renderable format.</dd>
+ <dt><code>ext.RGB16F_EXT</code></dt>
+ <dd>RGB 16-bit floating-point color-renderable format.</dd>
+ <dt><code>ext.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT</code></dt>
+ <dd>?</dd>
+ <dt><code>ext.UNSIGNED_NORMALIZED_EXT</code></dt>
+ <dd>?</dd>
+</dl>
+

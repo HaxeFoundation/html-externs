@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("MutationObserver.disconnect", "disconnect()")}}</dt>
+ <dd>Stops the <code>MutationObserver</code> instance from receiving further notifications until and unless {{domxref("MutationObserver.observe", "observe()")}} is called again.</dd>
+ <dt>{{domxref("MutationObserver.observe", "observe()")}}</dt>
+ <dd>Configures the <code>MutationObserver</code> to begin receiving notifications through its callback function when DOM changes matching the given options occur.</dd>
+ <dt>{{domxref("MutationObserver.takeRecords", "takeRecords()")}}</dt>
+ <dd>Removes all pending notifications from the <code>MutationObserver</code>'s notification queue and returns them in a new {{jsxref("Array")}} of {{domxref("MutationRecord")}} objects.</dd>
+</dl>
+

@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("AnimationTimeline.currentTime")}} {{readonlyInline}}</dt>
+	<dd>Returns the time value in milliseconds for this timeline or <code>null</code> if this timeline is inactive.</dd>
+</dl>
+

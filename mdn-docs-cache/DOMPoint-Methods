@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em><code>DOMPoint</code> inherits methods from its parent, {{domxref("DOMPointReadOnly")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("DOMPointReadOnly.fromPoint", "fromPoint()")}}</dt>
+ <dd>Creates a new mutable <code>DOMPoint</code> object given an existing point or a {{domxref("DOMPointInit")}} dictionary which provides the values for its properties.</dd>
+</dl>
+

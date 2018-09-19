@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}, and also implements properties of {{domxref("SVGFilterPrimitiveStandardAttributes")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFEDiffuseLightingElement.in1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDiffuseLightingElement.surfaceScale")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("surfaceScale")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDiffuseLightingElement.diffuseConstant")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("diffuseConstant")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDiffuseLightingElement.kernelUnitLengthX")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the X component of the {{SVGAttr("kernelUnitLength")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEDiffuseLightingElement.kernelUnitLengthY")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the Y component of the {{SVGAttr("kernelUnitLength")}} attribute of the given element.</dd>
+</dl>
+

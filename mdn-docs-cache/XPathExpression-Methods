@@ -1,0 +1,9 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("XPathExpression.evaluate()")}}</dt>
+ <dd>provide a context node/document, {{domxref("XPathResult")}} constant, and <code>XPathResult</code> to store the query or null to return a new XPathResult.</dd>
+ <dt>{{domxref("XPathExpression.evaluateWithContext()")}}</dt>
+ <dd>provide a context node/document, context position, context size, <code>XPathResult</code> constant, and <code>XPathResult</code> to store the query or null to return a new XPathResult.</dd>
+</dl>
+

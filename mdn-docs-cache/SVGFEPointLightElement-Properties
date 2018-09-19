@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFEPointLightElement.x")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("x")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEPointLightElement.y")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("y")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFEPointLightElement.z")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("z")}} attribute of the given element.</dd>
+</dl>
+

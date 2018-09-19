@@ -1,0 +1,62 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface inherits properties from the {{domxref("EventTarget")}} interface and implements properties from the {{domxref("WindowOrWorkerGlobalScope")}} and {{domxref("WindowEventHandlers")}} mixins.</em></p>
+
+<h3 id="Standard_properties">Standard properties</h3>
+
+<p>{{domxref("WorkerGlobalScope.navigator")}} {{readOnlyinline}}</p>
+
+<dl>
+	<dd>Returns the {{domxref("WorkerNavigator")}} associated with the worker. It is a specific navigator object, mostly a subset of the {{domxref("Navigator")}} for browsing scopes, but adapted to workers.</dd>
+	<dt>{{domxref("WorkerGlobalScope.self")}} {{readOnlyinline}}</dt>
+	<dd>Returns a reference to the <code>WorkerGlobalScope</code> itself. Most of the time it is a specific scope like {{domxref("DedicatedWorkerGlobalScope")}},  {{domxref("SharedWorkerGlobalScope")}} or {{domxref("ServiceWorkerGlobalScope")}}.</dd>
+	<dt>{{domxref("WorkerGlobalScope.location")}} {{readOnlyinline}}</dt>
+	<dd>Returns the {{domxref("WorkerLocation")}} associated with the worker. It is a specific location object, mostly a subset of the {{domxref("Location")}} for browsing scopes, but adapted to workers.</dd>
+</dl>
+
+<h3 id="Non-standard_properties">Non-standard properties</h3>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.performance")}} {{readOnlyinline}} {{Non-standard_inline}}</dt>
+	<dd>Returns the {{domxref("Performance")}} associated with the worker. It is a regular performance object, except that only a subset of its property and methods are available to workers.</dd>
+	<dt>{{domxref("WorkerGlobalScope.console")}} {{readOnlyinline}} {{Non-standard_inline}}</dt>
+	<dd>Returns the {{domxref("Console")}} associated with the worker.</dd>
+</dl>
+
+<h3 id="Properties_implemented_from_elsewhere">Properties implemented from elsewhere</h3>
+
+<dl>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.caches")}} {{readOnlyinline}}</dt>
+	<dd>Returns the {{domxref("CacheStorage")}} object associated with the current context. This object enables functionality such as storing assets for offline use, and generating custom responses to requests.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.indexedDB")}} {{readonlyInline}}</dt>
+	<dd>Provides a mechanism for applications to asynchronously access capabilities of indexed databases; returns an {{domxref("IDBFactory")}} object.</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.isSecureContext")}} {{readOnlyinline}}</dt>
+	<dd>Returns a boolean indicating whether the current context is secure (<code>true</code>) or not (<code>false</code>).</dd>
+	<dt>{{domxref("WindowOrWorkerGlobalScope.origin")}} {{readOnlyinline}}</dt>
+	<dd>Returns the global object's origin, serialized as a string. (This does not yet appear to be implemented in any browser.)</dd>
+</dl>
+
+<h3 id="Event_Handlers">Event Handlers</h3>
+
+<p><em>This interface inherits event handlers from the {{domxref("EventTarget")}} interface (which includes those from {{domxref("GlobalEventHandlers")}}), and implements event handlers from the {{domxref("WindowTimers")}} mixin.</em></p>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.onerror")}}</dt>
+	<dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("error")}} event is raised.</dd>
+	<dt>{{domxref("WorkerGlobalScope.onoffline")}}</dt>
+	<dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("offline")}} event is raised.</dd>
+	<dt>{{domxref("WorkerGlobalScope.ononline")}}</dt>
+	<dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("online")}} event is raised.</dd>
+	<dt>{{domxref("WorkerGlobalScope.onlanguagechange")}}</dt>
+	<dd>An {{domxref("EventHandler")}} fired at the global/worker scope object when the user's preferred languages change.</dd>
+</dl>
+
+<dl>
+	<dt>{{domxref("WorkerGlobalScope.onclose")}} {{non-standard_inline}} {{obsolete_inline}}</dt>
+	<dd>Is an {{domxref("EventHandler")}} representing the code to be called when the {{event("close")}} event is raised.</dd>
+	<dt>{{domxref("WorkerGlobalScope.onrejectionhandled")}} {{non-standard_inline}}</dt>
+	<dd>An event handler for handled <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" title="The Promise object is used for deferred and asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future."><code>Promise</code></a> rejection events.</dd>
+	<dt>{{domxref("WorkerGlobalScope.onunhandledrejection")}} {{non-standard_inline}}</dt>
+	<dd>An event handler for unhandled <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" title="The Promise object is used for deferred and asynchronous computations. A Promise represents an operation that hasn't completed yet, but is expected in the future."><code>Promise</code></a> rejection events.</dd>
+</dl>
+

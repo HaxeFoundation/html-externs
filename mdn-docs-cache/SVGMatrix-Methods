@@ -1,0 +1,27 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("SVGMatrix.multiply()")}}</dt>
+ <dd>Performs matrix multiplication. This matrix is post-multiplied by another matrix, returning the resulting new matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.inverse()")}}</dt>
+ <dd>Returns the inverse matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.translate()")}}</dt>
+ <dd>Post-multiplies a translation transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.scale()")}}</dt>
+ <dd>Post-multiplies a uniform scale transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.scaleNonUniform()")}}</dt>
+ <dd>Post-multiplies a non-uniform scale transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.rotate()")}}</dt>
+ <dd>Post-multiplies a rotation transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.rotateFromVector()")}}</dt>
+ <dd>Post-multiplies a rotation transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>. The rotation angle is determined by taking (+/-) atan(y/x). The direction of the vector (x, y) determines whether the positive or negative angle value is used.</dd>
+ <dt>{{domxref("SVGMatrix.flipX()")}}</dt>
+ <dd>Post-multiplies the transformation [-1 0 0 1 0 0] and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.flipY()")}}</dt>
+ <dd>Post-multiplies the transformation [1 0 0 -1 0 0] and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.skewX()")}}</dt>
+ <dd>Post-multiplies a skewX transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+ <dt>{{domxref("SVGMatrix.skewY()")}}</dt>
+ <dd>Post-multiplies a skewY transformation on the current matrix and returns the resulting matrix as <code>SVGMatrix</code>.</dd>
+</dl>
+

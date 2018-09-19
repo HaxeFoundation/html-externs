@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("ImageBitmapRenderingContext.transferFromImageBitmap()")}}</dt>
+ <dd>
+ <p>Displays the given <code>ImageBitmap</code> in the canvas associated with this rendering context. Ownership of the <code>ImageBitmap</code> is transferred to the canvas. This was previously named <code>transferImageBitmap()</code>, but was renamed in a spec change. The old name is being kept as an alias to avoid code breakage.</p>
+ </dd>
+</dl>
+

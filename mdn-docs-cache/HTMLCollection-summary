@@ -1,0 +1,1 @@
+The <strong><code>HTMLCollection</code></strong> interface represents a generic collection (array-like object similar to <a href="/en-US/docs/Web/JavaScript/Reference/Functions/arguments">arguments</a>) of elements (in document order) and offers methods and properties for selecting from the list.

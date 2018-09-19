@@ -1,0 +1,14 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("KeyframeEffect.target")}}</dt>
+ <dd>Gets and sets the element or pseudo-element being animated by this object. This may be <code>null</code> for animations that do not target a specific element.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("KeyframeEffect.iterationComposite")}}</dt>
+ <dd>Gets and sets the iteration composite operation for resolving the property value changes of this keyframe effect.</dd>
+ <dt>{{domxref("KeyframeEffect.composite")}}</dt>
+ <dd>Gets and sets the composite operation property for resolving the property value changes between this and other keyframe effects.</dd>
+</dl>
+

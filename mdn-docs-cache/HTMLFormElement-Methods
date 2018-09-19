@@ -1,0 +1,17 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface also inherits methods from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLFormElement.submit()")}}</dt>
+ <dd>Submits the form to the server.</dd>
+ <dt>{{domxref("HTMLFormElement.reset()")}}</dt>
+ <dd>Resets the form to its initial state.</dd>
+ <dt>{{domxref("HTMLFormElement.checkValidity()")}}</dt>
+ <dd>Returns <code>true</code> if the element's child controls are subject to <a href="/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation">constraint validation</a> and satisfy those contraints; returns <code>false</code> if some controls do not satisfy their constraints. Fires an event named {{event("invalid")}} at any control that does not satisfy its constraints; such controls are considered invalid if the event is not canceled. It is up to the programmer to decide how to respond to <code>false</code>.</dd>
+ <dt>{{domxref("HTMLFormElement.reportValidity()")}}</dt>
+ <dd>Returns <code>true</code> if the element's child controls satisfy their <a href="/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation">validation constraints</a>. When <code>false</code> is returned, cancelable {{Event("invalid")}} events are fired for each invalid child and validation problems are reported to the user.</dd>
+ <dt>{{domxref("HTMLFormElement.requestAutocomplete()")}} {{obsolete_inline}}</dt>
+ <dd>Triggers a native browser interface to assist the user in completing the fields which have an <a href="https://html.spec.whatwg.org/#autofill-field-name">autofill field name</a> value that is not <code>off</code> or <code>on</code>. The form will receive an event once the user has finished with the interface, the event will either be {{event("autocomplete")}} when the fields have been filled or {{event("autocompleteerror")}} when there was a problem. <strong>This method has been removed from Chrome and Firefox — see {{bug(1270740)}} for background information on why.</strong></dd>
+</dl>
+

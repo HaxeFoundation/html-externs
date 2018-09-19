@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface inherits the methods of its parent, {{domxref("HTMLCollection")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLFormControlsCollection.namedItem()")}}</dt>
+ <dd>Returns the {{domxref("RadioNodeList")}} or the {{domxref("Element")}} in the collection whose <code>name</code> or <code>id</code> match the specified name, or <code>null</code> if no nodes match. Note that this version of <code>namedItem()</code> hide the one inherited from {{domxref("HTMLCollection")}}. Like that one, in JavaScript, using the array bracket syntax with a {{jsxref("String")}}, like <code><em>collection</em>["value"]</code> is equivalent to <code><em>collection</em>.namedItem("value")</code>.</dd>
+</dl>
+

@@ -1,0 +1,27 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("DOMTokenList.item()")}}</dt>
+ <dd>Returns an item in the list by its index (returns undefined if the number is greater than or equal to the length of the list).</dd>
+ <dt>{{domxref("DOMTokenList.contains()")}}</dt>
+ <dd>Returns <code>true</code> if the list contains the given <em>token</em>, otherwise <code>false</code>.</dd>
+ <dt>{{domxref("DOMTokenList.add()")}}</dt>
+ <dd>Adds the given <em>token</em> to the list.</dd>
+ <dt>{{domxref("DOMTokenList.remove()")}}</dt>
+ <dd>Removes the specified <em>token</em> from the list.</dd>
+ <dt>{{domxref("DOMTokenList.replace()")}}</dt>
+ <dd>Replaces an existing <em>token</em> with a new token.</dd>
+ <dt>{{domxref("DOMTokenList.supports()")}}</dt>
+ <dd>Returns <code>true</code> if a given <em>token</em> is in the associated attribute's supported tokens.</dd>
+ <dt>{{domxref("DOMTokenList.toggle()")}}</dt>
+ <dd>Removes a given <em>token</em> from the list and returns false. If <em>token</em> doesn't exist it's added and the function returns <code>true</code>.</dd>
+ <dt>{{domxref("DOMTokenList.entries()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols","iterator")}} allowing you to go through all key/value pairs contained in this object.</dd>
+ <dt>{{domxref("DOMTokenList.forEach()")}}</dt>
+ <dd>Executes a provided function once per <code>DOMTokenList</code> element.</dd>
+ <dt>{{domxref("DOMTokenList.keys()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing you to go through all keys of the key/value pairs contained in this object.</dd>
+ <dt>{{domxref("DOMTokenList.values()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing you to go through all values of the key/value pairs contained in this object.</dd>
+</dl>
+

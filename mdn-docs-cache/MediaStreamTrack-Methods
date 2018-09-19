@@ -1,0 +1,17 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("MediaStreamTrack.applyConstraints()")}}</dt>
+ <dd>Lets the application specify the ideal and/or ranges of acceptable values for any number of the available constrainable properties of the <code>MediaStreamTrack</code>.</dd>
+ <dt>{{domxref("MediaStreamTrack.clone()")}}</dt>
+ <dd>Returns a duplicate of the <code>MediaStreamTrack</code>.</dd>
+ <dt>{{domxref("MediaStreamTrack.getCapabilities()")}}</dt>
+ <dd>Returns the a list of constrainable properties available for the <code>MediaStreamTrack</code>.</dd>
+ <dt>{{domxref("MediaStreamTrack.getConstraints()")}}</dt>
+ <dd>Returns a {{domxref('MediaTrackConstraints')}} object containing the currently set constraints for the track; the returned value matches the constraints last set using {{domxref("MediaStreamTrack.applyConstraints", "applyConstraints()")}}.</dd>
+ <dt>{{domxref("MediaStreamTrack.getSettings()")}}</dt>
+ <dd>Returns a {{domxref("MediaTrackSettings")}} object containing the current values of each of the <code>MediaStreamTrack</code>'s constrainable properties.</dd>
+ <dt>{{domxref("MediaStreamTrack.stop()")}}</dt>
+ <dd>Stops playing the source associated to the track, both the source and the track are deassociated. The track state is set to <code>ended</code>.</dd>
+</dl>
+

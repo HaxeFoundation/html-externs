@@ -1,0 +1,119 @@
+<h2 id="Properties">Properties</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <td><code>form </code>{{readonlyInline}}</td>
+   <td><code>object:</code> Returns a reference to the parent form element. If this element is not contained in a form element, it can be the {{htmlattrxref("id", "form")}} attribute of any {{HTMLElement("form")}} element in the same document or the value <code>null</code>.</td>
+  </tr>
+  <tr>
+   <td><code>type</code> {{readonlyInline}}</td>
+   <td><code><em>string</em>:</code> Returns the string <code>textarea</code>.</td>
+  </tr>
+  <tr>
+   <td><code>value</code></td>
+   <td><code><em>string</em>:</code> Returns / Sets the raw value contained in the control.</td>
+  </tr>
+  <tr>
+   <td><code>textLength</code> {{readonlyInline}}</td>
+   <td><code><em>long</em>:</code> Returns the codepoint length of the control's <code>value</code>. Same as <code>calling value.length</code></td>
+  </tr>
+  <tr>
+   <td><code>defaultValue</code></td>
+   <td><code><em>string</em>:</code> Returns / Sets the control's default value, which behaves like the {{domxref("Node.textContent")}} property.</td>
+  </tr>
+  <tr>
+   <td><code>placeholder</code></td>
+   <td><code><em>string</em>:</code> Returns / Sets the element's {{htmlattrxref("placeholder", "textarea")}} attribute, containing a hint to the user about what to enter in the control.</td>
+  </tr>
+  <tr>
+   <td><code>rows</code></td>
+   <td><code><em>unsigned long</em>:</code> Returns / Sets the element's {{htmlattrxref("rows", "textarea")}} attribute, indicating the number of visible text lines for the control.</td>
+  </tr>
+  <tr>
+   <td><code>cols</code></td>
+   <td><code><em>unsigned long</em>:</code> Returns / Sets the element's {{htmlattrxref("cols", "textarea")}} attribute, indicating the visible width of the text area.</td>
+  </tr>
+  <tr>
+   <td><code>autofocus</code></td>
+   <td><code><em>boolean</em>:</code> Returns / Sets the element's {{htmlattrxref("autofocus", "textarea")}} attribute, indicating that the control should have input focus when the page loads</td>
+  </tr>
+  <tr>
+   <td><code>name</code></td>
+   <td><code><em>string</em>:</code> Returns / Sets the element's {{htmlattrxref("name", "textarea")}} attribute, containing the name of the control.</td>
+  </tr>
+  <tr>
+   <td><code>disabled</code></td>
+   <td><code><em>boolean</em>:</code> Returns / Sets the element's {{htmlattrxref("disabled", "textarea")}} attribute, indicating that the control is not available for interaction.</td>
+  </tr>
+  <tr>
+   <td>{{domxref("HTMLTextAreaElement.labels")}}{{ReadOnlyInline}}</td>
+   <td>{{domxref("NodeList")}}: Returns a list of label elements associated with this select element.</td>
+  </tr>
+  <tr>
+   <td><code>maxLength</code></td>
+   <td><code><em>long</em>:</code> Returns / Sets the element's {{htmlattrxref("maxlength", "textarea")}} attribute, indicating the maximum number of characters the user can enter. This constraint is evaluated only when the value changes.</td>
+  </tr>
+  <tr>
+   <td><code>accessKey</code></td>
+   <td><code><em>string</em>:</code> Returns / Sets the element's {{htmlattrxref("accesskey", "textarea")}} attribute.</td>
+  </tr>
+  <tr>
+   <td><code>readOnly</code></td>
+   <td><code><em>boolean</em>:</code> Returns / Sets the element's {{htmlattrxref("readonly", "textarea")}} attribute, indicating that the user cannot modify the value of the control.</td>
+  </tr>
+  <tr>
+   <td><code>required</code></td>
+   <td><code><em>boolean</em>:</code> Returns / Sets the element's {{htmlattrxref("required", "textarea")}} attribute, indicating that the user must specify a value before submitting the form.</td>
+  </tr>
+  <tr>
+   <td><code>tabIndex</code></td>
+   <td><code><em>long</em>:</code> Returns / Sets the position of the element in the tabbing navigation order for the current document.</td>
+  </tr>
+  <tr>
+   <td><code>selectionStart</code></td>
+   <td><code><em>unsigned long</em>:</code> Returns / Sets the index of the beginning of selected text. If no text is selected, contains the index of the character that follows the input cursor. On being set, the control behaves as if <code>setSelectionRange()</code> had been called with this as the first argument, and <code>selectionEnd</code> as the second argument.</td>
+  </tr>
+  <tr>
+   <td><code>selectionEnd</code></td>
+   <td><code><em>unsigned long</em>:</code> Returns / Sets the index of the end of selected text. If no text is selected, contains the index of the character that follows the input cursor. On being set, the control behaves as if <code>setSelectionRange()</code> had been called with this as the second argument, and <code>selectionStart</code> as the first argument.</td>
+  </tr>
+  <tr>
+   <td><code>selectionDirection</code></td>
+   <td><code><em>string</em>:</code> Returns / Sets the direction in which selection occurred. This is <code>"forward"</code> if selection was performed in the start-to-end direction of the current locale, or <code>"backward"</code> for the opposite direction. This can also be <code>"none"</code> if the direction is unknown."</td>
+  </tr>
+  <tr>
+   <td><code>validity</code> {{readonlyInline}}</td>
+   <td><code><em>{{domxref("ValidityState")}} object</em>:</code> Returns the validity states that this element is in.</td>
+  </tr>
+  <tr>
+   <td><code>willValidate </code>{{readonlyInline}}</td>
+   <td>
+    <p><code><em>boolean</em>:</code> Returns / Sets whether the element is a candidate for constraint validation. <code>false</code> if any conditions bar it from constraint validation.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><code>validationMessage</code> {{readonlyInline}}</td>
+   <td><code><em>string</em>:</code> Returns a localized message that describes the validation constraints that the control does not satisfy (if any). This is the empty string if the control is not a candidate for constraint validation (<code>willValidate</code> is <code>false</code>), or it satisfies its constraints.</td>
+  </tr>
+  <tr>
+   <td><code>autocomplete</code> {{experimental_inline}}</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><code>autocapitalize</code> {{experimental_inline}}</td>
+   <td><code><em>string</em>:</code> Returns / Sets the element's capitalization behavior for user input. Valid values are: <code>none</code>, <code>off</code>, <code>characters</code>, <code>words</code>, <code>sentences</code>.</td>
+  </tr>
+  <tr>
+   <td><code>inputMode</code> {{experimental_inline}}</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><code>wrap</code>{{gecko_minversion_inline("2.0")}}</td>
+   <td><code><em>string</em>:</code> Returns / Sets the {{htmlattrxref("wrap", "textarea")}} HTML attribute, indicating how the control wraps text.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p>The two properties <code>tabIndex</code> and <code>accessKey</code> are inherited from {{domxref("HTMLElement")}} from HTML5 on, but were defined on <code>HTMLTextAreaElement</code> in DOM Level 2 HTML and earlier specifications.</p>
+

@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>The <code>Location</code></em><em> interface doesn't inherit any method<em>, but implements those from {{domxref("URLUtils")}}</em>.</em></p>
+
+<dl>
+ <dt>{{domxref("Location.assign()")}}</dt>
+ <dd>Loads the resource at the URL provided in parameter.</dd>
+ <dt>{{domxref("Location.reload()")}}</dt>
+ <dd>Reloads the resource from the current URL. Its optional unique parameter is a {{domxref("Boolean")}}, which, when it is <code>true</code>, causes the page to always be reloaded from the server. If it is <code>false</code> or not specified, the browser may reload the page from its cache.</dd>
+ <dt>{{domxref("Location.replace()")}}</dt>
+ <dd>Replaces the current resource with the one at the provided URL. The difference from the <code>assign()</code> method is that after using <code>replace()</code> the current page will not be saved in session {{domxref("History")}}, meaning the user won't be able to use the <em>back</em> button to navigate to it.</dd>
+ <dt>{{domxref("Location.toString()")}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} containing the whole URL. It is a synonym for {{domxref("URLUtils.href")}}, though it can't be used to modify the value.</dd>
+</dl>
+

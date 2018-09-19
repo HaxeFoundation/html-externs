@@ -1,0 +1,1 @@
+The <strong><code>SVGFETileElement</code></strong> interface corresponds to the <a href="/en-US/docs/Web/SVG/Element/feTile" title="The &lt;feTile&gt; SVG filter primitive allows to fill a target rectangle with a repeated, tiled pattern of an input image. The effect is similar to the one of a &lt;pattern&gt;."><code>&lt;feTile&gt;</code></a> element.

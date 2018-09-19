@@ -1,0 +1,16 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent interface, {{domxref("BaseAudioContext")}}.</em></p>
+
+<dl>
+ <dt>{{domxref('OfflineAudioContext.length')}} {{readonlyinline}}</dt>
+ <dd>An integer representing the size of the buffer in sample-frames.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("OfflineAudioContext.oncomplete")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} called when processing is terminated, that is when the {{event("complete")}} event (of type {{domxref("OfflineAudioCompletionEvent")}}) is raised, after the event-based version of {{domxref("OfflineAudioContext.startRendering()")}} is used.</dd>
+</dl>
+

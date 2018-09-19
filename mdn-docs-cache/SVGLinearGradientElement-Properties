@@ -1,0 +1,15 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGGradientElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGLinearGradientElement.x1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("x1")}} attribute of the given {{SVGElement("linearGradient")}} element.</dd>
+ <dt>{{domxref("SVGLinearGradientElement.y1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("y1")}} attribute of the given {{SVGElement("linearGradient")}} element.</dd>
+ <dt>{{domxref("SVGLinearGradientElement.x2")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("x2")}} attribute of the given {{SVGElement("linearGradient")}} element.</dd>
+ <dt>{{domxref("SVGLinearGradientElement.y2")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the {{SVGAttr("y2")}} attribute of the given {{SVGElement("linearGradient")}} element.</dd>
+</dl>
+

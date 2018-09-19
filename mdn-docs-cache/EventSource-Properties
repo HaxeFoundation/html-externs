@@ -1,0 +1,24 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("EventSource.readyState")}} {{readonlyinline}}</dt>
+ <dd>A number representing the state of the connection. Possible values are <code>CONNECTING</code> (<code>0</code>), <code>OPEN</code> (<code>1</code>), or <code>CLOSED</code> (<code>2</code>).</dd>
+ <dt>{{domxref("EventSource.url")}} {{readonlyinline}}</dt>
+ <dd>A {{domxref("DOMString")}} representing the URL of the source.</dd>
+ <dt>{{domxref("EventSource.withCredentials")}} {{readonlyinline}}</dt>
+ <dd>A {{domxref("Boolean")}} indicating whether the <code>EventSource</code> object was instantiated with cross-origin (<a href="/en-US/docs/Web/HTTP/CORS">CORS</a>) credentials set (<code>true</code>), or not (<code>false</code>, the default).</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("EventSource.onerror")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} called when an error occurs and the {{event("error")}} event is dispatched on an <code>EventSource</code> object.</dd>
+ <dt>{{domxref("EventSource.onmessage")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} called when a {{event("message")}} event is received, that is when a message is coming from the source.</dd>
+ <dt>{{domxref("EventSource.onopen")}}</dt>
+ <dd>Is an {{domxref("EventHandler")}} called when an {{event("open")}} event is received, that is when the connection was just opened.</dd>
+</dl>
+

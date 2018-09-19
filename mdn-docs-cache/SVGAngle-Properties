@@ -1,0 +1,25 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>unitType</dt>
+ <dd>The type of the value as specified by one of the <code>SVG_ANGLETYPE_*</code> constants defined on this interface.</dd>
+ <dt>value</dt>
+ <dd>
+ <p>The value as a floating point value, in user units. Setting this attribute will cause <code>valueInSpecifiedUnits</code> and <code>valueAsString</code> to be updated automatically to reflect this setting.</p>
+
+ <p><strong>Exceptions on setting:</strong> a {{domxref("DOMException")}} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when the length corresponds to a read only attribute or when the object itself is read only.</p>
+ </dd>
+ <dt>valueInSpecifiedUnits</dt>
+ <dd>
+ <p>The value as a floating point value, in the units expressed by <code>unitType</code>. Setting this attribute will cause <code>value</code> and <code>valueAsString</code> to be updated automatically to reflect this setting.</p>
+
+ <p><strong>Exceptions on setting:</strong> a {{domxref("DOMException")}} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when the length corresponds to a read only attribute or when the object itself is read only.</p>
+ </dd>
+ <dt>valueAsString</dt>
+ <dd>
+ <p>The value as a {{domxref("DOMString")}} value, in the units expressed by <code>unitType</code>. Setting this attribute will cause <code>value</code>, <code>valueInSpecifiedUnits</code> and <code>unitType</code> to be updated automatically to reflect this setting.</p>
+
+ <p><strong>Exceptions on setting:</strong></p>
+ a {{domxref("DOMException")}} with code <code>SYNTAX_ERR</code> is raised if the assigned string cannot be parsed as a valid {{cssxref("&lt;angle&gt;")}}. a {{domxref("DOMException")}} with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised when the length corresponds to a read only attribute or when the object itself is read only.</dd>
+</dl>
+

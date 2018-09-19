@@ -1,0 +1,7 @@
+<h2 name="Methods" id="Methods">Methods</h2>
+
+<ul>
+	<li>item(index) - returns the specific node at the given zero-based index (gives null if out of range)</li>
+	<li>namedItem(name) - returns the specific node with the given DOMString (i.e., string) id. Returns null if no such named node exists.</li>
+</ul>
+

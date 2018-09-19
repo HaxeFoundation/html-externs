@@ -1,0 +1,23 @@
+<h2 id="Methods">Methods</h2>
+
+<p>This extension exposes four new methods.</p>
+
+<dl>
+	<dt>{{domxref("OES_vertex_array_object.createVertexArrayOES()", "ext.createVertexArrayOES()")}}</dt>
+	<dd>
+	<p>Creates a new {{domxref("WebGLVertexArrayObject")}}.</p>
+	</dd>
+	<dt>{{domxref("OES_vertex_array_object.deleteVertexArrayOES()", "ext.deleteVertexArrayOES()")}}</dt>
+	<dd>
+	<p>Deletes a given {{domxref("WebGLVertexArrayObject")}}.</p>
+	</dd>
+	<dt>{{domxref("OES_vertex_array_object.isVertexArrayOES()", "ext.isVertexArrayOES()")}}</dt>
+	<dd>
+	<p>Returns <code>true</code> if a given object is a {{domxref("WebGLVertexArrayObject")}}.</p>
+	</dd>
+	<dt>{{domxref("OES_vertex_array_object.bindVertexArrayOES()", "ext.bindVertexArrayOES()")}}</dt>
+	<dd>
+	<p>Binds a given {{domxref("WebGLVertexArrayObject")}} to the buffer.</p>
+	</dd>
+</dl>
+

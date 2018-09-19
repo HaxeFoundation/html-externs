@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("WebGLActiveInfo.name")}}</dt>
+ <dd>The read-only name of the requested variable.</dd>
+ <dt>{{domxref("WebGLActiveInfo.size")}}</dt>
+ <dd>The read-only size of the requested variable.</dd>
+ <dt>{{domxref("WebGLActiveInfo.type")}}</dt>
+ <dd>The read-only type of the requested variable.</dd>
+</dl>
+

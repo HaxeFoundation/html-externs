@@ -1,0 +1,14 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>The <code>RTCSessionDescription</code> interface doesn't inherit any properties.</em></p>
+
+<dl>
+ <dt>{{domxref("RTCSessionDescription.type")}} {{ReadOnlyInline}}</dt>
+ <dd>An enum of type <code>{{anch("RTCSdpType")}}</code> describing the session description's type.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("RTCSessionDescription.sdp")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} containing the {{Glossary("SDP")}} describing the session.</dd>
+</dl>
+

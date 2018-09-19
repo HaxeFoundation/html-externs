@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("IDBFactory.open")}}</dt>
+ <dd>The current method to request opening a <a href="https://developer.mozilla.org/en-US/docs/IndexedDB#gloss_database_connection">connection to a database</a>.</dd>
+ <dt>{{domxref("IDBFactory.deleteDatabase")}}</dt>
+ <dd>A method to request the deletion of a database.</dd>
+ <dt>{{domxref("IDBFactory.cmp")}}</dt>
+ <dd>A method that compares two keys and returns a result indicating which one is greater in value.</dd>
+</dl>
+

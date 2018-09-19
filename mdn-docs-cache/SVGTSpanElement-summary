@@ -1,0 +1,1 @@
+The <strong><code>SVGTSpanElement</code></strong> interface represents a <a href="/en-US/docs/Web/SVG/Element/tspan" title="Within a &lt;text&gt; element, text and font properties and the current text position can be adjusted with absolute or relative coordinate values by including a &lt;tspan&gt; element."><code>&lt;tspan&gt;</code></a> element.

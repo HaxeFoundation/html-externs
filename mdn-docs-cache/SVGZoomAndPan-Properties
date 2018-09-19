@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("SVGZoomAndPan.zoomAndPan")}}</dt>
+ <dd>An unsigned short representing the value of the {{SVGAttr("zoomAndPan")}} attribute.</dd>
+</dl>
+

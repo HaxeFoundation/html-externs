@@ -1,0 +1,1 @@
+The <strong>WebGL2RenderingContext</strong> interface provides the OpenGL ES 3.0 rendering context for the drawing surface of an HTML <a href="/en-US/docs/Web/HTML/Element/canvas" title="Use the HTML &lt;canvas&gt; element with either the canvas scripting API or the WebGL API to draw graphics and animations."><code>&lt;canvas&gt;</code></a> element.

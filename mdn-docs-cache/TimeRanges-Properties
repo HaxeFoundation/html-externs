@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("TimeRanges.length")}} {{ReadOnlyInline}}</dt>
+ <dd>Returns an <code>unsigned long</code> representing the number of time ranges represented by the time range object.</dd>
+</dl>
+

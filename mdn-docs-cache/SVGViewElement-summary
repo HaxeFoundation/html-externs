@@ -1,0 +1,1 @@
+The <strong><code>SVGViewElement</code></strong> interface provides access to the properties of <a href="/en-US/docs/Web/SVG/Element/view" title="A view is a defined way to view the image, like a zoom level or a detail view."><code>&lt;view&gt;</code></a> elements, as well as methods to manipulate them.

@@ -1,0 +1,28 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Also inherits properties from its parent, {{domxref("Method")}}.</em></p>
+
+<dl>
+ <dt>{{ domxref("IDBVersionChangeEvent.oldVersion") }} {{readonlyInline}}</dt>
+ <dd>Returns the old version of the database.</dd>
+ <dt>{{ domxref("IDBVersionChangeEvent.newVersion") }} {{readonlyInline}}</dt>
+ <dd>Returns the new version of the database.</dd>
+</dl>
+
+<h3 id="Deprecated_properties">Deprecated properties</h3>
+
+<dl>
+ <dt>{{ domxref("IDBVersionChangeEvent.version") }} {{readonlyInline}} {{ Deprecated_inline("") }}</dt>
+ <dd>
+ <p>The new version of the database in a {{event("versionchange")}} transaction.</p>
+
+ <div class="warning">
+ <p><strong>Warning</strong>: While this property is still implemented in older browsers, the latest specification replaces it with the <code>oldVersion</code> and <code>newVersion</code> attributes. See the compatibility table to know what browsers support them.</p>
+ </div>
+ </dd>
+</dl>
+
+<h3 id="Methods">Methods</h3>
+
+<p><em>No specific method, but inherits properties from its parent, {{domxref("Method")}}.</em></p>
+

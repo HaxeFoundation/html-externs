@@ -1,0 +1,7 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("PerformanceNavigationTiming.toJSON()")}} {{experimental_inline}}</dt>
+ <dd>Returns a {{domxref("DOMString")}} that is the JSON representation of the {{domxref("PerformanceNavigationTiming")}} object.</dd>
+</dl>
+

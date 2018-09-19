@@ -1,0 +1,1 @@
+The <code><strong>DOMImplementation</strong></code> interface represent an object providing methods which are not dependent on any particular document. Such an object is returned by the <a href="/en-US/docs/Web/API/Document/implementation" title="Returns a DOMImplementation object associated with the current document."><code>Document.implementation</code></a> property.

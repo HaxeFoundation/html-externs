@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGTextContentElement")}}, and also implements properties of {{domxref("SVGURIReference")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGTextPathElement.startOffset")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedLength")}} corresponding to the X component of the {{SVGAttr("startOffset")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGTextPathElement.method")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("method")}} attribute of the given element. It takes one of the <code>TEXTPATH_METHODTYPE_*</code> constants defined on this interface.</dd>
+ <dt>{{domxref("SVGTextPathElement.spacing")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedEnumeration")}} corresponding to the {{SVGAttr("spacing")}} attribute of the given element. It takes one of the <code>TEXTPATH_SPACINGTYPE_*</code> constants defined on this interface.</dd>
+</dl>
+

@@ -1,0 +1,9 @@
+<h2 id="Constants">Constants</h2>
+
+<p>This extension exposes one new constant, which can be used in the {{domxref("WebGLRenderingContext.hint()", "hint()")}} and {{domxref("WebGLRenderingContext.getParameter()", "getParameter()")}} methods.</p>
+
+<dl>
+ <dt><code>ext.FRAGMENT_SHADER_DERIVATIVE_HINT_OES</code></dt>
+ <dd>A {{domxref("Glenum")}} indicating the accuracy of the derivative calculation for the GLSL built-in functions: <code>dFdx</code>, <code>dFdy</code>, and <code>fwidth</code>.</dd>
+</dl>
+

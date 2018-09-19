@@ -1,0 +1,19 @@
+<h2 name="Properties" id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("XPathResult.booleanValue")}}{{readonlyInline}}</dt>
+ <dd>boolean</dd>
+ <dt>{{domxref("XPathResult.invalidIteratorState")}}{{readonlyInline}}</dt>
+ <dd>boolean</dd>
+ <dt>{{domxref("XPathResult.numberValue")}}{{readonlyInline}}</dt>
+ <dd>float</dd>
+ <dt>{{domxref("XPathResult.resultType")}}{{readonlyInline}}</dt>
+ <dd>integer (short)</dd>
+ <dt>{{domxref("XPathResult.singleNodeValue")}}{{readonlyInline}}</dt>
+ <dd>Node</dd>
+ <dt>{{domxref("XPathResult.snapshotLength")}}{{readonlyInline}}</dt>
+ <dd>Integer</dd>
+ <dt>{{domxref("XPathResult.stringValue")}}{{readonlyInline}}</dt>
+ <dd>String</dd>
+</dl>
+

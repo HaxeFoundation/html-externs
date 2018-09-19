@@ -1,0 +1,29 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("Animation.cancel()")}}</dt>
+ <dd>Clears all {{domxref("KeyframeEffect", "keyframeEffects")}} caused by this animation and aborts its playback.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.finish()")}}</dt>
+ <dd>Seeks either end of an animation, depending on whether the animation is playing or reversing.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.pause()")}}</dt>
+ <dd>Suspends playing of an animation.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.play()")}}</dt>
+ <dd>Starts or resumes playing of an animation, or begins the animation again if it previously finished.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("Animation.reverse()")}}</dt>
+ <dd>Reverses playback direction, stopping at the start of the animation. If the animation is finished or unplayed, it will play from end to beginning.</dd>
+ <dt>{{domxref("Animation.updatePlaybackRate()")}}</dt>
+ <dd>Sets the speed of an animation after first synchronizing its playback position.</dd>
+</dl>
+

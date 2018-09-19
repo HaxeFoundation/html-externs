@@ -1,0 +1,29 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, </em>{{domxref('AudioNode')}}.</p>
+
+<div class="note">
+<p>The position, forward, and up value are set and retrieved using different syntaxes. Retrieval is done by accessing, for example, <code>AudioListener.positionX</code>, while setting the same property is done with <code>AudioListener.positionX.value</code>. This is why these values are not marked read only, which is how they appear in the specification's IDL.</p>
+</div>
+
+<dl>
+ <dt>{{domxref("AudioListener.positionX")}}</dt>
+ <dd>Represents the horizontal position of the listener in a right-hand cartesian coordinate sytem. The default is 0.</dd>
+ <dt>{{domxref("AudioListener.positionY")}}</dt>
+ <dd>Represents the vertical position of the listener in a right-hand cartesian coordinate sytem. The default is 0.</dd>
+ <dt>{{domxref("AudioListener.positionZ")}}</dt>
+ <dd>Represents the longitudinal (back and forth) position of the listener in a right-hand cartesian coordinate sytem. The default is 0.</dd>
+ <dt>{{domxref("AudioListener.forwardX")}}</dt>
+ <dd>Represents the horizontal position of the listener's forward direction in the same cartesian coordinate sytem as the position (<code>positionX</code>, <code>positionY</code>, and <code>positionZ</code>) values. The forward and up values are linearly independent of each other. The default is 0.</dd>
+ <dt>{{domxref("AudioListener.forwardY")}}</dt>
+ <dd>Represents the vertical position of the listener's forward direction in the same cartesian coordinate sytem as the position (<code>positionX</code>, <code>positionY</code>, and <code>positionZ</code>) values. The forward and up values are linearly independent of each other. The default is 0.</dd>
+ <dt>{{domxref("AudioListener.forwardZ")}}</dt>
+ <dd>Represents the longitudinal (back and forth) position of the listener's forward direction in the same cartesian coordinate sytem as the position (<code>positionX</code>, <code>positionY</code>, and <code>positionZ</code>) values. The forward and up values are linearly independent of each other. The default is -1.</dd>
+ <dt>{{domxref("AudioListener.upX")}}</dt>
+ <dd>Represents the horizontal position of the top of the listener's head in the same cartesian coordinate sytem as the position (<code>positionX</code>, <code>positionY</code>, and <code>positionZ</code>) values. The forward and up values are linearly independent of each other. The default is 0.</dd>
+ <dt>{{domxref("AudioListener.upY")}}</dt>
+ <dd>Represents the vertical position of the top of the listener's head in the same cartesian coordinate sytem as the position (<code>positionX</code>, <code>positionY</code>, and <code>positionZ</code>) values. The forward and up values are linearly independent of each other. The default is 1.</dd>
+ <dt>{{domxref("AudioListener.upZ")}}</dt>
+ <dd>Represents the longitudinal (back and forth) position of the top of the listener's head in the same cartesian coordinate sytem as the position (<code>positionX</code>, <code>positionY</code>, and <code>positionZ</code>) values. The forward and up values are linearly independent of each other. The default is 0.</dd>
+</dl>
+

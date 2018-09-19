@@ -1,0 +1,1 @@
+The <strong><code>SpeechRecognitionAlternative</code></strong> interface of the <a href="/en-US/docs/Web/API/Web_Speech_API">Web Speech API</a> represents a single word that has been recognised by the speech recognition service.

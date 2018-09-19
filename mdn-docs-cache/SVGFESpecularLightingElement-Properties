@@ -1,0 +1,19 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent interface, {{domxref("SVGElement")}}, and also implements properties of {{domxref("SVGFilterPrimitiveStandardAttributes")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGFESpecularLightingElement.in1")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedString")}} corresponding to the {{SVGAttr("in")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFESpecularLightingElement.surfaceScale")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("surfaceScale")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFESpecularLightingElement.specularConstant")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("specularConstant")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFESpecularLightingElement.specularExponent")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the {{SVGAttr("specularExponent")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFESpecularLightingElement.kernelUnitLengthX")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the X component of the {{SVGAttr("kernelUnitLength")}} attribute of the given element.</dd>
+ <dt>{{domxref("SVGFESpecularLightingElement.kernelUnitLengthY")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGAnimatedNumber")}} corresponding to the Y component of the {{SVGAttr("kernelUnitLength")}} attribute of the given element.</dd>
+</dl>
+

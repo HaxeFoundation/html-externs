@@ -1,0 +1,26 @@
+<h2 id="Properties">Properties</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>align</code></td>
+   <td>unsigned short</td>
+   <td>The type of the alignment value as specified by one of the SVG_PRESERVEASPECTRATIO_* constants defined on this interface.</td>
+  </tr>
+  <tr>
+   <td><code>meetOrSlice</code></td>
+   <td>unsigned short</td>
+   <td>The type of the meet-or-slice value as specified by one of the SVG_MEETORSLICE_* constants defined on this interface.</td>
+  </tr>
+ </tbody>
+</table>
+
+<p><strong>Exceptions on setting:</strong> a <code><a rel="custom" href="DOMException">DOMException</a></code> with code <code>NO_MODIFICATION_ALLOWED_ERR</code> is raised on an attempt to change the value of an attribute on a read only object.</p>
+

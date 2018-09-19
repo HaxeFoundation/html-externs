@@ -1,0 +1,4 @@
+<h2 id="Properties">Properties</h2>
+
+<p>As a {{domxref("CSSConditionRule")}} and therefore a {{domxref("CSSRule")}} and a {{domxref("CSSGroupingRule")}}, <code>CSSSupportsRule</code> also implements the properties of these interfaces. It has no specific properties.</p>
+

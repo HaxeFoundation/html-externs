@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("NodeList.item()")}}</dt>
+ <dd>Returns an item in the list by its index, or <code>null</code> if the index is out-of-bounds; can be used as an alternative to simply accessing <code>nodeList[idx]</code> (which instead returns  <code>undefined</code> when <code>idx</code> is out-of-bounds).</dd>
+ <dt>{{domxref("NodeList.entries()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols","iterator")}} allowing to go through all key/value pairs contained in this object.</dd>
+ <dt>{{domxref("NodeList.forEach()")}}</dt>
+ <dd>Executes a provided function once per <code>NodeList</code> element.</dd>
+ <dt>{{domxref("NodeList.keys()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing to go through all keys of the key/value pairs contained in this object.</dd>
+ <dt>{{domxref("NodeList.values()")}}</dt>
+ <dd>Returns an {{jsxref("Iteration_protocols", "iterator")}} allowing to go through all values of the key/value pairs contained in this object.</dd>
+</dl>
+

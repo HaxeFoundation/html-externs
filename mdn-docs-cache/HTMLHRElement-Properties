@@ -1,0 +1,41 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}.</em></p>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Name</th>
+   <th scope="col">Type</th>
+   <th scope="col">Description</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>align</code> {{obsolete_inline}}</td>
+   <td>{{domxref("DOMString")}}</td>
+   <td>Enumerated attribute indicating alignment of the rule with respect to the surrounding context.</td>
+  </tr>
+  <tr>
+   <td><code>color</code> {{obsolete_inline}}</td>
+   <td>{{domxref("DOMString")}}</td>
+   <td>The name of the color of the rule.</td>
+  </tr>
+  <tr>
+   <td><code>noshade</code> {{obsolete_inline}}</td>
+   <td>{{domxref("Boolean")}}</td>
+   <td>Sets the rule to have no shading.</td>
+  </tr>
+  <tr>
+   <td><code>size</code> {{obsolete_inline}}</td>
+   <td>{{domxref("DOMString")}}</td>
+   <td>The height of the rule.</td>
+  </tr>
+  <tr>
+   <td><code>width</code> {{obsolete_inline}}</td>
+   <td>{{domxref("DOMString")}}</td>
+   <td>The width of the rule on the page.</td>
+  </tr>
+ </tbody>
+</table>
+

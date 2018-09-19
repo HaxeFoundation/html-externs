@@ -1,0 +1,19 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>This interface defines the following methods.</em></p>
+
+<dl>
+ <dt>{{domxref("FileSystemEntry.copyTo", "copyTo()")}}</dt>
+ <dd>Copies the file or directory to a new location on the file system.</dd>
+ <dt>{{domxref("FileSystemEntry.getMetadata", "getMetadata()")}}</dt>
+ <dd>Obtains metadata about the file, such as its modification date and size.</dd>
+ <dt>{{domxref("FileSystemEntry.getParent", "getParent()")}}</dt>
+ <dd>Returns a {{domxref("FileSystemDirectoryEntry")}} representing the entry's parent directory.</dd>
+ <dt>{{domxref("FileSystemEntry.moveTo", "moveTo()")}}</dt>
+ <dd>Moves the file or directory to a new location on the file system, or renames the file or directory.</dd>
+ <dt>{{domxref("FileSystemEntry.remove", "remove()")}}</dt>
+ <dd>Removes the specified file or directory. You can only remove directories which are empty.</dd>
+ <dt>{{domxref("FileSystemEntry.toURL", "toURL()")}}</dt>
+ <dd>Creates and returns a URL which identifies the entry. This URL uses the URL scheme <code>"filesystem:"</code>.</dd>
+</dl>
+

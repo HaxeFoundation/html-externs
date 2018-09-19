@@ -1,0 +1,9 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("TimeRanges.start()")}}</dt>
+ <dd>Returns the time for the start of the range with the specified index.</dd>
+ <dt>{{domxref("TimeRanges.end()")}}</dt>
+ <dd>Returns the time for the end of the specified range.</dd>
+</dl>
+

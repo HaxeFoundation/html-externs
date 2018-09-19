@@ -1,0 +1,14 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent {{domxref("Event")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("BlobEvent.data")}} {{readonlyInline}}</dt>
+ <dd>A {{domxref("Blob")}} representing the data associated with the event. The event was fired on the {{domxref("EventTarget")}} because of something happening on that specific {{domxref("Blob")}}.</dd>
+ <dt>{{domxref("BlobEvent.timecode")}} {{readonlyinline}}</dt>
+ <dd>A {{domxref("DOMHighResTimeStamp")}} indicating the difference between the timestamp of the first chunk in data and the timestamp of the first chunk in the first BlobEvent produced by this recorder. Note that the timecode in the first produced BlobEvent does not need to be zero.</dd>
+</dl>
+
+<dl>
+</dl>
+

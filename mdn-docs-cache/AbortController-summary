@@ -1,0 +1,1 @@
+The <strong><code>AbortController</code></strong> interface represents a controller object that allows you to abort one or more DOM requests as and when desired.

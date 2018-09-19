@@ -1,0 +1,16 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("PermissionStatus.state")}} {{readonlyinline}} </dt>
+	<dd>Returns the state of a requested permission; one of <code>'granted'</code>, <code>'denied'</code>, or <code>'prompt'</code>.</dd>
+	<dt>{{domxref("PermissionStatus.status")}}{{readonlyinline}} {{deprecated_inline()}}</dt>
+	<dd>Returns the state of a requested permission; one of <code>'granted'</code>, <code>'denied'</code>, or <code>'prompt'</code>. Later versions of the specification replace this with {{domxref("PermissionStatus.state")}}.</dd>
+</dl>
+
+<h3 id="Event_Handler">Event Handler</h3>
+
+<dl>
+	<dt>{{domxref("PermissionStatus.onchange")}}</dt>
+	<dd>An event called whenever <code>PermissionStatus.status</code> changes.</dd>
+</dl>
+

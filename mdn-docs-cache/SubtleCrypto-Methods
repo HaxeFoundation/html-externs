@@ -1,0 +1,31 @@
+<h2 id="Methods">Methods</h2>
+
+<p>This interface doesn't inherit any method.</p>
+
+<dl>
+	<dt>{{domxref("SubtleCrypto.encrypt()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of the encrypted data corresponding to the clear text, algorithm and key given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.decrypt()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of the clear data corresponding to the encrypted text, algorithm and key given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.sign()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of the signature corresponding to the text, algorithm and key given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.verify()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a {{jsxref("Boolean")}} value indicating if the signature given as parameter matches the text, algorithm and key also given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.digest()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a digest generated from the algorithm and text given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.generateKey()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a newly generated {{domxref("CryptoKey")}}, for symmetrical algorithms, or a {{domxref("CryptoKeyPair")}}, containing two newly generated keys, for asymmetrical algorithm, that matches the algorithm, the usages and the extractability given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.deriveKey()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a newly generated {{domxref("CryptoKey")}} derived from a master key and a specific algorithm given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.deriveBits()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a newly generated buffer of pseudo-random bits derived from a master key and a specific algorithm given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.importKey()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a {{domxref("CryptoKey")}} corresponding to the format, the algorithm, the raw key data, the usages and the extractability given as parameters.</dd>
+	<dt>{{domxref("SubtleCrypto.exportKey()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a buffer containing the key in the format requested.</dd>
+	<dt>{{domxref("SubtleCrypto.wrapKey()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a wrapped symmetric key for usage (transfer, storage) in insecure environments. The wrapped buffer returned is in the format given in parameters, and contains the key wrapped by the given wrapping key with the given algorithm.</dd>
+	<dt>{{domxref("SubtleCrypto.unwrapKey()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} of a {{domxref("CryptoKey")}} corresponding to the wrapped key given in parameter.</dd>
+</dl>
+

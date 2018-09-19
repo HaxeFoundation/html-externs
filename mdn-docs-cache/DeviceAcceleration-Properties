@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("DeviceAcceleration.x")}} {{readonlyInline}}</dt>
+ <dd>The amount of acceleration along the X axis. <strong>Read only.</strong></dd>
+ <dt>{{domxref("DeviceAcceleration.y")}} {{readonlyInline}}</dt>
+ <dd>The amount of acceleration along the Y axis. <strong>Read only.</strong></dd>
+ <dt>{{domxref("DeviceAcceleration.z")}} {{readonlyInline}}</dt>
+ <dd>The amount of acceleration along the Z axis. <strong>Read only.</strong></dd>
+</dl>
+

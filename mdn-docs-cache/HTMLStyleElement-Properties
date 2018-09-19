@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("HTMLElement")}}</em><em>, and implements {{domxref("LinkStyle")}}</em><em>.</em></p>
+
+<dl>
+ <dt>{{domxref("HTMLStyleElement.media")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the intended destination medium for style information.</dd>
+ <dt>{{domxref("HTMLStyleElement.type")}}</dt>
+ <dd>Is a {{domxref("DOMString")}} representing the type of style being applied by this statement.</dd>
+ <dt>{{domxref("HTMLStyleElement.disabled")}}</dt>
+ <dd>Is a {{domxref("Boolean")}} value representing whether or not the stylesheet is disabled (true) or not (false).</dd>
+ <dt>{{domxref("LinkStyle.sheet")}} {{readonlyInline}}</dt>
+ <dd>Returns the {{domxref("StyleSheet")}} object associated with the given element, or <code>null</code> if there is none</dd>
+ <dt>{{domxref("HTMLStyleElement.scoped")}} {{non-standard_inline}} {{obsolete_inline}}</dt>
+ <dd>Is a {{domxref("Boolean")}} value indicating if the element applies to the whole document (<code>false</code>) or only to the parent's sub-tree (<code>true</code>).</dd>
+</dl>
+

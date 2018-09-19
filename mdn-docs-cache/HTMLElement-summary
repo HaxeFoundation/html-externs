@@ -1,0 +1,1 @@
+The <strong><code>HTMLElement</code></strong> interface represents any <a href="/en-US/docs/Web/HTML" title="/en-US/docs/Web/HTML">HTML</a> element. Some elements directly implement this interface, others implement it via an interface that inherits it.

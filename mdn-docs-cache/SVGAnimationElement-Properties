@@ -1,0 +1,17 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This interface also inherits properties from its parent, {{domxref("SVGElement")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("SVGAnimationElement.targetElement")}} {{ReadOnlyInline}}</dt>
+ <dd>An {{domxref("SVGElement")}} representing the element which is being animated. If no target element is being animated (for example, because the {{SVGAttr("href")}} specifies an unknown element) the value returned is <code>null</code>.</dd>
+ <dt>{{domxref("SVGAnimationElement.onbegin")}} {{experimental_inline}}</dt>
+ <dd>
+ <p>The event handler for the {{event("beginEvent")}} event .</p>
+ </dd>
+ <dt>{{domxref("SVGAnimationElement.onend")}} {{experimental_inline}}</dt>
+ <dd>The event handler for the {{event("endEvent")}} event .</dd>
+ <dt>{{domxref("SVGAnimationElement.onrepeat")}} {{experimental_inline}}</dt>
+ <dd>The event handler for the {{event("repeatEvent")}} event .</dd>
+</dl>
+

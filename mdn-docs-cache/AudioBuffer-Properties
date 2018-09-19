@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("AudioBuffer.sampleRate")}} {{readonlyInline}}</dt>
+ <dd>Returns a float representing the sample rate, in samples per second, of the PCM data stored in the buffer.</dd>
+ <dt>{{domxref("AudioBuffer.length")}} {{readonlyInline}}</dt>
+ <dd>Returns an integer representing the length, in sample-frames, of the PCM data stored in the buffer.</dd>
+ <dt>{{domxref("AudioBuffer.duration")}} {{readonlyInline}}</dt>
+ <dd>Returns a double representing the duration, in seconds, of the PCM data stored in the buffer.</dd>
+ <dt>{{domxref("AudioBuffer.numberOfChannels")}} {{readonlyInline}}</dt>
+ <dd>Returns an integer representing the number of discrete audio channels described by the PCM data stored in the buffer.</dd>
+</dl>
+

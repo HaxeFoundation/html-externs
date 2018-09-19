@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+	<dt>{{domxref("FileSystem.name")}} {{ReadOnlyInline}}</dt>
+	<dd>A {{domxref("USVString")}} representing the file system's name. This name is unique among the entire list of exposed file systems.</dd>
+	<dt>{{domxref("FileSystem.root")}} {{ReadOnlyInline}}</dt>
+	<dd>A {{domxref("FileSystemDirectoryEntry")}} object which represents the file system's root directory. Through this object, you can gain access to all files and directories in the file system.</dd>
+</dl>
+

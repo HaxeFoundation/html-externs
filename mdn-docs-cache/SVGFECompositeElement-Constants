@@ -1,0 +1,47 @@
+<h2 id="Constants">Constants</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th>Name</th>
+   <th>Value</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_UNKNOWN</code></td>
+   <td>0</td>
+   <td>The type is not one of predefined types. It is invalid to attempt to define a new value of this type or to attempt to switch an existing value to this type.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_OVER</code></td>
+   <td>1</td>
+   <td>Corresponds to the <code>over</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_IN</code></td>
+   <td>2</td>
+   <td>Corresponds to the <code>in</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_OUT</code></td>
+   <td>3</td>
+   <td>Corresponds to <code>out</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_ATOP</code></td>
+   <td>4</td>
+   <td>Corresponds to <code>atop</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_XOR</code></td>
+   <td>5</td>
+   <td>Corresponds to <code>xor</code> value.</td>
+  </tr>
+  <tr>
+   <td><code>SVG_FECOMPOSITE_OPERATOR_ARITHMETIC</code></td>
+   <td>6</td>
+   <td>Corresponds to <code>arithmetic</code> value.</td>
+  </tr>
+ </tbody>
+</table>
+

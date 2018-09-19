@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt id="selectorText">{{domxref("CSSStyleRule.selectorText")}}</dt>
+ <dd>Gets the textual representation of the selector for this rule, e.g. <code>"h1,h2"</code>.</dd>
+ <dt id="style">{{domxref("CSSStyleRule.style")}}</dt>
+ <dd>Returns the {{domxref("CSSStyleDeclaration")}} object for the rule.</dd>
+</dl>
+

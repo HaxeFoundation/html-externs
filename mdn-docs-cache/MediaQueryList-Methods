@@ -1,0 +1,14 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>The new version of the <code>MediaQueryList</code> interface inherits methods from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{domxref("MediaQueryList.addListener()")}}</dt>
+ <dd> Adds a listener to the <code>MediaQueryListener</code> that will run a custom callback function in response to the media query status changing. This is basically an alias for {{domxref("EventTarget.addEventListener()")}}, for backwards compatibility purposes.</dd>
+ <dt>{{domxref("MediaQueryList.removeListener()")}}</dt>
+ <dd> Removes a listener from the <code>MediaQueryListener</code>. This is basically an alias for {{domxref("EventTarget.removeEventListener()")}}, for backwards compatibility purposes.</dd>
+</dl>
+
+<dl>
+</dl>
+

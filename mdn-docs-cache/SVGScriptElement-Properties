@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("SVGScriptElement.type")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} corresponding to the {{SVGAttr("type")}} attribute of the given {{SVGElement("script")}} element. A {{domxref("DOMException")}} is raised with the code <code>NO_MODIFICATION_ALLOWED_ERR</code> on an attempt to change the value of a read only attribut.</dd>
+ <dt>{{domxref("SVGScriptElement.crossOrigin")}} {{ReadOnlyInline}}</dt>
+ <dd>A {{domxref("DOMString")}} corresponding to the {{SVGAttr("crossorigin")}} attribute of the given {{SVGElement("script")}} element.</dd>
+</dl>
+

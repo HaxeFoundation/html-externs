@@ -1,0 +1,9 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, </em><em>{{domxref("AudioNode")}}</em>.</p>
+
+<dl>
+ <dt>{{domxref("MediaStreamAudioDestinationNode.stream")}}</dt>
+ <dd>Is a {{domxref("MediaStream")}} containing a single {{domxref("AudioMediaStreamTrack")}} with the same number of channels as the node itself. You can use this property to get a stream out of the audio graph and feed it into another construct, such as a <a href="/en-US/docs/Web/API/MediaRecorder_API">Media Recorder</a>.</dd>
+</dl>
+

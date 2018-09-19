@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Also implements methods from its parent interface, </em>{{domxref("EventTarget")}}.</p>
+
+<dl>
+	<dt>{{domxref("ServiceWorkerRegistration.getNotifications()")}}</dt>
+	<dd>Returns a {{jsxref("Promise")}} that resolves to an array of {{domxref("Notification")}} objects.</dd>
+	<dt>{{domxref("ServiceWorkerRegistration.showNotification()")}}</dt>
+	<dd>Displays the notification with the requested title.</dd>
+	<dt>{{domxref("ServiceWorkerRegistration.update()")}}</dt>
+	<dd>Checks the server for an updated version of the service worker without consulting caches.</dd>
+	<dt>{{domxref("ServiceWorkerRegistration.unregister()")}}</dt>
+	<dd>Unregisters the service worker registration and returns a {{jsxref("Promise")}}. The service worker will finish any ongoing operations before it is unregistered.</dd>
+</dl>
+
