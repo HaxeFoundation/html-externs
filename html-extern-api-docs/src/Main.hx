@@ -28,7 +28,7 @@ class Main
 	static var IN_FOLDER = null;
 	
 	// all scraped data will be stored here. When running for second time it will use data from disk
-	static inline var DATA_FOLDER = "_mdn-docs-cache/";
+	static inline var DATA_FOLDER = "mdn-docs-cache/";
 	
 	static inline var MDN_URL = "https://developer.mozilla.org/en-US/docs/Web/API/";
 
