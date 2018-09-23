@@ -15,7 +15,8 @@ RESERVED_WORDS = set([
 	"finally", "float", "for", "function", "goto", "if", "implements", "import", "in", "instanceof", "int",
 	"interface", "is", "let", "long", "namespace", "native", "new", "null", "package", "private", "protected",
 	"public", "return", "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
-	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield", "inline"
+	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield", "inline",
+	"overload", "operator",
 ])
 
 WHITELIST = set([
