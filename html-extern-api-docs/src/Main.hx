@@ -267,7 +267,7 @@ class Main
 				processedHaxeFile = regexp.map(processedHaxeFile, function(regexp) 
 				{
 					stats.methods.total ++;
-					var methodName = regexp.matched(6);
+					var methodName = stripTrailingUnderscores(regexp.matched(6));
 
 					var result = getDoc(thing, methodName, true, descriptionList);
 
@@ -297,7 +297,7 @@ class Main
 				processedHaxeFile = regexp.map(processedHaxeFile, function(regexp) 
 				{
 					stats.properties.total ++;
-					var property = regexp.matched(6);
+					var property = stripTrailingUnderscores(regexp.matched(6));
 
 					var result = getDoc(thing, property, false, descriptionList);
 
@@ -524,6 +524,11 @@ class Main
 
 	private function escapeRegExp(string: String) {
 		return (~/([.*+?^${}()|[\]\\])/g).replace(string, '\\$1');
+	}
+
+	private function stripTrailingUnderscores(str: String) {
+		var p = ~/_+$/;
+		return p.match(str) ? str.substr(0, p.matchedPos().pos) : str;
 	}
 	
 	private function logStat(stat:{total:Int, replaced:Int})
