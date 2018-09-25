@@ -10,13 +10,14 @@ import textwrap
 from WebIDL import *
 
 RESERVED_WORDS = set([
-	"abstract", "as", "boolean", "break", "byte", "case", "catch", "char", "class", "continue", "const",
-	"debugger", "default", "delete", "do", "double", "else", "enum", "export", "extends", "false", "final",
-	"finally", "float", "for", "function", "goto", "if", "implements", "import", "in", "instanceof", "int",
-	"interface", "is", "let", "long", "namespace", "native", "new", "null", "package", "private", "protected",
-	"public", "return", "short", "static", "super", "switch", "synchronized", "this", "throw", "throws",
-	"transient", "true", "try", "typeof", "use", "var", "void", "volatile", "while", "with", "yield", "inline",
-	"overload", "operator",
+	# see core/ast.ml
+	"public", "private", "static", "override", "dynamic", "inline", "macro",
+	"final", "extern", "function", "class", "static", "var", "if", "else", "while",
+	"do", "for", "break", "return", "continue", "extends", "implements", "import",
+	"switch", "case", "default", "private", "public", "try", "catch", "new", "this",
+	"throw", "extern", "enum", "in", "interface", "untyped", "cast", "override",
+	"typedef", "dynamic", "package", "inline", "using", "null", "true", "false",
+	"abstract", "macro", "final", "operator", "overload",
 ])
 
 WHITELIST = set([
