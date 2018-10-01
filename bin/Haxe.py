@@ -17,7 +17,7 @@ RESERVED_WORDS = set([
 	"switch", "case", "default", "private", "public", "try", "catch", "new", "this",
 	"throw", "extern", "enum", "in", "interface", "untyped", "cast", "override",
 	"typedef", "dynamic", "package", "inline", "using", "null", "true", "false",
-	"abstract", "macro", "final", "operator", "overload",
+	"abstract", "macro", "final", "operator", "overload", "protected",
 ])
 
 WHITELIST = set([
