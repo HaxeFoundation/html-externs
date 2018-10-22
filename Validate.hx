@@ -5,7 +5,6 @@ class Validate {
 		js.Lib;
 		js.Boot;
 		js.Date;
-		js.jquery.JQuery;
 
 		// ensure listerner callback argument is typed
 		js.Browser.window.addEventListener('mousedown', function(e) {
