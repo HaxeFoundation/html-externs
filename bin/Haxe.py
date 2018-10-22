@@ -135,6 +135,7 @@ FUNCS = set([
 	"nsGlobalWindowInner::DeviceSensorsEnabled",
 	"IsNotUAWidget",
 	"nsGlobalWindowInner::IsWindowPrintEnabled",
+	"ServiceWorkerContainer::IsEnabled",
 ])
 
 HARDCODED_METHODS = {
