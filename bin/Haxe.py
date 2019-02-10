@@ -689,7 +689,12 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			write(">")
 
 		if argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue):
-				write(" = ", argument.defaultValue)
+			write(" = ")
+			# write enum values as their enum field names rather than strings
+			if argument.type.isEnum() and argument.defaultValue.type.isString():
+				write(toEnumValue(argument.defaultValue.value))
+			else:
+				write(argument.defaultValue)
 
 	def writeIdl (idl):
 		if isinstance(idl, IDLInterfaceOrNamespace):
