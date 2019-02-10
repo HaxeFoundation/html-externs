@@ -400,11 +400,11 @@ class Program ():
 		self.idls = idls
 
 	def generate (self, outputDir):
+		applyInheritanceFixes(self.idls)
+
 		knownTypes = []
 		for idl in self.idls:
-			if isinstance(idl, IDLInterfaceOrNamespace) or \
-					isinstance(idl, IDLEnum) or \
-					isinstance(idl, IDLDictionary) and isAvailable(idl):
+			if isRealType(idl) and isAvailable(idl):
 				knownTypes.append(stripTrailingUnderscore(idl.identifier.name))
 
 		usedTypes = set()
@@ -417,10 +417,7 @@ class Program ():
 		usedTypeReferenceDistance = 3
 		for number in range(usedTypeReferenceDistance):
 			for idl in self.idls:
-				if (isinstance(idl, IDLInterfaceOrNamespace) or \
-						isinstance(idl, IDLEnum) or \
-						isinstance(idl, IDLDictionary)) and \
-						stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+				if isRealType(idl) and stripTrailingUnderscore(idl.identifier.name) in usedTypes:
 					usedTypes |= checkUsage(idl)
 
 		def addDictParent(idl):
@@ -438,10 +435,7 @@ class Program ():
 				usedTypes.discard(idl.implementee.identifier.name)
 
 		for idl in self.idls:
-			if (isinstance(idl, IDLInterfaceOrNamespace) or \
-					isinstance(idl, IDLEnum) or \
-					isinstance(idl, IDLDictionary)) and \
-					stripTrailingUnderscore(idl.identifier.name) in usedTypes:
+			if isRealType(idl) and stripTrailingUnderscore(idl.identifier.name) in usedTypes:
 
 				if (isAvailable(idl)):
 					generate(idl, usedTypes, knownTypes, self.cssProperties, outputDir)
@@ -580,7 +574,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			else:
 				for argument in arguments:
 					write(argument.type, " -> ")
-				write(returnType)
+					write(returnType)
 		else:
 			write("Void -> ", returnType)
 
@@ -595,8 +589,10 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			else:
 				writeHaxeFunctionType(callback.signatures()[0])
 		elif idl.nullable():
-			# write("Null<", idl.inner, ">")
+			# although it's correct to output Null<T>, it's quite a lot more verbose than we'd like
+			# write("Null<")
 			writeType(idl.inner, subTypeMode)
+			# write(">")
 		elif idl.isSequence():
 			write("Array<")
 			writeType(idl.inner, subTypeMode)
@@ -692,6 +688,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		if isinstance(idl, IDLInterfaceOrNamespace):
 			nativeName = stripTrailingUnderscore(idl.identifier.name)
 			haxeType = determineHaxeType(idl)
+			haxeName = toHaxeType(idl.identifier.name)
 
 			if idl.identifier.name in DEPRECATED:
 				message = DEPRECATED[idl.identifier.name]
@@ -701,12 +698,12 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeln("\")")
 
 			if haxeType == "interface":
-				write("extern interface ", toHaxeType(idl.identifier.name))
+				write("extern interface ", haxeName)
 			elif haxeType == "typedef":
-				write("typedef ", toHaxeType(idl.identifier.name), " =")
+				write("typedef ", haxeName, " =")
 			elif haxeType == "class":
 				writeln("@:native(\"%s\")" % nativeName)
-				write("extern class ", toHaxeType(idl.identifier.name))
+				write("extern class ", haxeName)
 				if idl.parent:
 					write(" extends ")
 					writeHaxeType(idl.parent.identifier.name)
@@ -1091,6 +1088,24 @@ def generateWebGLExtensionEnum(idls, outputDir):
 
 	file.write("}\n")
 
+def applyInheritanceFixes(idls):
+	# WebGL2 context should inherit from WebGL1
+
+	webGLRenderingContextIdl = None
+	webGL2RenderingContextIdl = None
+
+	for idl in idls:
+		if not isRealType(idl):
+			continue
+		name = stripTrailingUnderscore(idl.identifier.name)
+		if name == "WebGLRenderingContext":
+			webGLRenderingContextIdl = idl
+		elif name == "WebGL2RenderingContext":
+			webGL2RenderingContextIdl = idl
+
+	webGL2RenderingContextIdl.parent = webGLRenderingContextIdl	
+
+
 def determineHaxeType(idlInterfaceOrNamespace):
 	# it's a compile-time only type if it has the [NoInterfaceObject] attribute or it's a callback type
 	# if the type has constants then we need a concrete class to host them
@@ -1264,6 +1279,13 @@ def isBlacklisted(idl):
 		# Hack for WebRTC, which is moz prefixed but we want it
 		if not idl.identifier.name.startswith("mozRTC"):
 			return True
+
+# 'real' types are ones which can be generated
+def isRealType(idl):
+	return isinstance(idl, IDLInterfaceOrNamespace) \
+			or isinstance(idl, IDLEnum) \
+			or isinstance(idl, IDLDictionary)
+			# or isinstance(idl, IDLTypedef)
 
 def isAvailable (idl):
 	if isWhitelisted(idl):
