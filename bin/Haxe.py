@@ -574,9 +574,16 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			else:
 				for argument in arguments:
 					write(argument.type, " -> ")
-				write(returnType)
+				if returnType.nullable():
+					write("Null<", returnType, ">")
+				else:
+					write(returnType)
 		else:
-			write("Void -> ", returnType)
+			write("Void -> ")
+			if returnType.nullable():
+				write("Null<", returnType, ">")
+			else:
+				write(returnType)
 
 	def writeType (idl, subTypeMode):
 		name = stripTrailingUnderscore(idl.name)
