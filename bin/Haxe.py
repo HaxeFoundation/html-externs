@@ -669,7 +669,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeHaxeType(name)
 
 	def writeArgument(argument, overrideType = None, subTypeMode = None):
-		if argument.optional and not argument.variadic:
+		nonNullDefault = argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue)
+
+		if argument.optional and not argument.variadic and not nonNullDefault:
 			write("?")
 
 		write(argument.identifier, " : ")
@@ -688,7 +690,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		if argument.variadic:
 			write(">")
 
-		if argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue):
+		if nonNullDefault:
 			write(" = ")
 			# write enum values as their enum field names rather than strings
 			if argument.type.isEnum() and argument.defaultValue.type.isString():
