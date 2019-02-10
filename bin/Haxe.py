@@ -574,7 +574,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			else:
 				for argument in arguments:
 					write(argument.type, " -> ")
-					write(returnType)
+				write(returnType)
 		else:
 			write("Void -> ", returnType)
 
