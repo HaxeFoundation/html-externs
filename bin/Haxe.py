@@ -108,10 +108,11 @@ PREFS = set([
 
 	"dom.webmidi.enabled",
 	"dom.select_events.enabled",
+	
+	"dom.IntersectionObserver.enabled",
 
 	# new APIs that are not yet stsable enough
 	# "dom.input.dirpicker",
-	# "dom.IntersectionObserver.enabled",
 ])
 
 FUNCS = set([
