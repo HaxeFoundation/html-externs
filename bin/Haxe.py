@@ -149,12 +149,12 @@ FUNCS = set([
 	"Navigator::HasUserMediaSupport",
 	"mozilla::dom::DOMPrefs::DOMCachesEnabled",
 	"mozilla::dom::DOMPrefs::PerformanceObserverEnabled",
+	"mozilla::dom::DOMPrefs::StorageManagerEnabled",
 
 	# new APIs that are not yet stable enough or widely implemented
 	# "mozilla::dom::PaymentRequest::PrefEnabled",
 	# "mozilla::dom::MediaCapabilities::Enabled",
 	# "nsScreen::MediaCapabilitiesEnabled",
-	# "mozilla::dom::DOMPrefs::StorageManagerEnabled",
 	# "mozilla::dom::DOMPrefs::StreamsEnabled",
 	# "mozilla::dom::DOMPrefs::NotificationEnabledInServiceWorkers",
 	# "mozilla::dom::DOMPrefs::PushEnabled",
