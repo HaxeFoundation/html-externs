@@ -107,9 +107,9 @@ PREFS = set([
 	"dom.pointer-lock.enabled",
 
 	# new APIs that are not yet stsable enough
+	"dom.webmidi.enabled",
 	# "dom.input.dirpicker",
 	# "dom.select_events.enabled",
-	# "dom.webmidi.enabled",
 	# "dom.IntersectionObserver.enabled",
 ])
 
@@ -131,7 +131,6 @@ FUNCS = set([
 	"nsDocument::IsWebAnimationsGetAnimationsEnabled",
 	"nsDocument::IsShadowDOMEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
-	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
 	"nsDocument::IsUnprefixedFullscreenEnabled",
 	"nsIDocument::IsUnprefixedFullscreenEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
@@ -156,6 +155,7 @@ FUNCS = set([
 	# "mozilla::dom::DOMPrefs::StreamsEnabled",
 	# "mozilla::dom::DOMPrefs::NotificationEnabledInServiceWorkers",
 	# "mozilla::dom::DOMPrefs::PushEnabled",
+	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
 ])
 
 HARDCODED_METHODS = {
@@ -296,6 +296,7 @@ class PackageGroup:
 		self.names = set(names)
 		self.removePrefix = removePrefix
 
+# Some APIs aren't nicely prefixed so we can't tell which files belong in their module, so here we keep a list of files that should be forced into a given module
 PACKAGES = {
 	# http://www.w3.org/TR/webaudio/
 	"audio": PackageGroup([
@@ -368,9 +369,6 @@ PACKAGES = {
 		"AudioNodeOptions",
 		"AudioWorkletNodeOptions",
 		"PeriodicWaveConstraints",
-	]),
-	"rtc": PackageGroup([
-		"DataChannel",
 	]),
 	"eme": PackageGroup([
 		"KeyIdsInitData",
@@ -1248,6 +1246,8 @@ def toHaxeType (name):
 		name = name[len("IDB"):]
 	elif name.startswith("RTC"):
 		name = name[len("RTC"):]
+	elif name.startswith("MIDI"):
+		name = name[len("MIDI"):]
 	else:
 		for pkg, group in PACKAGES.iteritems():
 			if group.removePrefix and name.startswith(group.removePrefix) and name in group.names:
@@ -1273,6 +1273,8 @@ def toHaxePackage (name):
 		package.append("svg")
 	elif name.startswith("RTC"):
 		package.append("rtc")
+	elif name.startswith("MIDI"):
+		package.append("midi")
 	else:
 		for pkg, group in PACKAGES.iteritems():
 			if name in group.names:
