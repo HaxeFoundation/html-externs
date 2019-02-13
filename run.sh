@@ -9,18 +9,16 @@ mkdir -p "$HAXE_DIR/std/js/html" &&
 	echo "-------"
 
 	pushd html-extern-api-docs && haxe build.hxml && popd &&
-	neko html-extern-api-docs/htmlexterns.n "$HAXE_DIR/std/js/html/" &&
-	
-	cp -r _output_documented_html/ "$HAXE_DIR/std/js/html" &&
-	{
-		echo "-------"
-		echo "> Validating"
-		echo "-------"
-		$HAXE_DIR/haxe validate.hxml && {
-			echo 'Validated!'
-		} || {
-			echo 'Validation failed.'
-		}
+	neko html-extern-api-docs/htmlexterns.n "$HAXE_DIR/std/js/html/"
+} && {
+	cp -r _output_documented_html/ "$HAXE_DIR/std/js/html"
+} &&  {
+	echo "-------"
+	echo "> Validating"
+	echo "-------"
+	$HAXE_DIR/haxe validate.hxml && {
+		echo 'Validated!'
+	} || {
+		echo 'Validation failed.'
 	}
-
-} 
+}
