@@ -291,7 +291,7 @@ class Main
 				
 			case Properties:
 				// haxiomic: added support for matching properties with metadata
-				var regexp = ~/(\/\*\* (.+?) \*\/\n\t)?((@:?[^\s]+\s*)*(static\s+)?var (.+?)(\(|\s))/g;
+				var regexp = ~/(\/\*\* (.+?) \*\/\n\t)?((@:?[^\s]+\s*)*(static\s+)?var\s+\??(.+?)(\(|\s))/g;
 				// replace extern file content with replaced data
 				
 				processedHaxeFile = regexp.map(processedHaxeFile, function(regexp) 
