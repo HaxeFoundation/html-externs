@@ -1,0 +1,11 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("PerformanceObserverEntryList.getEntries","PerformanceObserverEntryList.getEntries()")}}</dt>
+ <dd>Returns a list of explicitly <em>observed</em> {{domxref("PerformanceEntry")}} objects based on the given <em>filter</em>.</dd>
+ <dt>{{domxref("PerformanceObserverEntryList.getEntriesByType","PerformanceObserverEntryList.getEntriesByType()")}}</dt>
+ <dd>Returns a list of explicitly <em>observed</em> {{domxref("PerformanceEntry")}} objects of the given <em>entry type</em>.</dd>
+ <dt>{{domxref("PerformanceObserverEntryList.getEntriesByName","PerformanceObserverEntryList.getEntriesByName()")}}</dt>
+ <dd>Returns a list of explicitly <em>observed</em> {{domxref("PerformanceEntry")}} objects based on the given <em>name</em> and <em>entry type</em>.</dd>
+</dl>
+

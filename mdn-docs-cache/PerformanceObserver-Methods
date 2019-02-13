@@ -1,0 +1,14 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("PerformanceObserver.observe","PerformanceObserver.observe()")}}</dt>
+ <dd>Specifies the set of {{domxref("PerformanceEntry.entryType","entry types")}} to observe. The performance observer's callback function will be invoked when a {{domxref("PerformanceEntry","performance entry")}} is recorded for one of the specified <code>entryTypes</code></dd>
+ <dt>{{domxref("PerformanceObserver.disconnect","PerformanceObserver.disconnect()")}}</dt>
+ <dd>Stops the performance observer callback from receiving {{domxref("PerformanceEntry","performance entries")}}.</dd>
+ <dt>{{domxref("PerformanceObserver.takeRecords","PerformanceObserver.takeRecords()")}}</dt>
+ <dd>Returns the current list of {{domxref("PerformanceEntry","performance entries")}} stored in the performance observer, emptying it out.</dd>
+</dl>
+
+<dl>
+</dl>
+
