@@ -1,0 +1,15 @@
+<h2 id="Methods">Methods</h2>
+
+<p><em>Inherits methods from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<dl>
+ <dt>{{ domxref("MediaDevices.enumerateDevices", "enumerateDevices()") }}</dt>
+ <dd>Obtains an array of information about the media input and output devices available on the system.</dd>
+ <dt>{{domxref("MediaDevices.getSupportedConstraints", "getSupportedConstraints()")}}</dt>
+ <dd>Returns an object conforming to {{domxref("MediaTrackSupportedConstraints")}} indicating which constrainable properties are supported on the {{domxref("MediaStreamTrack")}} interface. See {{SectionOnPage("/en-US/docs/Web/API/Media_Streams_API", "Capabilities and constraints")}} to learn more about constraints and how to use them.</dd>
+ <dt>{{domxref("MediaDevices.getDisplayMedia", "getDisplayMedia()")}}</dt>
+ <dd>Prompts the user to select a display or portion of a display (such as a window) to capture as a {{domxref("MediaStream")}} for sharing or recording purposes.  Returns a promise that resolves to a <code>MediaStream</code>.</dd>
+ <dt>{{ domxref("MediaDevices.getUserMedia", "getUserMedia()") }}</dt>
+ <dd>With the user's permission through a prompt, turns on a camera and/or a microphone on the system and provides a {{domxref("MediaStream")}} containing a video track and/or an audio track with the input.</dd>
+</dl>
+

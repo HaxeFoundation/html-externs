@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent interface, {{domxref("EventTarget")}}.</em></p>
+
+<h3 name="Handlers" id="Handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{ domxref("MediaDevices.ondevicechange") }}</dt>
+ <dd>The event handler for the {{event("devicechange")}} event. This event is delivered to the <code>MediaDevices</code> object when a media input or output device is attached to or removed from the user's computer.</dd>
+</dl>
+
