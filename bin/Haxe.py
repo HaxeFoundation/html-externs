@@ -105,6 +105,12 @@ PREFS = set([
 	"device.sensors.orientation.enabled",
 
 	"dom.pointer-lock.enabled",
+
+	# new APIs that are not yet stsable enough
+	# "dom.input.dirpicker",
+	# "dom.select_events.enabled",
+	# "dom.webmidi.enabled",
+	# "dom.IntersectionObserver.enabled",
 ])
 
 FUNCS = set([
@@ -127,6 +133,7 @@ FUNCS = set([
 	"nsGenericHTMLElement::TouchEventsEnabled",
 	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
 	"nsDocument::IsUnprefixedFullscreenEnabled",
+	"nsIDocument::IsUnprefixedFullscreenEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
 	"SpeechRecognition::IsAuthorized",
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
@@ -137,6 +144,18 @@ FUNCS = set([
 	"IsNotUAWidget",
 	"nsGlobalWindowInner::IsWindowPrintEnabled",
 	"ServiceWorkerContainer::IsEnabled",
+
+	# new APIs that are not yet stsable enough
+	# "mozilla::dom::PaymentRequest::PrefEnabled",
+	# "mozilla::dom::MediaCapabilities::Enabled",
+	# "nsScreen::MediaCapabilitiesEnabled",
+	# "Navigator::HasUserMediaSupport",
+	# "mozilla::dom::DOMPrefs::DOMCachesEnabled",
+	# "mozilla::dom::DOMPrefs::PerformanceObserverEnabled",
+	# "mozilla::dom::DOMPrefs::StorageManagerEnabled",
+	# "mozilla::dom::DOMPrefs::StreamsEnabled",
+	# "mozilla::dom::DOMPrefs::NotificationEnabledInServiceWorkers",
+	# "mozilla::dom::DOMPrefs::PushEnabled",
 ])
 
 HARDCODED_METHODS = {
@@ -268,6 +287,9 @@ HTML_ELEMENTS = {
 	# "UnknownElement",
 	"VideoElement": "video",
 }
+
+# tracks when isDisabled() returns true for a given flag
+NOT_IN_WHITELIST = set([])
 
 class PackageGroup:
 	def __init__ (self, names, removePrefix=None):
@@ -450,6 +472,10 @@ class Program ():
 								print('> Warning: Type "%s" requires Pref "%s", Func "%s"' % (idl.identifier.name, pref, func))
 		
 		generateWebGLExtensionEnum(self.idls, outputDir)
+
+		# Print used flags that haven't been explicitly whitelisted
+		for flag in sorted(NOT_IN_WHITELIST):
+			print('> Warning: flag "%s" not enabled' % flag)
 
 # Return all the types used by this IDL
 def checkUsage (idl):
@@ -1275,6 +1301,7 @@ def isDisabled (attrs, whitelist):
 	if attrs:
 		for attr in attrs:
 			if attr not in whitelist:
+				NOT_IN_WHITELIST.add(attr)
 				return True
 	return False
 
