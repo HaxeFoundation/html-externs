@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>This dictionary currently always has both of the following properties defined.</em></p>
+
+<dl>
+ <dt>{{domxref("StorageEstimate.quota", "quota")}} {{securecontext_inline}}</dt>
+ <dd>A numeric value which provides a conservative approximation of the total storage the user's device or computer has available for the site origin or Web app. It's possible that there's more than this amount of space available though you can't rely on that being the case.</dd>
+ <dt>{{domxref("StorageEstimate.usage", "usage")}} {{securecontext_inline}}</dt>
+ <dd>A numeric value approximating the amount of storage space currently being used by the site or Web app, out of the available space as indicated by <code>quota</code>.</dd>
+</dl>
+
