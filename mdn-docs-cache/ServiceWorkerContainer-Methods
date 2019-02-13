@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("ServiceWorkerContainer.register", "ServiceWorkerContainer.register()")}} </dt>
+ <dd>Creates or updates a {{domxref("ServiceWorkerRegistration")}} for the given <code>scriptURL</code>.</dd>
+ <dt>{{domxref("ServiceWorkerContainer.getRegistration()")}}</dt>
+ <dd>Gets a {{domxref("ServiceWorkerRegistration")}} object whose scope matches the provided document URL.  If the method can't return a {{domxref("ServiceWorkerRegistration")}}, it returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" title="The Promise object is used for deferred and asynchronous computations. A Promise is in one of the three states:"><code>Promise</code></a>. </dd>
+ <dt>{{domxref("ServiceWorkerContainer.getRegistrations()")}}</dt>
+ <dd>Returns all {{domxref("ServiceWorkerRegistration")}} objects associated with a <code>ServiceWorkerContainer</code> in an array.  If the method can't return {{domxref("ServiceWorkerRegistration")}} objects, it returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" title="The Promise object is used for deferred and asynchronous computations. A Promise is in one of the three states:"><code>Promise</code></a>. </dd>
+ <dt>{{domxref("ServiceWorkerContainer.startMessages()")}}</dt>
+ <dd>explicitly starts the flow of messages being dispatched from a service worker to pages under its control (e.g. sent via {{domxref("Client.postMessage()")}}). This can be used to react to sent messages earlier, even before that page's content has finished loading.</dd>
+</dl>
+

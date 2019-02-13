@@ -1,0 +1,23 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("ServiceWorkerContainer.controller")}} {{readonlyinline}}</dt>
+ <dd>Returns a {{domxref("ServiceWorker")}} object if its state is <code>activated</code> (the same object returned by {{domxref("ServiceWorkerRegistration.active")}}). This property returns <code>null</code> during a force-refresh request (<em>Shift</em> + refresh) or if there is no active worker.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("ServiceWorkerContainer.ready")}} {{readonlyinline}}</dt>
+ <dd>Provides a way of delaying code execution until a service worker is active. It returns a {{jsxref("Promise")}} that will never reject, and which waits indefinitely until the {{domxref("ServiceWorkerRegistration")}} associated with the current page has an {{domxref("ServiceWorkerRegistration.active")}} worker. Once that condition is met, it resolves with the {{domxref("ServiceWorkerRegistration")}}.</dd>
+</dl>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("ServiceWorkerContainer.oncontrollerchange")}}</dt>
+ <dd>Fired whenever a {{Event("controllerchange")}} event occurs — when the document's associated {{domxref("ServiceWorkerRegistration")}} acquires a new {{domxref("ServiceWorkerRegistration.active","active")}} worker.</dd>
+ <dt>{{domxref("ServiceWorkerContainer.onerror")}}</dt>
+ <dd>Fired whenever an {{Event("error")}} event occurs in the associated service workers.</dd>
+ <dt>{{domxref("ServiceWorkerContainer.onmessage")}}</dt>
+ <dd>Fired whenever a {{Event("message")}} event occurs — when incoming messages are received to the {{domxref("ServiceWorkerContainer")}} object (e.g. via a {{domxref("MessagePort.postMessage()")}} call.)</dd>
+</dl>
+
