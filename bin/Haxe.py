@@ -793,8 +793,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 			if idl.identifier.name == "DOMStringMap":
 				write(" implements Dynamic<String>")
 
-			writeln()
-			writeln("{")
+			writeln(" {")
 			beginIndent()
 			if staticVars:
 				for member in staticVars:
@@ -896,27 +895,27 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				"""))
 
 		elif isinstance(idl, IDLDictionary):
-			# writeln("typedef ", idl.identifier, " =")
-			writeln("typedef ", toHaxeType(idl.identifier.name), " =")
-			writeln("{")
-			beginIndent()
+			write("typedef ", toHaxeType(idl.identifier.name), " = ")
+
 			if idl.parent:
 				name = idl.parent.identifier.name
 				# if name not in usedTypes or name not in knownTypes:
-				# 	write("// ")
-				writeln("> ", toHaxeType(idl.parent.identifier.name), ",")
+				write(toHaxeType(idl.parent.identifier.name), " & ")
+
+			writeln("{")
+			beginIndent()
 			for member in idl.members:
 				if isAvailable(member):
 					writeNativeMeta(member.identifier)
+					write("var ")
 					if member.optional:
-						write("@:optional ")
-					writeln("var ", member.identifier, " : ", member.type, ";")
+						write("?")
+					writeln(member.identifier, " : ", member.type, ";")
 			endIndent()
 			write("}")
 
 		elif isinstance(idl, IDLEnum):
-			writeln("enum abstract ", toHaxeType(idl.identifier.name), "(String)")
-			writeln("{")
+			writeln("enum abstract ", toHaxeType(idl.identifier.name), "(String) {")
 			beginIndent()
 			for value in idl.values():
 				if not isMozPrefixed(value):
