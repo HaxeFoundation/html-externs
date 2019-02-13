@@ -89,7 +89,6 @@ PREFS = set([
 	"media.webvtt.enabled",
 	"media.webvtt.regions.enabled",
 	"svg.svg-iframe.enabled",
-	# "dom.identity.enabled",
 	"media.peerconnection.enabled",
 	"media.peerconnection.identity.enabled",
 
@@ -111,7 +110,7 @@ PREFS = set([
 
 	"dom.IntersectionObserver.enabled",
 
-	# new APIs that are not yet stsable enough
+	# new APIs that are not yet stable enough
 	# "dom.input.dirpicker",
 ])
 
