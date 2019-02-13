@@ -151,13 +151,14 @@ FUNCS = set([
 	"mozilla::dom::DOMPrefs::PerformanceObserverEnabled",
 	"mozilla::dom::DOMPrefs::StorageManagerEnabled",
 
+	"mozilla::dom::DOMPrefs::PushEnabled",
+	"mozilla::dom::DOMPrefs::NotificationEnabledInServiceWorkers",
+
 	# new APIs that are not yet stable enough or widely implemented
 	# "mozilla::dom::PaymentRequest::PrefEnabled",
 	# "mozilla::dom::MediaCapabilities::Enabled",
 	# "nsScreen::MediaCapabilitiesEnabled",
 	# "mozilla::dom::DOMPrefs::StreamsEnabled",
-	# "mozilla::dom::DOMPrefs::NotificationEnabledInServiceWorkers",
-	# "mozilla::dom::DOMPrefs::PushEnabled",
 	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
 ])
 
@@ -1252,6 +1253,8 @@ def toHaxeType (name):
 		name = name[len("RTC"):]
 	elif name.startswith("MIDI"):
 		name = name[len("MIDI"):]
+	elif name.startswith("Push"):
+		name = name[len("Push"):]
 	else:
 		for pkg, group in PACKAGES.iteritems():
 			if group.removePrefix and name.startswith(group.removePrefix) and name in group.names:
@@ -1279,6 +1282,8 @@ def toHaxePackage (name):
 		package.append("rtc")
 	elif name.startswith("MIDI"):
 		package.append("midi")
+	elif name.startswith("Push"):
+		package.append("push")
 	else:
 		for pkg, group in PACKAGES.iteritems():
 			if name in group.names:
