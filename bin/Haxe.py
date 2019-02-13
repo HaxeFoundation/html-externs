@@ -108,7 +108,7 @@ PREFS = set([
 
 	"dom.webmidi.enabled",
 	"dom.select_events.enabled",
-	
+
 	"dom.IntersectionObserver.enabled",
 
 	# new APIs that are not yet stsable enough
@@ -146,11 +146,12 @@ FUNCS = set([
 	"nsGlobalWindowInner::IsWindowPrintEnabled",
 	"ServiceWorkerContainer::IsEnabled",
 
+	"Navigator::HasUserMediaSupport",
+
 	# new APIs that are not yet stsable enough
 	# "mozilla::dom::PaymentRequest::PrefEnabled",
 	# "mozilla::dom::MediaCapabilities::Enabled",
 	# "nsScreen::MediaCapabilitiesEnabled",
-	# "Navigator::HasUserMediaSupport",
 	# "mozilla::dom::DOMPrefs::DOMCachesEnabled",
 	# "mozilla::dom::DOMPrefs::PerformanceObserverEnabled",
 	# "mozilla::dom::DOMPrefs::StorageManagerEnabled",
