@@ -108,7 +108,7 @@ PREFS = set([
 
 	"dom.webmidi.enabled",
 	"dom.select_events.enabled",
-	
+
 	# new APIs that are not yet stsable enough
 	# "dom.input.dirpicker",
 	# "dom.IntersectionObserver.enabled",
@@ -473,8 +473,9 @@ class Program ():
 		generateWebGLExtensionEnum(self.idls, outputDir)
 
 		# Print used flags that haven't been explicitly whitelisted
+		print("> Flags not whitelisted:")
 		for flag in sorted(NOT_IN_WHITELIST):
-			print('> Warning: flag "%s" not enabled' % flag)
+			print("\t%s" % flag)
 
 # Return all the types used by this IDL
 def checkUsage (idl):
