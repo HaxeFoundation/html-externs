@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("IntersectionObserver.root")}} {{readonlyinline}}</dt>
+ <dd>A specific ancestor of the target {{domxref("element")}} being observed. If no value was passed to the constructor or this is <code>null</code>, the top-level document's viewport is used.</dd>
+ <dt>{{domxref("IntersectionObserver.rootMargin")}} {{readonlyinline}}</dt>
+ <dd>An offset rectangle applied to the root's {{Glossary('bounding box')}} when calculating intersections, effectively shrinking or growing the root for calculation purposes. The value returned by this property may not be the same as the one specified when calling the constructor as it may be changed to match internal requirements. Each offset can be expressed in pixels (<code>px</code>) or as a percentage (<code>%</code>). The default is "0px 0px 0px 0px".</dd>
+ <dt>{{domxref("IntersectionObserver.thresholds")}} {{readonlyinline}}</dt>
+ <dd>A list of thresholds, sorted in increasing numeric order, where each threshold is a ratio of intersection area to bounding box area of an observed target. Notifications for a target are generated when any of the thresholds are crossed for that target. If no value was passed to the constructor, 0 is used.</dd>
+</dl>
+

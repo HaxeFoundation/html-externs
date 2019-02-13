@@ -1,0 +1,13 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("IntersectionObserver.disconnect()")}}</dt>
+ <dd>Stops the <code>IntersectionObserver</code> object from observing any target.</dd>
+ <dt>{{domxref("IntersectionObserver.observe()")}}</dt>
+ <dd>Tells the <code>IntersectionObserver</code> a target element to observe.</dd>
+ <dt>{{domxref("IntersectionObserver.takeRecords()")}}</dt>
+ <dd>Returns an array of {{domxref("IntersectionObserverEntry")}} objects for all observed targets.</dd>
+ <dt>{{domxref("IntersectionObserver.unobserve()")}}</dt>
+ <dd>Tells the <code>IntersectionObserver</code> to stop observing a particular target element.</dd>
+</dl>
+

@@ -1,0 +1,1 @@
+The <code><strong>IntersectionObserverEntry</strong></code> interface of the <a href="/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API</a> describes the intersection between the target element and its root container at a specific moment of transition.
