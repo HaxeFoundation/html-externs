@@ -106,10 +106,11 @@ PREFS = set([
 
 	"dom.pointer-lock.enabled",
 
-	# new APIs that are not yet stsable enough
 	"dom.webmidi.enabled",
+	"dom.select_events.enabled",
+	
+	# new APIs that are not yet stsable enough
 	# "dom.input.dirpicker",
-	# "dom.select_events.enabled",
 	# "dom.IntersectionObserver.enabled",
 ])
 
