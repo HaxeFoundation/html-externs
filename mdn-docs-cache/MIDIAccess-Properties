@@ -1,0 +1,18 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MIDIAccess.inputs")}} {{readonlyinline}}</dt>
+ <dd>Returns an instance of {{domxref("MIDIInputMap")}} which provides access to any available MIDI input ports.</dd>
+ <dt>{{domxref("MIDIAccess.outputs")}} {{readonlyinline}}</dt>
+ <dd>Returns an instance of {{domxref("MIDIOutputMap")}} which provides access to any available MIDI output ports.</dd>
+ <dt>{{domxref("MIDIAccess.sysexEnabled")}} {{readonlyinline}}</dt>
+ <dd>A boolean attribute indicating whether system exclusive support is enabled on the current MIDIAccess instance.</dd>
+</dl>
+
+<h3 id="Event_Handlers">Event Handlers</h3>
+
+<dl>
+ <dt>{{domxref("MIDIAccess.onstatechange")}}</dt>
+ <dd>Called whenever a new MIDI port is added or an existing port changes state.</dd>
+</dl>
+

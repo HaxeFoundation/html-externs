@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("MIDIConnectionEvent.port")}}</dt>
+ <dd>Returns a reference to a {{domxref("MIDIPort")}} instance for a port that has been connected or disconnected."</dd>
+</dl>
+

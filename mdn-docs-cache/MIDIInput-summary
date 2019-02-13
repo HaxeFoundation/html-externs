@@ -1,0 +1,1 @@
+Use the <strong><code>MIDIInput</code></strong> interface of the <a href="/en-US/docs/Web/API/Web_MIDI_API">Web MIDI API</a> to access and pass messages to a MIDI input port.

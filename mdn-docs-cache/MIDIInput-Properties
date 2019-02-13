@@ -1,0 +1,11 @@
+<h2 id="Properties">Properties</h2>
+
+<p>None.</p>
+
+<h3 id="Event_handlers">Event handlers</h3>
+
+<dl>
+ <dt>{{domxref("MIDIInput.onmidimessage")}}</dt>
+ <dd>When the current port receives a {{domxref("MIDIMessage")}} it triggers a call to this event handler.</dd>
+</dl>
+
