@@ -1,0 +1,24 @@
+<h2 id="Methods">Methods</h2>
+
+<dl>
+ <dt>{{domxref("PushManager.getSubscription()")}}</dt>
+ <dd>Retrieves an existing push subscription. It returns a {{jsxref("Promise")}} that resolves to a {{domxref("PushSubscription")}} object containing details of an existing subscription. If no existing subscription exists, this resolves to a <code>null</code> value.</dd>
+ <dt>{{domxref("PushManager.permissionState()")}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} that resolves to the permission state of the current {{domxref("PushManager")}}, which will be one of <code>'granted'</code>, <code>'denied'</code>, or <code>'prompt'</code>.</dd>
+ <dt>{{domxref("PushManager.subscribe()")}}</dt>
+ <dd>Subscribes to a push service. It returns a {{jsxref("Promise")}} that resolves to a {{domxref("PushSubscription")}} object containing details of a push subscription. A new push subscription is created if the current service worker does not have an existing subscription.</dd>
+</dl>
+
+<h3 id="Deprecated_methods">Deprecated methods</h3>
+
+<dl>
+ <dt>{{domxref("PushManager.hasPermission()")}} {{deprecated_inline}}</dt>
+ <dd>Returns a {{jsxref("Promise")}} that resolves to the <code>PushPermissionStatus</code> of the requesting webapp, which will be one of <code>granted</code>, <code>denied</code>, or <code>default</code>. Replaced by {{domxref("PushManager.permissionState()")}}.</dd>
+ <dt>{{domxref("PushManager.register()")}} {{deprecated_inline}}</dt>
+ <dd>Subscribes to a push subscription. Replaced by {{domxref("PushManager.subscribe()")}}.</dd>
+ <dt>{{domxref("PushManager.registrations()")}} {{deprecated_inline}}</dt>
+ <dd>Retrieves existing push subscriptions. Replaced by {{domxref("PushManager.getSubscription()")}}.</dd>
+ <dt>{{domxref("PushManager.unregister()")}} {{deprecated_inline}}</dt>
+ <dd>Unregisters and deletes a specified subscription endpoint. In the updated API, a subscription is unregistered by calling the {{domxref("PushSubscription.unsubscribe()")}} method.</dd>
+</dl>
+

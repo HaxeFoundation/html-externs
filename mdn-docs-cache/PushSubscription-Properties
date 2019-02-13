@@ -1,0 +1,16 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("PushSubscription.endpoint")}} {{readonlyinline}}</dt>
+ <dd>A {{domxref("USVString")}} containing the endpoint associated with the push subscription.</dd>
+ <dt>{{domxref("PushSubscription.expirationTime")}} {{readonlyinline}}</dt>
+ <dd>A {{domxref("DOMHighResTimeStamp")}} of the subscription expiration time associated with the push subscription, if there is one, or null otherwise. </dd>
+ <dt>{{domxref("PushSubscription.options")}} {{readonlyinline}}</dt>
+ <dd>An object containing the options used to create the subscription.</dd>
+</dl>
+
+<dl>
+ <dt>{{domxref("PushSubscription.subscriptionId")}} {{deprecated_inline}} {{readonlyinline}}</dt>
+ <dd>A {{domxref("DOMString")}} containing the subscription ID associated with the push subscription.</dd>
+</dl>
+

@@ -1,0 +1,13 @@
+<h2 id="Properties">Properties</h2>
+
+<p><em>Inherits properties from its parent, {{domxref("ExtendableEvent")}}. Additional properties:</em></p>
+
+<dl>
+ <dt>{{domxref("PushEvent.data")}} {{readonlyinline}}</dt>
+ <dd>Returns a reference to a {{domxref("PushMessageData")}} object containing data sent to the <span>{{domxref("PushSubscription")}}.</span></dd>
+</dl>
+
+<p><strong style="font-size: 2.14285714285714rem; font-weight: 700; letter-spacing: -1px; line-height: 30px;">Methods</strong></p>
+
+<p><em>Inherits methods from its parent, {{domxref("ExtendableEvent")}}</em>.</p>
+

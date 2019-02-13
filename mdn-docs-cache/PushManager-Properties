@@ -1,0 +1,7 @@
+<h2 id="Properties">Properties</h2>
+
+<dl>
+ <dt>{{domxref("PushManager.supportedContentEncodings")}}</dt>
+ <dd>Returns an array of supported content codings that can be used to encrypt the payload of a push message.</dd>
+</dl>
+

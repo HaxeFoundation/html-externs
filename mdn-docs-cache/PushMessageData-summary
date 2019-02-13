@@ -1,0 +1,1 @@
+The <code><strong>PushMessageData</strong></code> interface of the <a href="/en-US/docs/Web/API/Push_API">Push API</a> provides methods which let you retrieve the push data sent by a server in various formats.

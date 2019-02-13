@@ -1,0 +1,1 @@
+The <code>PushSubscription</code> interface of the <a href="/en-US/docs/Web/API/Push_API">Push API</a> provides a subcription's URL endpoint and allows unsubscription from a push service.
