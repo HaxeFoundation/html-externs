@@ -126,6 +126,7 @@ FUNCS = set([
 	"nsDocument::IsShadowDOMEnabled",
 	"nsGenericHTMLElement::TouchEventsEnabled",
 	# "mozilla::dom::DOMPrefs::OffscreenCanvasEnabled",
+	"nsDocument::IsUnprefixedFullscreenEnabled",
 	"mozilla::dom::OffscreenCanvas::PrefEnabledOnWorkerThread",
 	"SpeechRecognition::IsAuthorized",
 	"mozilla::dom::ServiceWorkerRegistrationVisible",
