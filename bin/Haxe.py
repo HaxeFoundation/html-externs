@@ -1250,10 +1250,6 @@ def toHaxeType (name):
 		name = name[len("IDB"):]
 	elif name.startswith("RTC"):
 		name = name[len("RTC"):]
-	elif name.startswith("MIDI"):
-		name = name[len("MIDI"):]
-	elif name.startswith("Push"):
-		name = name[len("Push"):]
 	else:
 		for pkg, group in PACKAGES.iteritems():
 			if group.removePrefix and name.startswith(group.removePrefix) and name in group.names:
