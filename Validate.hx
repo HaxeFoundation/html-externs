@@ -47,6 +47,12 @@ class Validate {
 
 		var extUntyped = gl.getExtension('ANGLE_instanced_arrays');
 		$type(extUntyped.drawArraysInstancedANGLE); // should be Unknown
+
+		// ensure overloads are properly matched
+		// see https://github.com/HaxeFoundation/haxe/issues/7794
+		var current : js.html.audio.AudioBufferSourceNode = null;
+		var ctx : js.html.audio.AudioContext = null;
+		current.connect(ctx.destination); // overload resolution failed
 	}
 
 	static function onMouseDown(e: js.html.MouseEvent) {
