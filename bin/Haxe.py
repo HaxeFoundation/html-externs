@@ -701,7 +701,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		nonNullDefault = argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue)
 		primitiveDefault = argument.defaultValue and (argument.defaultValue.type.isPrimitive() or (argument.type.isEnum() and argument.defaultValue.type.isString()))
 
-		if argument.optional and not argument.variadic and not primitiveDefault:
+		if argument.optional and not argument.variadic and (not primitiveDefault or not nonNullDefault):
 			write("?")
 
 		write(argument.identifier, " : ")
