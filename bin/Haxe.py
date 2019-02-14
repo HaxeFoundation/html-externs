@@ -699,8 +699,9 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 
 	def writeArgument(argument, overrideType = None, subTypeMode = None):
 		nonNullDefault = argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue)
+		primitiveDefault = argument.defaultValue and (argument.defaultValue.type.isPrimitive() or (argument.type.isEnum() and argument.defaultValue.type.isString()))
 
-		if argument.optional and not argument.variadic and not nonNullDefault:
+		if argument.optional and not argument.variadic and not primitiveDefault:
 			write("?")
 
 		write(argument.identifier, " : ")
@@ -719,7 +720,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		if argument.variadic:
 			write(">")
 
-		if nonNullDefault:
+		if nonNullDefault and primitiveDefault:
 			write(" = ")
 			# write enum values as their enum field names rather than strings
 			if argument.type.isEnum() and argument.defaultValue.type.isString():
