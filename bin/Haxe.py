@@ -698,10 +698,30 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 				writeHaxeType(name)
 
 	def writeArgument(argument, overrideType = None, subTypeMode = None):
-		nonNullDefault = argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue)
-		primitiveDefault = argument.defaultValue and (argument.defaultValue.type.isPrimitive() or (argument.type.isEnum() and argument.defaultValue.type.isString()))
+		# we have to perform some checks on default values to ensure they are supported in haxe
+		# for example, array initializers like `x = []` are not allowed
+		# additionally, if the type is overridden with the `overrideType` argument, then the default may not have the correct type
+		# if the default cannot be printed, then the `?` prefix is used instead
 
-		if argument.optional and not argument.variadic and (not primitiveDefault or not nonNullDefault):
+		nonNullDefault = argument.defaultValue and not isinstance(argument.defaultValue, IDLNullValue) and not isinstance(argument.defaultValue, IDLUndefinedValue)
+		stringEnumDefault = argument.defaultValue and argument.type.isEnum() and argument.defaultValue.type.isString()
+		constantDefault = argument.defaultValue and (argument.defaultValue.type .isPrimitive() or argument.defaultValue.type.isString() or stringEnumDefault)
+
+		# if the type is overridden, the default value may not match
+		correctTypeDefault = True
+
+		if nonNullDefault:
+			try:
+				argumentType = argument.type
+				if overrideType != None:
+					argumentType = overrideType
+				argument.defaultValue.coerceToType(argumentType, argument.defaultValue.location)
+			except:
+				correctTypeDefault = False
+
+	  	supportedDefaultValue = nonNullDefault and constantDefault and correctTypeDefault
+
+		if argument.optional and not argument.variadic and not supportedDefaultValue:
 			write("?")
 
 		write(argument.identifier, " : ")
@@ -720,7 +740,7 @@ def generate (idl, usedTypes, knownTypes, cssProperties, outputDir):
 		if argument.variadic:
 			write(">")
 
-		if nonNullDefault and primitiveDefault:
+		if supportedDefaultValue:
 			write(" = ")
 			# write enum values as their enum field names rather than strings
 			if argument.type.isEnum() and argument.defaultValue.type.isString():
