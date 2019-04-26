@@ -191,10 +191,15 @@ HARDCODED_METHODS = {
 
 	"::WebGLRenderingContextBase::getExtension": ( "REPLACE", ["function getExtension<T>( name : Extension<T> ) : T;"] ),
 
-	# Make timeout a Float instead of an Int https://github.com/HaxeFoundation/haxe/issues/8223
+	# Make timeout use :Float instead of :Int https://github.com/HaxeFoundation/haxe/issues/8223
 	"::WindowOrWorkerGlobalScope::setTimeout": ( "REPLACE", [
 		"@:overload( function( handler : haxe.Constraints.Function, timeout : Float = 0, arguments : haxe.extern.Rest<Dynamic> ) : Int {} )",
 		"function setTimeout( handler : String, timeout : Float = 0, unused : haxe.extern.Rest<Dynamic> ) : Int;"
+	] ),
+
+	"::WindowOrWorkerGlobalScope::setInterval": ( "REPLACE", [
+		"@:overload( function( handler : haxe.Constraints.Function, timeout : Float = 0, arguments : haxe.extern.Rest<Dynamic> ) : Int {} )",
+		"function setInterval( handler : String, timeout : Float = 0, unused : haxe.extern.Rest<Dynamic> ) : Int;"
 	] )
 }
 
