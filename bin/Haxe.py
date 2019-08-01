@@ -110,6 +110,9 @@ PREFS = set([
 
 	"dom.IntersectionObserver.enabled",
 
+	"dom.events.asyncClipboard",
+	"dom.events.asyncClipboard.dataTransfer",
+
 	# new APIs that are not yet stable enough
 	# "dom.input.dirpicker",
 ])
